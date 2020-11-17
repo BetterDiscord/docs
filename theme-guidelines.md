@@ -1,5 +1,5 @@
 # Theme Guidelines
-These are the requirements and rules that themes in the official repository must follow. These exist to ensure a safe and user-friendly experience. Themes in violation of these guidelines will not be allowed into the repository.
+These are the requirements and rules that themes in the official repository must follow. These exist to ensure a safe and user-friendly experience, as well as maintain originality and variety. Themes found in violation of these guidelines will not be allowed into the official repository.
 
 ## General Usability
 - Usability should be prioritized over look and feel.
