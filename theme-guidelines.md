@@ -23,5 +23,5 @@ These are the requirements and rules that themes in the official repository must
 
 ## First Theme Policy
 These guidelines apply only if this is your **first** submission.
-- Your first theme must be original. You may not borrow large portions other people's codebase.
+- Your first theme must be original. You may not borrow large portions other people's codebase (some exceptions may apply).
 - Your first theme cannot be an "addon" or "mini-theme".
