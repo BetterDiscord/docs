@@ -1,5 +1,5 @@
 # Theme Guidelines
-These are the requirements and rules that themes in our official repository must follow. These exist to ensure a safe and user-friendly environment, as well as maintain variety and originality in our themes. Themes found in violation of these guidelines will not be allowed into the official repository.
+These are the requirements that themes in our official repository are expected to meet. These exist to ensure a safe and user-friendly environment, as well as maintain variety and originality in our themes.
 
 ## Definitions
 - **Theme:** A stylesheet written to alter the look and feel of Discord.
