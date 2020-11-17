@@ -1,2 +1,2 @@
 # BetterDiscord Documentation
-In-depth guides, policies and information on BetterDiscord for both developers and users.
+Documentation, guidelines and tutorials for BetterDiscord.
