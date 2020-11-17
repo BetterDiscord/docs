@@ -2,13 +2,13 @@
 These are the requirements and rules that themes in the official repository must follow. These exist to ensure a safe and user-friendly experience, as well as maintain originality and variety. Themes found in violation of these guidelines will not be allowed into the official repository.
 
 ## Definitions
-- Theme: A stylesheet written to alter the look and feel of Discord.
-- Mini-theme: A small styesheet which changes the look and feel of Discord in one area, or in a minor way.
-- Assets: Resources that your addon utilizes, including but not limited to images, fonts, code and videos.
-- Official Repository: The listings of themes and plugins which are publicly downloadable from [http://betterdiscord.net/](http://betterdiscord.net/).
-- User: Any individual who uses or has used your addon.
-- Remote Assets: Assets which are stored outside your local theme file.
-- Security Permissions: Any features put in place by the client to protect users, including but not limited to the Content Security Policy (CSP).
+- **Theme:** A stylesheet written to alter the look and feel of Discord.
+- **Mini-theme:** A small styesheet which changes the look and feel of Discord in one area, or in a minor way.
+- **Assets:** Resources that your addon utilizes, including but not limited to images, fonts, code and videos.
+- **Official Repository:** The listings of themes and plugins which are publicly downloadable from [http://betterdiscord.net/](http://betterdiscord.net/).
+- **User:** Any individual who uses or has used your addon.
+- **Remote Assets:** Assets which are stored outside your local theme file.
+- **Security Permissions:** Any features put in place by the client to protect users, including but not limited to the Content Security Policy (CSP).
 
 ## Usability
 - Usability should be prioritized over look and feel.
