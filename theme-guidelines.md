@@ -15,7 +15,7 @@ These are the requirements and rules that themes in our official repository must
 - Maintain performance on modern hardware. This can be done by limiting the use of intensive animations, filters and effects.
 - Do not target a specific user or group of users in a negative way (do not attempt to "ban" people).
 - Try to maintain support for Discord's accessability features.
-- Do not encourage users to further violate Discord's [https://discord.com/terms](Terms of Service), or promote content from outside of the official repository.
+- Do not encourage users to further violate Discord's [Terms of Service](https://discord.com/terms), or promote content from outside of the official repository.
 
 ## Code
 - Your theme's codebase theme must be made and written by you. This means you cannot submit an automatically-generated theme or have the majority of your codebase written by someone else.
