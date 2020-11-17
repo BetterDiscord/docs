@@ -1,7 +1,7 @@
 # Theme Guidelines
 These are the requirements and rules that themes in the official repository must follow. These exist to ensure a safe and user-friendly experience, as well as maintain originality and variety. Themes found in violation of these guidelines will not be allowed into the official repository.
 
-## General Usability
+## Usability
 - Usability should be prioritized over look and feel.
 - Do not degrade the user experience by removing core functionality or hiding important areas.
 - Your theme should be optimized to run well on normal hardware.
@@ -21,6 +21,7 @@ These are the requirements and rules that themes in the official repository must
 *File size does not play a role submission, however around 1000 lines of code generally indicates fair coverage of the app.*
 - NSFW images and assets are not allowed official themes.
 
-## First Themes
+## First Theme Policy
+These guidelines apply only if this is your __first__ submission.
 - Your first theme must be original. You may not borrow large portions other people's codebase.
 - Your first theme cannot be an "addon" or "mini-theme".
