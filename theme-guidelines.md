@@ -11,7 +11,6 @@ These are the requirements and rules that themes in our official repository must
 - **Security Permissions:** Any features put in place by the client to protect users, including but not limited to the Content Security Policy (CSP).
 
 ## Usability
-- Usability should be prioritized over look and feel.
 - Do not degrade the user experience by removing core functionality or hiding important areas.
 - Your theme should be optimized to run well on normal hardware.
 - Do not target a specific user or group of users in a negative way (do not attempt to "ban" people).
