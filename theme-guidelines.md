@@ -12,7 +12,7 @@ These are the requirements and rules that themes in our official repository must
 
 ## Usability
 - Do not degrade the user experience by removing core functionality.
-- Maintain usability performance-wise on modern hardware. This can be done by limiting the use of performance-intensive animations, filters and effects.
+- Maintain performance on modern hardware. This can be done by limiting the use of intensive animations, filters and effects.
 - Do not target a specific user or group of users in a negative way (do not attempt to "ban" people).
 - Try to maintain support for Discord's accessability features.
 - Do not encourage users to further violate Discord's [Terms of Service](Terms of Service), or promote content from outside of the official repository.
