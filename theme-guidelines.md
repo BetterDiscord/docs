@@ -18,7 +18,7 @@ These are the requirements and rules that themes in the official repository must
 - Themes should not be a basic recolor or background change (some exceptions apply). Themes should significantly alter the look and feel of Discord.
 - Themes should employ a mostly consistent design.
 - Themes should have full coverage of most common panels, modals, controls and popouts. Keep in mind that only changing discord's variables does not provide full coverage of the app.
-- Note: File size does not play a role submission, however around 1000 lines of code generally indicates fair coverage of the app.
+**Note:** File size does not play a role submission, however around 1000 lines of code generally indicates fair coverage of the app.
 - NSFW images and assets are not allowed official themes.
 
 ## First Themes
