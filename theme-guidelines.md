@@ -29,8 +29,6 @@ These are the requirements that themes in our official repository are expected t
 *Although filesize should not affect the submission process, 1000 lines is a good goal to aim for in your theme.*
 - NSFW images and assets are not allowed in official themes.
 
-## 
-
 ## First Theme Policy
 These guidelines apply only if this is your **first** submission.
 - First themes must be original. You may not borrow large portions other people's codebase (some exceptions may apply).
