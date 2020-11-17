@@ -22,7 +22,7 @@ These are the requirements and rules that themes in our official repository must
 - It should go without saying that your theme must be made and written by you. This means you cannot submit an automatically-generated theme or have the majority of your codebase written by someone else.
 - Only import code from trusted services (Github, Gitlab, Google Fonts, Adobe Fonts, etc...)
 - Do not abuse remote resources to gather user information, use untrusted content, or circumvent security permissions.
-- You may reverse-engineer or use other peoples code, provided you have proper permission and your theme's core design does not rely on code that isn't yours. This does not apply if this is your first theme for submission.
+- You may reverse-engineer or use other people's code, provided you have proper permission and your theme's core design does not rely on code that isn't yours. This does not apply if this is your first theme for submission.
 
 ## Design
 - Themes should not be a basic recolor or background change (some exceptions apply). Themes should significantly alter the look and feel of Discord.
