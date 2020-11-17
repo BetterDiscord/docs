@@ -18,7 +18,7 @@ These are the requirements that themes in our official repository are expected t
 - Maintain performance on modern hardware. This can be done by limiting the use of intensive animations, filters and effects.
 
 ## Code
-- Your theme's codebase must be made and written primarily by you. This means you cannot submit an automatically-generated theme, a customized version of someone else's theme, or have someone else to write your theme's codebase for you.
+- Your theme's codebase must be made and written primarily by you. You cannot submit an automatically-generated theme, a customized version of someone else's theme, or have someone else write your codebase for you.
 - Only import code from trusted services. (Github, Gitlab, Google Fonts, Adobe Fonts, etc...)
 - Do not abuse remote resources to gather user information, use untrusted content, or circumvent security permissions.
 - You may reverse-engineer or use other people's code, provided you have proper permission and your theme's core design does not rely on code that isn't yours. This does not apply if this is your first submission.
