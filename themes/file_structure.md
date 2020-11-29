@@ -1,5 +1,5 @@
 # Theme File Structure
-Themes are stored in [CSS (Cascading Style Sheet)](https://developer.mozilla.org/en-US/docs/Web/CSS) files. 
+Themes are stored and written in [CSS (Cascading Style Sheet)](https://developer.mozilla.org/en-US/docs/Web/CSS) files. 
 
 ## Requirements
 
