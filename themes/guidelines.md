@@ -9,16 +9,16 @@ These are the requirements that themes in our official repository are expected t
 - Maintain performance on modern hardware. This can be done by limiting the use of intensive animations, filters and effects.
 
 ## Code
-- Your theme's codebase must be made and written primarily by you. You cannot submit an automatically-generated theme, a customized version of someone else's theme, or have someone else write a codebase for you.
+- Your theme's codebase must be made and written primarily by you. You may not submit an automatically-generated theme, a customized version of someone else's theme, or a codebase written by someone other than you.
 - Only import code from trusted services. (Github, Gitlab, Google Fonts, Adobe Fonts, etc...)
 - Do not abuse remote resources to gather user information, use untrusted content, or circumvent security permissions.
-- You may reverse-engineer or use other people's code, provided you have proper permission and your theme's core design does not rely on code that isn't yours. This does not apply if this is your first submission.
+- You may reverse-engineer or use other people's code, provided you have proper permission and your theme's core design does not rely on third-party code. This does not apply if it is your first submission.
 
 ## Design
-- Themes should not be a basic recolor or background change (some exceptions apply). Themes should significantly alter the look and feel of Discord.
+- Themes should not be a basic recolor or background change change (some exceptions apply). Themes should significantly alter the look and feel of Discord.
 - Themes should have full coverage of most common pages, popouts, modals and controls. Keep in mind that changing discord's variables does not provide full coverage of the app.
 *Although filesize should not affect the submission process, 1000 lines is a good goal to aim for in your theme.*
-- NSFW images and assets are not allowed in official themes.
+- NSFW images or assets are not allowed in official themes.
 
 ## First Theme Policy
 These guidelines apply only if this is your **first** submission.
