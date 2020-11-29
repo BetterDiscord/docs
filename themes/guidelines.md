@@ -1,15 +1,6 @@
 # Theme Guidelines
 These are the requirements that themes in our official repository are expected to meet. These exist to ensure a safe and user-friendly environment, as well as maintain variety and originality in our themes.
 
-## Reference
-- **Theme:** A stylesheet written to alter the look and feel of Discord.
-- **Mini-theme:** A small styesheet which changes the look and feel of Discord in one area, or in a minor way.
-- **Assets:** Resources that your addon utilizes, including but not limited to images, fonts, code and videos.
-- **Official Repository:** The listings of themes and plugins which are publicly downloadable from [http://betterdiscord.net/](http://betterdiscord.net/).
-- **User:** Any individual who uses or has used your addon.
-- **Remote Assets:** Assets which are stored outside your local theme file.
-- **Security Permissions:** Any features put in place by the client to protect users, including but not limited to the Content Security Policy (CSP).
-
 ## Usability
 - Do not degrade the user experience by removing core functionality.
 - Do not target a specific user or group of users in a negative way (do not attempt to "ban" people).
