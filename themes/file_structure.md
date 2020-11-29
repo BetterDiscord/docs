@@ -25,4 +25,4 @@ body {
 }
 ```
 
-Click [here](https://github.com/BetterDiscord/Documentation/blob/main/examples/example.theme.css) to view the file.
+Click [here](https://github.com/BetterDiscord/Documentation/blob/main/examples/example.theme.css) to view the file on this repository.
