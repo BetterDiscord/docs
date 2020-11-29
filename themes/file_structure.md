@@ -10,7 +10,7 @@ The following requirements must be met for the client to register a file as a th
 
 ## Example Theme Template
 
-```
+```css
 /**
  * @name Theme Name
  * @version 1.0.0
