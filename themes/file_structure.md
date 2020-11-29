@@ -21,6 +21,7 @@ The following requirements must be met for the client to register a file as a th
 
 body {
     background-color: red;
-}```
+}
+```
 
 Click [here](todo) to view the file.
