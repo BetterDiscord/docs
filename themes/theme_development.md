@@ -8,3 +8,19 @@ Before setting up an environment, you should be familliar the following concepts
 * Chromium Developer Tools
 
 ## Setting up a Development Environment
+First, you need a theme file. Locate your BetterDiscord themes folder at the following locations:
+
+### Windows
+```
+%appdata%\BetterDiscord\themes
+```
+
+### macOS
+```
+/Users/[User]/Library/Preferences/BetterDiscord/plugins
+```
+
+### Linux
+```
+~/.config/BetterDiscord/plugins/
+```
