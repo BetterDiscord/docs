@@ -17,7 +17,7 @@ The following requirements must be met for the client to register a file as a th
  * @version 1.0.0
  * @description A description of your theme.
  * @author Theme Author
- * @website https://betterdiscord.net/
+ * @website https://betterdiscord.app/
 */
 
 body {
