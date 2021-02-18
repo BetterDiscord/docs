@@ -3,7 +3,7 @@
  * @version 1.0.0
  * @description A description of your plugin.
  * @author Plugin Author
- * @website https://betterdiscord.net/
+ * @website https://betterdiscord.app/
 */
 
 module.exports = class ExamplePlugin {
