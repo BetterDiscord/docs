@@ -6,7 +6,7 @@ Plugins are stored and written in [JavaScript](https://developer.mozilla.org/en-
 The following requirements must be met for the client to register a file as a plugin:
 - Plugins must be contained within a single file.
 - Plugins must utilize a [META](todo) on the first line of the file, with the required data fields containing valid entries.
-- Plugin files must be named in the following format: `*.plugin.css`. If the client detects a file copy identifier, it will be automatically removed. For example, `myplugin.plugin (1).css` would be truncated to `myplugin.plugin.css`.
+- Plugin files must be named in the following format: `*.plugin.js`. If the client detects a file copy identifier, it will be automatically removed. For example, `myplugin.plugin (1).js` would be truncated to `myplugin.plugin.js`.
 > The `*` character may contain any name in it's place, however the `@name` field in your file's [metadata](todo) will determine the name displayed in the client.
 
 ## Example Plugin Template
