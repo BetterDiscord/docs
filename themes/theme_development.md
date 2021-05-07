@@ -3,7 +3,7 @@ This page documents how to set up an environment for developing BetterDiscord th
 
 ## Prerequisites
 Before setting up an environment, you should be familliar the following concepts. This documentation does not function as a tutorial for these.
-* CSS and it's syntax
+* CSS and its syntax
 * HTML and the Document Object Model (DOM)
 * Chromium Developer Tools
 
@@ -17,10 +17,10 @@ First, you need a theme file. Locate your BetterDiscord themes folder at the fol
 
 ### macOS
 ```
-/Users/[User]/Library/Preferences/BetterDiscord/plugins
+/Users/[User]/Library/Preferences/BetterDiscord/themes
 ```
 
 ### Linux
 ```
-~/.config/BetterDiscord/plugins/
+~/.config/BetterDiscord/themes/
 ```
