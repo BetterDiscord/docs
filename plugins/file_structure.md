@@ -1,5 +1,5 @@
 # Plugin File Structure
-Plugins are stored and written in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) files. 
+Plugins are stored and written in [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) files.
 
 ## Requirements
 
