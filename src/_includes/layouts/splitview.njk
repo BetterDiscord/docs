@@ -1,0 +1,16 @@
+---
+templateClass: splitview
+---
+{% extends "./base.njk" %}
+{% block content %}
+<div id="docs-splitview" class="flex-container">
+    <aside class="docs-sidebar">
+        {% block left %}{% endblock %}
+    </aside>
+    <article class="docs-content">
+        <div class="markdown-body flex-container direction-column">           
+            {% block right %}{% endblock %}
+        </div>
+    </article>
+</div>
+{% endblock %}

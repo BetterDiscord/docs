@@ -1,0 +1,18 @@
+{
+  "name": "@betterdiscord/docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.md",
+  "scripts": {
+    "run": "eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "watch": "eleventy"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy-navigation": "^0.3.3",
+    "markdown-it": "^13.0.1",
+    "markdown-it-anchor": "^8.6.4"
+  }
+}

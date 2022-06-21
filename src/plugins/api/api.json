@@ -1,0 +1,6 @@
+{
+    "categoryKey": "api-reference",
+    "eleventyNavigation": {
+        "parent": "api-reference"
+    }
+}

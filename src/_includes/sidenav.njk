@@ -1,0 +1,84 @@
+{% macro buildNavigation(header, pages, page) %}
+    <div class="docs-sidebar-header">
+        <button id="sidebar-btn" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                </path>
+            </svg>
+        </button>
+        <h2 class="docs-header-title">{{ header }}</h2>
+    </div>
+    <div class="docs-sidebar-backdrop"></div>
+    <div class="docs-sidebar-inner">
+    {% for entry in pages %}
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">{{entry.title}}</div>
+            {% for subentry in entry.children %}
+                {% if subentry.url == page.url %}
+                    <div class="sidebar-item selected" class="sidebar-item">{{subentry.title}}</div>
+                {% else %}
+                    <a href="{{ subentry.url | url }}" class="sidebar-item">{{subentry.title}}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+    </div>
+{% endmacro %}
+    {# <aside class="docs-sidebar">
+        <div class="docs-sidebar-header">
+            <button id="sidebar-btn" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                    <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                    </path>
+                </svg>
+            </button>
+            <h2 class="docs-header-title">Docs</h2>
+        </div>
+        
+        <div class="docs-sidebar-backdrop"></div>
+        <div class="docs-sidebar-inner">
+            <div class="sidebar-group">
+                <div class="sidebar-group-header">Introduction</div>
+                <div class="sidebar-item selected">Getting Started</div>
+                <div class="sidebar-item">Installation</div>
+                <div class="sidebar-item">Core Features</div>
+                <div class="sidebar-item">Installing Addons</div>
+            </div>
+            <div class="sidebar-group">
+                <div class="sidebar-group-header">Troubleshooting</div>
+                <div class="sidebar-item">Installation Issues</div>
+                <div class="sidebar-item">Themes and Plugins</div>
+                <div class="sidebar-item">Runtime Errors</div>
+                <div class="sidebar-item">Crashes</div>
+            </div>
+            <div class="sidebar-group">
+                <div class="sidebar-group-header">Addon System</div>
+                <div class="sidebar-item">Submitting Addons</div>
+                <div class="sidebar-item">Approval System</div>
+                <div class="sidebar-item">Updating</div>
+            </div>
+            <div class="sidebar-group">
+                <div class="sidebar-group-header">Themes</div>
+                <div class="sidebar-item">Guidelines</div>
+                <div class="sidebar-item">File Structure</div>
+                <div class="sidebar-item">Theme Development</div>
+                <div class="sidebar-item">Metadata</div>
+                <div class="sidebar-item">Using Remote Code</div>
+                <div class="sidebar-item">Preprocessors</div>
+                <div class="sidebar-item">Customization</div>
+                <div class="sidebar-item">Theme Generators</div>
+            </div>
+            <div class="sidebar-group">
+                <div class="sidebar-group-header">Plugins</div>
+                <div class="sidebar-item">Guidelines</div>
+                <div class="sidebar-item">File Structure</div>
+                <div class="sidebar-item">Plugin Development</div>
+                <div class="sidebar-item">Metadata</div>
+                <div class="sidebar-item">Settings</div>
+                <div class="sidebar-item">BdApi</div>
+                <div class="sidebar-item">Patcher</div>
+                <div class="sidebar-item">Using Libraries</div>
+                <div class="sidebar-item">Security Considerations</div>
+            </div>
+        </div>
+    </aside> #}

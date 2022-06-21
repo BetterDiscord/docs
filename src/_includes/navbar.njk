@@ -1,0 +1,15 @@
+<header id="navbar" class="page-section flex-container align-center">
+    <div class="page-section-inner">
+        <a class="navbar-logo-container" href="{{"/" | url}}">
+            <img loading="lazy" class="navbar-logo hide-mobile" src="{{"/assets/branding/logo_large.svg" | url}}" alt="BetterDiscord logo" />
+            <img loading="lazy" class="navbar-logo small" src="{{"/assets/branding/logo_small.svg" | url}}" alt="BetterDiscord logo" />
+        </a>
+        <nav id="navbar-nav-items" class="flex-container align-center" data-toggle="affix">
+            {% set navPages = collections.all | eleventyNavigation %}
+            {%- for entry in navPages %}
+                <a {% if entry.url == page.url %} class="nav-item nav-item-selected"{% else %} class="nav-item" {% endif %} href="{{ entry.url | url }}">{{ entry.title }}</a>
+            {%- endfor %}
+        </nav>
+    </div>
+</header>
+

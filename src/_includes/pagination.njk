@@ -1,0 +1,29 @@
+{% set categoryPages = collections.all | eleventyNavigation(navigationKey) | getElementByKey("key", categoryKey) %}
+{% set categoryPages = categoryPages.children %}
+{# {{eleventyNavigation | log}} #}
+{% set currentIndex = categoryPages | getIndexByKey("key", eleventyNavigation.key) %}
+{# {{categoryPages | log}} #}
+{# {{currentIndex | log}} #}
+{# {{categoryPages | length | log}} #}
+
+{% set count = categoryPages | length %}
+{% set hasPrevious = currentIndex > 0 %}
+{% set hasNext = currentIndex < count - 1 %}
+
+{% set previousPost = categoryPages[currentIndex - 1] %}
+{% set nextPost = categoryPages[currentIndex + 1] %}
+
+<div class="flex-container justify-between wrap pagination-container">
+    <a href="{{previousPost.url | url}}" {{'style=visibility:hidden' if not previousPost}}>
+        <button class="btn btn-secondary" id="btn-back">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path></svg>
+            <span>{{previousPost.title}}</span>
+        </button>
+    </a>
+    <a href="{{nextPost.url | url}}" {{'style=visibility:hidden' if not nextPost}}>
+        <button class="btn btn-secondary flex-container align-center" id="btn-next">
+            <span>{{nextPost.title}}</span>
+            <svg class="btn-icon btn-icon-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path></svg>
+        </button>
+    </a>
+</div>

@@ -1,0 +1,18 @@
+---
+templateClass: plugins
+---
+{% extends "./splitview.njk" %}
+{% import "sidenav.njk" as sidebar %}
+
+{% block left %} {{ sidebar.buildNavigation(pageTitle, collections.all | eleventyNavigation(navigation), page) }} {% endblock %}
+
+{# {% for entry in navPages %}
+<div class="sidebar-group">
+    <div class="sidebar-group-header">{{entry.title}}</div>
+    {% for subentry in entry.children %}
+        <div class="sidebar-item">{{subentry.title}}</div>
+    {% endfor %}
+</div>
+{% endfor %} #}
+
+{% block right %} {{content | safe}} {% endblock %}
