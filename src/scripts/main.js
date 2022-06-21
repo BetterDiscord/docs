@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    let bodyScroller = window.OverlayScrollbars(document.body, {
+    const bodyScroller = window.OverlayScrollbars(document.body, {
         callbacks: {
             onScroll: function (ev) {
                 const scrollInfo = bodyScroller.scroll();
@@ -13,9 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function floatingNavBar(max, scrollTop) {
     if (scrollTop > document.querySelector("#navbar-nav-items").clientHeight) {
-        document.querySelector('#navbar').classList.add('floating');
-    } else {
-        document.querySelector('#navbar').classList.remove('floating');
+        document.querySelector("#navbar").classList.add("floating");
+    }
+    else {
+        document.querySelector("#navbar").classList.remove("floating");
     }
 }
 
@@ -27,7 +28,8 @@ function floatingNavBar(max, scrollTop) {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    const sidebarScroller = window.OverlayScrollbars(document.querySelectorAll('.docs-sidebar-inner'), {});
+    /* const sidebarScroller = */
+    window.OverlayScrollbars(document.querySelectorAll(".docs-sidebar-inner"), {});
     const bodyScroller = window.OverlayScrollbars(document.body, {
         callbacks: {
             onScroll: function (ev) {
@@ -42,11 +44,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function docsHeaderScroll() {
-    const header = document.getElementById('docs-header');
+    const header = document.getElementById("docs-header");
     if (header && header.getBoundingClientRect().top === 0) {
-        header.classList.add('stuck');
-    } else if (header) {
-        header.classList.remove('stuck');
+        header.classList.add("stuck");
+    }
+    else if (header) {
+        header.classList.remove("stuck");
     }
 }
 
@@ -54,7 +57,8 @@ const media = window.matchMedia("(max-width: 950px)");
 function detectMobile(e) {
     if (e.matches) {
         document.querySelector(".docs-sidebar").classList.add("hidden");
-    } else {
+    }
+    else {
         document.querySelector(".docs-sidebar").classList.remove("hidden");
     }
 }
@@ -63,15 +67,15 @@ detectMobile(media);
 function toggleDocsSidebar() {
     document.querySelector(".docs-sidebar").classList.toggle("hidden");
 }
-document.getElementById('header-sidebar-btn').addEventListener('click', e => {
+document.getElementById("header-sidebar-btn").addEventListener("click", () => {
     toggleDocsSidebar();
 });
-document.getElementById('sidebar-btn').addEventListener('click', e => {
+document.getElementById("sidebar-btn").addEventListener("click", () => {
     toggleDocsSidebar();
 });
-document.querySelector('.docs-sidebar-backdrop').addEventListener('click', e => {
+document.querySelector(".docs-sidebar-backdrop").addEventListener("click", () => {
     toggleDocsSidebar();
 });
 
-const newKeywords = new RegExp(Prism.languages.javascript.keyword[1].pattern.source.replace("delete", "delete|module"));
-Prism.languages.javascript.keyword[1].pattern = newKeywords;
+const newKeywords = new RegExp(window.Prism.languages.javascript.keyword[1].pattern.source.replace("delete", "delete|module"));
+window.Prism.languages.javascript.keyword[1].pattern = newKeywords;

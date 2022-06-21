@@ -1,0 +1,121 @@
+.footer-container {
+    position: relative;
+    z-index: 1;
+    margin-top: auto
+}
+
+#section-footer {
+    background: var(--bg1);
+    margin-top: auto;
+    position: relative
+}
+
+#footer-top {
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-bottom: 48px
+}
+
+.footer-column {
+    flex-grow: 1
+}
+
+.footer-column:last-child {
+    flex-grow: 0
+}
+
+.footer-column-header {
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 700
+}
+
+.footer-column-item {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    transition: 150ms ease;
+    width: fit-content;
+    width: -moz-fit-content
+}
+
+.footer-column-item:hover {
+    color: var(--text-normal)
+}
+
+.footer-logo-wrap {
+    display: block;
+    width: fit-content;
+    width: -moz-fit-content
+}
+
+.footer-logo {
+    border-radius: 3px;
+    height: 72px;
+    width: auto;
+    margin-bottom: 10px
+}
+
+#footer-social-icons {
+    gap: 12px
+}
+
+.social-icon {
+    border-radius: 3px;
+    color: var(--text-normal);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 150ms ease
+}
+
+.social-icon:hover {
+    color: var(--accent)
+}
+
+.footer-privacy {
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500
+}
+
+.footer-privacy-item {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    transition: 150ms ease
+}
+
+.footer-privacy-item:hover {
+    color: var(--text-normal)
+}
+
+.footer-copyright {
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500
+}
+
+@media screen and (max-width:950px) {
+    #footer-bottom {
+        padding: 0 48px;
+        flex-direction: column
+    }
+
+    .footer-privacy {
+        margin-bottom: 20px
+    }
+
+    .footer-copyright {
+        margin-bottom: 20px
+    }
+}

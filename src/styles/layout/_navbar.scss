@@ -1,0 +1,149 @@
+#navbar {
+    flex: 0 0 auto;
+    height: 112px;
+    position: relative;
+    background: var(--bg1);
+    padding: 0
+}
+
+#navbar .page-section-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+@keyframes floating-navbar {
+    0% {
+        transform: translateY(-100%)
+    }
+
+    100% {
+        transform: none
+    }
+}
+
+#navbar.floating {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 64px;
+    z-index: 100;
+    animation: floating-navbar 150ms ease
+}
+
+#navbar.floating+#main-page-content {
+    padding-top: 112px
+}
+
+#navbar.floating .navbar-logo {
+    display: none
+}
+
+#navbar.floating .navbar-logo.small {
+    display: block;
+    height: 36px
+}
+
+#navbar .user-container {
+    display: flex;
+    align-items: center;
+    position: relative
+}
+
+#navbar .user-container .dropdown-arrow {
+    margin-left: 10px;
+    fill: currentColor;
+    width: 16px;
+    height: 16px;
+    pointer-events: none
+}
+
+#navbar .user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+    pointer-events: none;
+    background-color: var(--bg3)
+}
+
+#navbar .btn {
+    padding: 10px 12px;
+    margin: 0 5px
+}
+
+.nav-item {
+    background-color: transparent;
+    border: none;
+    color: var(--text-normal);
+    font-weight: 500;
+    padding: 12px;
+    margin: 0 5px;
+    border-radius: 3px;
+    line-height: normal;
+    font-size: 15px !important;
+    white-space: nowrap;
+    text-decoration: none;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    transition: 150ms ease color
+}
+
+.nav-item:hover {
+    color: var(--text-light)
+}
+
+.navbar-logo {
+    border-radius: 3px;
+    height: 64px;
+    width: auto;
+    display: block
+}
+
+.navbar-logo.small {
+    display: none
+}
+
+@media screen and (max-width:950px) {
+    #navbar {
+        height: auto
+    }
+
+    #navbar .page-section-inner {
+        padding: 18px 4px 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column
+    }
+
+    #navbar.floating {
+        position: relative;
+        animation: none;
+        height: auto
+    }
+
+    #navbar.floating+#main-page-content {
+        padding: 0
+    }
+
+    #navbar.floating .nav-item {
+        font-size: 15px
+    }
+
+    #navbar-nav-items {
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        margin-top: 20px
+    }
+
+    .user-dropdown form {
+        display: block
+    }
+
+    .navbar-logo.small {
+        height: 36px;
+        display: block
+    }
+}

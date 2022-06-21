@@ -2,12 +2,16 @@ const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
 const pluginNavigation = require("@11ty/eleventy-navigation");
+const eleventySass = require("eleventy-sass");
 
 module.exports = function (eleventyConfig) {
     // Copy the `assets` folders to the output
     eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("src/scripts");
+    eleventyConfig.addPassthroughCopy("src/styles/vendor");
 
     eleventyConfig.addPlugin(pluginNavigation);
+    eleventyConfig.addPlugin(eleventySass);
 
     eleventyConfig.addFilter("getElementByKey", function(array, key, value) {
         if (!array) console.log("KEY, VALUE: ", key, value);
