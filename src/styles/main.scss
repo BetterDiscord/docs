@@ -1,24 +1,14 @@
-@use "fonts/inter";
-@use "generic/generic";
-@use "generic/banner";
-@use "generic/pagination";
-@use "generic/btn";
-// @use "generic/search";
-// @use "generic/spinner";
-// @use "generic/tabbar";
-@use "layout/markdown";
-@use "layout/navbar";
-@use "layout/page";
-@use "layout/footer";
-@use "layout/docs";
-@use "docs/api";
-@use "docs/syntax";
+@import "colors";
+@import "fonts/inter";
+@import "generic";
+@import "layout";
+@import "docs";
 
 :root {
     --bg1: #040405;
+    --bg2: #0c0d10;
     --bg3: #14151b;
     --bg4: #20212b;
-    --bg2: #0c0d10;
     --bg2-alt: #101116;
     --bg3-alt: #191a21;
     --accent: #3a71c1;

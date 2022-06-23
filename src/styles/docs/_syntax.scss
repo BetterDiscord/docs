@@ -2,66 +2,129 @@
     color: #f8f8f2
 }
 
-.hljs-built_in,
-.hljs-selector-tag,
-.hljs-section,
-.hljs-link {
-    color: #8be9fd
+// JavaScript or JSX
+code[class*="language-js"] {
+    .hljs-built_in,
+    .hljs-selector-tag,
+    .hljs-section,
+    .hljs-link {
+        color: #8be9fd
+    }
+    
+    .hljs-doctag,
+    .hljs-keyword {
+        color: #ff79c6
+    }
+    
+    .hljs-subst {
+        color: #f8f8f2
+    }
+    
+    .hljs-title {
+        color: #50fa7b
+    }
+    
+    .hljs-string,
+    .hljs-meta,
+    .hljs-name,
+    .hljs-type,
+    .hljs-attr,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition,
+    .hljs-variable,
+    .hljs-template-tag,
+    .hljs-template-variable {
+        color: #f1fa8c
+    }
+    
+    .hljs-comment,
+    .hljs-quote,
+    .hljs-deletion {
+        color: #6272a4
+    }
+    
+    .hljs-literal,
+    .hljs-number {
+        color: #bd93f9
+    }
+    
+    .hljs-emphasis {
+        font-style: italic
+    }
 }
 
-.hljs-doctag,
-.hljs-keyword {
-    color: #ff79c6
+
+// CSS Support
+code.language-css {
+    .hljs-built_in,
+    .hljs-selector-tag,
+    .hljs-section,
+    .hljs-link {
+        color: #8be9fd
+    }
+    
+    .hljs-doctag,
+    .hljs-attribute {
+        color: #ff79c6
+    }
+    
+    .hljs-subst {
+        color: #f8f8f2
+    }
+    
+    .hljs-selector-class,
+    .hljs-selector-id,
+    .hljs-selector-pseudo {
+        color: #50fa7b
+    }
+    
+    .hljs-string,
+    .hljs-meta,
+    .hljs-name,
+    .hljs-type,
+    .hljs-attr,
+    .hljs-symbol,
+    .hljs-bullet,
+    .hljs-addition,
+    .hljs-variable,
+    .hljs-template-tag,
+    .hljs-template-variable {
+        color: #f1fa8c
+    }
+    
+    .hljs-comment,
+    .hljs-quote,
+    .hljs-deletion {
+        color: #6272a4
+    }
+    
+    .hljs-literal,
+    .hljs-number {
+        color: #bd93f9
+    }
+    
+    .hljs-emphasis {
+        font-style: italic
+    }
 }
 
-.hljs-subst {
-    color: #f8f8f2
-}
-
-.hljs-title {
-    color: #50fa7b
-}
-
-.hljs-string,
-.hljs-meta,
-.hljs-name,
-.hljs-type,
-.hljs-attr,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition,
-.hljs-variable,
-.hljs-template-tag,
-.hljs-template-variable {
-    color: #f1fa8c
-}
-
-.hljs-comment,
-.hljs-quote,
-.hljs-deletion {
-    color: #6272a4
-}
-
-.hljs-literal,
-.hljs-number {
-    color: #bd93f9
-}
-
-.hljs-emphasis {
-    font-style: italic
-}
 
 
+
+// Line Numbers Support
 .markdown-body pre {
-    margin: .5em 0;
     position: relative;
+}
+
+.markdown-body pre.line-numbers {
+    margin: .5em 0;
     padding-left: 3.8em;
 }
 
-.markdown-body pre > code {
+.markdown-body pre > code.line-numbers {
     white-space: inherit;
 }
-
 
 .line-numbers-container {
     position: absolute;
@@ -92,6 +155,8 @@
     text-align: right;
 }
 
+
+// Copy Button Support
 .markdown-body code .btn-copy {
     position: absolute;
     top: 10px;

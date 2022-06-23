@@ -1,0 +1,88 @@
+.code-tab-container {
+    -webkit-transition: 0.3s box-shadow ease;
+    transition: 0.3s box-shadow ease;
+    border-radius: 6px;
+    max-width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+    list-style: none;
+    margin: 40px 0;
+}
+
+.code-tab-container pre,
+.code-tab-container pre.line-numbers {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.code-tab {
+    display: none;
+}
+
+.code-tab:checked:nth-of-type(1) ~ pre:nth-of-type(1),
+.code-tab:checked:nth-of-type(2) ~ pre:nth-of-type(2),
+.code-tab:checked:nth-of-type(3) ~ pre:nth-of-type(3),
+.code-tab:checked:nth-of-type(4) ~ pre:nth-of-type(4),
+.code-tab:checked:nth-of-type(5) ~ pre:nth-of-type(5) {
+    opacity: 1;
+    position: relative;
+    top: 0;
+    z-index: 100;
+    text-shadow: 0 0 0;
+}
+
+.code-tab:first-of-type:not(:last-of-type) + label {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.code-tab:not(:first-of-type):not(:last-of-type) + label {
+    border-radius: 0;
+}
+.code-tab:last-of-type:not(:first-of-type) + label {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.code-tab:checked + label {
+    background-color: var(--bg4);
+    cursor: default;
+    color: $text-normal;
+}
+.code-tab:checked + label:hover {
+    background-color: var(--bg4);
+}
+
+.code-tab + label {
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    display: block;
+    text-decoration: none;
+    color: $text-muted;
+    flex-grow: 3;
+    text-align: center;
+    background-color: var(--bg2);
+    user-select: none;
+    text-align: center;
+    transition: 0.3s background-color ease, 0.3s box-shadow ease;
+    height: 50px;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.code-tab + label:hover {
+    background-color: var(--bg2-alt);
+}
+
+.code-tab ~ pre {
+    padding: 10px 25px;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    opacity: 0;
+    left: 0;
+    border-radius: 6px;
+}  

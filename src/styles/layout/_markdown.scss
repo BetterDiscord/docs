@@ -1,6 +1,6 @@
 .markdown-body {
     font-size: 14px;
-    color: var(--text-normal)
+    color: $text-normal
 }
 
 .markdown-body>*:first-child {
@@ -114,7 +114,7 @@
 
 .markdown-body code {
     margin: 0;
-    background-color: var(--bg4);
+    background-color: $bg4;
     border-radius: 3px
 }
 

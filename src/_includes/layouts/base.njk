@@ -9,7 +9,7 @@
     {% set formattedTitle = "Docs" %}
 {% endif %}
 
-{% set formattedTitle = formattedTitle | title | replace("-", " ") %}
+{% set formattedTitle = formattedTitle | pageTitleCap | replace("-", " ") %}
 
 <!DOCTYPE html>
 <html lang="en">
