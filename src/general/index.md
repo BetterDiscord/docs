@@ -4,13 +4,12 @@ eleventyNavigation:
   order: 1
   title: General
 ---
-{% set navPages = collections.all | eleventyNavigation(navigationKey) %}
 
-{% for entry in navPages %}
-<h2>{{entry.title}}</h2>
-<ul>
-{% for subentry in entry.children %}
-    <li><a href="{{subentry.url | url}}">{{subentry.title}}</a></li>
-{% endfor %}
-</ul>
-{% endfor %}
+# General Docs
+{% banner "info" %}This documentation assumes you have basic computer literacy!{% endbanner %}
+
+The [Introduction](./introduction) section gives a lot of background information on what BetterDiscord is and what it can do for you.
+
+The [Troubleshooting](./troubleshooting) guide walks you through what to do when things go wrong.
+
+Lastly the [Addon System](./addons) section is a reference for developers (and curious users) on how the addon sytem work including submitting and updating.

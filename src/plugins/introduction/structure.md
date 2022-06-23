@@ -12,6 +12,7 @@ eleventyNavigation:
  - BetterDiscord plugins (files) must be named in the form `*.plugin.js`.
  - BetterDiscord plugins require a special header known as the meta.
  - BetterDiscord plugins must implement both a `start()` and `stop()` function.
+ - BetterDiscord plugins must either be a class or a function that returns the required object.
  - BetterDiscord plugins must be exported via `module.exports`.
 
 ## Details
@@ -71,16 +72,16 @@ And a fully filled out meta using all the fields would look something like this:
 
 The basics of the plugin code are simple. The plugin must have both a `start()` and `stop()` function which are called on enable and disable respectively. The plugin must also get those functions back to BetterDiscord using `module.exports`.
 
-The simplest and most direct way is to do it through an object literal:
+The simplest and most direct way is to do it is to return an object literal:
 ```js
-module.exports = {
+module.exports = () => ({
    start() {
 
    },
    stop() {
 
    }
-};
+});
 ```
 
 But that of course is not the only way to do it. Many people like the syntactic sugar and extensibility of classes
@@ -96,19 +97,13 @@ module.exports = class {
 };
 ```
 
-while others prefer a more functional style.
+while others prefer a more modular functional style.
 
 ```js
 const start = () => {};
 const stop = () => {};
 
-module.exports = {start, stop};
-```
-
-```js
-const start = () => {};
-const stop = () => {};
-
+module.exports = function() {};
 module.exports.start = start;
 module.exports.stop = stop;
 ```
@@ -127,7 +122,7 @@ module.exports = () => {
 But whatever your preference, just pass those functions on up!
 
 All of those examples are valid ways of getting those functions back to BetterDisord. The main idea is that when BetterDiscord calls `require("./yourplugin.plugin.js")`, the `exports` needs to <u>either</u>:
-1. have both a `start()` and `stop()` function.
+1. have both a `start()` and `stop()` prototype function.
 2. _be_ a function that returns an object containing both functions.
 
 It may seem roundabout to do it this way, but this is what allows for developers to make use of uninstantiated classes like the example above.

@@ -1,3 +1,4 @@
+var hljs = require('highlight.js'); // https://highlightjs.org/
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 
@@ -23,12 +24,46 @@ module.exports = function (eleventyConfig) {
         return array.findIndex(e => e[key] === value);
     });
 
-    eleventyConfig.addPairedShortcode("banner", function(content, type = "info", format = "html") {
+    // Customize Markdown library and settings:
+    const markdownLibrary = markdownIt({
+        highlight: function (str, lang) {
+            if (lang && hljs.getLanguage(lang)) {
+                try {
+                    const marked = hljs.highlight(str, { language: lang }).value;
+                    const lineCount = marked.split("\n").length - 1; // -1 to account for last line
+                    let lineNumbers = `<span class="line-numbers-container" aria-hidden="true">`;
+                    for (let l = 1; l <= lineCount; l++) lineNumbers += `<span></span>`;
+                    lineNumbers += `</span>`;
+                    const copyButton = `<button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button>`;
+                    return marked + lineNumbers + copyButton;
+                    // return marked;
+                }
+                catch (__) {}
+            }
+        
+            return ''; // use external default escaping
+        },
+        html: true,
+        breaks: true,
+        linkify: true
+    }).use(markdownItAnchor, {
+        permalink: markdownItAnchor.permalink.ariaHidden({
+            placement: "after",
+            class: "direct-link",
+            symbol: "#",
+            level: [1, 2, 3, 4],
+        }),
+        slugify: eleventyConfig.getFilter("slug")
+    });
+
+    eleventyConfig.setLibrary("md", markdownLibrary);
+
+    eleventyConfig.addPairedShortcode("banner", function(content, type = "info", format = "md") {
 		if (format === "md") {
-			content = markdownIt.renderInline(content);
+			content = markdownLibrary.renderInline(content);
 		}
         else if (format === "md-block") {
-			content = markdownIt.render(content);
+			content = markdownLibrary.render(content);
 		}
 
         let icon = "";
@@ -44,23 +79,6 @@ module.exports = function (eleventyConfig) {
                     <span>${content}</span>
                 </div>`;
 	});
-
-    // Customize Markdown library and settings:
-    const markdownLibrary = markdownIt({
-        html: true,
-        breaks: true,
-        linkify: true
-    }).use(markdownItAnchor, {
-        permalink: markdownItAnchor.permalink.ariaHidden({
-            placement: "after",
-            class: "direct-link",
-            symbol: "#",
-            level: [1, 2, 3, 4],
-        }),
-        slugify: eleventyConfig.getFilter("slug")
-    });
-
-    eleventyConfig.setLibrary("md", markdownLibrary);
 
     return {
         templateFormats: [

@@ -38,7 +38,7 @@ Save this as `YourPlugin.plugin.js` in your plugins folder (found below) and ena
 `%appdata%\BetterDiscord\plugins`
 
 ### macOS
-`/Users/[User]/Library/Preferences/BetterDiscord/plugins`
+`/Users/[User]/Library/Application Support/BetterDiscord/plugins`
 
 ### Linux
 `~/.config/BetterDiscord/plugins/`

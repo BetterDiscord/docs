@@ -30,7 +30,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 7. Plugins must not access user tokens, emails, or passwords.
 8. Plugins must clean up all changes/modification made by the plugin when it is disabled.
    - This includes UI changes, pathes, intervals, timeouts, subscriptions, and listeners.
-9. Plugins must not make user of the `child_process` node module.
+9. Plugins must not make use of the `child_process` node module.
    - Existing plugins are exempt, but no new plugins shall use this. This is due in part to the security risk, and in part due to an impending Discord update that will break this module.
 10. Plugins Must not bypass the addon approval system by implementing their own update system.
 11. Plugins must set `module.exports`
@@ -39,5 +39,5 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
     - This includes but is not limited to: selfbotting, spamming API requests, using non-user APIs, bypassing nitro features, animated status, message logging.
 14. Plugins must not remove security features.
 15. Plugins must not waste hardware resources.
-    - e.g., repeated webpack searching without cachin, storing unnecessary data in memory.
+    - e.g., repeated webpack searching without caching, storing unnecessary data in memory.
 16. Plugins must not access webpack modules outside of the official API.

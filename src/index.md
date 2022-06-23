@@ -7,9 +7,7 @@ pageTitle: Home
 
 # BetterDiscord Documentation
 
-{% banner "warning" %}
-Documentation is still under construction. Some links may either work improperly or not be added.
-{% endbanner %}
+{% banner "warning" %}Documentation is still under construction. Some links may either work improperly or not be added.{% endbanner %}
 
 This site is split into three separate sections:
 - General documentation mainly aimed at end-users but has some useful information for developers as well.

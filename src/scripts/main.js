@@ -21,12 +21,6 @@ function floatingNavBar(max, scrollTop) {
 }
 
 
-// tippy('.zere', {
-//     content: '"Do you need help?" - Tech Support',
-//     theme: 'default',
-// });
-
-
 document.addEventListener("DOMContentLoaded", () => {
     /* const sidebarScroller = */
     window.OverlayScrollbars(document.querySelectorAll(".docs-sidebar-inner"), {});
@@ -41,6 +35,15 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    const copyButtons = document.getElementsByClassName("btn-copy");
+    for (const button of copyButtons) {
+        button.addEventListener("click", () => {
+            navigator.clipboard.writeText(button.parentElement.textContent.trim());
+            button.classList.add("success");
+            setTimeout(() => {button.classList.remove("success");}, 1000);
+        });
+    }
 });
 
 function docsHeaderScroll() {
@@ -76,6 +79,3 @@ document.getElementById("sidebar-btn").addEventListener("click", () => {
 document.querySelector(".docs-sidebar-backdrop").addEventListener("click", () => {
     toggleDocsSidebar();
 });
-
-const newKeywords = new RegExp(window.Prism.languages.javascript.keyword[1].pattern.source.replace("delete", "delete|module"));
-window.Prism.languages.javascript.keyword[1].pattern = newKeywords;

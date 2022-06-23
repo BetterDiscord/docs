@@ -15,7 +15,7 @@ The [Introduction](./introduction) section gives a lot of background information
 
 The [Basics](./plugin-basics) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](./api-reference/bdapi) has to offer.
 
-The [intermediate](./intermediate) guide starts to branch into some of the 3rd-party libraries that can be used to enhance your plugins.
+The [Intermediate](./intermediate) guide starts to branch into some of the 3rd-party libraries that can be used to enhance your plugins.
 
 The [Advanced](./advanced) guide goes more in depth with advanced concepts that are important to making good and complicated plugins that smoothly integrate into Discord.
 

@@ -1,9 +1,8 @@
 ---
 layout: layouts/listing.njk
-categoryKey: troubleshooting
 eleventyNavigation:
   key: troubleshooting
-  order: 1
+  order: 2
   parent: general
   title: Troubleshooting
 ---
