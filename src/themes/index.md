@@ -2,7 +2,7 @@
 eleventyNavigation:
   key: themes
   order: 3
-  title: Themes
+  title: Theme Development
 ---
 
 # Theme Docs

@@ -231,7 +231,8 @@
 .markdown-body table th,
 .markdown-body table td {
     padding: 6px 13px;
-    border: 1px solid var(--bg4)
+    border: 1px solid var(--bg4);
+    word-break: normal;
 }
 
 .markdown-body table th {

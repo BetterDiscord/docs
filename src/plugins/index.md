@@ -3,7 +3,7 @@ pageTitle: Plugins
 eleventyNavigation:
   key: plugins
   order: 2
-  title: Plugins
+  title: Plugin Development
 ---
 
 # Plugin Docs

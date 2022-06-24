@@ -10,13 +10,13 @@ eleventyNavigation:
 
 ## Properties
 
-{% for property in bdapi.properties %}
+{% for property in bdapi.properties | sort(false, false, "name") %}
 {% apiProperty property %}
 {% endfor %}
 
 
 ## Methods
 
-{% for method in bdapi.methods %}
+{% for method in bdapi.methods | sort(false, false, "name") %}
 {% apiMethod method %}
 {% endfor %}

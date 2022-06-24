@@ -53,7 +53,7 @@ module.exports = class ExamplessPlugins {
 {% endcodetab %}
 
 {% codetab %}
-```css multi=true filename=test.csss
+```css multi=true filename=test.csssssdsa
 <!-- js -->
 /**
  * @name ExampledPlugin
@@ -81,3 +81,33 @@ module.exports = class ExamplessPlugins {
 ```
 {% endcodetab %}
 {% endcodetabs %}
+
+test tisi iewfi jewfpijw fiwjpfjew ofpekf owfw
+
+```js
+module.exports = () => {
+  const max = Math.max(45, window.MyValue);
+  const action = "Test Them";
+  const who = action.split(" ")[1];
+  const what = action.indexOf(0, who);
+
+  // Show this to console
+  console.log(`Who: ${who} | What: ${what}`);
+
+  var object = {};
+  object["do"] = action;
+  object[Symbol("self")] = Symbol("self");
+
+  console.log(typeof(object));
+
+  console.log(who + what);
+  console.log(10 - 5);
+  console.log(2 * 6);
+  console.log(9 / 3);
+  console.log(5 % 2);
+
+  return class GetTested {
+
+  };
+};
+```

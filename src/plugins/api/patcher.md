@@ -6,31 +6,18 @@ eleventyNavigation:
 
 # Patcher
 
+`Patcher` is a utility class for modifying existing functions. Instances are accessible through the [BdApi](./bdapi). This is extremely useful for modifying the internals of Discord by adjusting return value or React renders, or arguments of internal functions.
 
-```js
-module.exports = () => {
-  const max = Math.max(45, window.MyValue);
-  const action = "Test Them";
-  const who = action.split(" ")[1];
-  const what = action.indexOf(0, who);
+## Properties
 
-  // Show this to console
-  console.log(`Who: ${who} | What: ${what}`);
+{% for property in patcher.properties | sort(false, false, "name") %}
+{% apiProperty property %}
+{% endfor %}
 
-  var object = {};
-  object["do"] = action;
-  object[Symbol("self")] = Symbol("self");
 
-  console.log(typeof(object));
+## Methods
 
-  console.log(who + what);
-  console.log(10 - 5);
-  console.log(2 * 6);
-  console.log(9 / 3);
-  console.log(5 % 2);
+{% for method in patcher.methods | sort(false, false, "name") %}
+{% apiMethod method %}
+{% endfor %}
 
-  return class GetTested {
-
-  };
-};
-```

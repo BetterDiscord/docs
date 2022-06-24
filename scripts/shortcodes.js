@@ -1,3 +1,13 @@
+const fullParamHeader = [
+    `| Parameter |  Type  | Optional | Default |       Description      |`,
+    `|:----------|:------:|:--------:|:-------:|:----------------------:|`,
+];
+
+const compactParamHeader = [
+    `| Parameter |  Type  |       Description      |`,
+    `|:----------|:------:|:----------------------:|`,
+];
+
 module.exports = new class CustomShortcodes {
     add(eleventyConfig) {
         eleventyConfig.addShortcode("apiProperty", this.apiProperty);
@@ -10,36 +20,36 @@ module.exports = new class CustomShortcodes {
             property.description,
             ``,
             `**Type:** ${property.type}`,
-            `___`
+            `___`,
+            ""
         ];
         return lines.join("\n");
     }
 
     apiMethod(method) {
         const deprecation = ` <span class="deprecated">Deprecated</span>`;
-        const table = [
-            `| Parameter |  Type  | Optional | Default |       Description      |`,
-            `|:---------:|:------:|:--------:|:-------:|:----------------------:|`,
-        ];
+        const hasOptionalParams = method.parameters?.some(p => p.optional || p.value);
+        const table = (hasOptionalParams ? fullParamHeader : compactParamHeader).slice(0);
         if (method.parameters) {
             for (const parameter of method.parameters) {
-                const paramString = [
-                    parameter.name,
-                    parameter.type,
-                    parameter.options ? "&#x2705;" : "&#x274C;",
-                    parameter.default || "*none*",
-                    parameter.description
-                ];
+                const paramString = [];
+                paramString.push(parameter.name);
+                paramString.push(parameter.type.replace(/\|/g, "\\|").replace(/</g, "\\<").replace(/>/g, "\\>"));
+                if (hasOptionalParams) paramString.push(parameter.optional || parameter.value ? "&#x2705;" : "&#x274C;");
+                if (hasOptionalParams) paramString.push(parameter.value ?? "*none*");
+                paramString.push(parameter.description);
                 table.push(paramString.join("|"));
             }
             table.push("");
         }
+
         const lines = [
             `### ${method.name}` + (method.deprecated ? deprecation : ""),
             method.description,
             method.parameters ? table.join("\n") : "",
-            `**Returns:** ${method.type || "void"}`,
-            `___`
+            `**Returns:** ${method.returns?.replace(/</g, "\\<").replace(/>/g, "\\>") ?? "void"}`,
+            `___`,
+            ""
         ];
         return lines.join("\n");
     }
