@@ -27,7 +27,7 @@ Plugin files are split into two main pieces, the meta and the plugin code. If ei
 
 The meta of a plugin contains metadata about the plugin as the name would suggest. The format of this meta is a JSDoc style comment at the <u>very beginning</u> of the file. Not having this at the beginning can cause BetterDiscord to not load the plugin. A minimal meta header would look something like this:
 
-```jsdoc
+```js
 /**
  * @name ExamplePlugin
  * @author YourName
@@ -37,7 +37,7 @@ The meta of a plugin contains metadata about the plugin as the name would sugges
 ```
 
 And a fully filled out meta using all the fields would look something like this:
-```jsdoc
+```js
 /**
  * @name ExamplePlugin
  * @author YourName
@@ -128,3 +128,19 @@ All of those examples are valid ways of getting those functions back to BetterDi
 It may seem roundabout to do it this way, but this is what allows for developers to make use of uninstantiated classes like the example above.
 
 If you feel you have a solid grasp of how this works, take a look at the [Guidelines](../guidelines) before moving on to the [Basics](../../basics) guide.
+
+#### Optional Functions
+
+These are functions that plugins _can_ make use of but are not required at all. These are all supplied to BetterDiscord in the same place you provide `start` and `stop`
+
+##### getSettingsPanel
+
+This function allows your plugins to have a settings panel displayed through BetterDiscord. The expecting return type is either an `HTMLElement` or a `string` representing the HTML.
+
+##### observer
+
+This function is called on every mutation of the `document`. If you're unfamiliar with that terminology, take a look at [MDN](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver/observe).
+
+##### onSwitch
+
+This function is called every time the view is "switched". A better way to look at this is every time the user navigates such as changing the channel or server.

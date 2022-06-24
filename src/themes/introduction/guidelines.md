@@ -1,7 +1,7 @@
 ---
 eleventyNavigation:
   key: Guidelines
-  order: 4
+  order: 5
 ---
 
 # Guidelines

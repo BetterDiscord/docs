@@ -53,7 +53,7 @@ module.exports = class ExamplessPlugins {
 {% endcodetab %}
 
 {% codetab %}
-```css multi=true filename=test.csssssdsa
+```css multi=true
 <!-- js -->
 /**
  * @name ExampledPlugin
