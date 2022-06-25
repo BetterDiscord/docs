@@ -27,6 +27,7 @@ const parseOptions = function(rawOptions) {
 
 const makeLineNumbers = function(markup) {
     const lineCount = markup.split("\n").length - 1; // -1 to account for last line
+    if (lineCount === 1) return "";
     let htmlstring = `<span class="line-numbers-container" aria-hidden="true">`;
     for (let l = 1; l <= lineCount; l++) htmlstring += `<span></span>`;
     htmlstring += `</span>`;
@@ -82,7 +83,11 @@ const markupCode = function(code, lang, options) {
     const markup = getMarkup(code, lang, options);
 
     let htmlstring = markup;
-    if (options.lineNumbers) htmlstring += makeLineNumbers(markup);
+    if (options.lineNumbers) {
+        const result = makeLineNumbers(markup);
+        if (!result) options.lineNumbers = false;
+        else htmlstring += makeLineNumbers(markup);
+    }
     if (options.copyButton) htmlstring += makeCopyButton(markup);
 
     const className = `language-${lang}` + (options.lineNumbers ? " line-numbers" : "");

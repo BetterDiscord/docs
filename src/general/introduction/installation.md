@@ -39,9 +39,42 @@ eleventyNavigation:
 
 ### Steps
 
-1. Open a terminal of choice.
-1. Clone the BetterDiscord repository with `git clone https://github.com/BetterDiscord/BetterDiscord.git`.
-1. Enter the directory `cd BetterDiscord`.
-1. Install dependencies and build the project with `npm ci && npm run build`.
-1. Inject this local instalation into your Discord with `npm run inject`.
- - If using Canary or PTB, simply add that at the end like `npm run inject canary`.
+#### 1. Clone the BetterDiscord repository
+```sh
+git clone https://github.com/BetterDiscord/BetterDiscord.git
+```
+If this fails due to region lock or something similar, you can download a zipped copy directly from https://github.com/BetterDiscord/BetterDiscord/archive/refs/heads/main.zip
+
+#### 2. Enter the directory
+```sh
+cd BetterDiscord
+```
+
+#### 3. Install dependencies
+```sh
+npm install
+```
+
+#### 4. Build BetterDiscord
+
+This will create a `injector.js`, `preload.js`, and `renderer.js` in the `dist/` folder.
+```sh
+npm run build
+```
+
+#### 5. Install to Discord
+
+##### Install to Stable
+```sh
+npm run inject
+```
+
+##### Install to Canary
+```sh
+npm run inject canary
+```
+
+##### Install to PTB
+```sh
+npm run inject ptb
+```

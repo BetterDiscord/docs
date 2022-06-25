@@ -10,79 +10,47 @@ eleventyNavigation:
 
 {% codetab %}
 ```js
-/**
- * @name ExamplePlugin
- * @author YourName
- * @description Describe the basic functions. Maybe a support server link.
- * @version 0.0.1
- */
-
-module.exports = class ExamplessssssssssssssPlugins {
-    start() {
-      // Called when the plugin is activated (including after reloads)
-      BdApi.alert("Hello World!", "This is my first plugin!");
-    }
-
-    stop() {
-      // Called when the plugin is deactivated
-    }
-}
+module.exports = props => {
+  return React.createElement("div", {className: props.danger ?? "danger-block"},
+    React.createElement("p", null, "this is text")
+  );
+};
 ```
 {% endcodetab %}
 
 
 {% codetab %}
 ```jsx
-/**
- * @name ExamplePlugin
- * @author YourName
- * @description Describe the basic functions. Maybe a support server link.
- * @version 0.0.1
- */
-
-module.exports = class ExamplessPlugins {
-    start() {
-      // Called when the plugin is activated (including after reloads)
-      BdApi.alert(<h1>Hello World!</h1>, <p>This is my first plugin!</p>);
-    } 
-    stop() {
-      // Called when the plugin is deactivated
-    }
-}
+module.exports = props => {
+  return <div className={props.danger ?? "danger-block"}>
+    <p>this is text</p>
+  </div>;
+};
 ```
 {% endcodetab %}
 
 {% codetab %}
-```css multi=true
-<!-- js -->
-/**
- * @name ExampledPlugin
- * @author YourName
- * @description Describe the basic functions. Maybe a support server link.
- * @version 0.0.1
- */
- 
-<!-- css -->
-:root {
-    --myvar: black;
+```css
+div {
+  display: flex;
+  padding: 5px 10px;
+  border: 1px solid #904324;
+  background-color: white;
 }
 
-* {
-  background: red;
-  color: #fff;
-  border: 1px solid var(--myvar);
+div.danger-block {
+  background-color: #ff0000;
 }
 
-.test-class {}
-
-#idtest {
-    filter: drop-shadow();
+p {
+  text-align: center;
+  color: black;
 }
 ```
 {% endcodetab %}
 {% endcodetabs %}
 
-test tisi iewfi jewfpijw fiwjpfjew ofpekf owfw
+The following is just testing for the highlighter.
 
 ```js
 module.exports = () => {

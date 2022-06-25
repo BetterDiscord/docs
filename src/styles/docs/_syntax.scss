@@ -115,6 +115,9 @@ code.language-css {
 // Line Numbers Support
 .markdown-body pre {
     position: relative;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
 }
 
 .markdown-body pre.line-numbers {

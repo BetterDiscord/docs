@@ -10,7 +10,7 @@ eleventyNavigation:
 
 If you already know the basics, or just prefer to learn by trying it yourself and poking around, try this basic plugin template.
 
-```js filename=testwdwssssssssssssssssss lineNumbers=true
+```js
 /**
  * @name ExamplePlugin
  * @author YourName
