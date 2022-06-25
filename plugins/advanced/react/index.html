@@ -1,0 +1,321 @@
+
+
+    
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>React Injection | BetterDiscord Docs</title>
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta charset="utf-8" />
+<meta property="og:title" content="The Discord Enhancement Project">
+<meta property="og:description"
+    content="BetterDiscord extends the functionality of DiscordApp by enhancing it with new features.">
+<meta property="og:url" content="">
+<meta property="og:image" content="/docs/assets/branding/logo_solid.png">
+<meta property="og:image:alt" content="BetterDiscord Logo" />
+<meta name="description"
+    content="BetterDiscord extends the functionality of DiscordApp by enhancing it with new features.">
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Discord Enhancement Project">
+<meta property="twitter:description"
+    content="BetterDiscord extends the functionality of DiscordApp by enhancing it with new features.">
+<meta property="twitter:url" content="">
+<meta property="twitter:image" content="/docs/assets/branding/logo_solid.png">
+<meta property="twitter:image:alt" content="BetterDiscord Logo" />
+<meta property="og:site_name" content="BetterDiscord">
+<meta property="twitter:site" content="BetterDiscord">
+<meta name="theme-color" content="#3a71c1">
+<meta name="keywords"
+    content="Discord, BetterDiscord, Better Discord, Discord Mod, Discord Themes, Discord Plugins, Discord Extensions, Discord Client Mod, Discord Hacks">
+<meta name="author" content="BetterDiscord">
+<meta name="msapplication-TileColor" content="#3a71c1">
+<meta name="msapplication-TileImage" content="/docs/assets/favicon/ms-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/docs/assets/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/docs/assets/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/docs/assets/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/docs/assets/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/docs/assets/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/docs/assets/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/docs/assets/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/docs/assets/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/docs/assets/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/docs/assets/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/docs/assets/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/docs/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/docs/assets/favicon/manifest.json">
+<link rel="stylesheet" href="/docs/styles/vendor/normalize.css" />
+<link rel="stylesheet" href="/docs/styles/vendor/overlayscrollbars.min.css" />
+<link rel="stylesheet" href="/docs/styles/main.css" />
+<link rel="preload" as="font" type="font/woff2" href="/docs/assets/fonts/Inter-Medium.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/docs/assets/fonts/Inter-SemiBold.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/docs/assets/fonts/Inter-Bold.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff" href="/docs/assets/fonts/Inter-Medium.woff" crossorigin />
+<link rel="preload" as="font" type="font/woff" href="/docs/assets/fonts/Inter-SemiBold.woff" crossorigin />
+<link rel="preload" as="font" type="font/woff" href="/docs/assets/fonts/Inter-Bold.woff" crossorigin />
+
+<script defer src="/docs/scripts/vendor/overlayscrollbars.min.js"></script>
+<script defer src="/docs/scripts/main.js"></script>
+</head>
+
+<body class="line-numbers">
+    
+    <header id="navbar" class="page-section flex-container align-center">
+    <div class="page-section-inner">
+        <a class="navbar-logo-container" href="/docs/">
+            <img loading="lazy" class="navbar-logo hide-mobile" src="/docs/assets/branding/logo_large.svg" alt="BetterDiscord logo" />
+            <img loading="lazy" class="navbar-logo small" src="/docs/assets/branding/logo_small.svg" alt="BetterDiscord logo" />
+        </a>
+        <nav id="navbar-nav-items" class="flex-container align-center" data-toggle="affix">
+            
+                <a  class="nav-item"  href="/docs/general/">General</a>
+                <a  class="nav-item"  href="/docs/plugins/">Plugin Development</a>
+                <a  class="nav-item"  href="/docs/themes/">Theme Development</a>
+        </nav>
+    </div>
+</header>
+
+
+    <main id="main-page-content">
+        
+        <header id="docs-header" class="flex-container align-center">
+            <button id="header-sidebar-btn" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"> </path> </svg>
+            </button>
+            <h2 class="docs-header-title">Plugins</h2>
+        </header>
+        
+        <section class="page-section" id="docs-section">
+            <div class="page-section-inner">
+                
+    
+        
+        <div id="docs-splitview" class="flex-container">
+            <aside class="docs-sidebar">
+                
+    <div class="docs-sidebar-header">
+        <button id="sidebar-btn" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                </path>
+            </svg>
+        </button>
+        <h2 class="docs-header-title"></h2>
+    </div>
+    <div class="docs-sidebar-backdrop"></div>
+    <div class="docs-sidebar-inner">
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Introduction</div>
+            
+                
+                    <a href="/docs/plugins/introduction/quick-start/" class="sidebar-item">Quick Start</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/devtools/" class="sidebar-item">Developer Tools</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/environment/" class="sidebar-item">Environment</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/structure/" class="sidebar-item">Plugin Structure</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/guidelines/" class="sidebar-item">Guidelines</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Basics</div>
+            
+                
+                    <a href="/docs/plugins/basics/creating-a-plugin/" class="sidebar-item">Creating a Plugin</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/dom/" class="sidebar-item">Using the DOM</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/settings/" class="sidebar-item">Plugin Settings</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/ui/" class="sidebar-item">UI Components</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/betterdiscord/" class="sidebar-item">Interacting with BD</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/addons/" class="sidebar-item">Addon Interaction</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/discord/" class="sidebar-item">Changing Discord</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Intermediate</div>
+            
+                
+                    <a href="/docs/plugins/intermediate/react/" class="sidebar-item">React</a>
+                
+            
+                
+                    <a href="/docs/plugins/intermediate/webpack/" class="sidebar-item">Webpack</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Advanced</div>
+            
+                
+                    <a href="/docs/plugins/advanced/patching/" class="sidebar-item">Functional Patching</a>
+                
+            
+                
+                    <a href="/docs/plugins/advanced/webpack/" class="sidebar-item">Webpack Modules</a>
+                
+            
+                
+                    <div class="sidebar-item selected" class="sidebar-item">React Injection</div>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Discord Reference</div>
+            
+                
+                    <a href="/docs/plugins/discord/modules/" class="sidebar-item">Known Modules</a>
+                
+            
+                
+                    <a href="/docs/plugins/discord/ui/" class="sidebar-item">Discord UI</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">API Reference</div>
+            
+                
+                    <a href="/docs/plugins/api/bdapi/" class="sidebar-item">BdApi</a>
+                
+            
+                
+                    <a href="/docs/plugins/api/patcher/" class="sidebar-item">Patcher</a>
+                
+            
+                
+                    <a href="/docs/plugins/api/addonapi/" class="sidebar-item">AddonAPI</a>
+                
+            
+        </div>
+    
+    </div>
+
+            </aside>
+            <article class="docs-content">
+                <div class="markdown-body flex-container direction-column">           
+                    
+  <h1 id="react-injection" tabindex="-1">React Injection <a class="direct-link" href="#react-injection" aria-hidden="true">#</a></h1>
+
+
+  
+
+                </div>
+            </article>
+        </div>
+
+    
+
+            </div>
+        </section>
+    </main>
+    
+    <div class="footer-container">
+        <footer id="section-footer" class="page-section">
+            <div class="page-section-inner">
+                <section id="footer-top" class="flex-container hide-mobile">
+                    <div class="footer-column">
+                        <a class="footer-logo-wrap" href="/">
+                            <img class="footer-logo" loading="lazy" src="/docs/assets/branding/logo_large.svg" alt="Footer logo" />
+                        </a>
+                        <span class="footer-column-item">The Discord Enhancement Project</span>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-column-header">Community</h3>
+                        <a rel="noreferrer noopener" target="_blank" href="https://discord.gg/0Tmfo5ZbORCRqbAd" class="footer-column-item"><span>BetterDiscord</span></a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://discord.gg/sbA3xCJ" class="footer-column-item"><span>BetterDiscord2</span></a>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-column-header">Content</h3>
+                        <a href="/docs/themes" class="footer-column-item"><span>Themes</span></a>
+                        <a href="/docs/plugins" class="footer-column-item"><span>Plugins</span></a>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-column-header">Help</h3>
+                        <a href="/Docs" class="footer-column-item">Documentation</a>
+                        <a href="/FAQ" class="footer-column-item">Frequent Questions</a>
+                    </div>
+                </section>
+                <section id="footer-bottom" class="flex-container wrap align-center justify-between">
+                    <div class="hide-desktop flex-container wrap" id="footer-privacy-container">
+                        <div class="footer-privacy text-center">
+                            <a href="https://betterdiscord.bsa-whitelabel.com/" class="footer-privacy-item">Advertise With Us</a>
+                            <a href="/Privacy" class="footer-privacy-item">Privacy Policy</a>
+                            <a href="/cdn-cgi/l/email-protection#ef8d8a9b9b8a9d8b869c8c809d8b988a8daf88828e8683c18c8082" class="footer-privacy-item">Contact Us</a>
+                            <a href="#" class="footer-privacy-item" onclick="displayPreferenceModal()">Cookie Preferences</a>
+                        </div>
+                    </div>
+                    <div class="flex-container wrap" id="footer-copyright-container">
+                        <div class="footer-copyright text-center">
+                            © 2015-2022
+                            <a class="anchor" rel="noreferrer noopener" target="_blank" href="https://github.com/orgs/BetterDiscord/people">BetterDiscord Team</a>
+                        </div>
+                    </div>
+                    <div id="footer-social-icons" class="flex-container justify-center wrap">
+                        <a rel="noreferrer noopener" target="_blank" href="https://twitter.com/_BetterDiscord_" class="social-icon twitter">
+                            <svg class="social-icon-inner" width="32" height="32" viewBox="0 0 20 16" aria-hidden="true">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path class="foreground-26ym5y da-foreground" fill="currentColor" d="M1,14.1538462 L1.95,14.1538462 C3.73125,14.1538462 5.5125,13.5384615 6.81875,12.4307692 C5.15625,12.4307692 3.73125,11.2 3.1375,9.6 C3.375,9.6 3.6125,9.72307692 3.85,9.72307692 C4.20625,9.72307692 4.5625,9.72307692 4.91875,9.6 C3.1375,9.23076923 1.7125,7.63076923 1.7125,5.66153846 C2.1875,5.90769231 2.78125,6.15384615 3.49375,6.15384615 C2.425,5.41538462 1.83125,4.18461538 1.83125,2.70769231 C1.83125,1.96923077 2.06875,1.23076923 2.30625,0.615384615 C4.20625,3.07692308 7.05625,4.67692308 10.38125,4.8 C10.2625,4.67692308 10.2625,4.30769231 10.2625,4.06153846 C10.2625,1.84615385 12.04375,0 14.18125,0 C15.25,0 16.31875,0.492307692 17.03125,1.23076923 C17.8625,1.10769231 18.8125,0.738461538 19.525,0.246153846 C19.2875,1.23076923 18.575,1.96923077 17.8625,2.46153846 C18.575,2.46153846 19.2875,2.21538462 20,1.84615385 C19.525,2.70769231 18.8125,3.32307692 18.1,3.93846154 L18.1,4.43076923 C18.1,9.84615385 14.18125,16 6.9375,16 C4.68125,16 2.6625,15.3846154 1,14.1538462 Z"></path>
+                                    <rect width="32" height="32"></rect>
+                                </g>
+                            </svg>
+                        </a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://discord.gg/0Tmfo5ZbORCRqbAd" class="social-icon discord">
+                            <svg class="social-icon-inner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="26" height="26">
+                                <path fill="currentColor" fill-rule="evenodd" d="M20.222 0c1.406 0 2.54 1.137 2.607 2.475V24l-2.677-2.273l-1.47-1.338l-1.604-1.398l.67 2.205H3.71c-1.402 0-2.54-1.065-2.54-2.476V2.48C1.17 1.142 2.31.003 3.715.003h16.5L20.222 0zm-6.118 5.683h-.03l-.202.2c2.073.6 3.076 1.537 3.076 1.537c-1.336-.668-2.54-1.002-3.744-1.137c-.87-.135-1.74-.064-2.475 0h-.2c-.47 0-1.47.2-2.81.735c-.467.203-.735.336-.735.336s1.002-1.002 3.21-1.537l-.135-.135s-1.672-.064-3.477 1.27c0 0-1.805 3.144-1.805 7.02c0 0 1 1.74 3.743 1.806c0 0 .4-.533.805-1.002c-1.54-.468-2.14-1.404-2.14-1.404s.134.066.335.2h.06c.03 0 .044.015.06.03v.006c.016.016.03.03.06.03c.33.136.66.27.93.4a8.18 8.18 0 0 0 1.8.536c.93.135 1.996.2 3.21 0c.6-.135 1.2-.267 1.8-.535c.39-.2.87-.4 1.397-.737c0 0-.6.936-2.205 1.404c.33.466.795 1 .795 1c2.744-.06 3.81-1.8 3.87-1.726c0-3.87-1.815-7.02-1.815-7.02c-1.635-1.214-3.165-1.26-3.435-1.26l.056-.02zm.168 4.413c.703 0 1.27.6 1.27 1.335c0 .74-.57 1.34-1.27 1.34c-.7 0-1.27-.6-1.27-1.334c.002-.74.573-1.338 1.27-1.338zm-4.543 0c.7 0 1.266.6 1.266 1.335c0 .74-.57 1.34-1.27 1.34c-.7 0-1.27-.6-1.27-1.334c0-.74.57-1.338 1.27-1.338z" />
+                            </svg>
+                        </a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://github.com/BetterDiscord/BetterDiscord" class="social-icon github">
+                            <svg class="social-icon-inner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="26" height="26">
+                                <path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

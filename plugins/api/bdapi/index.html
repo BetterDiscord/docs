@@ -1,0 +1,1337 @@
+
+
+    
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>BdApi | BetterDiscord Docs</title>
+    <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<meta charset="utf-8" />
+<meta property="og:title" content="The Discord Enhancement Project">
+<meta property="og:description"
+    content="BetterDiscord extends the functionality of DiscordApp by enhancing it with new features.">
+<meta property="og:url" content="">
+<meta property="og:image" content="/docs/assets/branding/logo_solid.png">
+<meta property="og:image:alt" content="BetterDiscord Logo" />
+<meta name="description"
+    content="BetterDiscord extends the functionality of DiscordApp by enhancing it with new features.">
+<meta property="twitter:card" content="summary" />
+<meta property="twitter:title" content="The Discord Enhancement Project">
+<meta property="twitter:description"
+    content="BetterDiscord extends the functionality of DiscordApp by enhancing it with new features.">
+<meta property="twitter:url" content="">
+<meta property="twitter:image" content="/docs/assets/branding/logo_solid.png">
+<meta property="twitter:image:alt" content="BetterDiscord Logo" />
+<meta property="og:site_name" content="BetterDiscord">
+<meta property="twitter:site" content="BetterDiscord">
+<meta name="theme-color" content="#3a71c1">
+<meta name="keywords"
+    content="Discord, BetterDiscord, Better Discord, Discord Mod, Discord Themes, Discord Plugins, Discord Extensions, Discord Client Mod, Discord Hacks">
+<meta name="author" content="BetterDiscord">
+<meta name="msapplication-TileColor" content="#3a71c1">
+<meta name="msapplication-TileImage" content="/docs/assets/favicon/ms-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="57x57" href="/docs/assets/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/docs/assets/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/docs/assets/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/docs/assets/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/docs/assets/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/docs/assets/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/docs/assets/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/docs/assets/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/docs/assets/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/docs/assets/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/docs/assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/docs/assets/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/docs/assets/favicon/favicon-16x16.png">
+<link rel="manifest" href="/docs/assets/favicon/manifest.json">
+<link rel="stylesheet" href="/docs/styles/vendor/normalize.css" />
+<link rel="stylesheet" href="/docs/styles/vendor/overlayscrollbars.min.css" />
+<link rel="stylesheet" href="/docs/styles/main.css" />
+<link rel="preload" as="font" type="font/woff2" href="/docs/assets/fonts/Inter-Medium.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/docs/assets/fonts/Inter-SemiBold.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff2" href="/docs/assets/fonts/Inter-Bold.woff2" crossorigin />
+<link rel="preload" as="font" type="font/woff" href="/docs/assets/fonts/Inter-Medium.woff" crossorigin />
+<link rel="preload" as="font" type="font/woff" href="/docs/assets/fonts/Inter-SemiBold.woff" crossorigin />
+<link rel="preload" as="font" type="font/woff" href="/docs/assets/fonts/Inter-Bold.woff" crossorigin />
+
+<script defer src="/docs/scripts/vendor/overlayscrollbars.min.js"></script>
+<script defer src="/docs/scripts/main.js"></script>
+</head>
+
+<body class="line-numbers">
+    
+    <header id="navbar" class="page-section flex-container align-center">
+    <div class="page-section-inner">
+        <a class="navbar-logo-container" href="/docs/">
+            <img loading="lazy" class="navbar-logo hide-mobile" src="/docs/assets/branding/logo_large.svg" alt="BetterDiscord logo" />
+            <img loading="lazy" class="navbar-logo small" src="/docs/assets/branding/logo_small.svg" alt="BetterDiscord logo" />
+        </a>
+        <nav id="navbar-nav-items" class="flex-container align-center" data-toggle="affix">
+            
+                <a  class="nav-item"  href="/docs/general/">General</a>
+                <a  class="nav-item"  href="/docs/plugins/">Plugin Development</a>
+                <a  class="nav-item"  href="/docs/themes/">Theme Development</a>
+        </nav>
+    </div>
+</header>
+
+
+    <main id="main-page-content">
+        
+        <header id="docs-header" class="flex-container align-center">
+            <button id="header-sidebar-btn" class="btn btn-secondary">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"> <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"> </path> </svg>
+            </button>
+            <h2 class="docs-header-title">Plugins</h2>
+        </header>
+        
+        <section class="page-section" id="docs-section">
+            <div class="page-section-inner">
+                
+    
+        
+        <div id="docs-splitview" class="flex-container">
+            <aside class="docs-sidebar">
+                
+    <div class="docs-sidebar-header">
+        <button id="sidebar-btn" class="btn btn-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                <path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z">
+                </path>
+            </svg>
+        </button>
+        <h2 class="docs-header-title"></h2>
+    </div>
+    <div class="docs-sidebar-backdrop"></div>
+    <div class="docs-sidebar-inner">
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Introduction</div>
+            
+                
+                    <a href="/docs/plugins/introduction/quick-start/" class="sidebar-item">Quick Start</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/devtools/" class="sidebar-item">Developer Tools</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/environment/" class="sidebar-item">Environment</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/structure/" class="sidebar-item">Plugin Structure</a>
+                
+            
+                
+                    <a href="/docs/plugins/introduction/guidelines/" class="sidebar-item">Guidelines</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Basics</div>
+            
+                
+                    <a href="/docs/plugins/basics/creating-a-plugin/" class="sidebar-item">Creating a Plugin</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/dom/" class="sidebar-item">Using the DOM</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/settings/" class="sidebar-item">Plugin Settings</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/ui/" class="sidebar-item">UI Components</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/betterdiscord/" class="sidebar-item">Interacting with BD</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/addons/" class="sidebar-item">Addon Interaction</a>
+                
+            
+                
+                    <a href="/docs/plugins/basics/discord/" class="sidebar-item">Changing Discord</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Intermediate</div>
+            
+                
+                    <a href="/docs/plugins/intermediate/react/" class="sidebar-item">React</a>
+                
+            
+                
+                    <a href="/docs/plugins/intermediate/webpack/" class="sidebar-item">Webpack</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Advanced</div>
+            
+                
+                    <a href="/docs/plugins/advanced/patching/" class="sidebar-item">Functional Patching</a>
+                
+            
+                
+                    <a href="/docs/plugins/advanced/webpack/" class="sidebar-item">Webpack Modules</a>
+                
+            
+                
+                    <a href="/docs/plugins/advanced/react/" class="sidebar-item">React Injection</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">Discord Reference</div>
+            
+                
+                    <a href="/docs/plugins/discord/modules/" class="sidebar-item">Known Modules</a>
+                
+            
+                
+                    <a href="/docs/plugins/discord/ui/" class="sidebar-item">Discord UI</a>
+                
+            
+        </div>
+    
+        <div class="sidebar-group">
+            <div class="sidebar-group-header">API Reference</div>
+            
+                
+                    <div class="sidebar-item selected" class="sidebar-item">BdApi</div>
+                
+            
+                
+                    <a href="/docs/plugins/api/patcher/" class="sidebar-item">Patcher</a>
+                
+            
+                
+                    <a href="/docs/plugins/api/addonapi/" class="sidebar-item">AddonAPI</a>
+                
+            
+        </div>
+    
+    </div>
+
+            </aside>
+            <article class="docs-content">
+                <div class="markdown-body flex-container direction-column">           
+                    
+  <h1 id="bd-api" tabindex="-1">BdApi <a class="direct-link" href="#bd-api" aria-hidden="true">#</a></h1>
+<p><code>BdApi</code> is a globally (<code>window.BdApi</code>) accessible object for use by plugins and developers to make their lives easier.</p>
+<h2 id="properties" tabindex="-1">Properties <a class="direct-link" href="#properties" aria-hidden="true">#</a></h2>
+<h3 id="emotes" tabindex="-1">emotes <a class="direct-link" href="#emotes" aria-hidden="true">#</a></h3>
+<p>A reference object for BD's emotes.</p>
+<p><strong>Type:</strong> object</p>
+<hr>
+<h3 id="patcher" tabindex="-1">Patcher <a class="direct-link" href="#patcher" aria-hidden="true">#</a></h3>
+<p>An instance of <a href="../patcher">Patcher</a> used to affect existing functions.</p>
+<p><strong>Type:</strong> Patcher</p>
+<hr>
+<h3 id="plugins" tabindex="-1">Plugins <a class="direct-link" href="#plugins" aria-hidden="true">#</a></h3>
+<p>An instance of <a href="../addonapi">AddonAPI</a> to access plugins.</p>
+<p><strong>Type:</strong> AddonAPI</p>
+<hr>
+<h3 id="react" tabindex="-1">React <a class="direct-link" href="#react" aria-hidden="true">#</a></h3>
+<p>The React module being used inside Discord.</p>
+<p><strong>Type:</strong> object</p>
+<hr>
+<h3 id="react-dom" tabindex="-1">ReactDOM <a class="direct-link" href="#react-dom" aria-hidden="true">#</a></h3>
+<p>The ReactDOM module being used inside Discord.</p>
+<p><strong>Type:</strong> object</p>
+<hr>
+<h3 id="screen-height" tabindex="-1">screenHeight <a class="direct-link" href="#screen-height" aria-hidden="true">#</a></h3>
+<p>The total active height of the application.</p>
+<p><strong>Type:</strong> number</p>
+<hr>
+<h3 id="screen-width" tabindex="-1">screenWidth <a class="direct-link" href="#screen-width" aria-hidden="true">#</a></h3>
+<p>The total active width of the application.</p>
+<p><strong>Type:</strong> number</p>
+<hr>
+<h3 id="settings" tabindex="-1">settings <a class="direct-link" href="#settings" aria-hidden="true">#</a></h3>
+<p>A reference object to get BD's settings.</p>
+<p><strong>Type:</strong> object</p>
+<hr>
+<h3 id="themes" tabindex="-1">Themes <a class="direct-link" href="#themes" aria-hidden="true">#</a></h3>
+<p>An instance of <a href="../addonapi">AddonAPI</a> to access themes.</p>
+<p><strong>Type:</strong> AddonAPI</p>
+<hr>
+<h2 id="methods" tabindex="-1">Methods <a class="direct-link" href="#methods" aria-hidden="true">#</a></h2>
+<h3 id="alert" tabindex="-1">alert <a class="direct-link" href="#alert" aria-hidden="true">#</a></h3>
+<p>Creates an shows an alert modal to the user.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">The title to show on the modal.</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:center">string | ReactElement | Array&lt;string | ReactElement&gt;</td>
+<td style="text-align:center">Content to show in the modal.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="clear-css" tabindex="-1">clearCSS <a class="direct-link" href="#clear-css" aria-hidden="true">#</a></h3>
+<p>Removes a <code>&lt;style&gt;</code> from the document corresponding to the given ID.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Style ID to be cleared</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="delete-data" tabindex="-1">deleteData <a class="direct-link" href="#delete-data" aria-hidden="true">#</a></h3>
+<p>Deletes some saved data for plugin <code>pluginName</code> with key <code>key</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pluginName</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Which plugin this is being used for.</td>
+</tr>
+<tr>
+<td style="text-align:left">key</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Key for which data should be deleted.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="disable-setting" tabindex="-1">disableSetting <a class="direct-link" href="#disable-setting" aria-hidden="true">#</a></h3>
+<p>Disables a BetterDiscord setting by ids.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">collection</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">settings</td>
+<td style="text-align:center">Collection ID</td>
+</tr>
+<tr>
+<td style="text-align:left">category</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Category ID within the collection</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Setting ID within the category</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="enable-setting" tabindex="-1">enableSetting <a class="direct-link" href="#enable-setting" aria-hidden="true">#</a></h3>
+<p>Enable a BetterDiscord setting by ids.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">collection</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">settings</td>
+<td style="text-align:center">Collection ID</td>
+</tr>
+<tr>
+<td style="text-align:left">category</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Category ID within the collection</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Setting ID within the category</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="find-all-modules" tabindex="-1">findAllModules <a class="direct-link" href="#find-all-modules" aria-hidden="true">#</a></h3>
+<p>Searches for an internal Discord webpack module based on a filter. Returns the found modules or <code>null</code> if none. This is the same as <code>findModule</code> but finds all matches.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">filter</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">A function to use to filter modules.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> {Array&lt;any&gt; | null}</p>
+<hr>
+<h3 id="find-module" tabindex="-1">findModule <a class="direct-link" href="#find-module" aria-hidden="true">#</a></h3>
+<p>Searches for an internal Discord webpack module based on a filter. Returns the found module or <code>null</code> if none.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">filter</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">A function to use to filter modules.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> {any | null}</p>
+<hr>
+<h3 id="find-module-by-display-name" tabindex="-1">findModuleByDisplayName <a class="direct-link" href="#find-module-by-display-name" aria-hidden="true">#</a></h3>
+<p>Searches for an internal Discord webpack module that has a specific name. Returns the found module or <code>null</code> if none.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">The <code>displayName</code> to check for.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> {any | null}</p>
+<hr>
+<h3 id="find-module-by-props" tabindex="-1">findModuleByProps <a class="direct-link" href="#find-module-by-props" aria-hidden="true">#</a></h3>
+<p>Searches for an internal Discord webpack module that has every property passed. Returns the found module or <code>null</code> if none.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">props</td>
+<td style="text-align:center">...string</td>
+<td style="text-align:center">A series of properties to check for.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> {any | null}</p>
+<hr>
+<h3 id="find-module-by-prototypes" tabindex="-1">findModuleByPrototypes <a class="direct-link" href="#find-module-by-prototypes" aria-hidden="true">#</a></h3>
+<p>Searches for an internal Discord webpack module based that has every prototype passed. Returns the found module or <code>null</code> if none.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">protos</td>
+<td style="text-align:center">...string</td>
+<td style="text-align:center">A series of prototypes to check for.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> {any | null}</p>
+<hr>
+<h3 id="get-bd-data" tabindex="-1">getBDData <a class="direct-link" href="#get-bd-data" aria-hidden="true">#</a></h3>
+<p>Gets some data in BetterDiscord's misc data.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">key</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">The key of data to get.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> any</p>
+<hr>
+<h3 id="get-data" tabindex="-1">getData <a class="direct-link" href="#get-data" aria-hidden="true">#</a></h3>
+<p>Alias for <code>loadData</code></p>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="get-internal-instance" tabindex="-1">getInternalInstance <a class="direct-link" href="#get-internal-instance" aria-hidden="true">#</a></h3>
+<p>Gets the internal react instance for a DOM node if it exists.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">node</td>
+<td style="text-align:center">HTMLElement</td>
+<td style="text-align:center">DOM node containing desired react instance.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> object | undefined</p>
+<hr>
+<h3 id="inject-css" tabindex="-1">injectCSS <a class="direct-link" href="#inject-css" aria-hidden="true">#</a></h3>
+<p>Adds a <code>&lt;style&gt;</code> to the document with the given ID.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">ID to be used</td>
+</tr>
+<tr>
+<td style="text-align:left">css</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Series of style rules to add</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="is-setting-enabled-deprecated" tabindex="-1">isSettingEnabled <span class="deprecated">Deprecated</span> <a class="direct-link" href="#is-setting-enabled-deprecated" aria-hidden="true">#</a></h3>
+<p>Gets a specific setting's status from BD</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">collection</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">settings</td>
+<td style="text-align:center">Collection ID</td>
+</tr>
+<tr>
+<td style="text-align:left">category</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Category ID within the collection</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Setting ID within the category</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> boolean</p>
+<hr>
+<h3 id="link-js-deprecated" tabindex="-1">linkJS <span class="deprecated">Deprecated</span> <a class="direct-link" href="#link-js-deprecated" aria-hidden="true">#</a></h3>
+<p>Adds a <code>&lt;script&gt;</code> to the document with the given ID and src.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">ID to be used</td>
+</tr>
+<tr>
+<td style="text-align:left">url</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">URL of the javascript to link</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="load-data" tabindex="-1">loadData <a class="direct-link" href="#load-data" aria-hidden="true">#</a></h3>
+<p>Gets some saved data for plugin <code>pluginName</code> with key <code>key</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pluginName</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Which plugin this is being used for.</td>
+</tr>
+<tr>
+<td style="text-align:left">key</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Key for which data should be retrieved.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> any</p>
+<hr>
+<h3 id="monkey-patch-deprecated" tabindex="-1">monkeyPatch <span class="deprecated">Deprecated</span> <a class="direct-link" href="#monkey-patch-deprecated" aria-hidden="true">#</a></h3>
+<p>This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.</p>
+<ul>
+<li>Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.</li>
+<li>Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property <code>__monkeyPatched</code> set to <code>true</code>, in case you want to check something programmatically.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">module</td>
+<td style="text-align:center">object</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">object to be patched. You can can also pass class prototypes to patch all class instances.</td>
+</tr>
+<tr>
+<td style="text-align:left">methodName</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Name of the function to be patched.</td>
+</tr>
+<tr>
+<td style="text-align:left">options</td>
+<td style="text-align:center">object</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Options object to configure the patch.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.after</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">Callback that will be called after original target method call. You can modify return value here, so it will be passed to external code which calls target method. Can be combined with <code>before</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.before</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">Callback that will be called before original target method call. You can modify arguments here, so it will be passed to original method. Can be combined with <code>after</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.instead</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">Callback that will be called instead of original target method call. You can get access to original method using <code>originalMethod</code> parameter if you want to call it, but you do not have to. Can't be combined with <code>before</code> or <code>after</code>.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.once</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Set to <code>true</code> if you want to automatically unpatch method after first call.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.silent</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Set to <code>true</code> if you want to suppress log messages about patching and unpatching.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> function&lt;cancel&gt;</p>
+<hr>
+<h3 id="on-removed" tabindex="-1">onRemoved <a class="direct-link" href="#on-removed" aria-hidden="true">#</a></h3>
+<p>Adds a listener for when the node is removed from the document body.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">node</td>
+<td style="text-align:center">HTMLElement</td>
+<td style="text-align:center">Node to be observed</td>
+</tr>
+<tr>
+<td style="text-align:left">callback</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">Function to run when the event fires</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="open-dialog" tabindex="-1">openDialog <a class="direct-link" href="#open-dialog" aria-hidden="true">#</a></h3>
+<p>Gives access to the <a href="https://www.electronjs.org/docs/latest/api/dialog/">Electron Dialog</a> api. Returns a <code>Promise</code> that resolves to an <code>object</code> that has a boolean <code>cancelled</code> and a <code>filePath</code> string for saving and a <code>filePaths</code> string array for opening.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">options</td>
+<td style="text-align:center">object</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Options object to configure the dialog.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.mode</td>
+<td style="text-align:center">string&lt;open, save&gt;</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">open</td>
+<td style="text-align:center">Determines whether the dialog should open or save files.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.defaultPath</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">~</td>
+<td style="text-align:center">Path the dialog should show on launch.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.filters</td>
+<td style="text-align:center">Array&lt;object&lt;string, string[]&gt;&gt;</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">An array of <a href="https://www.electronjs.org/docs/latest/api/structures/file-filter">file filters</a>.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.title</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Title for the titlebar.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.message</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Message for the dialog.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.showOverwriteConfirmation</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Whether the user should be prompted when overwriting a file.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.showHiddenFiles</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Whether hidden files should be shown in the dialog.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.promptToCreate</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Whether the user should be prompted to create non-existant folders.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.openDirectory</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Whether the user should be able to select a directory as a target.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.openFile</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">Whether the user should be able to select a file as a target.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.multiSelections</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Whether the user should be able to select multiple targets.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.modal</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Whether the dialog should act as a modal to the main window.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> Promise&lt;object&gt;</p>
+<hr>
+<h3 id="save-data" tabindex="-1">saveData <a class="direct-link" href="#save-data" aria-hidden="true">#</a></h3>
+<p>Save some data for plugin <code>pluginName</code> under key <code>key</code>. Gets saved in the plugins folder under <code>pluginName.config.json</code>. Saved data can be accessed with <code>loadData</code>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">pluginName</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Which plugin this is being used for.</td>
+</tr>
+<tr>
+<td style="text-align:left">key</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">Key for which data should be retrieved.</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:center">any</td>
+<td style="text-align:center">The data to store</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="set-bd-data" tabindex="-1">setBDData <a class="direct-link" href="#set-bd-data" aria-hidden="true">#</a></h3>
+<p>Sets some data in BetterDiscord's misc data.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">key</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">The key of data to get.</td>
+</tr>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:center">any</td>
+<td style="text-align:center">The data to store</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="set-data" tabindex="-1">setData <a class="direct-link" href="#set-data" aria-hidden="true">#</a></h3>
+<p>Alias for <code>loadData</code></p>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="show-confirmation-modal" tabindex="-1">showConfirmationModal <a class="direct-link" href="#show-confirmation-modal" aria-hidden="true">#</a></h3>
+<p>Shows a generic but very customizable confirmation modal with optional confirm and cancel callbacks.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">title</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Title to show in the modal header.</td>
+</tr>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:center">string | ReactElement | Array&lt;string | ReactElement&gt;</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Content to show in the modal body.</td>
+</tr>
+<tr>
+<td style="text-align:left">options</td>
+<td style="text-align:center">object</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">{}</td>
+<td style="text-align:center">Options object to configure the modal.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.danger</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center">false</td>
+<td style="text-align:center">Whether the main button should be red or not.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.confirmText</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">Okay</td>
+<td style="text-align:center">Text for the confirmation/submit button.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.cancelText</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">Cancel</td>
+<td style="text-align:center">Text for the cancel button.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.onConfirm</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">Callback to occur when clicking the submit button.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.onCancel</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">void</td>
+<td style="text-align:center">Callback to occur when clicking the cancel button.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="show-notice" tabindex="-1">showNotice <a class="direct-link" href="#show-notice" aria-hidden="true">#</a></h3>
+<p>Shows a notice banner at the top of Discord.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:center">string | Node</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Content to show in the banner.</td>
+</tr>
+<tr>
+<td style="text-align:left">options</td>
+<td style="text-align:center">object</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">{}</td>
+<td style="text-align:center">Options object to configure the notice.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.type</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">info</td>
+<td style="text-align:center">Changes the type of the toast stylistically and semantically. Choices: &quot;info&quot;, &quot;success&quot;, &quot;error&quot;, &quot;warning&quot;.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.buttons</td>
+<td style="text-align:center">Array&lt;object&lt;string, function&gt;&gt;</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">[]</td>
+<td style="text-align:center">An array of objects containing a <code>label</code> string and <code>onClick</code> handler for buttons.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.timeout</td>
+<td style="text-align:center">number</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">10000</td>
+<td style="text-align:center">Timeout until the notice is closed. Won't fire if it's set to 0;.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="show-toast" tabindex="-1">showToast <a class="direct-link" href="#show-toast" aria-hidden="true">#</a></h3>
+<p>Shows a simple toast message similar to on Android.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">content</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Content to show inside the toast.</td>
+</tr>
+<tr>
+<td style="text-align:left">options</td>
+<td style="text-align:center">object</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">{}</td>
+<td style="text-align:center">Options object to configure the toast.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.type</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">&quot;&quot;</td>
+<td style="text-align:center">Changes the type of the toast stylistically and semantically. Choices: &quot;&quot;, &quot;info&quot;, &quot;success&quot;, &quot;danger&quot;/&quot;error&quot;, &quot;warning&quot;/&quot;warn&quot;.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.icon</td>
+<td style="text-align:center">boolean</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">true</td>
+<td style="text-align:center">Determines whether the icon should show corresponding to the type.</td>
+</tr>
+<tr>
+<td style="text-align:left">options.timeout</td>
+<td style="text-align:center">number</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">3000</td>
+<td style="text-align:center">Adjusts the time (in ms) the toast should be shown for before disappearing automatically.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="suppress-errors-deprecated" tabindex="-1">suppressErrors <span class="deprecated">Deprecated</span> <a class="direct-link" href="#suppress-errors-deprecated" aria-hidden="true">#</a></h3>
+<p>Wraps a given function in a <code>try..catch</code> block.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">risky</td>
+<td style="text-align:center">function</td>
+<td style="text-align:center">Function to be wrapped</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> function</p>
+<hr>
+<h3 id="test-json-deprecated" tabindex="-1">testJSON <span class="deprecated">Deprecated</span> <a class="direct-link" href="#test-json-deprecated" aria-hidden="true">#</a></h3>
+<p>Tests a given object to determine if it is valid JSON.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">data</td>
+<td style="text-align:center">object</td>
+<td style="text-align:center">Object to test</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> boolean</p>
+<hr>
+<h3 id="toggle-setting" tabindex="-1">toggleSetting <a class="direct-link" href="#toggle-setting" aria-hidden="true">#</a></h3>
+<p>Toggle a BetterDiscord setting by ids.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Optional</th>
+<th style="text-align:center">Default</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">collection</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">✅</td>
+<td style="text-align:center">settings</td>
+<td style="text-align:center">Collection ID</td>
+</tr>
+<tr>
+<td style="text-align:left">category</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Category ID within the collection</td>
+</tr>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">❌</td>
+<td style="text-align:center"><em>none</em></td>
+<td style="text-align:center">Setting ID within the category</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+<h3 id="unlink-js-deprecated" tabindex="-1">unlinkJS <span class="deprecated">Deprecated</span> <a class="direct-link" href="#unlink-js-deprecated" aria-hidden="true">#</a></h3>
+<p>Removes a <code>&lt;script&gt;</code> to the document with the given ID.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Parameter</th>
+<th style="text-align:center">Type</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:center">string</td>
+<td style="text-align:center">ID to be used</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong> void</p>
+<hr>
+
+
+  
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="flex-container justify-between wrap pagination-container">
+    <a href="." style=visibility:hidden>
+        <button class="btn btn-secondary" id="btn-back">
+            <svg class="btn-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M9.78 12.78a.75.75 0 01-1.06 0L4.47 8.53a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L6.06 8l3.72 3.72a.75.75 0 010 1.06z"></path></svg>
+            <span></span>
+        </button>
+    </a>
+    <a href="/docs/plugins/api/patcher/" >
+        <button class="btn btn-secondary flex-container align-center" id="btn-next">
+            <span>Patcher</span>
+            <svg class="btn-icon btn-icon-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path fill-rule="evenodd" d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z"></path></svg>
+        </button>
+    </a>
+</div>
+  
+
+                </div>
+            </article>
+        </div>
+
+    
+
+            </div>
+        </section>
+    </main>
+    
+    <div class="footer-container">
+        <footer id="section-footer" class="page-section">
+            <div class="page-section-inner">
+                <section id="footer-top" class="flex-container hide-mobile">
+                    <div class="footer-column">
+                        <a class="footer-logo-wrap" href="/">
+                            <img class="footer-logo" loading="lazy" src="/docs/assets/branding/logo_large.svg" alt="Footer logo" />
+                        </a>
+                        <span class="footer-column-item">The Discord Enhancement Project</span>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-column-header">Community</h3>
+                        <a rel="noreferrer noopener" target="_blank" href="https://discord.gg/0Tmfo5ZbORCRqbAd" class="footer-column-item"><span>BetterDiscord</span></a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://discord.gg/sbA3xCJ" class="footer-column-item"><span>BetterDiscord2</span></a>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-column-header">Content</h3>
+                        <a href="/docs/themes" class="footer-column-item"><span>Themes</span></a>
+                        <a href="/docs/plugins" class="footer-column-item"><span>Plugins</span></a>
+                    </div>
+                    <div class="footer-column">
+                        <h3 class="footer-column-header">Help</h3>
+                        <a href="/Docs" class="footer-column-item">Documentation</a>
+                        <a href="/FAQ" class="footer-column-item">Frequent Questions</a>
+                    </div>
+                </section>
+                <section id="footer-bottom" class="flex-container wrap align-center justify-between">
+                    <div class="hide-desktop flex-container wrap" id="footer-privacy-container">
+                        <div class="footer-privacy text-center">
+                            <a href="https://betterdiscord.bsa-whitelabel.com/" class="footer-privacy-item">Advertise With Us</a>
+                            <a href="/Privacy" class="footer-privacy-item">Privacy Policy</a>
+                            <a href="/cdn-cgi/l/email-protection#ef8d8a9b9b8a9d8b869c8c809d8b988a8daf88828e8683c18c8082" class="footer-privacy-item">Contact Us</a>
+                            <a href="#" class="footer-privacy-item" onclick="displayPreferenceModal()">Cookie Preferences</a>
+                        </div>
+                    </div>
+                    <div class="flex-container wrap" id="footer-copyright-container">
+                        <div class="footer-copyright text-center">
+                            © 2015-2022
+                            <a class="anchor" rel="noreferrer noopener" target="_blank" href="https://github.com/orgs/BetterDiscord/people">BetterDiscord Team</a>
+                        </div>
+                    </div>
+                    <div id="footer-social-icons" class="flex-container justify-center wrap">
+                        <a rel="noreferrer noopener" target="_blank" href="https://twitter.com/_BetterDiscord_" class="social-icon twitter">
+                            <svg class="social-icon-inner" width="32" height="32" viewBox="0 0 20 16" aria-hidden="true">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path class="foreground-26ym5y da-foreground" fill="currentColor" d="M1,14.1538462 L1.95,14.1538462 C3.73125,14.1538462 5.5125,13.5384615 6.81875,12.4307692 C5.15625,12.4307692 3.73125,11.2 3.1375,9.6 C3.375,9.6 3.6125,9.72307692 3.85,9.72307692 C4.20625,9.72307692 4.5625,9.72307692 4.91875,9.6 C3.1375,9.23076923 1.7125,7.63076923 1.7125,5.66153846 C2.1875,5.90769231 2.78125,6.15384615 3.49375,6.15384615 C2.425,5.41538462 1.83125,4.18461538 1.83125,2.70769231 C1.83125,1.96923077 2.06875,1.23076923 2.30625,0.615384615 C4.20625,3.07692308 7.05625,4.67692308 10.38125,4.8 C10.2625,4.67692308 10.2625,4.30769231 10.2625,4.06153846 C10.2625,1.84615385 12.04375,0 14.18125,0 C15.25,0 16.31875,0.492307692 17.03125,1.23076923 C17.8625,1.10769231 18.8125,0.738461538 19.525,0.246153846 C19.2875,1.23076923 18.575,1.96923077 17.8625,2.46153846 C18.575,2.46153846 19.2875,2.21538462 20,1.84615385 C19.525,2.70769231 18.8125,3.32307692 18.1,3.93846154 L18.1,4.43076923 C18.1,9.84615385 14.18125,16 6.9375,16 C4.68125,16 2.6625,15.3846154 1,14.1538462 Z"></path>
+                                    <rect width="32" height="32"></rect>
+                                </g>
+                            </svg>
+                        </a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://discord.gg/0Tmfo5ZbORCRqbAd" class="social-icon discord">
+                            <svg class="social-icon-inner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 23 23" width="26" height="26">
+                                <path fill="currentColor" fill-rule="evenodd" d="M20.222 0c1.406 0 2.54 1.137 2.607 2.475V24l-2.677-2.273l-1.47-1.338l-1.604-1.398l.67 2.205H3.71c-1.402 0-2.54-1.065-2.54-2.476V2.48C1.17 1.142 2.31.003 3.715.003h16.5L20.222 0zm-6.118 5.683h-.03l-.202.2c2.073.6 3.076 1.537 3.076 1.537c-1.336-.668-2.54-1.002-3.744-1.137c-.87-.135-1.74-.064-2.475 0h-.2c-.47 0-1.47.2-2.81.735c-.467.203-.735.336-.735.336s1.002-1.002 3.21-1.537l-.135-.135s-1.672-.064-3.477 1.27c0 0-1.805 3.144-1.805 7.02c0 0 1 1.74 3.743 1.806c0 0 .4-.533.805-1.002c-1.54-.468-2.14-1.404-2.14-1.404s.134.066.335.2h.06c.03 0 .044.015.06.03v.006c.016.016.03.03.06.03c.33.136.66.27.93.4a8.18 8.18 0 0 0 1.8.536c.93.135 1.996.2 3.21 0c.6-.135 1.2-.267 1.8-.535c.39-.2.87-.4 1.397-.737c0 0-.6.936-2.205 1.404c.33.466.795 1 .795 1c2.744-.06 3.81-1.8 3.87-1.726c0-3.87-1.815-7.02-1.815-7.02c-1.635-1.214-3.165-1.26-3.435-1.26l.056-.02zm.168 4.413c.703 0 1.27.6 1.27 1.335c0 .74-.57 1.34-1.27 1.34c-.7 0-1.27-.6-1.27-1.334c.002-.74.573-1.338 1.27-1.338zm-4.543 0c.7 0 1.266.6 1.266 1.335c0 .74-.57 1.34-1.27 1.34c-.7 0-1.27-.6-1.27-1.334c0-.74.57-1.338 1.27-1.338z" />
+                            </svg>
+                        </a>
+                        <a rel="noreferrer noopener" target="_blank" href="https://github.com/BetterDiscord/BetterDiscord" class="social-icon github">
+                            <svg class="social-icon-inner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="26" height="26">
+                                <path fill="currentColor" fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

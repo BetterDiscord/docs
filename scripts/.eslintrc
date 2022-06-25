@@ -1,0 +1,12 @@
+{
+    "env": {
+        "node": false,
+        "browser": true
+    },
+    "parserOptions": {
+        "sourceType": "script"
+    },
+    "rules": {
+        "new-cap": 0
+    }
+}
