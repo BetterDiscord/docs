@@ -1,3 +1,9 @@
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+}
+
 #sidebar-btn,
 #header-sidebar-btn {
     width: 48px;
@@ -35,18 +41,11 @@
 }
 
 .docs-sidebar {
+    transition: 150ms ease transform;
     width: 225px;
     flex-grow: 0;
     flex-shrink: 0;
-    margin-right: 20px
-}
-
-.docs-sidebar.hidden {
-    transform: translateX(-100%)
-}
-
-.docs-sidebar.hidden .docs-sidebar-backdrop {
-    display: none
+    margin-right: 20px;
 }
 
 .docs-sidebar-header {
@@ -63,10 +62,11 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 200vw;
     height: 100vh;
     z-index: -1;
-    background: rgba(0, 0, 0, .5)
+    background: rgba(0, 0, 0, .5);
+    animation: fade 150ms ease;
 }
 
 .docs-sidebar .sidebar-group {
@@ -140,10 +140,19 @@
         width: 272px
     }
 
+    .docs-sidebar.mobile-hidden {
+        transform: translateX(-100%)
+    }
+
+    
     .docs-sidebar-backdrop {
         display: block
     }
-
+    
+    .docs-sidebar.mobile-hidden .docs-sidebar-backdrop {
+        display: none;
+    }
+    
     .docs-sidebar-header {
         display: flex
     }
