@@ -3,7 +3,8 @@
     height: 112px;
     position: relative;
     background: var(--bg1);
-    padding: 0
+    padding: 0;
+    z-index: 10;
 }
 
 #navbar .page-section-inner {
