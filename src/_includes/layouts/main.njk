@@ -12,7 +12,7 @@ templateClass: main
     {% if navigationKey and navigation %}
         {# {{ navigation | log }} #}
         <div id="docs-splitview" class="flex-container">
-            <aside class="docs-sidebar">
+            <aside class="docs-sidebar mobile-hidden">
                 {{navigation | safe}}
             </aside>
             <article class="docs-content">

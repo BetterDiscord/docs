@@ -20,7 +20,6 @@ function floatingNavBar(max, scrollTop) {
     }
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
     /* const sidebarScroller = */
     window.OverlayScrollbars(document.querySelectorAll(".docs-sidebar-inner"), {});
@@ -56,26 +55,17 @@ function docsHeaderScroll() {
     }
 }
 
-const media = window.matchMedia("(max-width: 950px)");
-function detectMobile(e) {
-    if (e.matches) {
-        document.querySelector(".docs-sidebar").classList.add("hidden");
-    }
-    else {
-        document.querySelector(".docs-sidebar").classList.remove("hidden");
-    }
-}
-media.addListener(detectMobile);
-detectMobile(media);
 function toggleDocsSidebar() {
-    document.querySelector(".docs-sidebar").classList.toggle("hidden");
+    document.querySelector(".docs-sidebar").classList.toggle("mobile-hidden");
 }
-document.getElementById("header-sidebar-btn").addEventListener("click", () => {
-    toggleDocsSidebar();
-});
-document.getElementById("sidebar-btn").addEventListener("click", () => {
-    toggleDocsSidebar();
-});
-document.querySelector(".docs-sidebar-backdrop").addEventListener("click", () => {
-    toggleDocsSidebar();
+
+document.getElementById("header-sidebar-btn").addEventListener("click", toggleDocsSidebar);
+document.getElementById("sidebar-btn").addEventListener("click", toggleDocsSidebar);
+document.querySelector(".docs-sidebar-backdrop").addEventListener("click", toggleDocsSidebar);
+window.addEventListener("keydown", ({ key }) => {
+    const sidebar = document.querySelector(".docs-sidebar");
+
+    if (key === "Escape" && !sidebar?.classList.contains("mobile-hidden")) {
+        toggleDocsSidebar();
+    }
 });
