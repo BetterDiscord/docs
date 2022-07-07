@@ -59,6 +59,10 @@ const fixDocStrings = function(markup) {
     return lines.join("\n");
 };
 
+const highlightBD = function(markup) {
+    return markup.replace(/<span class="hljs-title class_">BdApi<\/span>/g, `<span class="hljs-title hljs-bd class_">BdApi</span>`);
+};
+
 const splitter = /<!-- [A-Za-z0-9]+ -->/g;
 const getMarkup = function(code, lang, options) {
     if (options.multi) {
@@ -74,7 +78,7 @@ const getMarkup = function(code, lang, options) {
     }
 
     const markup = hljs.highlight(code, {language: lang}).value;
-    return fixDocStrings(markup);
+    return highlightBD(fixDocStrings(markup));
 };
 
 const markupCode = function(code, lang, options) {
