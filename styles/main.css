@@ -599,6 +599,7 @@ p {
   position: relative;
   background: var(--bg1);
   padding: 0;
+  z-index: 10;
 }
 
 #navbar .page-section-inner {
@@ -768,7 +769,7 @@ p {
     display: initial !important;
   }
   .page-section .page-section-inner {
-    padding: 0 48px;
+    padding: 0 24px;
   }
   .content-header .page-section-inner {
     flex-direction: column;
@@ -894,7 +895,7 @@ p {
 
 @media screen and (max-width: 950px) {
   #footer-bottom {
-    padding: 0 48px;
+    padding: 0 24px;
     flex-direction: column;
   }
   .footer-privacy {
@@ -902,6 +903,11 @@ p {
   }
   .footer-copyright {
     margin-bottom: 20px;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
   }
 }
 #sidebar-btn,
@@ -947,14 +953,6 @@ p {
   margin-right: 20px;
 }
 
-.docs-sidebar.hidden {
-  transform: translateX(-100%);
-}
-
-.docs-sidebar.hidden .docs-sidebar-backdrop {
-  display: none;
-}
-
 .docs-sidebar-header {
   display: none;
   align-items: center;
@@ -969,10 +967,11 @@ p {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  width: 200vw;
   height: 100vh;
   z-index: -1;
   background: rgba(0, 0, 0, 0.5);
+  animation: fade 150ms ease;
 }
 
 .docs-sidebar .sidebar-group {
@@ -1035,6 +1034,7 @@ p {
     padding: 24px;
   }
   .docs-sidebar {
+    transition: 150ms ease transform;
     position: fixed;
     top: 0;
     left: 0;
@@ -1043,8 +1043,14 @@ p {
     z-index: 100;
     width: 272px;
   }
+  .docs-sidebar.mobile-hidden {
+    transform: translateX(-100%);
+  }
   .docs-sidebar-backdrop {
     display: block;
+  }
+  .docs-sidebar.mobile-hidden .docs-sidebar-backdrop {
+    display: none;
   }
   .docs-sidebar-header {
     display: flex;
@@ -1053,7 +1059,7 @@ p {
     background: var(--bg2-alt);
     z-index: 1;
     padding: 20px 10px;
-    max-height: 100%;
+    height: 100%;
     overflow: auto;
     overflow: overlay;
   }
@@ -1116,6 +1122,9 @@ code[class*=language-js] .hljs-number {
 }
 code[class*=language-js] .hljs-emphasis {
   font-style: italic;
+}
+code[class*=language-js] .hljs-bd {
+  color: #3a71c1;
 }
 
 code.language-css .hljs-built_in,

@@ -98,7 +98,7 @@
     
         
         <div id="docs-splitview" class="flex-container">
-            <aside class="docs-sidebar">
+            <aside class="docs-sidebar mobile-hidden">
                 
     <div class="docs-sidebar-header">
         <button id="sidebar-btn" class="btn btn-secondary">
@@ -248,20 +248,13 @@
 </li>
 <li>Addons must not discriminate whom can use it.</li>
 <li>Addons must not collect user data without opt-in consent.</li>
+<li>Addons must not include explicit sexual material or other adult content.</li>
 </ul>
-<h2 id="specific-guidelines" tabindex="-1">Specific Guidelines <a class="direct-link" href="#specific-guidelines" aria-hidden="true">#</a></h2>
+<h2 id="scope" tabindex="-1">Scope <a class="direct-link" href="#scope" aria-hidden="true">#</a></h2>
 <ol>
-<li>Plugins must not use remote libraries.
+<li>Plugins must clean up all changes/modification made by the plugin when it is disabled.
 <ul>
-<li>Necessary dependencies should be either bundled or a separate plugin.</li>
-</ul>
-</li>
-<li>Plugins must not be obfuscated, minified, include sourcemaps, or be otherwise deceitful.</li>
-<li>Plugins must not modify global variables, global objects, or existing <code>prototype</code>s.</li>
-<li>Plugins must not access BetterDiscord globals ouside of the official API.</li>
-<li>Plugins must not modify the BetterDiscord UI.
-<ul>
-<li>This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.</li>
+<li>This includes UI changes, patches, intervals, timeouts, subscriptions, and listeners.</li>
 </ul>
 </li>
 <li>Plugins and their corresponding libraries shall not operate outside of their intended functionality.
@@ -269,32 +262,52 @@
 <li>This includes but is not limited to: swapping out unrelated components, introducing unnecessary buttons or badges.</li>
 </ul>
 </li>
-<li>Plugins must not access user tokens, emails, or passwords.</li>
-<li>Plugins must clean up all changes/modification made by the plugin when it is disabled.
+<li>Plugins must not modify the BetterDiscord UI.
 <ul>
-<li>This includes UI changes, pathes, intervals, timeouts, subscriptions, and listeners.</li>
+<li>This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.</li>
 </ul>
 </li>
+<li>Plugins must not touch or use BetterDiscord's files.</li>
+</ol>
+<h2 id="code" tabindex="-1">Code <a class="direct-link" href="#code" aria-hidden="true">#</a></h2>
+<ol>
+<li>Plugins must set <code>module.exports</code></li>
 <li>Plugins must not make use of the <code>child_process</code> node module.
 <ul>
 <li>Existing plugins are exempt, but no new plugins shall use this. This is due in part to the security risk, and in part due to an impending Discord update that will break this module.</li>
 </ul>
 </li>
-<li>Plugins Must not bypass the addon approval system by implementing their own update system.</li>
-<li>Plugins must set <code>module.exports</code></li>
-<li>Plugins must not use closed source nor self-hosted binaries or libaries.</li>
-<li>Plugins must not risk a user's account.
-<ul>
-<li>This includes but is not limited to: selfbotting, spamming API requests, using non-user APIs, bypassing nitro features, animated status, message logging.</li>
-</ul>
-</li>
-<li>Plugins must not remove security features.</li>
+<li>Plugins must not modify global variables, global objects, or existing <code>prototype</code>s.</li>
+<li>Plugins must not access BetterDiscord globals ouside of the official API.</li>
+<li>Plugins must not access webpack modules outside of the official API.</li>
 <li>Plugins must not waste hardware resources.
 <ul>
 <li>e.g., repeated webpack searching without caching, storing unnecessary data in memory.</li>
 </ul>
 </li>
-<li>Plugins must not access webpack modules outside of the official API.</li>
+</ol>
+<h2 id="security-and-privacy" tabindex="-1">Security &amp; Privacy <a class="direct-link" href="#security-and-privacy" aria-hidden="true">#</a></h2>
+<ol>
+<li>Plugins must not remove security features.</li>
+<li>Plugins must not access user tokens, emails, or passwords.</li>
+<li>Plugins must not risk a user's account.
+<ul>
+<li>This includes but is not limited to: selfbotting, spamming API requests, using non-user APIs, bypassing nitro features, animated status, message logging.</li>
+</ul>
+</li>
+<li>Plugins must not provide access to potentially sensitive information from other users of the platform which is not otherwise accessible.
+<ul>
+<li>This includes but is not limited to: hidden channels, deleted messages, invisible/offline status distinction.</li>
+</ul>
+</li>
+<li>Plugins must not use remote libraries.
+<ul>
+<li>Necessary dependencies should be either bundled or a separate plugin.</li>
+</ul>
+</li>
+<li>Plugins must not use closed source nor self-hosted binaries or libaries.</li>
+<li>Plugins must not be obfuscated, minified, include sourcemaps, or be otherwise deceitful.</li>
+<li>Plugins must not bypass the addon approval system by implementing their own update system.</li>
 </ol>
 
 

@@ -98,7 +98,7 @@
     
         
         <div id="docs-splitview" class="flex-container">
-            <aside class="docs-sidebar">
+            <aside class="docs-sidebar mobile-hidden">
                 
     <div class="docs-sidebar-header">
         <button id="sidebar-btn" class="btn btn-secondary">
@@ -237,6 +237,115 @@
                 <div class="markdown-body flex-container direction-column">           
                     
   <h1 id="using-the-dom" tabindex="-1">Using the DOM <a class="direct-link" href="#using-the-dom" aria-hidden="true">#</a></h1>
+<p>If you're unfamiliar with the DOM it might be worth taking a look at the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model">MDN documentation</a> about it.</p>
+<p>Since we already know from <a href="../../introduction/environment">previous pages</a> that Discord is essentially a Chromium browser, we can access the DOM using typical methods.</p>
+<pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-comment">// Create a reference to the document</span>
+<span class="hljs-keyword">const</span> myDocument = <span class="hljs-variable language_">document</span>;
+
+<span class="hljs-comment">// Create an element</span>
+<span class="hljs-keyword">const</span> myElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;div&quot;</span>);
+
+<span class="hljs-comment">// Get an existing element by selector</span>
+<span class="hljs-keyword">const</span> existingElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.button&quot;</span>);
+
+<span class="hljs-comment">// Add an event listener</span>
+existingElement.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">() =&gt;</span> {<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;clicked!&quot;</span>);});
+<span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>You should hopefully be familiar with everything shown above, if not it might be a good idea to check out MDN linked at the beginning of this page.</p>
+<p>Now as to how we can apply this to plugins in Discord, let's try an example of adding a button that shows an alert when clicked. It might look something like this:</p>
+<pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-keyword">const</span> myButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;button&quot;</span>);
+myButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Click me!&quot;</span>;
+myButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">() =&gt;</span> {<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);});
+<span class="hljs-keyword">const</span> root = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&quot;app-mount&quot;</span>);
+root.<span class="hljs-title function_">append</span>(myButton);
+<span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>You can try this right in the console of your Discord client, and you should see a button appear at the bottom of your screen. Clicking it should give you a <code>Hello World!</code> popup.</p>
+<p>One thing to note from this code is the root container <code>document.getElementById(&quot;app-mount&quot;)</code>. Since Discord uses React as their front-end rendering system, their app needs to be &quot;mounted&quot; into the normal DOM hierarchy. Typically, this is in a root container with ID <code>app-mount</code>.</p>
+<p>And while that works, it's not very practical or useful. And the location of the button is terrible. So what if we wanted to add it to the end of the guild/server list? Let's give it a try!</p>
+<p>First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from <a href="../../introduction/devtools">devtools</a> and select the guild list on the left.</p>
+<p><img src="/docs/assets/docs/servers.png" alt="Server List"></p>
+<p>If yours looks like the one above, you've got the right element. Now we need to come up with a selector for the element. You can try to use the built in method by right clicking the element, then going to <code>Copy &gt; Copy Selector</code>. But that usually yields unwieldly selectors like <code>#app-mount &gt; div.appDevToolsWrapper-1QxdQf &gt; div &gt; div.app-3xd6d0 &gt; div &gt; div.layers-OrUESM.layers-1YQhyW &gt; div &gt; div.container-1eFtFS &gt; nav &gt; ul &gt; div.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt &gt; div:nth-child(3)</code> in this case.</p>
+<p>So lets do it manually. Since this element has no <code>id</code> or <code>class</code> but it does have an <code>aria-label</code> attribute, it seems obvious to use an attribute selector like <code>[aria-label=&quot;Servers&quot;]</code>. This does have a big problem however. This value changes based on the language the user has Discord set to. So while this may work for you in English, it won't work for many many others. If you're unfamiliar with <code>aria-label</code> or accessible web browsing in general, once again <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label">MDN has great documentation</a> on this topic.</p>
+<p>Since that didn't work out, let's take another look. We can see there are a couple unique classes in the ancestor hierarchy like <code>tree-3agP2X</code> and <code>guilds-2JjMmN</code>. We can combine these with the fact the <code>aria-label</code> only exists on the element we are targeting to create a selector like <code>.tree-3agP2X &gt; div &gt; div[aria-label]</code>. Since this doesn't depend on the <em>value</em> of the <code>aria-label</code> attribute, it will still work regardless of language. Note: there are other selectors that work as well, this is just an example.</p>
+<div class="banner info">
+                    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                        <path fill-rule="evenodd" d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM0 8a8 8 0 1116 0A8 8 0 010 8zm6.5-.25A.75.75 0 017.25 7h1a.75.75 0 01.75.75v2.75h.25a.75.75 0 010 1.5h-2a.75.75 0 010-1.5h.25v-2h-.25a.75.75 0 01-.75-.75zM8 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                    </svg>
+                    <span>Many of Discord's classes end in weird strings like <code>-3agP2X</code> because they use a system that prevents class collisions automatically. This means these strings are subject to change. A better way to get the desired class name will be covered in later sections.</span>
+                </div>
+<p>If we use our selector with our previous code, we can add our button to the guild list.</p>
+<pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-keyword">const</span> myButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;button&quot;</span>);
+myButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Click me!&quot;</span>;
+myButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">() =&gt;</span> {<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);});
+<span class="hljs-keyword">const</span> serverList = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.tree-3agP2X &gt; div &gt; div[aria-label]&quot;</span>);
+serverList.<span class="hljs-title function_">append</span>(myButton);
+<span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>If you try this out on console, you should see your button at the bottom of the guild list (you may have to scroll down). Clicking it should still cause your alert to appear.</p>
+<p>One problem that is common when working with Discord (and react) is sometimes your elements disappear. This could be from React refreshing the view and purging your element, or the user changes views (changing channel or server). This may even happen to your button in the guild list when that refreshes.</p>
+<p>How can we prevent this? Well we can't with normal DOM manipulation. But we <em>can</em> work around it. We can detect when our button is removed and re-add it. Enter <a href="https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver">mutation observers</a>.</p>
+<pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-comment">// This part adds our button</span>
+<span class="hljs-keyword">const</span> myButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;button&quot;</span>);
+myButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Click me!&quot;</span>;
+myButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">() =&gt;</span> {<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);});
+<span class="hljs-keyword">const</span> serverList = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.tree-3agP2X &gt; div &gt; div[aria-label]&quot;</span>);
+serverList.<span class="hljs-title function_">append</span>(myButton);
+
+
+<span class="hljs-comment">// This part waits for it to be removed</span>
+<span class="hljs-keyword">const</span> <span class="hljs-title function_">myCallback</span> = mutations =&gt; {
+    <span class="hljs-comment">// We only care about our button being removed</span>
+    <span class="hljs-keyword">if</span> (mutations.<span class="hljs-property">removedNodes</span>.<span class="hljs-property">length</span> === <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-comment">// Convert to array to allow array functions</span>
+    <span class="hljs-keyword">const</span> removedNodes = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(mutations.<span class="hljs-property">removedNodes</span>);
+
+    <span class="hljs-comment">// We only care about our button</span>
+    <span class="hljs-keyword">if</span> (!removedNodes.<span class="hljs-title function_">includes</span>(myButton)) <span class="hljs-keyword">return</span>;
+
+    <span class="hljs-comment">// Getting here means our button was removed, lets add it back</span>
+    serverList.<span class="hljs-title function_">append</span>(myButton);
+};
+<span class="hljs-keyword">const</span> myObserver = <span class="hljs-keyword">new</span> <span class="hljs-title class_">MutationObserver</span>(myCallback);
+<span class="hljs-keyword">const</span> observerOptions = {
+    <span class="hljs-attr">childList</span>: <span class="hljs-literal">true</span>,
+    <span class="hljs-attr">subtree</span>: <span class="hljs-literal">false</span> <span class="hljs-comment">// We don&#x27;t need subtree, only direct children</span>
+};
+myObserver.<span class="hljs-title function_">observe</span>(serverList, observerOptions);
+<span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>This will now re-append the button anytime it is removed from the server list. The code is a little inconvenient to write, and it's very specific to that button. But thankfully, <a href="../../api/bdapi">BdApi</a> has a utility function that can help called <code>onRemoved</code>. This code rewritten would look something like this:</p>
+<pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-comment">// This part adds our button</span>
+<span class="hljs-keyword">const</span> myButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;button&quot;</span>);
+myButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Click me!&quot;</span>;
+myButton.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">() =&gt;</span> {<span class="hljs-variable language_">window</span>.<span class="hljs-title function_">alert</span>(<span class="hljs-string">&quot;Hello World!&quot;</span>);});
+<span class="hljs-keyword">const</span> serverList = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;.tree-3agP2X &gt; div &gt; div[aria-label]&quot;</span>);
+serverList.<span class="hljs-title function_">append</span>(myButton);
+
+<span class="hljs-comment">// This part re-adds it when removed</span>
+<span class="hljs-title hljs-bd class_">BdApi</span>.<span class="hljs-title function_">onRemoved</span>(myButton, <span class="hljs-function">() =&gt;</span> {
+    serverList.<span class="hljs-title function_">append</span>(myButton);
+});
+<span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>This is much cleaner and more descriptive of the action being taken. This is just one of the many helper functions that exist in <code>BdApi</code>. You'll learn more as you go through the docs. In fact, there are two more functions <code>injectCSS</code> and <code>clearCSS</code> that can be helpful for our button example.</p>
+<p>These are pretty simple and straightforward. Say we added a class <code>my-button</code> to our button from before. We could then style it with css externally using this snippet:</p>
+<pre class="language-css line-numbers"><code class="language-css line-numbers"><span class="hljs-selector-class">.my-button</span> {
+    <span class="hljs-attribute">padding</span>: <span class="hljs-number">4px</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;
+    <span class="hljs-attribute">background</span>: black;
+    <span class="hljs-attribute">color</span>: white;
+}
+<span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>which is great and works, but we need to have it in our plugin. You can either create and add your own stylesheet to the document using the techniques at the beginning of this page, or you just use <code>BdApi.injectCSS</code>. Given an ID and your css, it'll take care of the rest.</p>
+<pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-title hljs-bd class_">BdApi</span>.<span class="hljs-title function_">injectCSS</span>(<span class="hljs-string">&quot;myPluginName&quot;</span>, <span class="hljs-string">`.my-button {
+    padding: 4px;
+    border-radius: 5px;
+    background: black;
+    color: white;
+}`</span>);
+<span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>which can later be removed using the same ID from before</p>
+<pre class="language-js"><code class="language-js"><span class="hljs-title hljs-bd class_">BdApi</span>.<span class="hljs-title function_">clearCSS</span>(<span class="hljs-string">&quot;myPluginName&quot;</span>);
+<button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
+<p>Try playing around with this and all the techniques discussed above. When you feel comfortable, go ahead and move on to the next section.</p>
 
 
   
