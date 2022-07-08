@@ -687,6 +687,10 @@ p {
   color: var(--text-light);
 }
 
+.nav-item-selected {
+  color: var(--accent);
+}
+
 .navbar-logo {
   border-radius: 3px;
   height: 64px;
@@ -951,6 +955,12 @@ p {
   flex-grow: 0;
   flex-shrink: 0;
   margin-right: 20px;
+}
+
+.docs-sidebar-inner {
+  height: 800px;
+  position: sticky;
+  top: 96px;
 }
 
 .docs-sidebar-header {
@@ -1252,6 +1262,7 @@ code.language-css .hljs-emphasis {
   position: relative;
   list-style: none;
   margin: 40px 0;
+  z-index: 1;
 }
 
 .code-tab-container pre,

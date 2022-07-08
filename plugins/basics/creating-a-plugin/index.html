@@ -76,7 +76,7 @@
         <nav id="navbar-nav-items" class="flex-container align-center" data-toggle="affix">
             
                 <a  class="nav-item"  href="/docs/general/">General</a>
-                <a  class="nav-item"  href="/docs/plugins/">Plugin Development</a>
+                <a  class="nav-item nav-item-selected" href="/docs/plugins/">Plugin Development</a>
                 <a  class="nav-item"  href="/docs/themes/">Theme Development</a>
         </nav>
     </div>
@@ -242,7 +242,7 @@
 <p>Knowing what you want the plugin to do also allows you to reach out to our community of developers and ask for help. It's much easier to help someone with a specific task or end-goal rather than someone that &quot;just wants to make a plugin&quot;.</p>
 <h2 id="the-style" tabindex="-1">The Style <a class="direct-link" href="#the-style" aria-hidden="true">#</a></h2>
 <p>Next, you'll need to decide which plugin style to use. As seen in the <a href="../../introduction/structure">plugin structure</a> docs, there a couple different ways to go about it. They are shown again below for clarity. Each one has pros and cons, but can each work well for simple to advanced plugins. In the end it ultimately comes down to the individual developer's style preference. A mix of the styles will be shown here in the docs.</p>
-<div class="code-tab-container"><input type="radio" id="Class" name="react" class="code-tab" checked><label for="Class">Class</label><input type="radio" id="Arrow" name="react" class="code-tab"><label for="Arrow">Arrow</label><input type="radio" id="Return" name="react" class="code-tab"><label for="Return">Return</label>
+<div class="code-tab-container"><input type="radio" id="react-Class" name="react" class="code-tab" checked><label for="react-Class">Class</label><input type="radio" id="react-Arrow" name="react" class="code-tab"><label for="react-Arrow">Arrow</label><input type="radio" id="react-Return" name="react" class="code-tab"><label for="react-Return">Return</label>
 <pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-comment hljs-jsdoc">/**
  * <span class="hljs-doctag">@name</span> ExamplePlugin
  * <span class="hljs-doctag">@author</span> YourName
@@ -307,7 +307,8 @@
 <p>Once you've got that decided, go ahead and save your template in your <a href="../../introduction/quick-start#plugin-folder">plugins folder</a> as <code>ExamplePlugin.plugin.js</code> and change <code>ExamplePlugin</code> to the name of your choice.</p>
 <h2 id="things-to-keep-in-mind" tabindex="-1">Things to Keep in Mind <a class="direct-link" href="#things-to-keep-in-mind" aria-hidden="true">#</a></h2>
 <p>There's a lot to keep in mind as you develop your plugin. One of the most important being how to cleanup when the plugin is disabled. This may seem straightforward, but if you don't have it in mind as you develop, it may slip through the cracks. Say you add some text to the DOM and no longer have a reference to it. When it's time to disable and cleanup, you have to search through the DOM again just to find this node. Instead, if you had remembered that this will need to be cleaned up, you could have kept a reference in order to easily remove it later.</p>
-<p>If you're looking to submit this plugin, or share it with others, it's worth keeping in mind what parts of the plugin are opinionated. For example, the way something is formatted or styled may look good to some and not to others. If you have this in mind while you develop, you might add unique classes to elements for themes and users to take advantage of, or even add <a href="../settings">plugin settings</a> which we'll get to a bit later.</p>
+<p>If you're looking to submit this plugin, or share it with others, it's worth keeping in mind what parts of the plugin are opinionated. For example, the way something is formatted or styled may look good to some and not to others.</p>
+<p>If you have these things in mind while you develop, you can add unique classes to elements for themes and users to take advantage of, or even add <a href="../settings">plugin settings</a> which we'll get to a bit later.</p>
 <h2 id="what-s-next" tabindex="-1">What's Next? <a class="direct-link" href="#what-s-next" aria-hidden="true">#</a></h2>
 <p>If you feel comfortable with everything so far, you're probably safe to move on to making your plugin by first <a href="../dom">interacting with the dom</a>. Otherwise, take the time and experiment with the plugin templates and see what feels right, maybe even brush up on your JavaScript skills.</p>
 

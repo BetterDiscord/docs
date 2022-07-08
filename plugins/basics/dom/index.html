@@ -76,7 +76,7 @@
         <nav id="navbar-nav-items" class="flex-container align-center" data-toggle="affix">
             
                 <a  class="nav-item"  href="/docs/general/">General</a>
-                <a  class="nav-item"  href="/docs/plugins/">Plugin Development</a>
+                <a  class="nav-item nav-item-selected" href="/docs/plugins/">Plugin Development</a>
                 <a  class="nav-item"  href="/docs/themes/">Theme Development</a>
         </nav>
     </div>
@@ -251,7 +251,7 @@
 <span class="hljs-comment">// Add an event listener</span>
 existingElement.<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&quot;click&quot;</span>, <span class="hljs-function">() =&gt;</span> {<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&quot;clicked!&quot;</span>);});
 <span class="line-numbers-container" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><button title="Copy Code" class="btn btn-secondary btn-copy flex-container align-center hide-mobile"></button></code></pre>
-<p>You should hopefully be familiar with everything shown above, if not it might be a good idea to check out MDN linked at the beginning of this page.</p>
+<p>You should hopefully be familiar with everything shown above, if not it might be a good idea to check out the MDN link at the beginning of this page.</p>
 <p>Now as to how we can apply this to plugins in Discord, let's try an example of adding a button that shows an alert when clicked. It might look something like this:</p>
 <pre class="language-js line-numbers"><code class="language-js line-numbers"><span class="hljs-keyword">const</span> myButton = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&quot;button&quot;</span>);
 myButton.<span class="hljs-property">textContent</span> = <span class="hljs-string">&quot;Click me!&quot;</span>;

@@ -1,28 +1,25 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const bodyScroller = window.OverlayScrollbars(document.body, {
-        callbacks: {
-            onScroll: function (ev) {
-                const scrollInfo = bodyScroller.scroll();
-                const scrollTop = ev.target.scrollTop;
-                const max = scrollInfo.max.y;
-                floatingNavBar(max, scrollTop);
-            }
-        }
-    });
-});
+const screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+const navbar = document.querySelector("#navbar");
+const sidebar = document.querySelector(".docs-sidebar-inner");
 
 function floatingNavBar(max, scrollTop) {
+
     if (scrollTop > document.querySelector("#navbar-nav-items").clientHeight) {
         document.querySelector("#navbar").classList.add("floating");
+        if (sidebar) sidebar.style.height = `${screenHeight - navbar.offsetHeight - 48}px`;
     }
     else {
         document.querySelector("#navbar").classList.remove("floating");
+        if (sidebar) sidebar.style.height = `${screenHeight - navbar.offsetHeight - 64}px`;
     }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    /* const sidebarScroller = */
-    window.OverlayScrollbars(document.querySelectorAll(".docs-sidebar-inner"), {});
+
+document.addEventListener("DOMContentLoaded", () => {  
+    if (sidebar) {
+        sidebar.style.height = `${screenHeight - navbar.offsetHeight - 24}px`;
+        window.OverlayScrollbars(sidebar, {});
+    }
     const bodyScroller = window.OverlayScrollbars(document.body, {
         callbacks: {
             onScroll: function (ev) {
@@ -56,16 +53,16 @@ function docsHeaderScroll() {
 }
 
 function toggleDocsSidebar() {
-    document.querySelector(".docs-sidebar").classList.toggle("mobile-hidden");
+    if (sidebar) sidebar.classList.toggle("mobile-hidden");
 }
 
 document.getElementById("header-sidebar-btn").addEventListener("click", toggleDocsSidebar);
 document.getElementById("sidebar-btn").addEventListener("click", toggleDocsSidebar);
 document.querySelector(".docs-sidebar-backdrop").addEventListener("click", toggleDocsSidebar);
-window.addEventListener("keydown", ({ key }) => {
-    const sidebar = document.querySelector(".docs-sidebar");
+window.addEventListener("keydown", ({key}) => {
+    if (!sidebar) return;
 
-    if (key === "Escape" && !sidebar?.classList.contains("mobile-hidden")) {
+    if (key === "Escape" && !sidebar.classList.contains("mobile-hidden")) {
         toggleDocsSidebar();
     }
 });
