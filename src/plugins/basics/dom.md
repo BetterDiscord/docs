@@ -24,7 +24,7 @@ const existingElement = document.querySelector(".button");
 existingElement.addEventListener("click", () => {console.log("clicked!");});
 ```
 
-You should hopefully be familiar with everything shown above, if not it might be a good idea to check out MDN linked at the beginning of this page.
+You should hopefully be familiar with everything shown above, if not it might be a good idea to check out the MDN link at the beginning of this page.
 
 Now as to how we can apply this to plugins in Discord, let's try an example of adding a button that shows an alert when clicked. It might look something like this:
 

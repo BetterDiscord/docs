@@ -7,7 +7,7 @@
         <nav id="navbar-nav-items" class="flex-container align-center" data-toggle="affix">
             {% set navPages = collections.all | eleventyNavigation %}
             {%- for entry in navPages %}
-                <a {% if entry.url == page.url %} class="nav-item nav-item-selected"{% else %} class="nav-item" {% endif %} href="{{ entry.url | url }}">{{ entry.title }}</a>
+                <a {% if entry.key == navigationKey %} class="nav-item nav-item-selected"{% else %} class="nav-item" {% endif %} href="{{ entry.url | url }}">{{ entry.title }}</a>
             {%- endfor %}
         </nav>
     </div>

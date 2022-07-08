@@ -47,6 +47,12 @@
     margin-right: 20px;
 }
 
+.docs-sidebar-inner {
+    height: 800px;
+    position: sticky;
+    top: 96px;
+}
+
 .docs-sidebar-header {
     display: none;
     align-items: center;

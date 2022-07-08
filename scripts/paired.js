@@ -30,7 +30,7 @@ module.exports = new class CustomPairedShortcodes {
     }
 
     tabs(content, group, buttons) {
-        const inputs = buttons.map((b, i) => `<input type="radio" id="${b}" name="${group}" class="code-tab"${i === 0 ? " checked" : ""}><label for="${b}">${b}</label>`);
+        const inputs = buttons.map((b, i) => `<input type="radio" id="${group}-${b}" name="${group}" class="code-tab"${i === 0 ? " checked" : ""}><label for="${group}-${b}">${b}</label>`);
         return `<div class="code-tab-container">${inputs.join("")}${content}</div>`;
     }
 

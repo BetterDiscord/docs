@@ -87,11 +87,15 @@
     position: relative;
     user-select: none;
     cursor: pointer;
-    transition: 150ms ease color
+    transition: 150ms ease color;
 }
 
 .nav-item:hover {
     color: var(--text-light)
+}
+
+.nav-item-selected {
+    color: var(--accent)
 }
 
 .navbar-logo {

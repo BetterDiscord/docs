@@ -99,7 +99,9 @@ Once you've got that decided, go ahead and save your template in your [plugins f
 
 There's a lot to keep in mind as you develop your plugin. One of the most important being how to cleanup when the plugin is disabled. This may seem straightforward, but if you don't have it in mind as you develop, it may slip through the cracks. Say you add some text to the DOM and no longer have a reference to it. When it's time to disable and cleanup, you have to search through the DOM again just to find this node. Instead, if you had remembered that this will need to be cleaned up, you could have kept a reference in order to easily remove it later.
 
-If you're looking to submit this plugin, or share it with others, it's worth keeping in mind what parts of the plugin are opinionated. For example, the way something is formatted or styled may look good to some and not to others. If you have this in mind while you develop, you might add unique classes to elements for themes and users to take advantage of, or even add [plugin settings](../settings) which we'll get to a bit later.
+If you're looking to submit this plugin, or share it with others, it's worth keeping in mind what parts of the plugin are opinionated. For example, the way something is formatted or styled may look good to some and not to others.
+
+If you have these things in mind while you develop, you can add unique classes to elements for themes and users to take advantage of, or even add [plugin settings](../settings) which we'll get to a bit later.
 
 ## What's Next?
 
