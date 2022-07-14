@@ -1,24 +1,25 @@
 const screenHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 const navbar = document.querySelector("#navbar");
-const sidebar = document.querySelector(".docs-sidebar-inner");
+const sidebar = document.querySelector(".docs-sidebar");
+const sidebarInner = document.querySelector(".docs-sidebar-inner");
 
 function floatingNavBar(max, scrollTop) {
 
     if (scrollTop > document.querySelector("#navbar-nav-items").clientHeight) {
         document.querySelector("#navbar").classList.add("floating");
-        if (sidebar) sidebar.style.height = `${screenHeight - navbar.offsetHeight - 48}px`;
+        if (sidebarInner) sidebarInner.style.height = `${screenHeight - navbar.offsetHeight - 48}px`;
     }
     else {
         document.querySelector("#navbar").classList.remove("floating");
-        if (sidebar) sidebar.style.height = `${screenHeight - navbar.offsetHeight - 64}px`;
+        if (sidebarInner) sidebarInner.style.height = `${screenHeight - navbar.offsetHeight - 64}px`;
     }
 }
 
 
 document.addEventListener("DOMContentLoaded", () => {  
-    if (sidebar) {
-        sidebar.style.height = `${screenHeight - navbar.offsetHeight - 24}px`;
-        window.OverlayScrollbars(sidebar, {});
+    if (sidebarInner) {
+        sidebarInner.style.height = `${screenHeight - navbar.offsetHeight - 24}px`;
+        window.OverlayScrollbars(sidebarInner, {});
     }
     const bodyScroller = window.OverlayScrollbars(document.body, {
         callbacks: {
