@@ -52,4 +52,4 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - Necessary dependencies should be either bundled or a separate plugin.
 1. Plugins must not use closed source nor self-hosted binaries or libaries.
 1. Plugins must not be obfuscated, minified, include sourcemaps, or be otherwise deceitful.
-1. Plugins must not bypass the addon approval system by implementing their own update system.
+<!-- 1. Plugins must not bypass the addon approval system by implementing their own update system. -->

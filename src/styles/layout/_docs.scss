@@ -48,7 +48,6 @@
 }
 
 .docs-sidebar-inner {
-    height: 800px;
     position: sticky;
     top: 96px;
 }
@@ -167,8 +166,9 @@
         background: var(--bg2-alt);
         z-index: 1;
         padding: 20px 10px;
-        height: 100% !important;
+        height: calc(100% - 72px)!important;
         overflow: auto;
         overflow: overlay;
+        position: relative;
     }
 }

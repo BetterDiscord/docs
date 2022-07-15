@@ -18,7 +18,7 @@ function floatingNavBar(max, scrollTop) {
 
 document.addEventListener("DOMContentLoaded", () => {  
     if (sidebarInner) {
-        sidebarInner.style.height = `${screenHeight - navbar.offsetHeight - 24}px`;
+        sidebarInner.style.height = `${screenHeight - navbar.offsetHeight - 64}px`;
         window.OverlayScrollbars(sidebarInner, {});
     }
     const bodyScroller = window.OverlayScrollbars(document.body, {
