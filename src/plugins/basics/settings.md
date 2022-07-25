@@ -175,7 +175,7 @@ const mySettings = BdApi.loadData("myPlugin", "settings");
 {% endcodetabs %}
 
 
-Saving each key separately:
+Loading each key separately:
 
 {% codetabs "load-keys", ["JS", "JSON"] %}
 

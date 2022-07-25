@@ -6,7 +6,7 @@ module.exports = {
     ],
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk",
-    pathPrefix: "/docs/",
+    pathPrefix: "/",
     dir: {
         input: "src",
         includes: "_includes",
