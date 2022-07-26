@@ -324,3 +324,16 @@ body {
 html[data-theme="dark"] {
   --doc-sidebar-width: 30%;
 }
+
+.anchor .hash-link {
+  opacity: 1;
+}
+
+pre.prism-code,
+.code-tabs {
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+}
+
+.code-tabs pre.prism-code {
+  box-shadow: 0;
+}
