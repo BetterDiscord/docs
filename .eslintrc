@@ -80,5 +80,8 @@
         "wrap-iife": ["error", "inside"],
         "yield-star-spacing": "error",
         "yoda": "error"
+    },
+    "globals": {
+        "globalThis": "readonly"
     }
 }

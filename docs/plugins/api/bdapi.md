@@ -93,7 +93,7 @@ key|string|Key for which data should be deleted.
 **Returns:** `void`
 ___
 
-### disableSetting
+### disableSetting <span class="deprecated">Deprecated</span>
 Disables a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -105,7 +105,7 @@ id|string|&#x274C;|*none*|Setting ID within the category
 **Returns:** `void`
 ___
 
-### enableSetting
+### enableSetting <span class="deprecated">Deprecated</span>
 Enable a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -387,7 +387,7 @@ data|object|Object to test
 **Returns:** `boolean`
 ___
 
-### toggleSetting
+### toggleSetting <span class="deprecated">Deprecated</span>
 Toggle a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |

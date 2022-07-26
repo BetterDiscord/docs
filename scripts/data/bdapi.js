@@ -41,6 +41,7 @@ module.exports = {
         {
             name: "disableSetting",
             description: "Disables a BetterDiscord setting by ids.",
+            deprecated: true,
             returns: null,
             parameters: [
                 {name: "collection", type: "string", value: "settings", description: "Collection ID"},
@@ -51,6 +52,7 @@ module.exports = {
         {
             name: "enableSetting",
             description: "Enable a BetterDiscord setting by ids.",
+            deprecated: true,
             returns: null,
             parameters: [
                 {name: "collection", type: "string", value: "settings", description: "Collection ID"},
@@ -290,6 +292,7 @@ module.exports = {
         {
             name: "toggleSetting",
             description: "Toggle a BetterDiscord setting by ids.",
+            deprecated: true,
             returns: null,
             parameters: [
                 {name: "collection", type: "string", value: "settings", description: "Collection ID"},
