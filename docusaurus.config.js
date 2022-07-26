@@ -74,6 +74,12 @@ const config = {
         items: [
           {
             type: "doc",
+            docId: "general/index",
+            position: "left",
+            label: "General",
+          },
+          {
+            type: "doc",
             docId: "plugins/index",
             position: "left",
             label: "Plugins",
@@ -98,12 +104,16 @@ const config = {
             title: "Docs",
             items: [
               {
+                label: "General",
+                to: "/general/",
+              },
+              {
                 label: "Plugins",
-                to: "/plugins/index",
+                to: "/plugins/",
               },
               {
                 label: "Themes",
-                to: "/themes/index",
+                to: "/themes/",
               },
             ],
           },
