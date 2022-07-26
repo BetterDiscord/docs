@@ -1,0 +1,10 @@
+{
+    "label": "Advanced",
+    "position": 5,
+    "link": {
+      "type": "generated-index",
+      "slug": "/plugins/advanced",
+      "description": "Advanced plugin concepts."
+    }
+  }
+  

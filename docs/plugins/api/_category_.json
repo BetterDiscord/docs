@@ -1,0 +1,10 @@
+{
+    "label": "API Reference",
+    "position": 7,
+    "link": {
+      "type": "generated-index",
+      "slug": "/plugins/api",
+      "description": "Reference for BD's API."
+    }
+  }
+  

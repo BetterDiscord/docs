@@ -1,0 +1,326 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@import url(./inter.css);
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #3e82e5;
+  --ifm-color-primary-dark: #2471e2;
+  --ifm-color-primary-darker: #1d6ada;
+  --ifm-color-primary-darkest: #1857b4;
+  --ifm-color-primary-light: #5893e8;
+  --ifm-color-primary-lighter: #649bea;
+  --ifm-color-primary-lightest: #8bb4ef;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+html[data-theme='dark'] {
+  --ifm-color-primary: #3e82e5;
+  --ifm-color-primary-dark: #2471e2;
+  --ifm-color-primary-darker: #1d6ada;
+  --ifm-color-primary-darkest: #1857b4;
+  --ifm-color-primary-light: #5893e8;
+  --ifm-color-primary-lighter: #649bea;
+  --ifm-color-primary-lightest: #8bb4ef;
+  --ifm-background-color: #0C0D10; /* #0C0D10 #14151B */
+  --ifm-footer-background-color: #040405;
+  --ifm-navbar-background-color: #040405;
+  --ifm-card-background-color: #20212B;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
+
+  --ifm-table-head-background: #191A21;
+  --ifm-table-border-color: #20212B;
+  --ifm-table-background: #14151B;
+  --ifm-table-stripe-background: #101116;
+
+  --ifm-code-background: #20212b;
+  --ifm-navbar-search-input-background-color: #20212B;
+
+  --ifm-code-padding-vertical: 3px;
+  --ifm-code-padding-horizontal: 3px;
+  --ifm-heading-font-family: inter, system-ui, sans-serif;
+  --ifm-h1-font-size: 2rem;
+  --ifm-h2-font-size: 1.5rem;
+}
+
+.code-tabs {
+  background-color: #282A36;
+  border-radius: var(--ifm-code-border-radius) var(--ifm-code-border-radius) 0 0;
+}
+
+.code-tabs + .margin-top--md {
+  margin-top: 0 !important;
+}
+
+.code-tabs + .margin-top--md [class*="language-"] {
+  border-radius: 0 0 var(--ifm-code-border-radius) var(--ifm-code-border-radius);
+}
+
+
+
+html[data-theme='dark'] .footer {
+  --ifm-footer-background-color: #040405;
+}
+
+html[data-theme='dark'] .cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
+  border-color: transparent;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme='dark'] .cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover {
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+html[data-theme='dark'] [class*="language-"] {
+  --prism-background-color: #20212B;
+}
+
+.deprecated {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  color: #C13A3A;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: rgba(193, 58, 58, 0.1);
+  border-radius: 50px;
+  padding: 1px 8px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+h3 .deprecated {
+  font-size: 1rem;
+  padding: 2px 8px;
+  margin-left: 10px;
+}
+
+h3[id*="deprecated"] {
+  display: flex;
+  align-items: center;
+}
+
+/* .theme-admonition {
+  background-color: rgba(58, 113, 193, 0.1);
+  color: #5A88CE;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  --ifm-alert-foreground-color: #5A88CE;
+}
+
+.theme-admonition > :first-child > :last-child {
+  font-size: 14px;
+}
+
+.theme-admonition > :first-child {
+  font-size: 0;
+  margin: 0;
+} */
+
+.alert--secondary {
+  --ifm-alert-background-color: #20212B;
+}
+
+.alert--info {
+  --ifm-alert-background-color: rgba(58, 113, 193, 0.1);
+  --ifm-alert-foreground-color: #5A88CE;
+  --ifm-alert-border-color: #5A88CE;
+}
+
+.alert--warning {
+  --ifm-alert-background-color: rgba(251, 191, 36, 0.1);
+  --ifm-alert-foreground-color: #fbbf24;
+  --ifm-alert-border-color: #fbbf24;
+}
+
+.alert--success {
+  --ifm-alert-background-color: rgba(58, 193, 114, 0.1);
+  --ifm-alert-foreground-color: #3ac172;
+  --ifm-alert-border-color: #3ac172;
+}
+
+.alert--danger {
+  --ifm-alert-background-color: rgba(193, 58, 58, 0.1);
+  --ifm-alert-foreground-color: #c13a3a;
+  --ifm-alert-border-color: #c13a3a;
+}
+
+.tabs__item {
+  text-transform: capitalize;
+}
+
+
+[class*="docItemContainer"],
+[class*="generatedIndexPage"],
+[class*="tableOfContents"] {
+  background: #14151B;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+[class*="tableOfContents"] {
+  padding: 10px;
+}
+
+body {
+  font-family: inter, sans-serif;
+  word-break: break-word
+}
+
+
+
+
+.theme-doc-sidebar-item-category {
+  margin-bottom: 20px
+}
+
+.menu__link--sublist {
+  text-transform: uppercase;
+  color: #95989D;
+  opacity: .75;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  padding: 0 16px
+}
+
+.menu__list-item-collapsible--active {
+  background: rgba(58, 113, 193, .15);
+}
+
+.menu__list-item-collapsible--active .menu__link--sublist {
+  color: #3a71c1;
+}
+
+.theme-doc-sidebar-item-link > .menu__link {
+  display: block;
+  margin: 2px 4px;
+  padding: 10px 16px;
+  color: #bfc4c9;
+  font-weight: 500;
+  font-size: 13px;
+  border-radius: 3px;
+  user-select: none;
+  cursor: pointer;
+  transition: 250ms ease;
+  text-decoration: none;
+}
+
+.theme-doc-sidebar-item-link > .menu__link:hover {
+  color: #f1f1f1;
+}
+
+.theme-doc-sidebar-item-link > .menu__link.menu__link--active,
+.menu__list-item-collapsible--active {
+  background: rgba(58, 113, 193, .15);
+  color: #3a71c1;
+  cursor: default
+}
+
+.theme-doc-sidebar-container {
+  border-width: 0!important;
+}
+
+.markdown h1, .markdown h2 {
+  padding-bottom: 0.3em;
+  border-bottom: 1px solid #20212B;
+}
+
+
+.theme-doc-breadcrumbs {
+  margin-bottom: 1.8rem!important;
+}
+
+/* .markdown h1:first-child {
+  --ifm-h1-font-size: 2rem;
+}
+
+.markdown > h2 {
+  --ifm-h2-font-size: 1.5rem;
+} */
+
+
+[class*="docPage"] {
+  /* justify-content: center; */
+}
+
+.theme-doc-sidebar-container {
+  /* --doc-sidebar-width: 30%; */
+  display: flex!important;
+  justify-content: flex-end;
+}
+
+.theme-doc-sidebar-container > div {
+  width: 300px;
+}
+
+[class*="docMainContainer"] .container {
+  margin: 0;
+}
+
+[class*="docMainContainerEnhanced"] .container {
+  margin: 0 auto;
+}
+
+/* [class*="docMainContainer"] {
+  justify-content: flex-start;
+  flex-grow: initial!important;
+  width: auto!important;
+} */
+/* .pagination-nav__sublabel {
+  display: none;
+}
+.pagination-nav__link {
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 3px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: 150ms ease background, 150ms ease box-shadow, 150ms ease color, 150ms ease border;
+  cursor: pointer;
+  padding: 8px 12px;
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.05);
+  color: #BFC4C9;
+} */
+
+/* @media (min-width: 1440px) {
+  [class*="docMainContainer"] {
+    min-width: 1320px;
+  }
+} */
+
+/* .main-wrapper {
+  max-width: calc(var(--doc-sidebar-width) + var(--ifm-container-width));
+  margin: 0 auto;
+}
+
+@media (min-width:1440px) {
+  .main-wrapper {
+    max-width: calc(var(--doc-sidebar-width) + var(--ifm-container-width-xl));
+  }
+} */
+
+html[data-theme="dark"] {
+  --doc-sidebar-width: 30%;
+}

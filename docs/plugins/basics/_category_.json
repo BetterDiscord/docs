@@ -1,0 +1,10 @@
+{
+    "label": "Basics",
+    "position": 3,
+    "link": {
+      "type": "generated-index",
+      "slug": "/plugins/basics",
+      "description": "Basics to plugin development"
+    }
+  }
+  
