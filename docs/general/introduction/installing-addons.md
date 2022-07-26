@@ -11,4 +11,4 @@ sidebar_position: 3
 1. Drag and drop, or move, the plugin or theme you downloaded into this folder.
 1. Go back to your `Plugins` or `Themes` pages and enable your plugin or theme.
 
-![Addon Card](/docs/addon_card.png)
+![Addon Card](./img/addon_card.png)

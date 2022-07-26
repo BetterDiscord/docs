@@ -42,7 +42,7 @@ And while that works, it's not very practical or useful. And the location of the
 
 First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [devtools](../introduction/devtools) and select the guild list on the left.
 
-![Server List](/docs/servers.png)
+![Server List](./img/servers.png)
 
 If yours looks like the one above, you've got the right element. Now we need to come up with a selector for the element. You can try to use the built in method by right clicking the element, then going to `Copy > Copy Selector`. But that usually yields unwieldly selectors like `#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > nav > ul > div.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt > div:nth-child(3)` in this case.
 

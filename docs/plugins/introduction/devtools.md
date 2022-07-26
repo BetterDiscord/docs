@@ -12,7 +12,7 @@ If you have past web development experience you are probably already familiar wi
 
 Working in this Discord (and BetterDiscord) environment, we have access to these DevTools. Discord has this disabled by default, but it is possible to reenable this functionality in the BetterDiscord settings. Go to the BetterDiscord Settings page and find the Developer Settings. Then check the option for DevTools.
 
-![Developer Tools](/docs/developer_settings.png)
+![Developer Tools](./img/developer_settings.png)
 
 Once this is enabled, you can press `ctrl`+`shift`+`i` (or for a Mac `cmd`+`opt`+`i`) to open the DevTools just as you would in Chrome.
 
@@ -34,11 +34,11 @@ With this installed, head back to the Developer Settings in BetterDiscord (the s
 
 After restarting, you can press `ctrl`+`shift`+`i` (or for a Mac `cmd`+`opt`+`i`) to open the DevTools and then find that the React DevTools tabs, `Components` and `Profiler` have been added.
 
-![React DevTools](/docs/react_devtools.png)
+![React DevTools](./img/react_devtools.png)
 
 If you don't see them there, be sure to check the tab overflow to see if they got added at the end of the list.
 
-![Tab Overflow](/docs/devtools_tab_overflow.png)
+![Tab Overflow](./img/devtools_tab_overflow.png)
 
 
 <!-- ## Development Environment

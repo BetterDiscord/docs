@@ -12,6 +12,6 @@ If you have past web development experience you are probably already familiar wi
 
 Working in this Discord (and BetterDiscord) environment, we have access to these DevTools. Discord has this disabled by default, but it is possible to reenable this functionality in the BetterDiscord settings. Go to the BetterDiscord Settings page and find the Developer Settings. Then check the option for DevTools.
 
-![Developer Tools](/docs/developer_settings.png)
+![Developer Tools](./img/developer_settings.png)
 
 Once this is enabled, you can press `ctrl`+`shift`+`i` (or for a Mac `cmd`+`opt`+`i`) to open the DevTools just as you would in Chrome.

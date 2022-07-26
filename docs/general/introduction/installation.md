@@ -16,7 +16,7 @@ If you experience any issues following these steps, try the [troubleshooting](..
 2. Open the installer you downloaded in the previous step.
 3. Accept the license agreement, and click next to proceed.
 
-![BetterDiscord Installer](/docs/installer.png)
+![BetterDiscord Installer](./img/installer.png)
 
 4. Select `Install` then click the next button to proceed with installation.
 5. Select the version of Discord you want to use. If you're not sure what this means, just select `Stable`. Click the install button when ready.
@@ -25,7 +25,7 @@ If you experience any issues following these steps, try the [troubleshooting](..
   - Open (or switch to) Discord, and open Discord's settings.
   - Check the tabs on the left for a new section called `BetterDiscord` (see below)
 
-![BetterDiscord Settings Tabs](/docs/bd_settings_tabs.png)
+![BetterDiscord Settings Tabs](./img/bd_settings_tabs.png)
 
 8. Enjoy BetterDiscord!
 

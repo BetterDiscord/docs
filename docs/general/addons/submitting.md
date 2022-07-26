@@ -11,12 +11,12 @@ Submissions are handled through the [BetterDiscord website](https://betterdiscor
 1. Go to the BetterDiscord website.
 2. Select `Connect` at the top-right of the page.
 
-![Connect Button](/docs/connect.png)
+![Connect Button](./img/connect.png)
 
 3. Connect your Discord account.
 4. Go to either the `Plugins` or `Themes` page and select the button `+ Submit a XXXXX`.
 
-![Submit an Addon](/docs/submit.png)
+![Submit an Addon](./img/submit.png)
 
 3. Wait for your account to be authorized.
  - If you have no plugins or themes detected on GitHub you may be automatically declined.

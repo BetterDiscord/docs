@@ -17,7 +17,7 @@ If you need help beyond what these docs provide, please contact us in `#support`
 
 This is usualy an issue with Discord moving around its installation location on Windows. Sometimes the installer is unable to differentiate what to do. To fix it, select `Browse` in the installer, then enter `%localappdata%/discord/app-1.0.9005/resources` in the address bar at the top. If this has the same issue repeat this but using `%programdata%/%username%/Discord/app-1.0.9005/resources`
 
-![ProgramData](/docs/programdata.gif)
+![ProgramData](./img/programdata.gif)
 </details>
 
 <details>
@@ -54,7 +54,7 @@ Follow the [manual installation](../introduction/installation/#manual-installati
 
 Click the text next to the checkbox instead, they are connected.
 
-![Checkbox Workaround](/docs/agreement_text.png)
+![Checkbox Workaround](./img/agreement_text.png)
 </details>
 
 ## Specific Errors
