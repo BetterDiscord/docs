@@ -1,6 +1,6 @@
 import siteConfig from "@generated/docusaurus.config";
 export default function prismIncludeLanguages(PrismObject) {
-    const {themeConfig: {prism},} = siteConfig;
+    const {themeConfig: {prism}} = siteConfig;
     const {additionalLanguages} = prism;
     // Prism components work on the Prism instance on the window, while prism-
     // react-renderer uses its own Prism instance. We temporarily mount the
@@ -10,10 +10,10 @@ export default function prismIncludeLanguages(PrismObject) {
     // long as you don't re-assign it
     globalThis.Prism = PrismObject;
     additionalLanguages.forEach((lang) => {
-        // We need to add ourselves before jsx
-        if (lang === "jsx") require("./prism-betterdiscord");
         require(`prismjs/components/prism-${lang}`);
     });
+
+    require("./prism-betterdiscord");
 
     delete globalThis.Prism;
 }

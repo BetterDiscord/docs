@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: Quick submission guide.
 ---
 
 # Submitting Addons

@@ -1,5 +1,6 @@
 ---
 sidebar_position: 7
+description: Modifying existing parts of Discord.
 ---
 
 # Changing Discord

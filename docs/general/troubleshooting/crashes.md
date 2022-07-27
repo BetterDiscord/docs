@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: What to do when your Discord crashes.
 ---
 
 # Crashes

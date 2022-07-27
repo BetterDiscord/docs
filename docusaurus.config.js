@@ -2,27 +2,20 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/vsdark");
+const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "BetterDiscord",
   tagline: "Documentation, guidelines and tutorials.",
-  url: "https://bd.zerebos.com",
-  baseUrl: "/docs/",
+  url: "https://docs.betterdiscord.app",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "favicon/favicon-96x96.png",
-  staticDirectories: ["assets"],
+  organizationName: "betterdiscord",
+  projectName: "docs",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "betterdiscord", // Usually your GitHub org/user name.
-  projectName: "docs", // Usually your repo name.
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -151,6 +144,25 @@ const config = {
         darkTheme: darkCodeTheme,
         additionalLanguages: ["javadoclike", "jsdoc"]
       },
+      metadata: [
+        {property: "og:site_name", content: "BetterDiscord Docs"},
+        {property: "og:title", content: "BetterDiscord Documentation & Guides"},
+        {property: "og:description", content: "User and developer documentation for using and creating addons for BetterDiscord."},
+        {property: "og:image", content: "/branding/logo_solid.png"},
+        {property: "og:image:alt", content: "BetterDiscord Logo"},
+
+        {property: "twitter:card", content: "summary"},
+        {property: "twitter:site", content: "BetterDiscord Logo"},
+        {property: "twitter:title", content: "BetterDiscord Documentation & Guides"},
+        {property: "twitter:description", content: "User and developer documentation for using and creating addons for BetterDiscord."},
+        {property: "twitter:image", content: "/branding/logo_solid.png"},
+        {property: "twitter:image:alt", content: "BetterDiscord Logo"},
+
+        {name: "theme-color", content: "#3a71c1"},
+        {name: "description", content: "User and developer documentation for using and creating addons for BetterDiscord."},
+        {name: "keywords", content: "Discord, BetterDiscord, Better Discord, Discord Mod, Discord Themes, Discord Plugins, Discord Extensions, Discord Client Mod, Discord Hacks, Documentation, Docs, Guide, Tutorial"},
+        {name: "author", content: "BetterDiscord"},
+      ]
     }),
 };
 

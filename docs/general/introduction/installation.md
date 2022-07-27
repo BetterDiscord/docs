@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: Quick guide to getting BetterDiscord.
 ---
 
 # Installation

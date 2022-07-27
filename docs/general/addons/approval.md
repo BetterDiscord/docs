@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: Overview of the whole system.
 ---
 
 # Approval System

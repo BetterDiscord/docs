@@ -68,13 +68,14 @@ html[data-theme='dark'] .footer {
   --ifm-footer-background-color: #040405;
 }
 
-html[data-theme='dark'] .cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module {
+html[data-theme='dark'] [class*="cardContainer"] {
   border-color: transparent;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  transition: all var(--ifm-transition-fast) ease;
 }
 
-html[data-theme='dark'] .cardContainer_node_modules-\@docusaurus-theme-classic-lib-theme-DocCard-styles-module:hover {
-  border-color: var(--ifm-color-emphasis-200);
+html[data-theme='dark'] [class*="cardContainer"]:hover {
+  background-color: #282A36;
 }
 
 html[data-theme='dark'] [class*="language-"] {
@@ -279,12 +280,25 @@ body {
   flex-grow: initial!important;
   width: auto!important;
 } */
-/* .pagination-nav__sublabel {
+/* .pagination-nav {
+  display: flex;
+  justify-content: space-between;
+} */
+.pagination-nav__link--prev {
+  justify-self: flex-start;
+}
+.pagination-nav__link--next {
+  justify-self: flex-end;
+}
+.pagination-nav__sublabel {
   display: none;
 }
-.pagination-nav__link {
+.pagination-nav__label {
   font-size: 14px;
   font-weight: 500;
+  word-break: break-word;
+}
+.pagination-nav__link {
   border-radius: 3px;
   border: none;
   display: flex;
@@ -302,7 +316,7 @@ body {
   background-color: transparent;
   border: 2px solid rgba(255, 255, 255, 0.05);
   color: #BFC4C9;
-} */
+}
 
 /* @media (min-width: 1440px) {
   [class*="docMainContainer"] {

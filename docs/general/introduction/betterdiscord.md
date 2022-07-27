@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: A really good question.
 ---
 
 # What is BetterDiscord?

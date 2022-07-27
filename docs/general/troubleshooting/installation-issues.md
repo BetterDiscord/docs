@@ -1,5 +1,6 @@
 ---
 sidebar_position: 1
+description: What to do when you can't install.
 ---
 
 # Installation Issues

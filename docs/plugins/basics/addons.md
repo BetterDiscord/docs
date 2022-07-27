@@ -1,5 +1,6 @@
 ---
 sidebar_position: 6
+description: Work with other addons.
 ---
 
 # Addon Interaction

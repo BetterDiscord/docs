@@ -1,5 +1,6 @@
 ---
 sidebar_position: 2
+description: Learn the tools of the trade.
 ---
 
 # Developer Tools

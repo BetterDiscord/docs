@@ -1,4 +1,4 @@
-name: Build GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -7,25 +7,30 @@ on:
 
 jobs:
   build:
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-    - name: Use Node.js 16
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-        cache: 'npm'
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: npm
 
-    - name: Install
-      run: npm ci
+      - name: Install Dependencies
+        run: npm ci
 
-    - name: Build
-      run: npm run build
+      - name: Build Documentation
+        run: npm run build
 
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: dist
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          cname: docs.betterdiscord.app
+          commit_message: Deploying github pages @
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
