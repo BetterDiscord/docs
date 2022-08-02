@@ -13,14 +13,14 @@ ___
 
 ## Methods
 
-### isEnabled
-Determines if a particular adon is enabled.
+### disable
+Disables the given addon.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Plugin id or filename.
+idOrFile|string|Addon id or filename.
 
-**Returns:** `boolean`
+**Returns:** `void`
 ___
 
 ### enable
@@ -28,54 +28,54 @@ Enables the given addon.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Plugin id or filename.
-
-**Returns:** `void`
-___
-
-### disable
-Disables the given addon.
-
-| Parameter |  Type  |       Description      |
-|:----------|:------:|:----------------------:|
-idOrFile|string|Plugin id or filename.
-
-**Returns:** `void`
-___
-
-### toggle
-Toggles the given addon.
-
-| Parameter |  Type  |       Description      |
-|:----------|:------:|:----------------------:|
-idOrFile|string|Plugin id or filename.
-
-**Returns:** `void`
-___
-
-### reload
-Reloads the given addon.
-
-| Parameter |  Type  |       Description      |
-|:----------|:------:|:----------------------:|
-idOrFile|string|Plugin id or filename.
+idOrFile|string|Addon id or filename.
 
 **Returns:** `void`
 ___
 
 ### get
-Gets the given addon if it exists and returns the addon object.
+Gets a particular addon.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Plugin id or filename.
+idOrFile|string|Addon id or filename.
 
-**Returns:** `{object|undefined}`
+**Returns:** `object` - Addon instance
 ___
 
 ### getAll
 Gets all addons of this type.
 
 
-**Returns:** `Array<object>`
+**Returns:** `Array.<object>` - Array of all addon instances
+___
+
+### isEnabled
+Determines if a particular adon is enabled.
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+idOrFile|string|Addon id or filename.
+
+**Returns:** `boolean`
+___
+
+### reload
+Reloads if a particular addon is enabled.
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+idOrFile|string|Addon id or filename.
+
+**Returns:** `void`
+___
+
+### toggle
+Toggles if a particular addon is enabled.
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+idOrFile|string|Addon id or filename.
+
+**Returns:** `void`
 ___

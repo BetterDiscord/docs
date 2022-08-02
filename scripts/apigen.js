@@ -1,8 +1,14 @@
+const fs = require("fs");
+const path = require("path");
+
+const parseAST = require("./parseast");
+
 function getProps(properties) {
     const props = [];
     for (const prop of properties) {
+        const deprecation = prop.deprecated ? ` <span class="deprecated">Deprecated</span>` : "";
         let propString = "";
-        propString += `### ${prop.name}\n`;
+        propString += `### ${prop.name}${deprecation}\n`;
         propString += `${prop.description}\n\n`;
         propString += `**Type:** \`${prop.type}\`\n`;
         propString += "___\n";
@@ -48,16 +54,15 @@ function getMethods(methods) {
         methodString += `### ${method.name}${deprecation}\n`;
         methodString += `${method.description}\n\n`;
         methodString += method.parameters ? getParams(method) : "\n";
-        methodString += `**Returns:** \`${method.returns ?? "void"}\`\n`;
+        methodString += `**Returns:** \`${method?.returns?.type ?? "void"}\`${method?.returns?.description ? " - " + method?.returns?.description : ""}\n`;
         methodString += "___\n";
         funcs.push(methodString);
     }
     return funcs.join("\n");
 }
 
-const fs = require("fs");
-const path = require("path");
-const template = `# {{name}}
+
+const markdownTemplate = `# {{name}}
 
 {{description}}
 
@@ -69,17 +74,19 @@ const template = `# {{name}}
 
 {{methods}}`;
 
-function generateApiDoc(which) {
-    const data = require(`./data/${which}`);
-    const outFile = path.resolve(__dirname, "..", "docs", "plugins", "api", `${which}.md`);
+function generateApiDoc(which, memberName) {
+    const data = parseAST(which, memberName);
+    const outFile = path.resolve(__dirname, "..", "docs", "plugins", "api", `${which.toLowerCase()}.md`);
     
-    const finalMarkdown = template.replace("{{name}}", data.name)
+    const finalMarkdown = markdownTemplate.replace("{{name}}", data.name)
                                   .replace("{{description}}", data.description)
                                   .replace("{{properties}}", getProps(data.properties))
                                   .replace("{{methods}}", getMethods(data.methods));
     fs.writeFileSync(outFile, finalMarkdown);
 }
 
-generateApiDoc("bdapi");
-generateApiDoc("addonapi");
-generateApiDoc("patcher");
+generateApiDoc("BdApi");
+generateApiDoc("AddonAPI");
+generateApiDoc("Patcher", "BdApi.Patcher");
+generateApiDoc("Webpack", "BdApi.Webpack");
+generateApiDoc("Filters", "BdApi.Webpack.Filters");

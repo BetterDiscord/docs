@@ -4,20 +4,8 @@
 
 ## Properties
 
-### React
-The React module being used inside Discord.
-
-**Type:** `object`
-___
-
-### ReactDOM
-The ReactDOM module being used inside Discord.
-
-**Type:** `object`
-___
-
 ### Patcher
-An instance of [Patcher](./patcher) used to affect existing functions.
+[Patcher](./patcher) is a utility class for modifying existing functions.
 
 **Type:** `Patcher`
 ___
@@ -28,46 +16,58 @@ An instance of [AddonAPI](./addonapi) to access plugins.
 **Type:** `AddonAPI`
 ___
 
+### React
+The React module being used inside Discord.
+
+**Type:** `React`
+___
+
+### ReactDOM
+The ReactDOM module being used inside Discord.
+
+**Type:** `ReactDOM`
+___
+
 ### Themes
 An instance of [AddonAPI](./addonapi) to access themes.
 
 **Type:** `AddonAPI`
 ___
 
-### settings
-A reference object to get BD's settings.
+### Webpack
+[Webpack](./webpack) is a utility class for getting internal webpack modules.
 
-**Type:** `object`
+**Type:** `Webpack`
 ___
 
-### emotes
+### emotes <span class="deprecated">Deprecated</span>
 A reference object for BD's emotes.
 
 **Type:** `object`
 ___
 
-### screenWidth
-The total active width of the application.
+### settings <span class="deprecated">Deprecated</span>
+A reference object to get BD's settings.
 
-**Type:** `number`
+**Type:** `object`
 ___
 
-### screenHeight
-The total active height of the application.
+### version
+A reference string for BD's version.
 
-**Type:** `number`
+**Type:** `string`
 ___
 
 
 ## Methods
 
 ### alert
-Creates an shows an alert modal to the user.
+Shows a generic but very customizable modal.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-title|string|The title to show on the modal.
-content|string \| ReactElement \| Array&lt;string \| ReactElement&gt;|Content to show in the modal.
+title|string|title of the modal
+content|string\|ReactElement\|Array.&lt;(string\|ReactElement)&gt;|a string of text to display in the modal
 
 **Returns:** `void`
 ___
@@ -77,18 +77,18 @@ Removes a `<style>` from the document corresponding to the given ID.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-id|string|Style ID to be cleared
+id|string|ID uses for the style element
 
 **Returns:** `void`
 ___
 
 ### deleteData
-Deletes some saved data for plugin `pluginName` with key `key`.
+Deletes a piece of stored data, this is different than saving as null or undefined.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-pluginName|string|Which plugin this is being used for.
-key|string|Key for which data should be deleted.
+pluginName|string|Name of the plugin deleting data
+key|string|Which piece of data to delete
 
 **Returns:** `void`
 ___
@@ -98,9 +98,9 @@ Disables a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-collection|string|&#x2705;|settings|Collection ID
-category|string|&#x274C;|*none*|Category ID within the collection
-id|string|&#x274C;|*none*|Setting ID within the category
+collection|string|&#x2705;|"settings"|Collection ID
+category|string|&#x274C;|*none*|Category ID in the collection
+id|string|&#x274C;|*none*|Setting ID in the category
 
 **Returns:** `void`
 ___
@@ -110,88 +110,81 @@ Enable a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-collection|string|&#x2705;|settings|Collection ID
-category|string|&#x274C;|*none*|Category ID within the collection
-id|string|&#x274C;|*none*|Setting ID within the category
+collection|string|&#x2705;|"settings"|Collection ID
+category|string|&#x274C;|*none*|Category ID in the collection
+id|string|&#x274C;|*none*|Setting ID in the category
 
 **Returns:** `void`
 ___
 
-### findModule
-Searches for an internal Discord webpack module based on a filter. Returns the found module or `null` if none.
+### findAllModules <span class="deprecated">Deprecated</span>
+Finds multple webpack modules using a filter
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-filter|function|A function to use to filter modules.
+filter|function|A filter given the exports, module, and moduleId. Returns true if the module matches.
 
-**Returns:** `{any | null}`
+**Returns:** `Array` - Either an array of matching modules or an empty array
 ___
 
-### findAllModules
-Searches for an internal Discord webpack module based on a filter. Returns the found modules or `null` if none. This is the same as `findModule` but finds all matches.
+### findModule <span class="deprecated">Deprecated</span>
+Finds a webpack module using a filter
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-filter|function|A function to use to filter modules.
+filter|function|A filter given the exports, module, and moduleId. Returns true if the module matches.
 
-**Returns:** `{Array<any> | null}`
+**Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### findModuleByProps
-Searches for an internal Discord webpack module that has every property passed. Returns the found module or `null` if none.
+### findModuleByDisplayName <span class="deprecated">Deprecated</span>
+Finds a webpack module by displayName property
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-props|...string|A series of properties to check for.
+name|string|Desired displayName property
 
-**Returns:** `{any | null}`
+**Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### findModuleByPrototypes
-Searches for an internal Discord webpack module based that has every prototype passed. Returns the found module or `null` if none.
+### findModuleByProps <span class="deprecated">Deprecated</span>
+Finds a webpack module by own properties
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-protos|...string|A series of prototypes to check for.
+props|...string|Any desired properties
 
-**Returns:** `{any | null}`
+**Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### findModuleByDisplayName
-Searches for an internal Discord webpack module that has a specific name. Returns the found module or `null` if none.
+### findModuleByPrototypes <span class="deprecated">Deprecated</span>
+Finds a webpack module by own prototypes
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-name|string|The `displayName` to check for.
+protos|...string|Any desired prototype properties
 
-**Returns:** `{any | null}`
+**Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### getBDData
+### getBDData <span class="deprecated">Deprecated</span>
 Gets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-key|string|The key of data to get.
+key|string|Key of the data to load.
 
-**Returns:** `any`
-___
-
-### getData
-Alias for `loadData`
-
-
-**Returns:** `void`
+**Returns:** `any` - The stored data
 ___
 
 ### getInternalInstance
-Gets the internal react instance for a DOM node if it exists.
+Get the internal react data of a specified node
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-node|HTMLElement|DOM node containing desired react instance.
+node|HTMLElement|Node to get the react data from
 
-**Returns:** `object | undefined`
+**Returns:** `object` - Either the found data or `undefined`
 ___
 
 ### injectCSS
@@ -199,8 +192,8 @@ Adds a `<style>` to the document with the given ID.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-id|string|ID to be used
-css|string|Series of style rules to add
+id|string|ID to use for style element
+css|string|CSS to apply to the document
 
 **Returns:** `void`
 ___
@@ -210,53 +203,50 @@ Gets a specific setting's status from BD
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-collection|string|&#x2705;|settings|Collection ID
-category|string|&#x274C;|*none*|Category ID within the collection
-id|string|&#x274C;|*none*|Setting ID within the category
+collection|string|&#x2705;|"settings"|Collection ID
+category|string|&#x274C;|*none*|Category ID in the collection
+id|string|&#x274C;|*none*|Setting ID in the category
 
-**Returns:** `boolean`
+**Returns:** `boolean` - If the setting is enabled
 ___
 
 ### linkJS <span class="deprecated">Deprecated</span>
-Adds a `<script>` to the document with the given ID and src.
+Automatically creates and links a remote JS script.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-id|string|ID to be used
-url|string|URL of the javascript to link
+id|string|ID of the script element
+url|string|URL of the remote script
 
-**Returns:** `void`
+**Returns:** `Promise` - Resolves upon onload event
 ___
 
 ### loadData
-Gets some saved data for plugin `pluginName` with key `key`.
+Loads previously stored data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-pluginName|string|Which plugin this is being used for.
-key|string|Key for which data should be retrieved.
+pluginName|string|Name of the plugin loading data
+key|string|Which piece of data to load
 
-**Returns:** `any`
+**Returns:** `any` - The stored data
 ___
 
 ### monkeyPatch <span class="deprecated">Deprecated</span>
-This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.
- - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.
- - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
- 
+This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method. - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures. - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-module|object|&#x274C;|*none*|object to be patched. You can can also pass class prototypes to patch all class instances.
+what|object|&#x274C;|*none*|Object to be patched. You can can also pass class prototypes to patch all class instances.
 methodName|string|&#x274C;|*none*|Name of the function to be patched.
 options|object|&#x274C;|*none*|Options object to configure the patch.
-options.after|function|&#x2705;|void|Callback that will be called after original target method call. You can modify return value here, so it will be passed to external code which calls target method. Can be combined with `before`.
-options.before|function|&#x2705;|void|Callback that will be called before original target method call. You can modify arguments here, so it will be passed to original method. Can be combined with `after`.
-options.instead|function|&#x2705;|void|Callback that will be called instead of original target method call. You can get access to original method using `originalMethod` parameter if you want to call it, but you do not have to. Can't be combined with `before` or `after`.
+options.after|function|&#x2705;|*none*|Callback that will be called after original target method call. You can modify return value here, so it will be passed to external code which calls target method. Can be combined with `before`.
+options.before|function|&#x2705;|*none*|Callback that will be called before original target method call. You can modify arguments here, so it will be passed to original method. Can be combined with `after`.
+options.instead|function|&#x2705;|*none*|Callback that will be called instead of original target method call. You can get access to original method using `originalMethod` parameter if you want to call it, but you do not have to. Can't be combined with `before` or `after`.
 options.once|boolean|&#x2705;|false|Set to `true` if you want to automatically unpatch method after first call.
 options.silent|boolean|&#x2705;|false|Set to `true` if you want to suppress log messages about patching and unpatching.
 
-**Returns:** `function<cancel>`
+**Returns:** `function` - A function that cancels the monkey patch
 ___
 
 ### onRemoved
@@ -265,22 +255,22 @@ Adds a listener for when the node is removed from the document body.
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
 node|HTMLElement|Node to be observed
-callback|function|Function to run when the event fires
+callback|function|Function to run when fired
 
 **Returns:** `void`
 ___
 
 ### openDialog
-Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api. Returns a `Promise` that resolves to an `object` that has a boolean `cancelled` and a `filePath` string for saving and a `filePaths` string array for opening.
+Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
 options|object|&#x274C;|*none*|Options object to configure the dialog.
-options.mode|string&lt;open, save&gt;|&#x2705;|open|Determines whether the dialog should open or save files.
+options.mode|"open"\|"save"|&#x2705;|"open"|Determines whether the dialog should open or save files.
 options.defaultPath|string|&#x2705;|~|Path the dialog should show on launch.
-options.filters|Array&lt;object&lt;string, string[]&gt;&gt;|&#x2705;|[]|An array of [file filters](https://www.electronjs.org/docs/latest/api/structures/file-filter).
+options.filters|Array.&lt;object.&lt;string, Array.&lt;string&gt;&gt;&gt;|&#x2705;|[]|An array of [file filters](https://www.electronjs.org/docs/latest/api/structures/file-filter).
 options.title|string|&#x2705;|*none*|Title for the titlebar.
-options.message||&#x2705;|*none*|Message for the dialog.
+options.message|string|&#x2705;|*none*|Message for the dialog.
 options.showOverwriteConfirmation|boolean|&#x2705;|false|Whether the user should be prompted when overwriting a file.
 options.showHiddenFiles|boolean|&#x2705;|false|Whether hidden files should be shown in the dialog.
 options.promptToCreate|boolean|&#x2705;|false|Whether the user should be prompted to create non-existant folders.
@@ -289,37 +279,29 @@ options.openFile|boolean|&#x2705;|true|Whether the user should be able to select
 options.multiSelections|boolean|&#x2705;|false|Whether the user should be able to select multiple targets.
 options.modal|boolean|&#x2705;|false|Whether the dialog should act as a modal to the main window.
 
-**Returns:** `Promise<object>`
+**Returns:** `Promise.<object>` - Result of the dialog
 ___
 
 ### saveData
-Save some data for plugin `pluginName` under key `key`. Gets saved in the plugins folder under `pluginName.config.json`. Saved data can be accessed with `loadData`.
+Saves JSON-serializable data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-pluginName|string|Which plugin this is being used for.
-key|string|Key for which data should be retrieved.
-data|any|The data to store
+pluginName|string|Name of the plugin saving data
+key|string|Which piece of data to store
+data|any|The data to be saved
 
 **Returns:** `void`
 ___
 
-### setBDData
-Sets some data in BetterDiscord's misc data.
+### setBDData <span class="deprecated">Deprecated</span>
+Gets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-key|string|The key of data to get.
-data|any|The data to store
+key|string|Key of the data to load.
 
-**Returns:** `void`
-___
-
-### setData
-Alias for `loadData`
-
-
-**Returns:** `void`
+**Returns:** `any` - The stored data
 ___
 
 ### showConfirmationModal
@@ -327,42 +309,43 @@ Shows a generic but very customizable confirmation modal with optional confirm a
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-title|string|&#x274C;|*none*|Title to show in the modal header.
-content|string \| ReactElement \| Array&lt;string \| ReactElement&gt;|&#x274C;|*none*|Content to show in the modal body.
-options|object|&#x2705;|{}|Options object to configure the modal.
-options.danger|boolean|&#x274C;|false|Whether the main button should be red or not.
-options.confirmText|string|&#x2705;|Okay|Text for the confirmation/submit button.
-options.cancelText|string|&#x2705;|Cancel|Text for the cancel button.
-options.onConfirm|function|&#x2705;|void|Callback to occur when clicking the submit button.
-options.onCancel|function|&#x2705;|void|Callback to occur when clicking the cancel button.
+title|string|&#x274C;|*none*|title of the modal
+children|string\|ReactElement\|Array.&lt;(string\|ReactElement)&gt;|&#x274C;|*none*|a single or mixed array of react elements and strings. Everything is wrapped in Discord's `TextElement` component so strings will show and render properly.
+options|object|&#x2705;|*none*|options to modify the modal
+options.danger|boolean|&#x2705;|false|whether the main button should be red or not
+options.confirmText|string|&#x2705;|Okay|text for the confirmation/submit button
+options.cancelText|string|&#x2705;|Cancel|text for the cancel button
+options.onConfirm|callable|&#x2705;|NOOP|callback to occur when clicking the submit button
+options.onCancel|callable|&#x2705;|NOOP|callback to occur when clicking the cancel button
 
 **Returns:** `void`
 ___
 
 ### showNotice
-Shows a notice banner at the top of Discord.
+Show a notice above discord's chat layer.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-content|string \| Node|&#x274C;|*none*|Content to show in the banner.
-options|object|&#x2705;|{}|Options object to configure the notice.
-options.type|string|&#x2705;|info|Changes the type of the toast stylistically and semantically. Choices: "info", "success", "error", "warning".
-options.buttons|Array&lt;object&lt;string, function&gt;&gt;|&#x2705;|[]|An array of objects containing a `label` string and `onClick` handler for buttons.
-options.timeout|number|&#x2705;|10000|Timeout until the notice is closed. Won't fire if it's set to 0;.
+content|string\|Node|&#x274C;|*none*|Content of the notice
+options|object|&#x274C;|*none*|Options for the notice.
+options.type|string|&#x2705;|"info" | "error" | "warning" | "success"|Type for the notice. Will affect the color.
+options.buttons|Array.&lt;{label: string, onClick: function()}&gt;|&#x2705;|*none*|Buttons that should be added next to the notice text.
+options.timeout|number|&#x2705;|10000|Timeout until the notice is closed. Won't fire if it's set to 0;
 
-**Returns:** `void`
+**Returns:** `function`
 ___
 
 ### showToast
-Shows a simple toast message similar to on Android.
+This shows a toast similar to android towards the bottom of the screen.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-content|string|&#x274C;|*none*|Content to show inside the toast.
-options|object|&#x2705;|{}|Options object to configure the toast.
-options.type|string|&#x2705;|""|Changes the type of the toast stylistically and semantically. Choices: "", "info", "success", "danger"/"error", "warning"/"warn".
-options.icon|boolean|&#x2705;|true|Determines whether the icon should show corresponding to the type.
-options.timeout|number|&#x2705;|3000|Adjusts the time (in ms) the toast should be shown for before disappearing automatically.
+content|string|&#x274C;|*none*|The string to show in the toast.
+options|object|&#x274C;|*none*|Options object. Optional parameter.
+options.type|string|&#x2705;|""|Changes the type of the toast stylistically and semantically. Choices: "", "info", "success", "danger"/"error", "warning"/"warn". Default: ""
+options.icon|boolean|&#x2705;|true|Determines whether the icon should show corresponding to the type. A toast without type will always have no icon. Default: true
+options.timeout|number|&#x2705;|3000|Adjusts the time (in ms) the toast should be shown for before disappearing automatically. Default: 3000
+options.forceShow|boolean|&#x2705;|false|Whether to force showing the toast and ignore the bd setting
 
 **Returns:** `void`
 ___
@@ -372,9 +355,10 @@ Wraps a given function in a `try..catch` block.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-risky|function|Function to be wrapped
+method|function|Function to wrap
+message|string|Additional messasge to print when an error occurs
 
-**Returns:** `function`
+**Returns:** `function` - The new wrapped function
 ___
 
 ### testJSON <span class="deprecated">Deprecated</span>
@@ -382,9 +366,9 @@ Tests a given object to determine if it is valid JSON.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-data|object|Object to test
+data|object|Data to be tested
 
-**Returns:** `boolean`
+**Returns:** `boolean` - Result of the test
 ___
 
 ### toggleSetting <span class="deprecated">Deprecated</span>
@@ -392,19 +376,19 @@ Toggle a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-collection|string|&#x2705;|settings|Collection ID
-category|string|&#x274C;|*none*|Category ID within the collection
-id|string|&#x274C;|*none*|Setting ID within the category
+collection|string|&#x2705;|"settings"|Collection ID
+category|string|&#x274C;|*none*|Category ID in the collection
+id|string|&#x274C;|*none*|Setting ID in the category
 
 **Returns:** `void`
 ___
 
 ### unlinkJS <span class="deprecated">Deprecated</span>
-Removes a `<script>` to the document with the given ID.
+Removes a remotely linked JS script.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-id|string|ID to be used
+id|string|ID of the script element
 
 **Returns:** `void`
 ___

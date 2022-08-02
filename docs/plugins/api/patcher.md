@@ -1,6 +1,6 @@
 # Patcher
 
-`Patcher` is a utility class for modifying existing functions. Instances are accessible through the [BdApi](./bdapi). This is extremely useful for modifying the internals of Discord by adjusting return value or React renders, or arguments of internal functions.
+`Patcher` is a utility class for modifying existing functions. Instance is accessible through the [BdApi](./bdapi).This is extremely useful for modifying the internals of Discord by adjusting return value or React renders, or arguments of internal functions.
 
 ## Properties
 
@@ -8,61 +8,71 @@
 
 ## Methods
 
-### getPatchesByCaller
-Returns all patches by a particular caller. The patches all have an `unpatch()` method.
+### after
+This method patches onto another function, allowing your code to run instead.Using this, you are also able to modify the return value, using the return of your code instead.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-caller|string|ID of the caller that originally patched
+caller|string|Name of the caller of the patch function.
+moduleToPatch|object|Object with the function to be patched. Can also be an object's prototype.
+functionName|string|Name of the function to be patched.
+callback|function|Function to run after the original method. The function is given the `this` context, the `arguments` of the original function, and the `return` value of the original function.
 
-**Returns:** `Array<function>`
-___
-
-### getPatchesByCaller
-Returns all patches by a particular caller. The patches all have an `unpatch()` method.
-
-| Parameter |  Type  |       Description      |
-|:----------|:------:|:----------------------:|
-caller|string|ID of the caller that originally patched
-
-**Returns:** `Array<function>`
+**Returns:** `function` - Function that cancels the original patch.
 ___
 
 ### before
-This method patches onto another function, allowing your code to run beforehand. Using this, you are also able to modify the incoming arguments before the original method is run.
+This method patches onto another function, allowing your code to run beforehand.Using this, you are also able to modify the incoming arguments before the original method is run.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
 caller|string|Name of the caller of the patch function.
-module|object|Object with the function to be patched. Can also patch an object's prototype.
-method|string|Name of the method to be patchedd
+moduleToPatch|object|Object with the function to be patched. Can also be an object's prototype.
+functionName|string|Name of the function to be patched.
 callback|function|Function to run before the original method. The function is given the `this` context and the `arguments` of the original function.
 
-**Returns:** `void`
+**Returns:** `function` - Function that cancels the original patch.
+___
+
+### bind
+This function creates a version of itself that binds all `caller` parameters to your ID.
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+id|string|ID to use for all subsequent calls
+
+**Returns:** `Patcher` - An instance of this patcher with all functions bound to your ID
+___
+
+### getPatchesByCaller
+Returns all patches by a particular caller. The patches all have an `unpatch()` method.
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+caller|string|ID of the original patches
+
+**Returns:** `Array.<function()>` - Array of all the patch objects.
 ___
 
 ### instead
-This method patches onto another function, allowing your code to run instead. Using this, you are also able to modify the return value, using the return of your code instead.
+This method patches onto another function, allowing your code to run instead.Using this, you are also able to modify the return value, using the return of your code instead.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
 caller|string|Name of the caller of the patch function.
-module|object|Object with the function to be patched. Can also patch an object's prototype.
-method|string|Name of the method to be patchedd
-callback|function|Function to run instead of the original method. The function is given the `this` context, the `arguments` of the original function, and also the original function.
+moduleToPatch|object|Object with the function to be patched. Can also be an object's prototype.
+functionName|string|Name of the function to be patched.
+callback|function|Function to run before the original method. The function is given the `this` context, `arguments` of the original function, and also the original function.
 
-**Returns:** `void`
+**Returns:** `function` - Function that cancels the original patch.
 ___
 
-### after
-This method patches onto another function, allowing your code to run after. Using this, you are also able to modify the return value, using the return of your code instead.
+### unpatchAll
+Automatically cancels all patches created with a specific ID.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-caller|string|Name of the caller of the patch function.
-module|object|Object with the function to be patched. Can also patch an object's prototype.
-method|string|Name of the method to be patchedd
-callback|function|Function to run after the original method. The function is given the `this` context, the `arguments` of the original function, and the `return` value of the original function.
+caller|string|ID of the original patches
 
 **Returns:** `void`
 ___
