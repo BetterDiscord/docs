@@ -1,6 +1,7 @@
 # Patcher
 
-`Patcher` is a utility class for modifying existing functions. Instance is accessible through the [BdApi](./bdapi).This is extremely useful for modifying the internals of Discord by adjusting return value or React renders, or arguments of internal functions.
+`Patcher` is a utility class for modifying existing functions. Instance is accessible through the [BdApi](./bdapi).
+This is extremely useful for modifying the internals of Discord by adjusting return value or React renders, or arguments of internal functions.
 
 ## Properties
 
@@ -9,7 +10,8 @@
 ## Methods
 
 ### after
-This method patches onto another function, allowing your code to run instead.Using this, you are also able to modify the return value, using the return of your code instead.
+This method patches onto another function, allowing your code to run instead.
+Using this, you are also able to modify the return value, using the return of your code instead.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -22,7 +24,8 @@ callback|function|Function to run after the original method. The function is giv
 ___
 
 ### before
-This method patches onto another function, allowing your code to run beforehand.Using this, you are also able to modify the incoming arguments before the original method is run.
+This method patches onto another function, allowing your code to run beforehand.
+Using this, you are also able to modify the incoming arguments before the original method is run.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -32,16 +35,6 @@ functionName|string|Name of the function to be patched.
 callback|function|Function to run before the original method. The function is given the `this` context and the `arguments` of the original function.
 
 **Returns:** `function` - Function that cancels the original patch.
-___
-
-### bind
-This function creates a version of itself that binds all `caller` parameters to your ID.
-
-| Parameter |  Type  |       Description      |
-|:----------|:------:|:----------------------:|
-id|string|ID to use for all subsequent calls
-
-**Returns:** `Patcher` - An instance of this patcher with all functions bound to your ID
 ___
 
 ### getPatchesByCaller
@@ -55,7 +48,8 @@ caller|string|ID of the original patches
 ___
 
 ### instead
-This method patches onto another function, allowing your code to run instead.Using this, you are also able to modify the return value, using the return of your code instead.
+This method patches onto another function, allowing your code to run instead.
+Using this, you are also able to modify the return value, using the return of your code instead.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
