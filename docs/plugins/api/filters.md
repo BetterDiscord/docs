@@ -9,7 +9,7 @@ Series of [Filters](./filters) to be used for finding webpack modules.
 ## Methods
 
 ### byDisplayName
-Generates a function that filters by a set of properties.
+Generates a function that filters by the `displayName` property.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|

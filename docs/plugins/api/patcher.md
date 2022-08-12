@@ -10,8 +10,8 @@ This is extremely useful for modifying the internals of Discord by adjusting ret
 ## Methods
 
 ### after
-This method patches onto another function, allowing your code to run instead.
-Using this, you are also able to modify the return value, using the return of your code instead.
+This method patches onto another function, allowing your code to run afterwards.
+Using this, you are able to modify the return value after the original method is run.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -49,7 +49,7 @@ ___
 
 ### instead
 This method patches onto another function, allowing your code to run instead.
-Using this, you are also able to modify the return value, using the return of your code instead.
+Using this, you are able to replace the original completely. You can still call the original manually if needed.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|

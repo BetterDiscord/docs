@@ -233,7 +233,10 @@ key|string|Which piece of data to load
 ___
 
 ### monkeyPatch <span class="deprecated">Deprecated</span>
-This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method. - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures. - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
+This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.
+
+ - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.
+ - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -261,7 +264,8 @@ callback|function|Function to run when fired
 ___
 
 ### openDialog
-Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
+Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.
+Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -295,13 +299,14 @@ data|any|The data to be saved
 ___
 
 ### setBDData <span class="deprecated">Deprecated</span>
-Gets some data in BetterDiscord's misc data.
+Sets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-key|string|Key of the data to load.
+key|string|Key of the data to store
+data|any|The data to be saved
 
-**Returns:** `any` - The stored data
+**Returns:** `void`
 ___
 
 ### showConfirmationModal
