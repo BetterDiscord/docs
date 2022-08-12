@@ -106,7 +106,7 @@ id|string|&#x274C;|*none*|Setting ID in the category
 ___
 
 ### enableSetting <span class="deprecated">Deprecated</span>
-Enable a BetterDiscord setting by ids.
+Enables a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -118,37 +118,37 @@ id|string|&#x274C;|*none*|Setting ID in the category
 ___
 
 ### findAllModules <span class="deprecated">Deprecated</span>
-Finds multple webpack modules using a filter
+Finds multiple webpack modules using a filter.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-filter|function|A filter given the exports, module, and moduleId. Returns true if the module matches.
+filter|function|A filter given the exports, module, and moduleId. Returns `true` if the module matches.
 
 **Returns:** `Array` - Either an array of matching modules or an empty array
 ___
 
 ### findModule <span class="deprecated">Deprecated</span>
-Finds a webpack module using a filter
+Finds a webpack module using a filter.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-filter|function|A filter given the exports, module, and moduleId. Returns true if the module matches.
+filter|function|A filter given the exports, module, and moduleId. Returns `true` if the module matches.
 
 **Returns:** `any` - Either the matching module or `undefined`
 ___
 
 ### findModuleByDisplayName <span class="deprecated">Deprecated</span>
-Finds a webpack module by displayName property
+Finds a webpack module by its `displayName` property.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-name|string|Desired displayName property
+name|string|Desired `displayName` property
 
 **Returns:** `any` - Either the matching module or `undefined`
 ___
 
 ### findModuleByProps <span class="deprecated">Deprecated</span>
-Finds a webpack module by own properties
+Finds a webpack module by its own properties.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -158,7 +158,7 @@ props|...string|Any desired properties
 ___
 
 ### findModuleByPrototypes <span class="deprecated">Deprecated</span>
-Finds a webpack module by own prototypes
+Finds a webpack module by its own prototypes.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -172,13 +172,13 @@ Gets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-key|string|Key of the data to load.
+key|string|Key of the data to load
 
 **Returns:** `any` - The stored data
 ___
 
 ### getInternalInstance
-Get the internal react data of a specified node
+Gets the internal react data of a specified node.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -199,7 +199,7 @@ css|string|CSS to apply to the document
 ___
 
 ### isSettingEnabled <span class="deprecated">Deprecated</span>
-Gets a specific setting's status from BD
+Gets a specific setting's status from BD.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -233,7 +233,7 @@ key|string|Which piece of data to load
 ___
 
 ### monkeyPatch <span class="deprecated">Deprecated</span>
-This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.
+Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.
 
  - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.
  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
@@ -264,7 +264,7 @@ callback|function|Function to run when fired
 ___
 
 ### openDialog
-Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.
+Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) API.
 Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -327,7 +327,7 @@ options.onCancel|callable|&#x2705;|NOOP|callback to occur when clicking the canc
 ___
 
 ### showNotice
-Show a notice above discord's chat layer.
+Shows a notice above Discord's chat layer.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -341,7 +341,7 @@ options.timeout|number|&#x2705;|10000|Timeout until the notice is closed. Won't 
 ___
 
 ### showToast
-This shows a toast similar to android towards the bottom of the screen.
+Shows a toast similar to Android towards the bottom of the screen.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -377,7 +377,7 @@ data|object|Data to be tested
 ___
 
 ### toggleSetting <span class="deprecated">Deprecated</span>
-Toggle a BetterDiscord setting by ids.
+Toggles a BetterDiscord setting by ids.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
