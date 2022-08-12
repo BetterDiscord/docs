@@ -337,7 +337,7 @@ options.type|string|&#x2705;|"info" | "error" | "warning" | "success"|Type for t
 options.buttons|Array.&lt;{label: string, onClick: function()}&gt;|&#x2705;|*none*|Buttons that should be added next to the notice text.
 options.timeout|number|&#x2705;|10000|Timeout until the notice is closed. Won't fire if it's set to 0;
 
-**Returns:** `function` A function that closes the notice. Passing `true` as first parameters closes immediately without transitioning out.
+**Returns:** `function` A function that closes the notice. Passing `true` as first parameter closes immediately without transitioning out.
 ___
 
 ### showToast
