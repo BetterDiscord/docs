@@ -36,4 +36,4 @@ These are guidelines that all themes are expected to abide by. Any themes that v
 
 ## Design
 1. Themes should not be a basic recolor or background change. Themes should significantly alter the look and feel of Discord.
-1. Themes should have full coverage of most common pages, popouts, modals and controls. Keep in mind that changing discord's variables does not provide full coverage of the app.
+1. Themes should have full coverage of most common pages, popouts, modals and controls. Keep in mind that changing Discord's variables does not provide full coverage of the app.
