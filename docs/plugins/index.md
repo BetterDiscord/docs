@@ -28,7 +28,7 @@ Lastly the [Discord Internals](./discord) section is a reference that goes hand-
 
 The following resources will be handy for learning and reference:
 
-- Modern Javascript: The Modern JavaScript Tutorial - https://javascript.info/
+- Modern JavaScript: The Modern JavaScript Tutorial - https://javascript.info/
 - Chrome DevTools - https://developer.chrome.com/docs/devtools/
 - ReactJS: Official Tutorial - https://reactjs.org/tutorial/tutorial.html
 - React DevTools - https://react-devtools-tutorial.vercel.app/

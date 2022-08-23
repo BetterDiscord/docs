@@ -16,7 +16,7 @@ description: Overview of the whole system.
 
 ### Denial
 
-1. You'll get a notification that your submission was denied along with a reason mesage.
+1. You'll get a notification that your submission was denied along with a reason message.
 2. Check your GitHub for any issues opened by the review team.
 2. Make any necessary changes and resubmit.
 

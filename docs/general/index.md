@@ -13,4 +13,4 @@ The [Introduction](./introduction) section gives a lot of background information
 
 The [Troubleshooting](./troubleshooting) guide walks you through what to do when things go wrong.
 
-Lastly the [Addon System](./addons) section is a reference for developers (and curious users) on how the addon sytem work including submitting and updating.
+Lastly the [Addon System](./addons) section is a reference for developers (and curious users) on how the addon system work including submitting and updating.

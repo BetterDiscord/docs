@@ -16,7 +16,7 @@ If you need help beyond what these docs provide, please contact us in `#support`
 <details>
 <summary>Cannot select stable, or BetterDiscord not installed after installing</summary>
 
-This is usualy an issue with Discord moving around its installation location on Windows. Sometimes the installer is unable to differentiate what to do. To fix it, select `Browse` in the installer, then enter `%localappdata%/discord/app-1.0.9005/resources` in the address bar at the top. If this has the same issue repeat this but using `%programdata%/%username%/Discord/app-1.0.9005/resources`
+This is usually an issue with Discord moving around its installation location on Windows. Sometimes the installer is unable to differentiate what to do. To fix it, select `Browse` in the installer, then enter `%localappdata%/discord/app-1.0.9005/resources` in the address bar at the top. If this has the same issue repeat this but using `%programdata%/%username%/Discord/app-1.0.9005/resources`
 
 ![ProgramData](./img/programdata.gif)
 </details>
@@ -24,7 +24,7 @@ This is usualy an issue with Discord moving around its installation location on 
 <details>
 <summary>Installer won't open</summary>
 
-If you are on Linux try rnning with the `--no-sandbox`
+If you are on Linux try running with the `--no-sandbox`
 
 If the installer does not seem to open, follow these steps:
 1. Download and install [7-Zip](https://www.7-zip.org/)

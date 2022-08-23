@@ -46,7 +46,7 @@ And a fully filled out meta using all the fields would look something like this:
 
  |Field|Required|Description|
  |-----|:------:|-----------|
- |name|&#x2705;|The name of the theme. Typcially does not contain spaces, but is allowed.|
+ |name|&#x2705;|The name of the theme. Typically does not contain spaces, but is allowed.|
  |author|&#x2705;|The name of you the developer.|
  |description|&#x2705;|A basic description of the what the theme does.|
  |version|&#x2705;|Version representing the current update level. [Semantic versioning](https://semver.org/) recommended.|
