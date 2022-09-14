@@ -9,7 +9,7 @@ const config = {
   title: "BetterDiscord",
   tagline: "Documentation, guidelines and tutorials.",
   url: "https://docs.betterdiscord.app",
-  baseUrl: "/docs/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "favicon/favicon-96x96.png",

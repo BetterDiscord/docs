@@ -31,7 +31,7 @@ Finds a module using a filter function.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-filter|function|&#x274C;|*none*|A function to use to filter modules. It is given exports, module, and moduleID. Return true to signify match.
+filter|function|&#x274C;|*none*|A function to use to filter modules. It is given exports, module, and moduleID. Return `true` to signify match.
 options|object|&#x2705;|*none*|Whether to return only the first matching module
 options.first|Boolean|&#x2705;|true|Whether to return only the first matching module
 options.defaultExport|Boolean|&#x2705;|true|Whether to return default export when matching the default export
@@ -40,11 +40,11 @@ options.defaultExport|Boolean|&#x2705;|true|Whether to return default export whe
 ___
 
 ### waitForModule
-Finds a module that lazily loaded.
+Finds a module that is lazily loaded.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-filter|function|&#x274C;|*none*|A function to use to filter modules. It is given exports. Return true to signify match.
+filter|function|&#x274C;|*none*|A function to use to filter modules. It is given exports. Return `true` to signify match.
 options|object|&#x2705;|*none*|Whether to return only the first matching module
 options.signal|AbortSignal|&#x2705;|*none*|AbortSignal of an AbortController to cancel the promise
 options.defaultExport|Boolean|&#x2705;|true|Whether to return default export when matching the default export

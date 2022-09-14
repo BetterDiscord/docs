@@ -662,11 +662,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * This shows a toast similar to android towards the bottom of the screen.\r\n *\r\n * @param {string} content The string to show in the toast.\r\n * @param {object} options Options object. Optional parameter.\r\n * @param {string} [options.type=\"\"] Changes the type of the toast stylistically and semantically. Choices: \"\", \"info\", \"success\", \"danger\"/\"error\", \"warning\"/\"warn\". Default: \"\"\r\n * @param {boolean} [options.icon=true] Determines whether the icon should show corresponding to the type. A toast without type will always have no icon. Default: true\r\n * @param {number} [options.timeout=3000] Adjusts the time (in ms) the toast should be shown for before disappearing automatically. Default: 3000\r\n * @param {boolean} [options.forceShow=false] Whether to force showing the toast and ignore the bd setting\r\n */",
+        "comment": "/**\r\n * Shows a toast similar to android towards the bottom of the screen.\r\n *\r\n * @param {string} content The string to show in the toast.\r\n * @param {object} options Options object. Optional parameter.\r\n * @param {string} [options.type=\"\"] Changes the type of the toast stylistically and semantically. Choices: \"\", \"info\", \"success\", \"danger\"/\"error\", \"warning\"/\"warn\". Default: \"\"\r\n * @param {boolean} [options.icon=true] Determines whether the icon should show corresponding to the type. A toast without type will always have no icon. Default: `true`\r\n * @param {number} [options.timeout=3000] Adjusts the time (in ms) the toast should be shown for before disappearing automatically. Default: `3000`\r\n * @param {boolean} [options.forceShow=false] Whether to force showing the toast and ignore the bd setting\r\n */",
         "meta": {
             "range": [
-                5421,
-                5511
+                5420,
+                5510
             ],
             "filename": "pluginapi.js",
             "lineno": 147,
@@ -682,7 +682,7 @@
                 ]
             }
         },
-        "description": "This shows a toast similar to android towards the bottom of the screen.",
+        "description": "Shows a toast similar to android towards the bottom of the screen.",
         "params": [
             {
                 "type": {
@@ -721,7 +721,7 @@
                 },
                 "optional": true,
                 "defaultvalue": true,
-                "description": "Determines whether the icon should show corresponding to the type. A toast without type will always have no icon. Default: true",
+                "description": "Determines whether the icon should show corresponding to the type. A toast without type will always have no icon. Default: `true`",
                 "name": "options.icon"
             },
             {
@@ -732,7 +732,7 @@
                 },
                 "optional": true,
                 "defaultvalue": 3000,
-                "description": "Adjusts the time (in ms) the toast should be shown for before disappearing automatically. Default: 3000",
+                "description": "Adjusts the time (in ms) the toast should be shown for before disappearing automatically. Default: `3000`",
                 "name": "options.timeout"
             },
             {
@@ -754,11 +754,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Show a notice above discord's chat layer.\r\n * \r\n * @param {string|Node} content Content of the notice\r\n * @param {object} options Options for the notice.\r\n * @param {string} [options.type=\"info\" | \"error\" | \"warning\" | \"success\"] Type for the notice. Will affect the color.\r\n * @param {Array<{label: string, onClick: function}>} [options.buttons] Buttons that should be added next to the notice text.\r\n * @param {number} [options.timeout=10000] Timeout until the notice is closed. Won't fire if it's set to 0;\r\n * @returns {function}\r\n */",
+        "comment": "/**\r\n * Shows a notice above Discord's chat layer.\r\n * \r\n * @param {string|Node} content Content of the notice\r\n * @param {object} options Options for the notice.\r\n * @param {string} [options.type=\"info\" | \"error\" | \"warning\" | \"success\"] Type for the notice. Will affect the color.\r\n * @param {Array<{label: string, onClick: function}>} [options.buttons] Buttons that should be added next to the notice text.\r\n * @param {number} [options.timeout=10000] Timeout until the notice is closed. Won't fire if it's set to 0;\r\n * @returns {function} A callback for closing the notice. Passing `true` as first parameter closes immediately without transitioning out.\r\n */",
         "meta": {
             "range": [
-                6065,
-                6165
+                6180,
+                6280
             ],
             "filename": "pluginapi.js",
             "lineno": 161,
@@ -774,7 +774,7 @@
                 ]
             }
         },
-        "description": "Show a notice above discord's chat layer.",
+        "description": "Shows a notice above Discord's chat layer.",
         "params": [
             {
                 "type": {
@@ -834,7 +834,8 @@
                     "names": [
                         "function"
                     ]
-                }
+                },
+                "description": "A callback for closing the notice. Passing `true` as first parameter closes immediately without transitioning out."
             }
         ],
         "name": "showNotice",
@@ -844,11 +845,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Finds a webpack module using a filter\r\n * \r\n * @deprecated\r\n * @param {function} filter A filter given the exports, module, and moduleId. Returns true if the module matches.\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
+        "comment": "/**\r\n * Finds a webpack module using a filter.\r\n * \r\n * @deprecated\r\n * @param {function} filter A filter given the exports, module, and moduleId. Returns `true` if the module matches.\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
         "meta": {
             "range": [
-                6419,
-                6505
+                6537,
+                6623
             ],
             "filename": "pluginapi.js",
             "lineno": 172,
@@ -863,7 +864,7 @@
                 ]
             }
         },
-        "description": "Finds a webpack module using a filter",
+        "description": "Finds a webpack module using a filter.",
         "deprecated": true,
         "params": [
             {
@@ -872,7 +873,7 @@
                         "function"
                     ]
                 },
-                "description": "A filter given the exports, module, and moduleId. Returns true if the module matches.",
+                "description": "A filter given the exports, module, and moduleId. Returns `true` if the module matches.",
                 "name": "filter"
             }
         ],
@@ -893,11 +894,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Finds multple webpack modules using a filter\r\n * \r\n * @deprecated\r\n * @param {function} filter A filter given the exports, module, and moduleId. Returns true if the module matches.\r\n * @returns {Array} Either an array of matching modules or an empty array\r\n */",
+        "comment": "/**\r\n * Finds multiple webpack modules using a filter.\r\n * \r\n * @deprecated\r\n * @param {function} filter A filter given the exports, module, and moduleId. Returns `true` if the module matches.\r\n * @returns {Array} Either an array of matching modules or an empty array\r\n */",
         "meta": {
             "range": [
-                6780,
-                6886
+                6902,
+                7008
             ],
             "filename": "pluginapi.js",
             "lineno": 183,
@@ -912,7 +913,7 @@
                 ]
             }
         },
-        "description": "Finds multple webpack modules using a filter",
+        "description": "Finds multiple webpack modules using a filter.",
         "deprecated": true,
         "params": [
             {
@@ -921,7 +922,7 @@
                         "function"
                     ]
                 },
-                "description": "A filter given the exports, module, and moduleId. Returns true if the module matches.",
+                "description": "A filter given the exports, module, and moduleId. Returns `true` if the module matches.",
                 "name": "filter"
             }
         ],
@@ -945,8 +946,8 @@
         "comment": "",
         "meta": {
             "range": [
-                6868,
-                6880
+                6990,
+                7002
             ],
             "filename": "pluginapi.js",
             "lineno": 184,
@@ -966,11 +967,11 @@
         "scope": "global"
     },
     {
-        "comment": "/**\r\n * Finds a webpack module by own properties\r\n * \r\n * @deprecated\r\n * @param {...string} props Any desired properties\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
+        "comment": "/**\r\n * Finds a webpack module by own properties.\r\n * \r\n * @deprecated\r\n * @param {...string} props Any desired properties\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
         "meta": {
             "range": [
-                7080,
-                7178
+                7203,
+                7301
             ],
             "filename": "pluginapi.js",
             "lineno": 194,
@@ -985,7 +986,7 @@
                 ]
             }
         },
-        "description": "Finds a webpack module by own properties",
+        "description": "Finds a webpack module by own properties.",
         "deprecated": true,
         "params": [
             {
@@ -1016,11 +1017,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Finds a webpack module by own prototypes\r\n * \r\n * @deprecated\r\n * @param {...string} protos Any desired prototype properties\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
+        "comment": "/**\r\n * Finds a webpack module by own prototypes.\r\n * \r\n * @deprecated\r\n * @param {...string} protos Any desired prototype properties\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
         "meta": {
             "range": [
-                7385,
-                7495
+                7509,
+                7619
             ],
             "filename": "pluginapi.js",
             "lineno": 206,
@@ -1035,7 +1036,7 @@
                 ]
             }
         },
-        "description": "Finds a webpack module by own prototypes",
+        "description": "Finds a webpack module by own prototypes.",
         "deprecated": true,
         "params": [
             {
@@ -1066,11 +1067,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Finds a webpack module by displayName property\r\n * \r\n * @deprecated\r\n * @param {string} name Desired displayName property\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
+        "comment": "/**\r\n * Finds a webpack module by `displayName` property.\r\n * \r\n * @deprecated\r\n * @param {string} name Desired `displayName` property\r\n * @returns {any} Either the matching module or `undefined`\r\n */",
         "meta": {
             "range": [
-                7697,
-                7799
+                7826,
+                7928
             ],
             "filename": "pluginapi.js",
             "lineno": 217,
@@ -1085,7 +1086,7 @@
                 ]
             }
         },
-        "description": "Finds a webpack module by displayName property",
+        "description": "Finds a webpack module by `displayName` property.",
         "deprecated": true,
         "params": [
             {
@@ -1094,7 +1095,7 @@
                         "string"
                     ]
                 },
-                "description": "Desired displayName property",
+                "description": "Desired `displayName` property",
                 "name": "name"
             }
         ],
@@ -1115,11 +1116,11 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Get the internal react data of a specified node\r\n * \r\n * @param {HTMLElement} node Node to get the react data from\r\n * @returns {object|undefined} Either the found data or `undefined` \r\n */",
+        "comment": "/**\r\n * Gets the internal react data of a specified node.\r\n * \r\n * @param {HTMLElement} node Node to get the react data from\r\n * @returns {object|undefined} Either the found data or `undefined` \r\n */",
         "meta": {
             "range": [
-                8003,
-                8096
+                8134,
+                8227
             ],
             "filename": "pluginapi.js",
             "lineno": 227,
@@ -1134,7 +1135,7 @@
                 ]
             }
         },
-        "description": "Get the internal react data of a specified node",
+        "description": "Gets the internal react data of a specified node.",
         "params": [
             {
                 "type": {
@@ -1167,8 +1168,8 @@
         "comment": "/**\r\n * Loads previously stored data.\r\n * \r\n * @param {string} pluginName Name of the plugin loading data\r\n * @param {string} key Which piece of data to load\r\n * @returns {any} The stored data\r\n */",
         "meta": {
             "range": [
-                8300,
-                8401
+                8431,
+                8532
             ],
             "filename": "pluginapi.js",
             "lineno": 238,
@@ -1225,8 +1226,8 @@
         "comment": "/** @alias loadData */",
         "meta": {
             "range": [
-                8430,
-                8460
+                8561,
+                8591
             ],
             "filename": "pluginapi.js",
             "lineno": 243,
@@ -1247,14 +1248,14 @@
         "scope": "global"
     },
     {
-        "comment": "/**\r\n * Saves JSON-serializable data.\r\n * \r\n * @param {string} pluginName Name of the plugin saving data\r\n * @param {string} key Which piece of data to store\r\n * @param {any} data The data to be saved\r\n * @returns \r\n */",
+        "comment": "/**\r\n * Saves JSON-serializable data.\r\n * \r\n * @param {string} pluginName Name of the plugin saving data\r\n * @param {string} key Which piece of data to store\r\n * @param {any} data The data to be saved\r\n */",
         "meta": {
             "range": [
-                8686,
-                8799
+                8803,
+                8916
             ],
             "filename": "pluginapi.js",
-            "lineno": 253,
+            "lineno": 252,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1298,9 +1299,6 @@
                 "name": "data"
             }
         ],
-        "returns": [
-            null
-        ],
         "name": "saveData",
         "longname": "BdApi.saveData",
         "kind": "function",
@@ -1311,11 +1309,11 @@
         "comment": "/** @alias saveData */",
         "meta": {
             "range": [
-                8828,
-                8858
+                8945,
+                8975
             ],
             "filename": "pluginapi.js",
-            "lineno": 258,
+            "lineno": 257,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1336,11 +1334,11 @@
         "comment": "/**\r\n * Deletes a piece of stored data, this is different than saving as null or undefined.\r\n * \r\n * @param {string} pluginName Name of the plugin deleting data\r\n * @param {string} key Which piece of data to delete\r\n */",
         "meta": {
             "range": [
-                9084,
-                9183
+                9201,
+                9300
             ],
             "filename": "pluginapi.js",
-            "lineno": 266,
+            "lineno": 265,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1381,14 +1379,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.\r\n * \r\n *  - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.\r\n *  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.\r\n * \r\n * @deprecated\r\n * @param {object} what Object to be patched. You can can also pass class prototypes to patch all class instances.\r\n * @param {string} methodName Name of the function to be patched.\r\n * @param {object} options Options object to configure the patch.\r\n * @param {function} [options.after] Callback that will be called after original target method call. You can modify return value here, so it will be passed to external code which calls target method. Can be combined with `before`.\r\n * @param {function} [options.before] Callback that will be called before original target method call. You can modify arguments here, so it will be passed to original method. Can be combined with `after`.\r\n * @param {function} [options.instead] Callback that will be called instead of original target method call. You can get access to original method using `originalMethod` parameter if you want to call it, but you do not have to. Can't be combined with `before` or `after`.\r\n * @param {boolean} [options.once=false] Set to `true` if you want to automatically unpatch method after first call.\r\n * @param {boolean} [options.silent=false] Set to `true` if you want to suppress log messages about patching and unpatching.\r\n * @returns {function} A function that cancels the monkey patch\r\n */",
+        "comment": "/**\r\n * Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.\r\n * \r\n *  - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.\r\n *  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.\r\n * \r\n * @deprecated\r\n * @param {object} what Object to be patched. You can can also pass class prototypes to patch all class instances.\r\n * @param {string} methodName Name of the function to be patched.\r\n * @param {object} options Options object to configure the patch.\r\n * @param {function} [options.after] Callback that will be called after original target method call. You can modify return value here, so it will be passed to external code which calls target method. Can be combined with `before`.\r\n * @param {function} [options.before] Callback that will be called before original target method call. You can modify arguments here, so it will be passed to original method. Can be combined with `after`.\r\n * @param {function} [options.instead] Callback that will be called instead of original target method call. You can get access to original method using `originalMethod` parameter if you want to call it, but you do not have to. Can't be combined with `before` or `after`.\r\n * @param {boolean} [options.once=false] Set to `true` if you want to automatically unpatch method after first call.\r\n * @param {boolean} [options.silent=false] Set to `true` if you want to suppress log messages about patching and unpatching.\r\n * @returns {function} A function that cancels the monkey patch\r\n */",
         "meta": {
             "range": [
-                11218,
-                12350
+                11321,
+                12453
             ],
             "filename": "pluginapi.js",
-            "lineno": 287,
+            "lineno": 286,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1410,7 +1408,7 @@
                 "data.cancelPatch": "BdApi.monkeyPatch~data.cancelPatch"
             }
         },
-        "description": "This function monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.\r\r - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.\r - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.",
+        "description": "Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.\r\r - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.\r - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.",
         "deprecated": true,
         "params": [
             {
@@ -1513,11 +1511,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11288,
-                11294
+                11391,
+                11397
             ],
             "filename": "pluginapi.js",
-            "lineno": 288,
+            "lineno": 287,
             "columnno": 11,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1537,11 +1535,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11296,
-                11301
+                11399,
+                11404
             ],
             "filename": "pluginapi.js",
-            "lineno": 288,
+            "lineno": 287,
             "columnno": 19,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1561,11 +1559,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11303,
-                11310
+                11406,
+                11413
             ],
             "filename": "pluginapi.js",
-            "lineno": 288,
+            "lineno": 287,
             "columnno": 26,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1585,11 +1583,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11312,
-                11324
+                11415,
+                11427
             ],
             "filename": "pluginapi.js",
-            "lineno": 288,
+            "lineno": 287,
             "columnno": 35,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1609,11 +1607,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11326,
-                11344
+                11429,
+                11447
             ],
             "filename": "pluginapi.js",
-            "lineno": 288,
+            "lineno": 287,
             "columnno": 49,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1633,11 +1631,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11368,
-                11442
+                11471,
+                11545
             ],
             "filename": "pluginapi.js",
-            "lineno": 289,
+            "lineno": 288,
             "columnno": 10,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1659,11 +1657,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11551,
-                11584
+                11654,
+                11687
             ],
             "filename": "pluginapi.js",
-            "lineno": 291,
+            "lineno": 290,
             "columnno": 10,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1685,11 +1683,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11597,
-                11753
+                11700,
+                11856
             ],
             "filename": "pluginapi.js",
-            "lineno": 292,
+            "lineno": 291,
             "columnno": 10,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1711,11 +1709,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11615,
-                11645
+                11718,
+                11748
             ],
             "filename": "pluginapi.js",
-            "lineno": 293,
+            "lineno": 292,
             "columnno": 8,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1736,11 +1734,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11656,
-                11746
+                11759,
+                11849
             ],
             "filename": "pluginapi.js",
-            "lineno": 294,
+            "lineno": 293,
             "columnno": 8,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1760,11 +1758,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11760,
-                12316
+                11863,
+                12419
             ],
             "filename": "pluginapi.js",
-            "lineno": 296,
+            "lineno": 295,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1787,11 +1785,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11872,
-                11900
+                11975,
+                12003
             ],
             "filename": "pluginapi.js",
-            "lineno": 297,
+            "lineno": 296,
             "columnno": 8,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1814,11 +1812,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11911,
-                11938
+                12014,
+                12041
             ],
             "filename": "pluginapi.js",
-            "lineno": 298,
+            "lineno": 297,
             "columnno": 8,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1841,11 +1839,11 @@
         "comment": "",
         "meta": {
             "range": [
-                11949,
-                11979
+                12052,
+                12082
             ],
             "filename": "pluginapi.js",
-            "lineno": 299,
+            "lineno": 298,
             "columnno": 8,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1868,11 +1866,11 @@
         "comment": "",
         "meta": {
             "range": [
-                12015,
-                12076
+                12118,
+                12179
             ],
             "filename": "pluginapi.js",
-            "lineno": 301,
+            "lineno": 300,
             "columnno": 18,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1894,11 +1892,11 @@
         "comment": "/**\r\n * Adds a listener for when the node is removed from the document body.\r\n * \r\n * @param {HTMLElement} node Node to be observed\r\n * @param {function} callback Function to run when fired\r\n */",
         "meta": {
             "range": [
-                12551,
-                12640
+                12654,
+                12743
             ],
             "filename": "pluginapi.js",
-            "lineno": 318,
+            "lineno": 317,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -1942,11 +1940,11 @@
         "comment": "/**\r\n * Wraps a given function in a `try..catch` block.\r\n * \r\n * @deprecated\r\n * @param {function} method Function to wrap\r\n * @param {string} message Additional messasge to print when an error occurs\r\n * @returns {function} The new wrapped function\r\n */",
         "meta": {
             "range": [
-                12901,
-                13009
+                13004,
+                13112
             ],
             "filename": "pluginapi.js",
-            "lineno": 330,
+            "lineno": 329,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2001,11 +1999,11 @@
         "comment": "/**\r\n * Tests a given object to determine if it is valid JSON.\r\n * \r\n * @deprecated\r\n * @param {object} data Data to be tested\r\n * @returns {boolean} Result of the test\r\n */",
         "meta": {
             "range": [
-                13189,
-                13263
+                13292,
+                13366
             ],
             "filename": "pluginapi.js",
-            "lineno": 341,
+            "lineno": 340,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2047,14 +2045,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Gets a specific setting's status from BD\r\n * \r\n * @deprecated\r\n * @param {string} [collection=\"settings\"] Collection ID\r\n * @param {string} category Category ID in the collection\r\n * @param {string} id Setting ID in the category\r\n * @returns {boolean} If the setting is enabled\r\n */",
+        "comment": "/**\r\n * Gets a specific setting's status from BD.\r\n * \r\n * @deprecated\r\n * @param {string} [collection=\"settings\"] Collection ID\r\n * @param {string} category Category ID in the collection\r\n * @param {string} id Setting ID in the category\r\n * @returns {boolean} If the setting is enabled\r\n */",
         "meta": {
             "range": [
-                13560,
-                13676
+                13664,
+                13780
             ],
             "filename": "pluginapi.js",
-            "lineno": 354,
+            "lineno": 353,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2068,7 +2066,7 @@
                 ]
             }
         },
-        "description": "Gets a specific setting's status from BD",
+        "description": "Gets a specific setting's status from BD.",
         "deprecated": true,
         "params": [
             {
@@ -2118,14 +2116,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Enable a BetterDiscord setting by ids.\r\n * \r\n * @deprecated\r\n * @param {string} [collection=\"settings\"] Collection ID\r\n * @param {string} category Category ID in the collection\r\n * @param {string} id Setting ID in the category\r\n */",
+        "comment": "/**\r\n * Enables a BetterDiscord setting by ids.\r\n * \r\n * @deprecated\r\n * @param {string} [collection=\"settings\"] Collection ID\r\n * @param {string} category Category ID in the collection\r\n * @param {string} id Setting ID in the category\r\n */",
         "meta": {
             "range": [
-                13922,
-                14041
+                14027,
+                14146
             ],
             "filename": "pluginapi.js",
-            "lineno": 366,
+            "lineno": 365,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2139,7 +2137,7 @@
                 ]
             }
         },
-        "description": "Enable a BetterDiscord setting by ids.",
+        "description": "Enables a BetterDiscord setting by ids.",
         "deprecated": true,
         "params": [
             {
@@ -2182,11 +2180,11 @@
         "comment": "/**\r\n * Disables a BetterDiscord setting by ids.\r\n * \r\n * @deprecated\r\n * @param {string} [collection=\"settings\"] Collection ID\r\n * @param {string} category Category ID in the collection\r\n * @param {string} id Setting ID in the category\r\n */",
         "meta": {
             "range": [
-                14289,
-                14410
+                14394,
+                14515
             ],
             "filename": "pluginapi.js",
-            "lineno": 378,
+            "lineno": 377,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2240,14 +2238,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Toggle a BetterDiscord setting by ids.\r\n * \r\n * @deprecated\r\n * @param {string} [collection=\"settings\"] Collection ID\r\n * @param {string} category Category ID in the collection\r\n * @param {string} id Setting ID in the category\r\n */",
+        "comment": "/**\r\n * Toggles a BetterDiscord setting by ids.\r\n * \r\n * @deprecated\r\n * @param {string} [collection=\"settings\"] Collection ID\r\n * @param {string} category Category ID in the collection\r\n * @param {string} id Setting ID in the category\r\n */",
         "meta": {
             "range": [
-                14656,
-                14810
+                14762,
+                14916
             ],
             "filename": "pluginapi.js",
-            "lineno": 390,
+            "lineno": 389,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2261,7 +2259,7 @@
                 ]
             }
         },
-        "description": "Toggle a BetterDiscord setting by ids.",
+        "description": "Toggles a BetterDiscord setting by ids.",
         "deprecated": true,
         "params": [
             {
@@ -2301,14 +2299,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Gets some data in BetterDiscord's misc data.\r\n * \r\n * @deprecated\r\n * @param {string} key Key of the data to load.\r\n * @returns {any} The stored data\r\n */",
+        "comment": "/**\r\n * Gets some data in BetterDiscord's misc data.\r\n * \r\n * @deprecated\r\n * @param {string} key Key of the data to load\r\n * @returns {any} The stored data\r\n */",
         "meta": {
             "range": [
-                14979,
-                15053
+                15084,
+                15158
             ],
             "filename": "pluginapi.js",
-            "lineno": 401,
+            "lineno": 400,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2329,7 +2327,7 @@
                         "string"
                     ]
                 },
-                "description": "Key of the data to load.",
+                "description": "Key of the data to load",
                 "name": "key"
             }
         ],
@@ -2350,14 +2348,14 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n * Gets some data in BetterDiscord's misc data.\r\n * \r\n * @deprecated\r\n * @param {string} key Key of the data to load.\r\n * @returns {any} The stored data\r\n */",
+        "comment": "/**\r\n * Sets some data in BetterDiscord's misc data.\r\n * \r\n * @deprecated\r\n * @param {string} key Key of the data to store\r\n * @returns {any} The stored data\r\n */",
         "meta": {
             "range": [
-                15222,
-                15308
+                15327,
+                15413
             ],
             "filename": "pluginapi.js",
-            "lineno": 412,
+            "lineno": 411,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2370,7 +2368,7 @@
                 ]
             }
         },
-        "description": "Gets some data in BetterDiscord's misc data.",
+        "description": "Sets some data in BetterDiscord's misc data.",
         "deprecated": true,
         "params": [
             {
@@ -2379,7 +2377,7 @@
                         "string"
                     ]
                 },
-                "description": "Key of the data to load.",
+                "description": "Key of the data to store",
                 "name": "key"
             }
         ],
@@ -2403,11 +2401,11 @@
         "comment": "/**\r\n * Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.\r\n * Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.\r\n * \r\n * @param {object} options Options object to configure the dialog.\r\n * @param {\"open\"|\"save\"} [options.mode=\"open\"] Determines whether the dialog should open or save files.\r\n * @param {string} [options.defaultPath=~] Path the dialog should show on launch.\r\n * @param {Array<object<string, string[]>>} [options.filters=[]] An array of [file filters](https://www.electronjs.org/docs/latest/api/structures/file-filter).\r\n * @param {string} [options.title] Title for the titlebar.\r\n * @param {string} [options.message] Message for the dialog.\r\n * @param {boolean} [options.showOverwriteConfirmation=false] Whether the user should be prompted when overwriting a file.\r\n * @param {boolean} [options.showHiddenFiles=false] Whether hidden files should be shown in the dialog.\r\n * @param {boolean} [options.promptToCreate=false] Whether the user should be prompted to create non-existant folders.\r\n * @param {boolean} [options.openDirectory=false] Whether the user should be able to select a directory as a target.\r\n * @param {boolean} [options.openFile=true] Whether the user should be able to select a file as a target.\r\n * @param {boolean} [options.multiSelections=false] Whether the user should be able to select multiple targets.\r\n * @param {boolean} [options.modal=false] Whether the dialog should act as a modal to the main window.\r\n * @returns {Promise<object>} Result of the dialog\r\n */",
         "meta": {
             "range": [
-                16973,
-                17140
+                17078,
+                17245
             ],
             "filename": "pluginapi.js",
-            "lineno": 435,
+            "lineno": 434,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2585,11 +2583,11 @@
         "comment": "",
         "meta": {
             "range": [
-                17030,
-                17066
+                17135,
+                17171
             ],
             "filename": "pluginapi.js",
-            "lineno": 436,
+            "lineno": 435,
             "columnno": 10,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2611,11 +2609,11 @@
         "comment": "/**\r\n * `AddonAPI` is a utility class for working with plugins and themes. Instances are accessible through the {@link BdApi}.\r\n */",
         "meta": {
             "range": [
-                17278,
-                18875
+                17383,
+                19007
             ],
             "filename": "pluginapi.js",
-            "lineno": 445,
+            "lineno": 444,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2638,15 +2636,40 @@
         "comment": "",
         "meta": {
             "range": [
-                17300,
-                17346
+                17405,
+                17414
             ],
             "filename": "pluginapi.js",
-            "lineno": 446,
+            "lineno": 445,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
                 "id": "astnode100000806",
+                "name": "manager",
+                "type": "ClassPrivateProperty"
+            }
+        },
+        "undocumented": true,
+        "name": "manager",
+        "longname": "AddonAPI#manager",
+        "kind": "member",
+        "memberof": "AddonAPI",
+        "scope": "instance",
+        "access": "private"
+    },
+    {
+        "comment": "",
+        "meta": {
+            "range": [
+                17422,
+                17469
+            ],
+            "filename": "pluginapi.js",
+            "lineno": 447,
+            "columnno": 4,
+            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
+            "code": {
+                "id": "astnode100000807",
                 "name": "AddonAPI",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2668,11 +2691,11 @@
         "comment": "/**\r\n * `AddonAPI` is a utility class for working with plugins and themes. Instances are accessible through the {@link BdApi}.\r\n */",
         "meta": {
             "range": [
-                17278,
-                18875
+                17383,
+                19007
             ],
             "filename": "pluginapi.js",
-            "lineno": 445,
+            "lineno": 444,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
@@ -2694,41 +2717,41 @@
         "comment": "",
         "meta": {
             "range": [
-                17322,
-                17344
+                17444,
+                17467
             ],
             "filename": "pluginapi.js",
-            "lineno": 446,
+            "lineno": 447,
             "columnno": 26,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000812",
-                "name": "this.manager",
+                "id": "astnode100000813",
+                "name": "this.",
                 "type": "Identifier",
                 "value": "manager",
                 "paramnames": []
             }
         },
         "undocumented": true,
-        "name": "manager",
-        "longname": "AddonAPI#manager",
+        "name": "AddonAPI",
+        "longname": "AddonAPI.AddonAPI",
         "kind": "member",
         "memberof": "AddonAPI",
-        "scope": "instance"
+        "scope": "static"
     },
     {
         "comment": "/**\r\n     * The path to the addon folder.\r\n     * @type string\r\n     */",
         "meta": {
             "range": [
-                17431,
-                17478
+                17554,
+                17602
             ],
             "filename": "pluginapi.js",
-            "lineno": 452,
+            "lineno": 453,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000817",
+                "id": "astnode100000819",
                 "name": "AddonAPI#folder",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -2754,15 +2777,15 @@
         "comment": "/**\r\n     * Determines if a particular adon is enabled.\r\n     * @param {string} idOrFile Addon id or filename.\r\n     * @returns {boolean}\r\n     */",
         "meta": {
             "range": [
-                17638,
-                17700
+                17762,
+                17825
             ],
             "filename": "pluginapi.js",
-            "lineno": 459,
+            "lineno": 460,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000827",
+                "id": "astnode100000830",
                 "name": "AddonAPI#isEnabled",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2804,15 +2827,15 @@
         "comment": "/**\r\n     * Enables the given addon.\r\n     * @param {string} idOrFile Addon id or filename.\r\n     */",
         "meta": {
             "range": [
-                17814,
-                17877
+                17939,
+                18003
             ],
             "filename": "pluginapi.js",
-            "lineno": 465,
+            "lineno": 466,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000840",
+                "id": "astnode100000844",
                 "name": "AddonAPI#enable",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2845,15 +2868,15 @@
         "comment": "/**\r\n     * Disables the given addon.\r\n     * @param {string} idOrFile Addon id or filename.\r\n     */",
         "meta": {
             "range": [
-                17992,
-                18057
+                18118,
+                18184
             ],
             "filename": "pluginapi.js",
-            "lineno": 471,
+            "lineno": 472,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000853",
+                "id": "astnode100000858",
                 "name": "AddonAPI#disable",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2886,15 +2909,15 @@
         "comment": "/**\r\n     * Toggles if a particular addon is enabled.\r\n     * @param {string} idOrFile Addon id or filename.\r\n     */",
         "meta": {
             "range": [
-                18188,
-                18251
+                18315,
+                18379
             ],
             "filename": "pluginapi.js",
-            "lineno": 477,
+            "lineno": 478,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000866",
+                "id": "astnode100000872",
                 "name": "AddonAPI#toggle",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2927,15 +2950,15 @@
         "comment": "/**\r\n     * Reloads if a particular addon is enabled.\r\n     * @param {string} idOrFile Addon id or filename.\r\n     */",
         "meta": {
             "range": [
-                18382,
-                18457
+                18510,
+                18586
             ],
             "filename": "pluginapi.js",
-            "lineno": 483,
+            "lineno": 484,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000879",
+                "id": "astnode100000886",
                 "name": "AddonAPI#reload",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -2968,15 +2991,15 @@
         "comment": "/**\r\n     * Gets a particular addon.\r\n     * @param {string} idOrFile Addon id or filename.\r\n     * @returns {object} Addon instance\r\n     */",
         "meta": {
             "range": [
-                18612,
-                18667
+                18741,
+                18797
             ],
             "filename": "pluginapi.js",
-            "lineno": 490,
+            "lineno": 491,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000892",
+                "id": "astnode100000900",
                 "name": "AddonAPI#get",
                 "type": "MethodDefinition",
                 "paramnames": [
@@ -3019,15 +3042,15 @@
         "comment": "/**\r\n     * Gets all addons of this type.\r\n     * @returns {Array<object>} Array of all addon instances\r\n     */",
         "meta": {
             "range": [
-                18793,
-                18872
+                18923,
+                19004
             ],
             "filename": "pluginapi.js",
-            "lineno": 496,
+            "lineno": 497,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000905",
+                "id": "astnode100000914",
                 "name": "AddonAPI#getAll",
                 "type": "MethodDefinition",
                 "paramnames": []
@@ -3058,15 +3081,15 @@
         "comment": "/**\r\n * An instance of {@link AddonAPI} to access plugins.\r\n * @type AddonAPI\r\n */",
         "meta": {
             "range": [
-                18963,
-                19006
+                19095,
+                19138
             ],
             "filename": "pluginapi.js",
-            "lineno": 503,
+            "lineno": 504,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000930",
+                "id": "astnode100000941",
                 "name": "BdApi.Plugins",
                 "type": "NewExpression",
                 "value": "",
@@ -3089,15 +3112,15 @@
         "comment": "/**\r\n * An instance of {@link AddonAPI} to access themes.\r\n * @type AddonAPI\r\n */",
         "meta": {
             "range": [
-                19094,
-                19135
+                19226,
+                19267
             ],
             "filename": "pluginapi.js",
-            "lineno": 509,
+            "lineno": 510,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000938",
+                "id": "astnode100000949",
                 "name": "BdApi.Themes",
                 "type": "NewExpression",
                 "value": "",
@@ -3120,18 +3143,18 @@
         "comment": "/**\r\n * `Patcher` is a utility class for modifying existing functions. Instance is accessible through the {@link BdApi}.\r\n * This is extremely useful for modifying the internals of Discord by adjusting return value or React renders, or arguments of internal functions.\r\n * @type Patcher\r\n * @summary {@link Patcher} is a utility class for modifying existing functions.\r\n */",
         "meta": {
             "range": [
-                19517,
-                23862
+                19649,
+                23241
             ],
             "filename": "pluginapi.js",
-            "lineno": 518,
+            "lineno": 519,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100000946",
+                "id": "astnode100000957",
                 "name": "BdApi.Patcher",
                 "type": "ObjectExpression",
-                "value": "{\"bind\":\"\",\"before\":\"\",\"instead\":\"\",\"after\":\"\",\"getPatchesByCaller\":\"\",\"unpatchAll\":\"\"}",
+                "value": "{\"before\":\"\",\"instead\":\"\",\"after\":\"\",\"getPatchesByCaller\":\"\",\"unpatchAll\":\"\"}",
                 "paramnames": []
             }
         },
@@ -3149,212 +3172,23 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n     * This function creates a version of itself that binds all `caller` parameters to your ID.\r\n     * @param {string} id ID to use for all subsequent calls\r\n     * @returns {Patcher} An instance of this patcher with all functions bound to your ID\r\n     */",
+        "comment": "/**\r\n     * This method patches onto another function, allowing your code to run beforehand.\r\n     * Using this, you are able to modify the incoming arguments before the original method is run.\r\n     * @param {string} caller Name of the caller of the patch function.\r\n     * @param {object} moduleToPatch Object with the function to be patched. Can also be an object's prototype.\r\n     * @param {string} functionName Name of the function to be patched.\r\n     * @param {function} callback Function to run before the original method. The function is given the `this` context and the `arguments` of the original function.\r\n     * @returns {function} Function that cancels the original patch.\r\n     */",
         "meta": {
             "range": [
-                19808,
-                20287
-            ],
-            "filename": "pluginapi.js",
-            "lineno": 524,
-            "columnno": 4,
-            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
-            "code": {
-                "id": "astnode100000951",
-                "name": "bind",
-                "type": "FunctionExpression"
-            }
-        },
-        "description": "This function creates a version of itself that binds all `caller` parameters to your ID.",
-        "params": [
-            {
-                "type": {
-                    "names": [
-                        "string"
-                    ]
-                },
-                "description": "ID to use for all subsequent calls",
-                "name": "id"
-            }
-        ],
-        "returns": [
-            {
-                "type": {
-                    "names": [
-                        "Patcher"
-                    ]
-                },
-                "description": "An instance of this patcher with all functions bound to your ID"
-            }
-        ],
-        "name": "bind",
-        "longname": "BdApi.Patcher.bind",
-        "kind": "function",
-        "memberof": "BdApi.Patcher",
-        "scope": "static"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                19850,
-                19900
-            ],
-            "filename": "pluginapi.js",
-            "lineno": 526,
-            "columnno": 12,
-            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
-            "code": {
-                "id": "astnode100000957",
-                "name": "patch",
-                "type": "CallExpression",
-                "value": ""
-            }
-        },
-        "undocumented": true,
-        "name": "patch",
-        "longname": "patch",
-        "kind": "member",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                19915,
-                19967
-            ],
-            "filename": "pluginapi.js",
-            "lineno": 527,
-            "columnno": 12,
-            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
-            "code": {
-                "id": "astnode100000970",
-                "name": "before",
-                "type": "CallExpression",
-                "value": ""
-            }
-        },
-        "undocumented": true,
-        "name": "before",
-        "longname": "before",
-        "kind": "member",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                19982,
-                20036
-            ],
-            "filename": "pluginapi.js",
-            "lineno": 528,
-            "columnno": 12,
-            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
-            "code": {
-                "id": "astnode100000983",
-                "name": "instead",
-                "type": "CallExpression",
-                "value": ""
-            }
-        },
-        "undocumented": true,
-        "name": "instead",
-        "longname": "instead",
-        "kind": "member",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                20051,
-                20101
+                20375,
+                20542
             ],
             "filename": "pluginapi.js",
             "lineno": 529,
-            "columnno": 12,
-            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
-            "code": {
-                "id": "astnode100000996",
-                "name": "after",
-                "type": "CallExpression",
-                "value": ""
-            }
-        },
-        "undocumented": true,
-        "name": "after",
-        "longname": "after",
-        "kind": "member",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                20116,
-                20192
-            ],
-            "filename": "pluginapi.js",
-            "lineno": 530,
-            "columnno": 12,
-            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
-            "code": {
-                "id": "astnode100001009",
-                "name": "getPatchesByCaller",
-                "type": "CallExpression",
-                "value": ""
-            }
-        },
-        "undocumented": true,
-        "name": "getPatchesByCaller",
-        "longname": "getPatchesByCaller",
-        "kind": "member",
-        "scope": "global"
-    },
-    {
-        "comment": "",
-        "meta": {
-            "range": [
-                20207,
-                20267
-            ],
-            "filename": "pluginapi.js",
-            "lineno": 531,
-            "columnno": 12,
-            "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
-            "code": {
-                "id": "astnode100001022",
-                "name": "unpatchAll",
-                "type": "CallExpression",
-                "value": ""
-            }
-        },
-        "undocumented": true,
-        "name": "unpatchAll",
-        "longname": "unpatchAll",
-        "kind": "member",
-        "scope": "global"
-    },
-    {
-        "comment": "/**\r\n     * This method patches onto another function, allowing your code to run beforehand.\r\n     * Using this, you are also able to modify the incoming arguments before the original method is run.\r\n     * @param {string} caller Name of the caller of the patch function.\r\n     * @param {object} moduleToPatch Object with the function to be patched. Can also be an object's prototype.\r\n     * @param {string} functionName Name of the function to be patched.\r\n     * @param {function} callback Function to run before the original method. The function is given the `this` context and the `arguments` of the original function.\r\n     * @returns {function} Function that cancels the original patch.\r\n     */",
-        "meta": {
-            "range": [
-                21004,
-                21171
-            ],
-            "filename": "pluginapi.js",
-            "lineno": 544,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001035",
+                "id": "astnode100000962",
                 "name": "before",
                 "type": "FunctionExpression"
             }
         },
-        "description": "This method patches onto another function, allowing your code to run beforehand.\rUsing this, you are also able to modify the incoming arguments before the original method is run.",
+        "description": "This method patches onto another function, allowing your code to run beforehand.\rUsing this, you are able to modify the incoming arguments before the original method is run.",
         "params": [
             {
                 "type": {
@@ -3413,15 +3247,15 @@
         "comment": "",
         "meta": {
             "range": [
-                21147,
-                21161
+                20518,
+                20532
             ],
             "filename": "pluginapi.js",
-            "lineno": 545,
+            "lineno": 530,
             "columnno": 86,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001052",
+                "id": "astnode100000979",
                 "name": "type",
                 "type": "Literal",
                 "value": "before"
@@ -3434,23 +3268,23 @@
         "scope": "global"
     },
     {
-        "comment": "/**\r\n     * This method patches onto another function, allowing your code to run instead.\r\n     * Using this, you are also able to modify the return value, using the return of your code instead.\r\n     * @param {string} caller Name of the caller of the patch function.\r\n     * @param {object} moduleToPatch Object with the function to be patched. Can also be an object's prototype.\r\n     * @param {string} functionName Name of the function to be patched.\r\n     * @param {function} callback Function to run before the original method. The function is given the `this` context, `arguments` of the original function, and also the original function.\r\n     * @returns {function} Function that cancels the original patch.\r\n     */",
+        "comment": "/**\r\n     * This method patches onto another function, allowing your code to run instead.\r\n     * Using this, you are able to replace the original completely. You can still call the original manually if needed.\r\n     * @param {string} caller Name of the caller of the patch function.\r\n     * @param {object} moduleToPatch Object with the function to be patched. Can also be an object's prototype.\r\n     * @param {string} functionName Name of the function to be patched.\r\n     * @param {function} callback Function to run before the original method. The function is given the `this` context, `arguments` of the original function, and also the original function.\r\n     * @returns {function} Function that cancels the original patch.\r\n     */",
         "meta": {
             "range": [
-                21909,
-                22078
+                21296,
+                21465
             ],
             "filename": "pluginapi.js",
-            "lineno": 557,
+            "lineno": 542,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001054",
+                "id": "astnode100000981",
                 "name": "instead",
                 "type": "FunctionExpression"
             }
         },
-        "description": "This method patches onto another function, allowing your code to run instead.\rUsing this, you are also able to modify the return value, using the return of your code instead.",
+        "description": "This method patches onto another function, allowing your code to run instead.\rUsing this, you are able to replace the original completely. You can still call the original manually if needed.",
         "params": [
             {
                 "type": {
@@ -3509,15 +3343,15 @@
         "comment": "",
         "meta": {
             "range": [
-                22053,
-                22068
+                21440,
+                21455
             ],
             "filename": "pluginapi.js",
-            "lineno": 558,
+            "lineno": 543,
             "columnno": 86,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001071",
+                "id": "astnode100000998",
                 "name": "type",
                 "type": "Literal",
                 "value": "instead"
@@ -3530,23 +3364,23 @@
         "scope": "global"
     },
     {
-        "comment": "/**\r\n     * This method patches onto another function, allowing your code to run instead.\r\n     * Using this, you are also able to modify the return value, using the return of your code instead.\r\n     * @param {string} caller Name of the caller of the patch function.\r\n     * @param {object} moduleToPatch Object with the function to be patched. Can also be an object's prototype.\r\n     * @param {string} functionName Name of the function to be patched.\r\n     * @param {function} callback Function to run after the original method. The function is given the `this` context, the `arguments` of the original function, and the `return` value of the original function.\r\n     * @returns {function} Function that cancels the original patch.\r\n     */",
+        "comment": "/**\r\n     * This method patches onto another function, allowing your code to run afterwards.\r\n     * Using this, you are able to modify the return value after the original method is run.\r\n     * @param {string} caller Name of the caller of the patch function.\r\n     * @param {object} moduleToPatch Object with the function to be patched. Can also be an object's prototype.\r\n     * @param {string} functionName Name of the function to be patched.\r\n     * @param {function} callback Function to run after the original method. The function is given the `this` context, the `arguments` of the original function, and the `return` value of the original function.\r\n     * @returns {function} Function that cancels the original patch.\r\n     */",
         "meta": {
             "range": [
-                22836,
-                23001
+                22215,
+                22380
             ],
             "filename": "pluginapi.js",
-            "lineno": 570,
+            "lineno": 555,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001073",
+                "id": "astnode100001000",
                 "name": "after",
                 "type": "FunctionExpression"
             }
         },
-        "description": "This method patches onto another function, allowing your code to run instead.\rUsing this, you are also able to modify the return value, using the return of your code instead.",
+        "description": "This method patches onto another function, allowing your code to run afterwards.\rUsing this, you are able to modify the return value after the original method is run.",
         "params": [
             {
                 "type": {
@@ -3605,15 +3439,15 @@
         "comment": "",
         "meta": {
             "range": [
-                22978,
-                22991
+                22357,
+                22370
             ],
             "filename": "pluginapi.js",
-            "lineno": 571,
+            "lineno": 556,
             "columnno": 86,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001090",
+                "id": "astnode100001017",
                 "name": "type",
                 "type": "Literal",
                 "value": "after"
@@ -3629,15 +3463,15 @@
         "comment": "/**\r\n     * Returns all patches by a particular caller. The patches all have an `unpatch()` method.\r\n     * @param {string} caller ID of the original patches\r\n     * @returns {Array<function>} Array of all the patch objects.\r\n     */",
         "meta": {
             "range": [
-                23249,
-                23492
+                22628,
+                22871
             ],
             "filename": "pluginapi.js",
-            "lineno": 579,
+            "lineno": 564,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001092",
+                "id": "astnode100001019",
                 "name": "getPatchesByCaller",
                 "type": "FunctionExpression"
             }
@@ -3674,15 +3508,15 @@
         "comment": "/**\r\n     * Automatically cancels all patches created with a specific ID.\r\n     * @param {string} caller ID of the original patches\r\n     */",
         "meta": {
             "range": [
-                23647,
-                23859
+                23026,
+                23238
             ],
             "filename": "pluginapi.js",
-            "lineno": 588,
+            "lineno": 573,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001114",
+                "id": "astnode100001041",
                 "name": "unpatchAll",
                 "type": "FunctionExpression"
             }
@@ -3709,15 +3543,15 @@
         "comment": "/**\r\n * `Webpack` is a utility class for getting internal webpack modules. Instance is accessible through the {@link BdApi}.\r\n * This is extremely useful for interacting with the internals of Discord.\r\n * @type Webpack\r\n * @summary {@link Webpack} is a utility class for getting internal webpack modules.\r\n */",
         "meta": {
             "range": [
-                24178,
-                28929
+                23557,
+                28324
             ],
             "filename": "pluginapi.js",
-            "lineno": 600,
+            "lineno": 585,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001137",
+                "id": "astnode100001064",
                 "name": "BdApi.Webpack",
                 "type": "ObjectExpression",
                 "value": "{\"Filters\":\"\",\"getModule\":\"\",\"getBulk\":\"\",\"waitForModule\":\"\"}",
@@ -3741,15 +3575,15 @@
         "comment": "/**\r\n     * Series of {@link Filters} to be used for finding webpack modules.\r\n     * @type Filters\r\n     */",
         "meta": {
             "range": [
-                24317,
-                26218
+                23696,
+                25606
             ],
             "filename": "pluginapi.js",
-            "lineno": 606,
+            "lineno": 591,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001142",
+                "id": "astnode100001069",
                 "name": "Filters",
                 "type": "ObjectExpression",
                 "value": "{\"byProps\":\"\",\"byPrototypeFields\":\"\",\"byRegex\":\"\",\"byStrings\":\"\",\"byDisplayName\":\"\",\"combine\":\"\"}"
@@ -3771,15 +3605,15 @@
         "comment": "/**\r\n         * Generates a function that filters by a set of properties.\r\n         * @param {...string} props List of property names\r\n         * @returns {function} A filter that checks for a set of properties\r\n         */",
         "meta": {
             "range": [
-                24570,
-                24620
+                23949,
+                23999
             ],
             "filename": "pluginapi.js",
-            "lineno": 612,
+            "lineno": 597,
             "columnno": 8,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001144",
+                "id": "astnode100001071",
                 "name": "byProps",
                 "type": "FunctionExpression"
             }
@@ -3817,15 +3651,15 @@
         "comment": "/**\r\n         * Generates a function that filters by a set of properties on the object's prototype.\r\n         * @param {...string} props List of property names\r\n         * @returns {function} A filter that checks for a set of properties on the object's prototype.\r\n         */",
         "meta": {
             "range": [
-                24920,
-                24990
+                24299,
+                24369
             ],
             "filename": "pluginapi.js",
-            "lineno": 619,
+            "lineno": 604,
             "columnno": 9,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001155",
+                "id": "astnode100001082",
                 "name": "byPrototypeFields",
                 "type": "FunctionExpression"
             }
@@ -3863,15 +3697,15 @@
         "comment": "/**\r\n         * Generates a function that filters by a regex.\r\n         * @param {RegExp} search A RegExp to check on the module\r\n         * @param {function} filter Additional filter\r\n         * @returns {function} A filter that checks for a regex match\r\n         */",
         "meta": {
             "range": [
-                25282,
-                25329
+                24661,
+                24708
             ],
             "filename": "pluginapi.js",
-            "lineno": 627,
+            "lineno": 612,
             "columnno": 9,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001166",
+                "id": "astnode100001093",
                 "name": "byRegex",
                 "type": "FunctionExpression"
             }
@@ -3917,15 +3751,15 @@
         "comment": "/**\r\n         * Generates a function that filters by strings.\r\n         * @param {...String} strings A list of strings\r\n         * @returns {function} A filter that checks for a set of strings\r\n         */",
         "meta": {
             "range": [
-                25559,
-                25617
+                24938,
+                24996
             ],
             "filename": "pluginapi.js",
-            "lineno": 634,
+            "lineno": 619,
             "columnno": 9,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001176",
+                "id": "astnode100001103",
                 "name": "byStrings",
                 "type": "FunctionExpression"
             }
@@ -3960,23 +3794,23 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n         * Generates a function that filters by a set of properties.\r\n         * @param {string} name Name the module should have\r\n         * @returns {function} A filter that checks for a set of properties\r\n         */",
+        "comment": "/**\r\n         * Generates a function that filters by the `displayName` property.\r\n         * @param {string} name Name the module should have\r\n         * @returns {function} A filter that checks for a `displayName` match\r\n         */",
         "meta": {
             "range": [
-                25865,
-                25922
+                25253,
+                25310
             ],
             "filename": "pluginapi.js",
-            "lineno": 641,
+            "lineno": 626,
             "columnno": 9,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001187",
+                "id": "astnode100001114",
                 "name": "byDisplayName",
                 "type": "FunctionExpression"
             }
         },
-        "description": "Generates a function that filters by a set of properties.",
+        "description": "Generates a function that filters by the `displayName` property.",
         "params": [
             {
                 "type": {
@@ -3995,7 +3829,7 @@
                         "function"
                     ]
                 },
-                "description": "A filter that checks for a set of properties"
+                "description": "A filter that checks for a `displayName` match"
             }
         ],
         "name": "byDisplayName",
@@ -4008,15 +3842,15 @@
         "comment": "/**\r\n         * Generates a combined function from a list of filters.\r\n         * @param {...function} filters A list of filters\r\n         * @returns {function} Combinatory filter of all arguments\r\n         */",
         "meta": {
             "range": [
-                26156,
-                26210
+                25544,
+                25598
             ],
             "filename": "pluginapi.js",
-            "lineno": 648,
+            "lineno": 633,
             "columnno": 9,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001197",
+                "id": "astnode100001124",
                 "name": "combine",
                 "type": "FunctionExpression"
             }
@@ -4051,18 +3885,18 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n     * Finds a module using a filter function.\r\n     * @param {function} filter A function to use to filter modules. It is given exports, module, and moduleID. Return true to signify match.\r\n     * @param {object} [options] Whether to return only the first matching module\r\n     * @param {Boolean} [options.first=true] Whether to return only the first matching module\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @return {any}\r\n     */",
+        "comment": "/**\r\n     * Finds a module using a filter function.\r\n     * @param {function} filter A function to use to filter modules. It is given exports, module, and moduleID. Return `true` to signify match.\r\n     * @param {object} [options] Whether to return only the first matching module\r\n     * @param {Boolean} [options.first=true] Whether to return only the first matching module\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @return {any}\r\n     */",
         "meta": {
             "range": [
-                26756,
-                27289
+                26146,
+                26679
             ],
             "filename": "pluginapi.js",
-            "lineno": 659,
+            "lineno": 644,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001208",
+                "id": "astnode100001135",
                 "name": "getModule",
                 "type": "FunctionExpression"
             }
@@ -4075,7 +3909,7 @@
                         "function"
                     ]
                 },
-                "description": "A function to use to filter modules. It is given exports, module, and moduleID. Return true to signify match.",
+                "description": "A function to use to filter modules. It is given exports, module, and moduleID. Return `true` to signify match.",
                 "name": "filter"
             },
             {
@@ -4130,15 +3964,15 @@
         "comment": "/**\r\n     * Finds multiple modules using multiple filters.\r\n     * \r\n     * @param {...object} queries Whether to return only the first matching module\r\n     * @param {Function} queries.filter A function to use to filter modules\r\n     * @param {Boolean} [queries.first=true] Whether to return only the first matching module\r\n     * @param {Boolean} [queries.defaultExport=true] Whether to return default export when matching the default export\r\n     * @return {any}\r\n     */",
         "meta": {
             "range": [
-                27778,
-                27842
+                27168,
+                27232
             ],
             "filename": "pluginapi.js",
-            "lineno": 674,
+            "lineno": 659,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001266",
+                "id": "astnode100001193",
                 "name": "getBulk",
                 "type": "FunctionExpression"
             }
@@ -4203,23 +4037,23 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n     * Finds a module that lazily loaded.\r\n     * @param {function} filter A function to use to filter modules. It is given exports. Return true to signify match.\r\n     * @param {object} [options] Whether to return only the first matching module\r\n     * @param {AbortSignal} [options.signal] AbortSignal of an AbortController to cancel the promise\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @returns {Promise<any>}\r\n     */",
+        "comment": "/**\r\n     * Finds a module that is lazily loaded.\r\n     * @param {function} filter A function to use to filter modules. It is given exports. Return `true` to signify match.\r\n     * @param {object} [options] Whether to return only the first matching module\r\n     * @param {AbortSignal} [options.signal] AbortSignal of an AbortController to cancel the promise\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @returns {Promise<any>}\r\n     */",
         "meta": {
             "range": [
-                28370,
-                28925
+                27765,
+                28320
             ],
             "filename": "pluginapi.js",
-            "lineno": 684,
+            "lineno": 669,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001278",
+                "id": "astnode100001205",
                 "name": "waitForModule",
                 "type": "FunctionExpression"
             }
         },
-        "description": "Finds a module that lazily loaded.",
+        "description": "Finds a module that is lazily loaded.",
         "params": [
             {
                 "type": {
@@ -4227,7 +4061,7 @@
                         "function"
                     ]
                 },
-                "description": "A function to use to filter modules. It is given exports. Return true to signify match.",
+                "description": "A function to use to filter modules. It is given exports. Return `true` to signify match.",
                 "name": "filter"
             },
             {
@@ -4281,15 +4115,15 @@
         "comment": "",
         "meta": {
             "range": [
-                29121,
-                29142
+                28516,
+                28537
             ],
             "filename": "pluginapi.js",
-            "lineno": 698,
+            "lineno": 683,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001384",
+                "id": "astnode100001311",
                 "name": "module.exports",
                 "type": "Identifier"
             }
