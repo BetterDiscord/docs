@@ -53,7 +53,7 @@ Though this guide won't be giving a tutorial on the Node.js standard library--th
 
 ### Plugin API
 
-BetterDiscord provides an API for plugins. The guides here show how it's used and the [API reference](../api/) section has an exhaustive list of what's available. The API exists as a global and provides several utility functions relevant to plugins. This includes data storage, UI rendering, notifications, and utilities to explore Discord's internals.
+BetterDiscord provides an API for plugins. The guides here show how it's used and the [API reference](/api/) section has an exhaustive list of what's available. The API exists as a global and provides several utility functions relevant to plugins. This includes data storage, UI rendering, notifications, and utilities to explore Discord's internals.
 
 ### Discord's Internals
 

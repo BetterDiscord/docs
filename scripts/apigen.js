@@ -76,7 +76,7 @@ const markdownTemplate = `# {{name}}
 
 function generateApiDoc(which, memberName) {
     const data = parseAST(which, memberName);
-    const outFile = path.resolve(__dirname, "..", "docs", "plugins", "api", `${which.toLowerCase()}.md`);
+    const outFile = path.resolve(__dirname, "..", "docs", "api", `${which.toLowerCase()}.md`);
     
     const finalMarkdown = markdownTemplate.replace("{{name}}", data.name)
                                   .replace("{{description}}", data.description)
