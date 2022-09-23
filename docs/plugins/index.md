@@ -14,13 +14,13 @@ These docs consist of this introduction which gives you an idea of what to expec
 
 The [Introduction](./introduction) section gives a lot of background information on plugins requirements, the development environment, and the tools at your disposal.
 
-The [Basics](./basics) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](./api/bdapi) has to offer.
+The [Basics](./basics) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/bdapi) has to offer.
 
 The [Intermediate](./intermediate) guide starts to branch into some of the 3rd-party libraries that can be used to enhance your plugins.
 
 The [Advanced](./advanced) guide goes more in depth with advanced concepts that are important to making good and complicated plugins that smoothly integrate into Discord.
 
-The [API Reference](./api) section is purely a reference to what APIs are available, the parameters and return types of any functions, and descriptions of their properties. If you've seen any code documentation before, this will look familiar.
+The [API Reference](/api) section is purely a reference to what APIs are available, the parameters and return types of any functions, and descriptions of their properties. If you've seen any code documentation before, this will look familiar.
 
 Lastly the [Discord Internals](./discord) section is a reference that goes hand-in-hand with the advanced guide. It's an ever-changing reference point of what is available for use within Discord's code.
 

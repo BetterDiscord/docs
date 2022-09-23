@@ -67,21 +67,48 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "general/index",
+            docId: "users/index",
             position: "left",
-            label: "General",
+            label: "User Guides",
           },
           {
-            type: "doc",
-            docId: "plugins/index",
+            type: "dropdown",
+            label: "Developer Guides",
             position: "left",
-            label: "Plugins",
+            items: [
+              {
+                type: "doc",
+                docId: "plugins/index",
+                label: "Plugins",
+              },
+              {
+                type: "doc",
+                docId: "themes/index",
+                label: "Themes",
+              },
+            ]
           },
           {
-            type: "doc",
-            docId: "themes/index",
+            type: "dropdown",
+            label: "Reference",
             position: "left",
-            label: "Themes",
+            items: [
+                {
+                  type: "doc",
+                  docId: "api/index",
+                  label: "Plugin API",
+                },
+                {
+                  type: "doc",
+                  docId: "discord/index",
+                  label: "Discord Internals",
+                },
+            ]
+          },
+          {
+            label: "Discord",
+            href: "https://betterdiscord.app/invite",
+            position: "right"
           },
           {
             href: "https://github.com/BetterDiscord/BetterDiscord",
@@ -97,16 +124,24 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "General",
-                to: "/general/",
+                label: "User Guides",
+                to: "/users/"
               },
               {
-                label: "Plugins",
-                to: "/plugins/",
+                label: "Plugin Development",
+                to: "/plugins/"
               },
               {
-                label: "Themes",
-                to: "/themes/",
+                label: "Theme Development",
+                to: "/themes/"
+              },
+              {
+                label: "Plugin API",
+                to: "/api/"
+              },
+              {
+                label: "Discord Internals",
+                to: "/discord/"
               },
             ],
           },
