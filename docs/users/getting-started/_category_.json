@@ -1,9 +1,9 @@
 {
-    "label": "Introduction",
+    "label": "Getting Started",
     "position": 2,
     "link": {
       "type": "generated-index",
-      "slug": "/users/introduction",
+      "slug": "/users/getting-started",
       "description": "Introduction to BetterDiscord."
     }
   }

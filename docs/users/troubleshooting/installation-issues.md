@@ -33,7 +33,7 @@ If the installer does not seem to open, follow these steps:
 
 OR
 
-Follow the [manual installation](../introduction/installation/#manual-installation) instruction.
+Follow the [manual installation](../getting-started/installation/#manual-installation) instruction.
 </details>
 
 <details>
@@ -46,7 +46,7 @@ Try one of the following:
 
 OR
 
-Follow the [manual installation](../introduction/installation/#manual-installation) instruction.
+Follow the [manual installation](../getting-started/installation/#manual-installation) instruction.
 </details>
 
 

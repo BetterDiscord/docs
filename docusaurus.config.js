@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
 const config = {
   title: "BetterDiscord",
   tagline: "Documentation, guidelines and tutorials.",
-  url: "https://docs.betterdiscord.app",
+  url: "https://docs.zerebos.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -78,6 +78,11 @@ const config = {
             items: [
               {
                 type: "doc",
+                docId: "developers/index",
+                label: "General",
+              },
+              {
+                type: "doc",
                 docId: "plugins/index",
                 label: "Plugins",
               },
@@ -128,6 +133,10 @@ const config = {
                 to: "/users/"
               },
               {
+                label: "Developer Guides",
+                to: "/developers/"
+              },
+              {
                 label: "Plugin Development",
                 to: "/plugins/"
               },
@@ -167,7 +176,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/BetterDiscord",
+                href: "https://github.com/BetterDiscord/BetterDiscord",
               },
             ],
           },

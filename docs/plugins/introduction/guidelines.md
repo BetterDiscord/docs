@@ -9,12 +9,12 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 
 ## General Guidelines
 
- - Addons must be in public GitHub repositories.
- - Addons must not negatively affect users.
+1. Addons must be in public GitHub repositories.
+1. Addons must not negatively affect users.
    - e.g., ban risk, disabling security features, accessing private information
- - Addons must not discriminate whom can use it.
- - Addons must not collect user data without opt-in consent.
- - Addons must not include explicit sexual material or other adult content.
+1. Addons must not discriminate whom can use it.
+1. Addons must not collect user data without opt-in consent.
+1. Addons must not include explicit sexual material or other adult content.
 
 
 ## Scope

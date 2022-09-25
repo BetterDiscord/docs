@@ -192,8 +192,8 @@ body {
   opacity: .75;
   font-size: 12px;
   font-weight: 600;
-  margin-bottom: 5px;
-  padding: 0 16px
+  /* margin: 2px 4px; */
+  padding: 10px 16px;
 }
 
 .menu__list-item-collapsible--active {
@@ -204,6 +204,7 @@ body {
   color: #3a71c1;
 }
 
+.theme-doc-sidebar-item-category-level-2 .menu__link--sublist,
 .theme-doc-sidebar-item-link > .menu__link {
   display: block;
   margin: 2px 4px;
@@ -218,12 +219,17 @@ body {
   text-decoration: none;
 }
 
+.theme-doc-sidebar-item-category-level-2 .menu__link--sublist {
+  opacity: 1;
+  text-transform: none;
+}
+
 .theme-doc-sidebar-item-link > .menu__link:hover {
   color: #f1f1f1;
 }
 
 .theme-doc-sidebar-item-link > .menu__link.menu__link--active,
-.menu__list-item-collapsible--active {
+.menu__list-item-collapsible--active > .menu__link.menu__link--active {
   background: rgba(58, 113, 193, .15);
   color: #3a71c1;
   cursor: default
@@ -349,4 +355,8 @@ pre.prism-code,
 
 .code-tabs pre.prism-code {
   box-shadow: 0;
+}
+
+iframe {
+  max-width: 100%;
 }

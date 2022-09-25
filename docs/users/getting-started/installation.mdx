@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 description: Quick guide to getting BetterDiscord.
 ---
 
@@ -12,6 +12,14 @@ If you experience any issues following these steps, try the [troubleshooting](..
 :::
 
 ## Automatic Installation
+
+### Video
+
+If you prefer a video tutorial, take a look at this:
+
+<iframe width="850" height="478" src="https://www.youtube.com/embed/n_CCYtIZj0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Step-by-step
 
 1. Go to the [BetterDiscord Website](https://betterdiscord.app) and click the big download button. Save this somewhere on your computer.
 2. Open the installer you downloaded in the previous step.
@@ -34,6 +42,8 @@ If you experience any issues following these steps, try the [troubleshooting](..
 
 ## Manual Installation
 
+For those that can't get the automatic installers to work, those that want more control over their installation, and for developers.
+
 ### Prerequisites
 
 - Git - https://git-scm.com/downloads
@@ -43,41 +53,36 @@ If you experience any issues following these steps, try the [troubleshooting](..
 ### Steps
 
 #### 1. Clone the BetterDiscord repository
-```sh
+```bash
 git clone https://github.com/BetterDiscord/BetterDiscord.git
 ```
 If this fails due to region lock or something similar, you can download a zipped copy directly from https://github.com/BetterDiscord/BetterDiscord/archive/refs/heads/main.zip
 
 #### 2. Enter the directory
-```sh
+```bash
 cd BetterDiscord
 ```
 
 #### 3. Install dependencies
-```sh
+```bash
 npm install
 ```
 
 #### 4. Build BetterDiscord
 
 This will create a `injector.js`, `preload.js`, and `renderer.js` in the `dist/` folder.
-```sh
+```bash
 npm run build
 ```
 
 #### 5. Install to Discord
 
-##### Install to Stable
-```sh
-npm run inject
-```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 
-##### Install to Canary
-```sh
-npm run inject canary
-```
-
-##### Install to PTB
-```sh
-npm run inject ptb
-```
+<Tabs className="code-tabs">
+<TabItem value="stable"><CodeBlock language="bash">npm run inject</CodeBlock></TabItem>
+<TabItem value="canary"><CodeBlock language="bash">npm run inject canary</CodeBlock></TabItem>
+<TabItem value="ptb"><CodeBlock language="bash">npm run inject ptb</CodeBlock></TabItem>
+</Tabs>
