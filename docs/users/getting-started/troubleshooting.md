@@ -1,9 +1,9 @@
 ---
-sidebar_position: 1
-description: What to do when you can't install.
+sidebar_position: 3
+description: When things go wrong.
 ---
 
-# Installation Issues
+# Troubleshooting
 
 :::caution
 
@@ -11,12 +11,40 @@ If you need help beyond what these docs provide, please contact us in `#support`
 
 :::
 
-## General Issues
+## Crashes
+
+Crashing when using BetterDiscord can be frustrating. Here are some helpful tips to solve your issues.
+
+<details>
+<summary>⚠️ BetterDiscord seems to have crashed your client.</summary>
+
+This is a very generic error that could mean any number of things. It also doesn't necessarily mean BetterDiscord was at fault. It could have been a plugin or even Discord itself. It's just difficult for BetterDiscord to tell who is the cause so it catches them all.
+
+Fixing issues like this involves the following:
+ - Switching to Stable from Canary or PTB
+ - Manually updating library plugins
+ - Removing unofficial plugins
+ - Rename the plugin folder
+
+</details>
+
+<details>
+<summary>"Well, this is awkward" or "You died, looks like you got slaughtered by an Error Level 9000"</summary>
+
+This type of error is usually caused by plugins or BetterDiscord being out of date. Ensure your copy of BetterDiscord and your plugins and keys are up to date.
+
+</details>
+
+## Installation
+
+This section goes over common issues and pitfalls when trying to install BetterDiscord.
+
+### General Issues
 
 <details>
 <summary>Cannot select stable, or BetterDiscord not installed after installing</summary>
 
-This is usualy an issue with Discord moving around its installation location on Windows. Sometimes the installer is unable to differentiate what to do. To fix it, select `Browse` in the installer, then enter `%localappdata%/discord/app-1.0.9005/resources` in the address bar at the top. If this has the same issue repeat this but using `%programdata%/%username%/Discord/app-1.0.9005/resources`
+This is usually an issue with Discord moving around its installation location on Windows. Sometimes the installer is unable to differentiate what to do. To fix it, select `Browse` in the installer, then enter `%localappdata%/discord/app-1.0.9006/resources` in the address bar at the top. If this has the same issue repeat this but using `%programdata%/%username%/Discord/app-1.0.9006/resources`
 
 ![ProgramData](./img/programdata.gif)
 </details>
@@ -58,7 +86,7 @@ Click the text next to the checkbox instead, they are connected.
 ![Checkbox Workaround](./img/agreement_text.png)
 </details>
 
-## Specific Errors
+### Specific Errors
 
 <details>
 <summary>❌ Cannot read property "assets" of undefined" OR installer freezing at "downloading asar file..."</summary>

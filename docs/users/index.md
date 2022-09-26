@@ -35,7 +35,7 @@ BetterDiscord can make the Discord application partially see-through leading to 
 
 BetterDiscord adds a public server directory sourced from [DiscordServers.com](https://discordservers.com/). This is different from the built-in discovery feature of Discord because DiscordServer is a community run listing and does not have the same requirements as discovery.
 
-### Multiboot
+### Dual Boot
 
 BetterDiscord allows you to have multiple shortcuts to Discord that allow you to quickly boot with or without BetterDiscord. No need to fiddle with installing and uninstalling.
 

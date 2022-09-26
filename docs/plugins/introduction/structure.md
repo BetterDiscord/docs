@@ -5,6 +5,12 @@ description: The requirements and format of a plugin.
 
 # Plugin Structure
 
+:::info
+
+This page only goes over the body of a plugin. Make sure you have read up on the [addon system](../../developers/addons.md) first.
+
+:::
+
 ## Requirements
 
  - BetterDiscord plugins are limited to a single file.
@@ -21,53 +27,6 @@ BetterDiscord plugins must be in vanilla JavaScript and be contained in a single
 Plugin files must be named in the format `*.plugin.js` where `*` is representative of any string. Usually this matches the name of the plugin without any spaces or special characters, however that is not a requirement.
 
 Plugin files are split into two main pieces, the meta and the plugin code. If either of these are missing the plugin will not load.
-
-### Meta
-
-The meta of a plugin contains metadata about the plugin as the name would suggest. The format of this meta is a JSDoc style comment at the <u>very beginning</u> of the file. Not having this at the beginning can cause BetterDiscord to not load the plugin. A minimal meta header would look something like this:
-
-```js
-/**
- * @name ExamplePlugin
- * @author YourName
- * @description Describe the basic functions. Maybe a support server link.
- * @version 0.0.1
- */
-```
-
-And a fully filled out meta using all the fields would look something like this:
-```js
-/**
- * @name ExamplePlugin
- * @author YourName
- * @description Describe the basic functions. Maybe a support server link.
- * @version 0.0.1
- * @invite inviteCode
- * @authorId 51512151151651
- * @authorLink https://twitter.com/Whoever
- * @donate https://paypal.me/
- * @patreon https://patreon.com/
- * @website https://github.com/BetterDiscord/BetterDiscord
- * @source https://gist.github.com/rauenzi/e5f4d02fc3085a53872b0236cd6f8225
- */
- ```
-
-Please see the table below for details on the fields.
-
-
-|Field|Required|Description|
-|-----|:------:|-----------|
-|name|&#x2705;|The name of the plugin. Typcially does not contain spaces, but is allowed.|
-|author|&#x2705;|The name of you the developer.|
-|description|&#x2705;|A basic description of the what the plugin does.|
-|version|&#x2705;|Version representing the current update level. [Semantic versioning](https://semver.org/) recommended.|
-|invite|&#x274C;|A Discord invite code, useful for directing users to a support server.|
-|authorId|&#x274C;|Discord snowflake ID of the developer. This allows users to get in touch.|
-|authorLink|&#x274C;|Link to use for the author's name on the plugins page.|
-|donate|&#x274C;|Link to donate to the developer.|
-|patreon|&#x274C;|Link to the patreon of the developer.|
-|website|&#x274C;|Developer's (or plugin's) website link.|
-|source|&#x274C;|Link to the source on GitHub of the plugin.|
 
 ### JavaScript
 
