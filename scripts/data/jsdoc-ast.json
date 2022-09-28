@@ -3544,7 +3544,7 @@
         "meta": {
             "range": [
                 23557,
-                28324
+                28293
             ],
             "filename": "pluginapi.js",
             "lineno": 585,
@@ -3576,7 +3576,7 @@
         "meta": {
             "range": [
                 23696,
-                25606
+                25612
             ],
             "filename": "pluginapi.js",
             "lineno": 591,
@@ -3752,7 +3752,7 @@
         "meta": {
             "range": [
                 24938,
-                24996
+                24999
             ],
             "filename": "pluginapi.js",
             "lineno": 619,
@@ -3797,15 +3797,15 @@
         "comment": "/**\r\n         * Generates a function that filters by the `displayName` property.\r\n         * @param {string} name Name the module should have\r\n         * @returns {function} A filter that checks for a `displayName` match\r\n         */",
         "meta": {
             "range": [
-                25253,
-                25310
+                25256,
+                25313
             ],
             "filename": "pluginapi.js",
             "lineno": 626,
             "columnno": 9,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001114",
+                "id": "astnode100001115",
                 "name": "byDisplayName",
                 "type": "FunctionExpression"
             }
@@ -3842,15 +3842,15 @@
         "comment": "/**\r\n         * Generates a combined function from a list of filters.\r\n         * @param {...function} filters A list of filters\r\n         * @returns {function} Combinatory filter of all arguments\r\n         */",
         "meta": {
             "range": [
-                25544,
-                25598
+                25547,
+                25604
             ],
             "filename": "pluginapi.js",
             "lineno": 633,
             "columnno": 9,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001124",
+                "id": "astnode100001125",
                 "name": "combine",
                 "type": "FunctionExpression"
             }
@@ -3885,18 +3885,18 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n     * Finds a module using a filter function.\r\n     * @param {function} filter A function to use to filter modules. It is given exports, module, and moduleID. Return `true` to signify match.\r\n     * @param {object} [options] Whether to return only the first matching module\r\n     * @param {Boolean} [options.first=true] Whether to return only the first matching module\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @return {any}\r\n     */",
+        "comment": "/**\r\n     * Finds a module using a filter function.\r\n     * @param {function} filter A function to use to filter modules. It is given exports, module, and moduleID. Return `true` to signify match.\r\n     * @param {object} [options] Options to configure the search\r\n     * @param {Boolean} [options.first=true] Whether to return only the first matching module\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @return {any}\r\n     */",
         "meta": {
             "range": [
-                26146,
-                26679
+                26135,
+                26668
             ],
             "filename": "pluginapi.js",
             "lineno": 644,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001135",
+                "id": "astnode100001137",
                 "name": "getModule",
                 "type": "FunctionExpression"
             }
@@ -3919,7 +3919,7 @@
                     ]
                 },
                 "optional": true,
-                "description": "Whether to return only the first matching module",
+                "description": "Options to configure the search",
                 "name": "options"
             },
             {
@@ -3961,18 +3961,18 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n     * Finds multiple modules using multiple filters.\r\n     * \r\n     * @param {...object} queries Whether to return only the first matching module\r\n     * @param {Function} queries.filter A function to use to filter modules\r\n     * @param {Boolean} [queries.first=true] Whether to return only the first matching module\r\n     * @param {Boolean} [queries.defaultExport=true] Whether to return default export when matching the default export\r\n     * @return {any}\r\n     */",
+        "comment": "/**\r\n     * Finds multiple modules using multiple filters.\r\n     * \r\n     * @param {...object} queries Object representing the query to perform\r\n     * @param {Function} queries.filter A function to use to filter modules\r\n     * @param {Boolean} [queries.first=true] Whether to return only the first matching module\r\n     * @param {Boolean} [queries.defaultExport=true] Whether to return default export when matching the default export\r\n     * @return {any}\r\n     */",
         "meta": {
             "range": [
-                27168,
-                27232
+                27149,
+                27213
             ],
             "filename": "pluginapi.js",
             "lineno": 659,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001193",
+                "id": "astnode100001195",
                 "name": "getBulk",
                 "type": "FunctionExpression"
             }
@@ -3986,7 +3986,7 @@
                     ]
                 },
                 "variable": true,
-                "description": "Whether to return only the first matching module",
+                "description": "Object representing the query to perform",
                 "name": "queries"
             },
             {
@@ -4037,18 +4037,18 @@
         "scope": "static"
     },
     {
-        "comment": "/**\r\n     * Finds a module that is lazily loaded.\r\n     * @param {function} filter A function to use to filter modules. It is given exports. Return `true` to signify match.\r\n     * @param {object} [options] Whether to return only the first matching module\r\n     * @param {AbortSignal} [options.signal] AbortSignal of an AbortController to cancel the promise\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @returns {Promise<any>}\r\n     */",
+        "comment": "/**\r\n     * Finds a module that is lazily loaded.\r\n     * @param {function} filter A function to use to filter modules. It is given exports. Return `true` to signify match.\r\n     * @param {object} [options] Options for configuring the listener\r\n     * @param {AbortSignal} [options.signal] AbortSignal of an AbortController to cancel the promise\r\n     * @param {Boolean} [options.defaultExport=true] Whether to return default export when matching the default export\r\n     * @returns {Promise<any>}\r\n     */",
         "meta": {
             "range": [
-                27765,
-                28320
+                27734,
+                28289
             ],
             "filename": "pluginapi.js",
             "lineno": 669,
             "columnno": 4,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001205",
+                "id": "astnode100001207",
                 "name": "waitForModule",
                 "type": "FunctionExpression"
             }
@@ -4071,7 +4071,7 @@
                     ]
                 },
                 "optional": true,
-                "description": "Whether to return only the first matching module",
+                "description": "Options for configuring the listener",
                 "name": "options"
             },
             {
@@ -4115,15 +4115,15 @@
         "comment": "",
         "meta": {
             "range": [
-                28516,
-                28537
+                28485,
+                28506
             ],
             "filename": "pluginapi.js",
             "lineno": 683,
             "columnno": 0,
             "path": "Z:\\Programming\\BetterDiscordStuff\\BetterDiscord\\renderer\\src\\modules",
             "code": {
-                "id": "astnode100001311",
+                "id": "astnode100001313",
                 "name": "module.exports",
                 "type": "Identifier"
             }

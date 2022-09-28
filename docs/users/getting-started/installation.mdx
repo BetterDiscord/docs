@@ -48,7 +48,8 @@ For those that can't get the automatic installers to work, those that want more 
 
 - Git - https://git-scm.com/downloads
 - Node.js - https://nodejs.org/en/download/
-- npm
+- npm - (comes with node on most systems)
+- pnpm - `npm install -g pnpm`
 
 ### Steps
 
@@ -64,15 +65,21 @@ cd BetterDiscord
 ```
 
 #### 3. Install dependencies
+First install `pnpm` if you have not done so already
 ```bash
-npm install
+npm install -g pnpm
+```
+
+Then install BetterDiscord's dependencies
+```bash
+pnpm install
 ```
 
 #### 4. Build BetterDiscord
 
 This will create a `injector.js`, `preload.js`, and `renderer.js` in the `dist/` folder.
 ```bash
-npm run build
+pnpm build
 ```
 
 #### 5. Install to Discord
@@ -82,7 +89,7 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 <Tabs className="code-tabs">
-<TabItem value="stable"><CodeBlock language="bash">npm run inject</CodeBlock></TabItem>
-<TabItem value="canary"><CodeBlock language="bash">npm run inject canary</CodeBlock></TabItem>
-<TabItem value="ptb"><CodeBlock language="bash">npm run inject ptb</CodeBlock></TabItem>
+<TabItem value="stable"><CodeBlock language="bash">pnpm inject</CodeBlock></TabItem>
+<TabItem value="canary"><CodeBlock language="bash">pnpm inject canary</CodeBlock></TabItem>
+<TabItem value="ptb"><CodeBlock language="bash">pnpm inject ptb</CodeBlock></TabItem>
 </Tabs>
