@@ -4,8 +4,26 @@
 
 ## Properties
 
+### ContextMenu
+An instance of [ContextMenu](./contextmenu) for interacting with context menus
+
+**Type:** `ContextMenu`
+___
+
+### DOM
+An instance of [DOM](./dom) to interact with the DOM.
+
+**Type:** `DOM`
+___
+
+### Data
+An instance of [Data](./data) to manage data.
+
+**Type:** `Data`
+___
+
 ### Patcher
-[Patcher](./patcher) is a utility class for modifying existing functions.
+An instance of [Patcher](./patcher) to monkey patch functions.
 
 **Type:** `Patcher`
 ___
@@ -16,16 +34,10 @@ An instance of [AddonAPI](./addonapi) to access plugins.
 **Type:** `AddonAPI`
 ___
 
-### React
-The React module being used inside Discord.
+### ReactUtils
+An instance of [ReactUtils](./reactutils) to work with React.
 
-**Type:** `React`
-___
-
-### ReactDOM
-The ReactDOM module being used inside Discord.
-
-**Type:** `ReactDOM`
+**Type:** `ReactUtils`
 ___
 
 ### Themes
@@ -34,34 +46,28 @@ An instance of [AddonAPI](./addonapi) to access themes.
 **Type:** `AddonAPI`
 ___
 
+### UI
+An instance of [UI](./ui) to create interfaces.
+
+**Type:** `UI`
+___
+
+### Utils
+An instance of [Utils](./utils) for general utility functions.
+
+**Type:** `Utils`
+___
+
 ### Webpack
-[Webpack](./webpack) is a utility class for getting internal webpack modules.
+An instance of [Webpack](./webpack) to search for modules.
 
 **Type:** `Webpack`
-___
-
-### emotes <span class="deprecated">Deprecated</span>
-A reference object for BD's emotes.
-
-**Type:** `object`
-___
-
-### settings <span class="deprecated">Deprecated</span>
-A reference object to get BD's settings.
-
-**Type:** `object`
-___
-
-### version
-A reference string for BD's version.
-
-**Type:** `string`
 ___
 
 
 ## Methods
 
-### alert
+### alert <span class="deprecated">Deprecated</span>
 Shows a generic but very customizable modal.
 
 | Parameter |  Type  |       Description      |
@@ -72,7 +78,7 @@ content|string\|ReactElement\|Array.&lt;(string\|ReactElement)&gt;|a string of t
 **Returns:** `void`
 ___
 
-### clearCSS
+### clearCSS <span class="deprecated">Deprecated</span>
 Removes a `<style>` from the document corresponding to the given ID.
 
 | Parameter |  Type  |       Description      |
@@ -82,7 +88,7 @@ id|string|ID uses for the style element
 **Returns:** `void`
 ___
 
-### deleteData
+### deleteData <span class="deprecated">Deprecated</span>
 Deletes a piece of stored data, this is different than saving as null or undefined.
 
 | Parameter |  Type  |       Description      |
@@ -118,7 +124,7 @@ id|string|&#x274C;|*none*|Setting ID in the category
 ___
 
 ### findAllModules <span class="deprecated">Deprecated</span>
-Finds multiple webpack modules using a filter.
+Finds multiple webpack modules using a filter
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -128,7 +134,7 @@ filter|function|A filter given the exports, module, and moduleId. Returns `true`
 ___
 
 ### findModule <span class="deprecated">Deprecated</span>
-Finds a webpack module using a filter.
+Finds a webpack module using a filter
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -138,7 +144,7 @@ filter|function|A filter given the exports, module, and moduleId. Returns `true`
 ___
 
 ### findModuleByDisplayName <span class="deprecated">Deprecated</span>
-Finds a webpack module by `displayName` property.
+Finds a webpack module by `displayName` property
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -172,13 +178,13 @@ Gets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-key|string|Key of the data to load
+key|string|Key of the data to load.
 
 **Returns:** `any` - The stored data
 ___
 
-### getInternalInstance
-Gets the internal react data of a specified node.
+### getInternalInstance <span class="deprecated">Deprecated</span>
+Get the internal react data of a specified node.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -187,7 +193,7 @@ node|HTMLElement|Node to get the react data from
 **Returns:** `object` - Either the found data or `undefined`
 ___
 
-### injectCSS
+### injectCSS <span class="deprecated">Deprecated</span>
 Adds a `<style>` to the document with the given ID.
 
 | Parameter |  Type  |       Description      |
@@ -221,7 +227,7 @@ url|string|URL of the remote script
 **Returns:** `Promise` - Resolves upon onload event
 ___
 
-### loadData
+### loadData <span class="deprecated">Deprecated</span>
 Loads previously stored data.
 
 | Parameter |  Type  |       Description      |
@@ -233,7 +239,7 @@ key|string|Which piece of data to load
 ___
 
 ### monkeyPatch <span class="deprecated">Deprecated</span>
-Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method. - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures. - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
+Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.   - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -249,7 +255,7 @@ options.silent|boolean|&#x2705;|false|Set to `true` if you want to suppress log 
 **Returns:** `function` - A function that cancels the monkey patch
 ___
 
-### onRemoved
+### onRemoved <span class="deprecated">Deprecated</span>
 Adds a listener for when the node is removed from the document body.
 
 | Parameter |  Type  |       Description      |
@@ -260,8 +266,8 @@ callback|function|Function to run when fired
 **Returns:** `void`
 ___
 
-### openDialog
-Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
+### openDialog <span class="deprecated">Deprecated</span>
+Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.  Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -282,7 +288,7 @@ options.modal|boolean|&#x2705;|false|Whether the dialog should act as a modal to
 **Returns:** `Promise.<object>` - Result of the dialog
 ___
 
-### saveData
+### saveData <span class="deprecated">Deprecated</span>
 Saves JSON-serializable data.
 
 | Parameter |  Type  |       Description      |
@@ -299,12 +305,12 @@ Sets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-key|string|Key of the data to store
+key|string|Key of the data to store.
 
 **Returns:** `any` - The stored data
 ___
 
-### showConfirmationModal
+### showConfirmationModal <span class="deprecated">Deprecated</span>
 Shows a generic but very customizable confirmation modal with optional confirm and cancel callbacks.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -321,7 +327,7 @@ options.onCancel|callable|&#x2705;|NOOP|callback to occur when clicking the canc
 **Returns:** `void`
 ___
 
-### showNotice
+### showNotice <span class="deprecated">Deprecated</span>
 Shows a notice above Discord's chat layer.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -335,7 +341,7 @@ options.timeout|number|&#x2705;|10000|Timeout until the notice is closed. Won't 
 **Returns:** `function` - A callback for closing the notice. Passing `true` as first parameter closes immediately without transitioning out.
 ___
 
-### showToast
+### showToast <span class="deprecated">Deprecated</span>
 Shows a toast similar to android towards the bottom of the screen.
 
 | Parameter |  Type  | Optional | Default |       Description      |

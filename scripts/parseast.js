@@ -1,10 +1,14 @@
 const ast = require("./data/jsdoc-ast.json");
 
-const formatLink = s => s.replace("{@link AddonAPI}", "[AddonAPI](./addonapi)")
-                         .replace("{@link BdApi}", "[BdApi](./bdapi)")
-                         .replace("{@link Patcher}", "[Patcher](./patcher)")
-                         .replace("{@link Webpack}", "[Webpack](./webpack)")
-                         .replace("{@link Filters}", "[Filters](./filters)");
+const modules = ["AddonAPI", "BdApi", "Patcher", "Webpack", "Filters", "Data", "DOM", "ReactUtils", "UI", "Utils", "ContextMenu"];
+
+const formatLink = s => {
+    s = s.replace(/\r/g, " ");
+    for (const mod of modules) {
+        s = s.replace(`{@link ${mod}}`, `[${mod}](./${mod.toLowerCase()})`);
+    }
+    return s;
+};
 
 const nameSort = (a, b) => {
     const aName = a.name;
@@ -18,7 +22,7 @@ const nameSort = (a, b) => {
 function getProps(memberName) {
     const moduleProps = ast.filter(n => n.memberof === memberName && n.kind === "member" && !n.undocumented);
     moduleProps.sort(nameSort);
-    return moduleProps.map(n => ({name: n.name, description: formatLink(n.summary || n.description), type: n.type.names[0], deprecated: n.deprecated}));
+    return moduleProps.map(n => ({name: n.name, description: formatLink(n.summary || n.description), type: n?.type?.names[0] ?? n.name, deprecated: n.deprecated}));
 }
 
 function getMethods(memberName) {
@@ -38,7 +42,7 @@ function getMethods(memberName) {
 
 module.exports = function getModule(name, memberName) {
     if (!memberName) memberName = name;
-    const moduleNode = ast.find(n => n.name === name && !n.undocumented);
+    const moduleNode = ast.find(n => n.name === name && n.longname === memberName && !n.undocumented);
     if (!moduleNode) return console.log("Could not find info for ", name); // eslint-disable-line no-console
     return {name: moduleNode.name, description: formatLink(moduleNode.description || moduleNode.classdesc), properties: getProps(memberName), methods: getMethods(memberName)};
 };

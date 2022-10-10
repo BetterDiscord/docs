@@ -87,6 +87,13 @@ function generateApiDoc(which, memberName) {
 
 generateApiDoc("BdApi");
 generateApiDoc("AddonAPI");
-generateApiDoc("Patcher", "BdApi.Patcher");
-generateApiDoc("Webpack", "BdApi.Webpack");
-generateApiDoc("Filters", "BdApi.Webpack.Filters");
+generateApiDoc("Patcher");
+generateApiDoc("Webpack");
+generateApiDoc("Filters", "Webpack.Filters");
+
+generateApiDoc("Data");
+generateApiDoc("UI");
+generateApiDoc("ReactUtils");
+generateApiDoc("Utils");
+generateApiDoc("DOM");
+generateApiDoc("ContextMenu");
