@@ -111,8 +111,8 @@ const config = {
             ]
           },
           {
-            label: "Discord",
-            href: "https://betterdiscord.app/invite",
+            label: "Website",
+            href: "https://betterdiscord.app/",
             position: "right"
           },
           {
@@ -174,6 +174,10 @@ const config = {
           {
             title: "More",
             items: [
+              {
+                label: "Website",
+                href: "https://betterdiscord.app/",
+              },
               {
                 label: "GitHub",
                 href: "https://github.com/BetterDiscord/BetterDiscord",
