@@ -29,7 +29,7 @@ The meta of an addon contains metadata about the addon as the name would suggest
  */
 ```
 
-And a fully filled out meta using all the fields would look something like this:
+And a fully filled out meta, using all the fields, would look something like this:
 ```js
 /**
  * @name ExampleAddon
@@ -52,7 +52,7 @@ Please see the table below for details on the fields.
 |Field|Required|Description|
 |-----|:------:|-----------|
 |name|&#x2705;|The name of the addon. Typcially does not contain spaces, but is allowed.|
-|author|&#x2705;|The name of you the developer.|
+|author|&#x2705;|Your name, as the developer.|
 |description|&#x2705;|A basic description of the what the addon does.|
 |version|&#x2705;|Version representing the current update level. [Semantic versioning](https://semver.org/) recommended.|
 |invite|&#x274C;|A Discord invite code, useful for directing users to a support server.|

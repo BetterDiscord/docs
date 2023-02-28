@@ -239,7 +239,7 @@ key|string|Which piece of data to load
 ___
 
 ### monkeyPatch <span class="deprecated">Deprecated</span>
-Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.   - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
+Monkey-patches a method on an object. The patching callback may be run before, after, or instead of target method.   - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|

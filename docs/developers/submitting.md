@@ -37,7 +37,7 @@ Submissions are handled through the [BetterDiscord website](https://betterdiscor
 
 ### Denial
 
-1. You'll get a notification that your submission was denied along with a reason mesage.
+1. You'll get a notification that your submission was denied, along with a reason message.
 2. Check your GitHub for any issues opened by the review team.
 2. Make any necessary changes and resubmit.
 
@@ -52,7 +52,7 @@ Submissions are handled through the [BetterDiscord website](https://betterdiscor
 
 ### Your Addon
 
-Updating your addon on the website is pretty simple, just update your addon on GitHub. The webhook will automatically send the update to the website where it will once again go through the approval process. This is done to prevent malicious updates from making it through, whether by a compromised developer account, or by a disgruntled developer.
+Updating your addon on the website is pretty simple, just update your addon on GitHub. The webhook will automatically send the update to the website - where it will once again go through the approval process. This is done to prevent malicious updates from making it through, whether by a compromised account, or by a disgruntled developer.
 
 ### Your README
 

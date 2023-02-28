@@ -51,7 +51,7 @@ Gets all addons of this type.
 ___
 
 ### isEnabled
-Determines if a particular adon is enabled.
+Determines if a particular addon is enabled.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
