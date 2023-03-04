@@ -13,7 +13,7 @@ These are settings that control whole modules of BetterDiscord.
 
 ### Emote System
 
-This option allows you to toggle the Twitch emote system on or off. If you don't use it, it's good to leave this off as it saves your computer som RAM and CPU power.
+This option allows you to toggle the Twitch emote system on or off. If you don't use it, it's good to leave this off as it saves your computer some RAM and CPU power.
 
 ### Public Servers
 
@@ -55,7 +55,7 @@ This option allows you to completely disable the custom css system. If you don't
 
 ### Live Update
 
-This options lets the css editor update as you type rather than waiting for you to clik the button.
+This options lets the css editor update as you type rather than waiting for you to click the button.
 
 
 
@@ -113,7 +113,7 @@ This option causes BetterDiscord to output everything from the chromium console 
 
 ### DevTools
 
-This option allows you to open the chromium devtools with the usualy `ctrl`+`shift`+`i` combination. If you're not a developer, best to leave this off.
+This option allows you to open the chromium devtools with the usually `ctrl`+`shift`+`i` combination. If you're not a developer, best to leave this off.
 
 ### Debugger Hotkey
 
