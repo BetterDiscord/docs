@@ -95,7 +95,7 @@ These are functions that plugins _can_ make use of but are not required at all. 
 
 ##### getSettingsPanel
 
-This function allows your plugins to have a settings panel displayed through BetterDiscord. The expecting return type is either an `HTMLElement` or a `string` representing the HTML.
+This function allows your plugins to have a settings panel displayed through BetterDiscord. The expected return type is either an `HTMLElement` or a React element. Returning a `string` representing the HTML is deprecated.
 
 ##### observer
 
