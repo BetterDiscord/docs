@@ -3,6 +3,10 @@ sidebar_position: 2
 description: Learn the tools of the trade.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
 # Developer Tools
 
 These are tools that help with both general web development, and working with the React UI library. 
@@ -21,15 +25,17 @@ Once this is enabled, you can press `ctrl`+`shift`+`i` (or for a Mac `cmd`+`opt`
 
 If you have past web development experience but not a lot of React experience, it might be a good idea to give [its documentation](https://reactjs.org/tutorial/tutorial.html) a once-over. It also may be worth taking a look through [the tutorial](https://react-devtools-tutorial.vercel.app/) for the React DevTools.
 
-Since this environment is one with Chromium DevTools, we can add extensions meant for those DevTools. Unfortunately, this is not packaged with Discord or BetterDiscord, but BetterDiscord can add the React DevTools for you if you have it installed locally. That is, BetterDiscord looks for a local Chrome installation with the React Developer Tools extension installed and loads the extension from there.
+Since this environment is one with Chromium DevTools, we can add extensions meant for those DevTools. Unfortunately, this is not packaged with Discord or BetterDiscord, but BetterDiscord can add the React DevTools for you if you download it and place it in the BetterDiscord folder.
 
-So to get this setup, make sure you have Chrome installed (most people usually do), and then head to the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) extension page and install it like any other Chrome extension.
+To get this setup, download this [special manifest v2](https://github.com/mondaychen/react/raw/017f120369d80a21c0e122106bd7ca1faa48b8ee/packages/react-devtools-extensions/ReactDevTools.zip) version of the extension. Currently the version in the Chrome extension store only works for manifest v3 which is not compatible with electron.
 
-:::info
+Open your BetterDiscord folder and make a new folder inside called `extensions`. Within this folder, make another new folder with the React DevTools extension ID `fmkadmapgofadopljbjfkapdkoienihi`. The path should look something like `<BetterDiscord>/extensions/fmkadmapgofadopljbjfkapdkoienihi/`. Extract the contents of the `zip` you downloaded directly to this folder.
 
-Tip: Power users can avoid installing Chrome by creating a matching set of directories and placing the extension there instead!
-
-:::
+<Tabs className="code-tabs">
+<TabItem value="windows"><CodeBlock language="bash">%appdata%\BetterDiscord\plugins</CodeBlock></TabItem>
+<TabItem value="mac"><CodeBlock language="bash">~/Library/Application Support/BetterDiscord/plugins</CodeBlock></TabItem>
+<TabItem value="linux"><CodeBlock language="bash">~/.config/BetterDiscord/plugins/</CodeBlock></TabItem>
+</Tabs>
 
 With this installed, head back to the Developer Settings in BetterDiscord (the same from the [image above](#chromium-devtools)) and this time select the React DevTools option. BetterDiscord should then prompt you to restart.
 

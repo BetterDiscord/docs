@@ -29,10 +29,10 @@ If you're not familiar with any of the mentioned libraries, now is a good time t
 
 :::
 
-For the curious, here are the versions of the major components as of writing (June 21st 2022).
+For the curious, here are the versions of the major components as of writing (April 17th 2023).
 
 |Component|Version|
 |:--------|------:|
-|Chrome   |91.0.4472.164|
-|Electron |13.6.6 |
-|Node     |14.16.0|
+|Chrome   |108.0.5359.215|
+|Electron |22.3.2|
+|Node     |16.17.1|
