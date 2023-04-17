@@ -20,9 +20,9 @@ Finds multiple modules using multiple filters.
 |:----------|:------:|:--------:|:-------:|:----------------------:|
 queries|...object|&#x274C;|*none*|Object representing the query to perform
 queries.filter|function|&#x274C;|*none*|A function to use to filter modules
-queries.first|Boolean|&#x2705;|true|Whether to return only the first matching module
-queries.defaultExport|Boolean|&#x2705;|true|Whether to return default export when matching the default export
-queries.searchExports|Boolean|&#x2705;|false|Whether to execute the filter on webpack exports
+queries.first|boolean|&#x2705;|true|Whether to return only the first matching module
+queries.defaultExport|boolean|&#x2705;|true|Whether to return default export when matching the default export
+queries.searchExports|boolean|&#x2705;|false|Whether to execute the filter on webpack exports
 
 **Returns:** `any`
 ___
@@ -34,9 +34,9 @@ Finds a module using a filter function.
 |:----------|:------:|:--------:|:-------:|:----------------------:|
 filter|function|&#x274C;|*none*|A function to use to filter modules. It is given exports, module, and moduleID. Return `true` to signify match.
 options|object|&#x2705;|*none*|Options to configure the search
-options.first|Boolean|&#x2705;|true|Whether to return only the first matching module
-options.defaultExport|Boolean|&#x2705;|true|Whether to return default export when matching the default export
-options.searchExports|Boolean|&#x2705;|false|Whether to execute the filter on webpack exports
+options.first|boolean|&#x2705;|true|Whether to return only the first matching module
+options.defaultExport|boolean|&#x2705;|true|Whether to return default export when matching the default export
+options.searchExports|boolean|&#x2705;|false|Whether to execute the filter on webpack exports
 
 **Returns:** `any`
 ___
@@ -49,8 +49,8 @@ Finds a module that is lazily loaded.
 filter|function|&#x274C;|*none*|A function to use to filter modules. It is given exports. Return `true` to signify match.
 options|object|&#x2705;|*none*|Options for configuring the listener
 options.signal|AbortSignal|&#x2705;|*none*|AbortSignal of an AbortController to cancel the promise
-options.defaultExport|Boolean|&#x2705;|true|Whether to return default export when matching the default export
-options.searchExports|Boolean|&#x2705;|false|Whether to execute the filter on webpack exports
+options.defaultExport|boolean|&#x2705;|true|Whether to return default export when matching the default export
+options.searchExports|boolean|&#x2705;|false|Whether to execute the filter on webpack exports
 
 **Returns:** `Promise.<any>`
 ___

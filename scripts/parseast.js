@@ -20,7 +20,7 @@ const nameSort = (a, b) => {
 
 
 function getProps(memberName) {
-    const moduleProps = ast.filter(n => n.memberof === memberName && n.kind === "member" && !n.undocumented);
+    const moduleProps = ast.filter(n => n.memberof === memberName && (n.kind === "member" || n.kind === "constant") && !n.undocumented);
     moduleProps.sort(nameSort);
     return moduleProps.map(n => ({name: n.name, description: formatLink(n.summary || n.description), type: n?.type?.names[0] ?? n.name, deprecated: n.deprecated}));
 }

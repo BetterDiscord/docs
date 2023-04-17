@@ -9,16 +9,16 @@
 ## Methods
 
 ### after
-This method patches onto another function, allowing your code to run instead.  Using this, you are also able to modify the return value, using the return of your code instead.
+This method patches onto another function, allowing your code to run afterwards.  Using this, you are able to modify the return value after the original method is run.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-caller|string|Name of the caller of the patch function.
+caller|string|Name of the caller of the patch function
 moduleToPatch|object|Object with the function to be patched. Can also be an object's prototype.
-functionName|string|Name of the function to be patched.
+functionName|string|Name of the function to be patched
 callback|function|Function to run after the original method. The function is given the `this` context, the `arguments` of the original function, and the `return` value of the original function.
 
-**Returns:** `function` - Function that cancels the original patch.
+**Returns:** `function` - Function that cancels the original patch
 ___
 
 ### before
@@ -26,12 +26,12 @@ This method patches onto another function, allowing your code to run beforehand.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-caller|string|Name of the caller of the patch function.
+caller|string|Name of the caller of the patch function
 moduleToPatch|object|Object with the function to be patched. Can also be an object's prototype.
-functionName|string|Name of the function to be patched.
+functionName|string|Name of the function to be patched
 callback|function|Function to run before the original method. The function is given the `this` context and the `arguments` of the original function.
 
-**Returns:** `function` - Function that cancels the original patch.
+**Returns:** `function` - Function that cancels the original patch
 ___
 
 ### getPatchesByCaller
@@ -41,20 +41,20 @@ Returns all patches by a particular caller. The patches all have an `unpatch()` 
 |:----------|:------:|:----------------------:|
 caller|string|ID of the original patches
 
-**Returns:** `Array.<function()>` - Array of all the patch objects.
+**Returns:** `Array.<function()>` - Array of all the patch objects
 ___
 
 ### instead
-This method patches onto another function, allowing your code to run instead.  Using this, you are also able to modify the return value, using the return of your code instead.
+This method patches onto another function, allowing your code to run instead.  Using this, you are able to replace the original completely. You can still call the original manually if needed.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-caller|string|Name of the caller of the patch function.
+caller|string|Name of the caller of the patch function
 moduleToPatch|object|Object with the function to be patched. Can also be an object's prototype.
-functionName|string|Name of the function to be patched.
+functionName|string|Name of the function to be patched
 callback|function|Function to run before the original method. The function is given the `this` context, `arguments` of the original function, and also the original function.
 
-**Returns:** `function` - Function that cancels the original patch.
+**Returns:** `function` - Function that cancels the original patch
 ___
 
 ### unpatchAll

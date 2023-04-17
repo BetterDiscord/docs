@@ -9,12 +9,12 @@
 ## Methods
 
 ### delete
-Deletes a piece of stored data, this is different than saving as null or undefined.
+Deletes a piece of stored data. This is different than saving `null` or `undefined`.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
 pluginName|string|Name of the plugin deleting data
-key|string|Which piece of data to delete
+key|string|Which piece of data to delete.
 
 **Returns:** `void`
 ___

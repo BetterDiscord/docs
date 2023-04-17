@@ -54,7 +54,7 @@ Generates a function that filters by strings.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-strings|...String|A list of strings
+strings|...string|A list of strings
 
 **Returns:** `function` - A filter that checks for a set of strings
 ___

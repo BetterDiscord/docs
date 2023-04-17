@@ -31,13 +31,14 @@ css|string|CSS to apply to the document
 ___
 
 ### animate
-Utility to help smoothly animate using JavaScript
+Utility to help smoothly animate using JavaScript.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-update|function|&#x274C;|*none*|render function indicating the style should be updates
-duration|number|&#x274C;|*none*|duration in ms to animate for
-options|object|&#x2705;|*none*|option to customize the animation
+update|function|&#x274C;|*none*|Render function indicating the style should be updated
+duration|number|&#x274C;|*none*|Duration in ms to animate for
+options|object|&#x2705;|*none*|Options to customize the animation
+options.timing|function|&#x2705;|*none*|Optional function calculating progress based on current time fraction. Linear by default.
 
 **Returns:** `void`
 ___
@@ -48,13 +49,13 @@ Utility function to make creating DOM elements easier. Acts similarly  to `React
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
 tag|string|&#x274C;|*none*|HTML tag name to create
-options|object|&#x2705;|*none*|options object to customize the element
-options.className|string|&#x2705;|*none*|class name to add to the element
-options.id|string|&#x2705;|*none*|id to set for the element
-options.target|HTMLElement|&#x2705;|*none*|target element to automatically append to
-child|HTMLElement|&#x2705;|*none*|child node to add
+options|object|&#x2705;|*none*|Options object to customize the element
+options.className|string|&#x2705;|*none*|Class name to add to the element
+options.id|string|&#x2705;|*none*|ID to set for the element
+options.target|HTMLElement|&#x2705;|*none*|Target element to automatically append to
+child|HTMLElement|&#x2705;|*none*|Child node to add
 
-**Returns:** `void`
+**Returns:** `HTMLElement` - The created HTML element
 ___
 
 ### onRemoved
@@ -63,7 +64,7 @@ Adds a listener for when the node is removed from the document body.
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
 node|HTMLElement|Node to be observed
-callback|function|Function to run when fired
+callback|function|Function to run when removed
 
 **Returns:** `void`
 ___
@@ -76,7 +77,7 @@ Parses a string of HTML and returns the results. If the second parameter is true
 html|string|&#x274C;|*none*|HTML to be parsed
 fragment|boolean|&#x2705;|false|Whether or not the return should be the raw `DocumentFragment`
 
-**Returns:** `DocumentFragment` - - The result of HTML parsing
+**Returns:** `DocumentFragment` - The result of HTML parsing
 ___
 
 ### removeStyle
@@ -84,7 +85,7 @@ Removes a `<style>` from the document corresponding to the given ID.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-id|string|ID uses for the style element
+id|string|ID used for the style element
 
 **Returns:** `void`
 ___

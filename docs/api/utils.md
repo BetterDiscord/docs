@@ -13,30 +13,30 @@ Builds a classname string from any number of arguments. This includes arrays and
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-argument|...Any|anything that should be used to add classnames.
+argument|...any|Anything that should be used to add classnames
 
-**Returns:** `void`
+**Returns:** `string` - Joined classname
 ___
 
 ### debounce
-Returns a function, that, as long as it continues to be invoked, will not be triggered. The function will be called after it stops being called for N milliseconds.  Adapted from the version by David Walsh (https://davidwalsh.name/javascript-debounce-function)
+Returns a function, that, as long as it continues to be invoked, will not be triggered. The function will be called after it stops being called for `delay` milliseconds. It is called at the end of the sequence (trailing edge).  Adapted from the version by David Walsh (https://davidwalsh.name/javascript-debounce-function)
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-executor|function|
-delay|number|
+executor|function|The function to be debounced
+delay|number|Number of ms to delay calls
 
-**Returns:** `void`
+**Returns:** `function` - A debounced version of the function
 ___
 
 ### escapeHTML
-Takes a string of html and escapes it using the brower's own escaping mechanism.
+Takes a string of HTML and escapes it using the browser's own escaping mechanism.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-html|String|html to be escaped
+html|string|HTML to be escaped
 
-**Returns:** `void`
+**Returns:** `string` - Escaped HTML string
 ___
 
 ### extend
@@ -47,7 +47,7 @@ Deep extends an object with a set of other objects. Objects later in the list of
 extendee|object|Object to be extended
 extenders|...object|Objects to extend with
 
-**Returns:** `object` - - A reference to `extendee`
+**Returns:** `object` - A reference to `extendee`
 ___
 
 ### findInTree
@@ -58,8 +58,8 @@ Finds a value, subobject, or array from a tree that matches a specific filter. T
 tree|object|&#x274C;|*none*|Tree that should be walked
 searchFilter|callable|&#x274C;|*none*|Filter to check against each object and subobject
 options|object|&#x274C;|*none*|Additional options to customize the search
-options.walkable|Array.&lt;string&gt;\|null|&#x2705;|*none*|Array of strings to use as keys that are allowed to be walked on. Null value indicates all keys are walkable
-options.ignore|Array.&lt;string&gt;|&#x2705;|[]|Array of strings to use as keys to exclude from the search, most helpful when `walkable = null`.
+options.walkable|Array.&lt;string&gt;\|null|&#x2705;|*none*|Array of strings to use as keys that are allowed to be walked on. `null` indicates all keys are walkable.
+options.ignore|Array.&lt;string&gt;|&#x2705;|[]|Array of strings to use as keys to exclude from the search. Most helpful when `walkable = null`.
 
 **Returns:** `void`
 ___

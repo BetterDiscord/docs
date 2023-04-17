@@ -13,10 +13,10 @@ Builds a single menu item. The only prop shown here is the type, the rest should
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-props|object|&#x274C;|*none*|props used to build the item
-props.type|string|&#x2705;|"text"|type of the item, options: text, submenu, toggle, radio, custom, separator
+props|object|&#x274C;|*none*|Props used to build the item
+props.type|string|&#x2705;|"text"|Type of the item, options: text, submenu, toggle, radio, custom, separator
 
-**Returns:** `object` - the created component
+**Returns:** `object` - The created component
 ___
 
 ### buildMenu
@@ -24,9 +24,9 @@ Creates the menu *component* including the wrapping `ContextMenu`. Calls {@link 
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-setup|Array.&lt;object&gt;|array of item props used to build items. See {@link ContextMenu.buildMenuChildren}
+setup|Array.&lt;object&gt;|Array of item props used to build items. See {@link ContextMenu.buildMenuChildren}.
 
-**Returns:** `function` - the unique context menu component
+**Returns:** `function` - The unique context menu component
 ___
 
 ### buildMenuChildren
@@ -34,9 +34,9 @@ Creates the all the items **and groups** of a context menu recursively. There is
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-setup|Array.&lt;object&gt;|array of item props used to build items. See {@link ContextMenu.buildItem}
+setup|Array.&lt;object&gt;|Array of item props used to build items. See {@link ContextMenu.buildItem}.
 
-**Returns:** `Array.<object>` - array of the created component
+**Returns:** `Array.<object>` - Array of the created component
 ___
 
 ### close
@@ -52,12 +52,11 @@ Function that allows you to open an entire context menu. Recommended to build th
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
 event|MouseEvent|&#x274C;|*none*|The context menu event. This can be emulated, requires target, and all X, Y locations.
-menuComponent|function|&#x274C;|*none*|Component to render. This can be any react component or output of {@link ContextMenu.buildMenu}
-config|object|&#x274C;|*none*|configuration/props for the context menu
-config.position|string|&#x2705;|"right"|default position for the menu, options: "left", "right"
-config.align|string|&#x2705;|"top"|default alignment for the menu, options: "bottom", "top"
-config.onClose|function|&#x2705;|*none*|function to run when the menu is closed
-config.noBlurEvent|boolean|&#x2705;|false|No clue
+menuComponent|function|&#x274C;|*none*|Component to render. This can be any React component or output of {@link ContextMenu.buildMenu}.
+config|object|&#x274C;|*none*|Configuration/props for the context menu
+config.position|string|&#x2705;|"right"|Default position for the menu, options: "left", "right"
+config.align|string|&#x2705;|"top"|Default alignment for the menu, options: "bottom", "top"
+config.onClose|function|&#x2705;|*none*|Function to run when the menu is closed
 
 **Returns:** `void`
 ___
@@ -67,10 +66,10 @@ Allows you to patch a given context menu. Acts as a wrapper around the `Patcher`
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-navId|string|Discord's internal navId used to identify context menus
-callback|function|callback function that accepts the react render tree
+navId|string|Discord's internal `navId` used to identify context menus
+callback|function|Callback function that accepts the React render tree
 
-**Returns:** `function` - a function that automatically unpatches
+**Returns:** `function` - A function that automatically unpatches
 ___
 
 ### unpatch
@@ -78,8 +77,8 @@ Allows you to remove the patch added to a given context menu.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-navId|string|the original navId from patching
-callback|function|the original callback from patching
+navId|string|The original `navId` from patching
+callback|function|The original callback from patching
 
 **Returns:** `void`
 ___

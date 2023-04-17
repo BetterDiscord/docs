@@ -9,35 +9,35 @@
 ## Methods
 
 ### getInternalInstance
-Gets the internal react data of a specified node
+Gets the internal React data of a specified node.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-node|HTMLElement|Node to get the react data from
+node|HTMLElement|Node to get the internal React data from
 
 **Returns:** `object` - Either the found data or `undefined`
 ___
 
 ### getOwnerInstance
-Attempts to find the "owner" node to the current node. This is generally  a node with a stateNode--a class component.
+Attempts to find the "owner" node to the current node. This is generally  a node with a `stateNode` - a class component.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
-node|HTMLElement|&#x274C;|*none*|node to obtain react instance of
-options|object|&#x274C;|*none*|options for the search
-options.include|array|&#x2705;|*none*|list of items to include from the search
-options.exclude|array|&#x2705;|["Popout", "Tooltip", "Scroller", "BackgroundFlash"]|list of items to exclude from the search
-options.filter|callable|&#x2705;|_=>_|filter to check the current instance with (should return a boolean)
+node|HTMLElement|&#x274C;|*none*|Node to obtain React instance of
+options|object|&#x274C;|*none*|Options for the search
+options.include|array|&#x2705;|*none*|List of items to include in the search
+options.exclude|array|&#x2705;|["Popout", "Tooltip", "Scroller", "BackgroundFlash"]|List of items to exclude from the search.
+options.filter|callable|&#x2705;|_=>_|Filter to check the current instance with (should return a boolean)
 
-**Returns:** `*` - the owner instance or undefined if not found.
+**Returns:** `object` - The owner instance or `undefined` if not found
 ___
 
 ### wrapElement
-Creates an unrendered react component that wraps dom elements.
+Creates an unrendered React component that wraps HTML elements.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-element|HTMLElement|element or array of elements to wrap into a react component
+element|HTMLElement|Element or array of elements to wrap
 
-**Returns:** `object` - - unrendered react component
+**Returns:** `object` - Unrendered React component
 ___

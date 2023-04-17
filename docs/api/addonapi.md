@@ -18,7 +18,7 @@ Disables the given addon.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Addon id or filename.
+idOrFile|string|Addon ID or filename
 
 **Returns:** `void`
 ___
@@ -28,7 +28,7 @@ Enables the given addon.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Addon id or filename.
+idOrFile|string|Addon ID or filename
 
 **Returns:** `void`
 ___
@@ -38,7 +38,7 @@ Gets a particular addon.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Addon id or filename.
+idOrFile|string|Addon ID or filename
 
 **Returns:** `object` - Addon instance
 ___
@@ -51,11 +51,11 @@ Gets all addons of this type.
 ___
 
 ### isEnabled
-Determines if a particular adon is enabled.
+Determines if a particular addon is enabled.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Addon id or filename.
+idOrFile|string|Addon ID or filename
 
 **Returns:** `boolean`
 ___
@@ -65,7 +65,7 @@ Reloads if a particular addon is enabled.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Addon id or filename.
+idOrFile|string|Addon ID or filename
 
 **Returns:** `void`
 ___
@@ -75,7 +75,7 @@ Toggles if a particular addon is enabled.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-idOrFile|string|Addon id or filename.
+idOrFile|string|Addon ID or filename
 
 **Returns:** `void`
 ___
