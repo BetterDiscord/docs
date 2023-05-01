@@ -93,3 +93,32 @@ import CodeBlock from '@theme/CodeBlock';
 <TabItem value="canary"><CodeBlock language="bash">pnpm inject canary</CodeBlock></TabItem>
 <TabItem value="ptb"><CodeBlock language="bash">pnpm inject ptb</CodeBlock></TabItem>
 </Tabs>
+
+### Manually updating BetterDiscord
+
+##### 1. Enter the BetterDiscord directory
+```bash
+cd BetterDiscord
+```
+
+#### 2. Pull an up-to-date version of the Git repository
+```bash
+git pull
+```
+
+#### 3. Build BetterDiscord
+```bash
+pnpm build
+```
+
+#### 4. Reinject to Discord
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+
+<Tabs className="code-tabs">
+<TabItem value="stable"><CodeBlock language="bash">pnpm inject</CodeBlock></TabItem>
+<TabItem value="canary"><CodeBlock language="bash">pnpm inject canary</CodeBlock></TabItem>
+<TabItem value="ptb"><CodeBlock language="bash">pnpm inject ptb</CodeBlock></TabItem>
+</Tabs>
