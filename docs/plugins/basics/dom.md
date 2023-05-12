@@ -116,12 +116,12 @@ const serverList = document.querySelector(".tree-3agP2X > div > div[aria-label]"
 serverList.append(myButton);
 
 // This part re-adds it when removed
-BdApi.onRemoved(myButton, () => {
+BdApi.DOM.onRemoved(myButton, () => {
     serverList.append(myButton);
 });
 ```
 
-This is much cleaner and more descriptive of the action being taken. This is just one of the many helper functions that exist in `BdApi`. You'll learn more as you go through the docs. In fact, there are two more functions `injectCSS` and `clearCSS` that can be helpful for our button example.
+This is much cleaner and more descriptive of the action being taken. This is just one of the many helper functions that exist in `BdApi`. You'll learn more as you go through the docs. In fact, there are two more functions `addStyle` and `removeStyle` that can be helpful for our button example.
 
 These are pretty simple and straightforward. Say we added a class `my-button` to our button from before. We could then style it with css externally using this snippet:
 ```css
@@ -133,10 +133,10 @@ These are pretty simple and straightforward. Say we added a class `my-button` to
 }
 ```
 
-which is great and works, but we need to have it in our plugin. You can either create and add your own stylesheet to the document using the techniques at the beginning of this page, or you just use `BdApi.injectCSS`. Given an ID and your css, it'll take care of the rest.
+which is great and works, but we need to have it in our plugin. You can either create and add your own stylesheet to the document using the techniques at the beginning of this page, or you just use `BdApi.DOM.addStyle`. Given an ID and your css, it'll take care of the rest.
 
 ```js
-BdApi.injectCSS("myPluginName", `.my-button {
+BdApi.DOM.addStyle("myPluginName", `.my-button {
     padding: 4px;
     border-radius: 5px;
     background: black;
@@ -147,7 +147,7 @@ BdApi.injectCSS("myPluginName", `.my-button {
 which can later be removed using the same ID from before
 
 ```js
-BdApi.clearCSS("myPluginName");
+BdApi.DOM.removeStyle("myPluginName");
 ```
 
 Try playing around with this and all the techniques discussed above. When you feel comfortable, go ahead and move on to the next section.
