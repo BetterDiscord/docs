@@ -6,11 +6,11 @@ sidebar_position: 1
 
 :::info
 
-This documentation and the accompanying guides assume you already know CSS and are familiar with the Developer Tools, finding DIscord's classes and styling them. If you're not, check out the resources section below!
+This documentation and the accompanying guides assume you already know CSS and are familiar with the Developer Tools, finding Discord's classes and styling them. If you're not, check out the resources section below!
 
 :::
 
-These docs consist of this introduction which gives you an idea of what to expect, an overview on plugins and the development environment, a few guides, and an API reference.
+These docs consist of this introduction which gives you an idea of what to expect, an overview on themes, the development environment and a few guides.
 
 The [Introduction](../category/introduction) section gives a lot of background information on themes requirements, the development environment, and the tools at your disposal.
 
