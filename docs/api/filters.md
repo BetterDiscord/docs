@@ -18,17 +18,31 @@ name|string|Name the module should have
 **Returns:** `function` - A filter that checks for a `displayName` match
 ___
 
-### byProps
+### byKeys
 Generates a function that filters by a set of properties.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
-props|...string|List of property names
+keys|...string|List of property names
 
 **Returns:** `function` - A filter that checks for a set of properties
 ___
 
-### byPrototypeFields
+### byProps <span class="deprecated">Deprecated</span>
+
+
+
+**Returns:** `void`
+___
+
+### byPrototypeFields <span class="deprecated">Deprecated</span>
+
+
+
+**Returns:** `void`
+___
+
+### byPrototypeKeys
 Generates a function that filters by a set of properties on the object's prototype.
 
 | Parameter |  Type  |       Description      |
@@ -47,6 +61,16 @@ search|RegExp|A RegExp to check on the module
 filter|function|Additional filter
 
 **Returns:** `function` - A filter that checks for a regex match
+___
+
+### byStoreName
+Generates a function that filters by a specific internal Store name.
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+name|string|Name the store should have
+
+**Returns:** `function` - A filter that checks for a Store name match
 ___
 
 ### byStrings
