@@ -85,7 +85,7 @@ class MyPlugin {
                 myGreeting = zalgoPlugin.format(myGreeting);
             }
         }
-        BdApi.showToast(myGreeting);
+        BdApi.UI.showToast(myGreeting);
     }
 
     stop() {

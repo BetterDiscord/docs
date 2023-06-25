@@ -58,7 +58,7 @@ Where you store this object in your plugin is up to the individual developer. It
 
 ### Saving Settings
 
-BetterDiscord gives you an easy way to save your settings in a JSON file using `BdApi.saveData`. This function takes your plugin's name, the key you want to save and the corresponding data to save. This means you can save your entire settings object from above under a single key, or save each key invidually. See the examples below to help understand the difference.
+BetterDiscord gives you an easy way to save your settings in a JSON file using `BdApi.Data.save`. This function takes your plugin's name, the key you want to save and the corresponding data to save. This means you can save your entire settings object from above under a single key, or save each key invidually. See the examples below to help understand the difference.
 
 Saving the whole settings object under a single key:
 
@@ -77,7 +77,7 @@ const mySettings = {
     setting5: false
 };
 
-BdApi.saveData("myPlugin", "settings", mySettings);
+BdApi.Data.save("myPlugin", "settings", mySettings);
 ```
 
 </TabItem>
@@ -124,7 +124,7 @@ const mySettings = {
 const keys = Object.keys(mySettings);
 
 for (const key of keys) {
-    BdApi.saveData("myPlugin", key, mySettings[key]);
+    BdApi.Data.save("myPlugin", key, mySettings[key]);
 }
 ```
 
@@ -154,7 +154,7 @@ The first options--saving the entire object under a single key--may seem redunda
 
 ### Loading Settings
 
-Similar to above, BetterDiscord gives you an easy way to load your settings from a JSON file using `BdApi.loadData`. This function takes your plugin's name and the key you want to load. Just like before, you can have everything saved under one `settings` key, or saved individually in multiple keys. These are illustrated below.
+Similar to above, BetterDiscord gives you an easy way to load your settings from a JSON file using `BdApi.Data.load`. This function takes your plugin's name and the key you want to load. Just like before, you can have everything saved under one `settings` key, or saved individually in multiple keys. These are illustrated below.
 
 Loading the whole settings object from a single key:
 
@@ -162,7 +162,7 @@ Loading the whole settings object from a single key:
 <TabItem value="js" label="JS">
 
 ```js showLineNumbers
-const mySettings = BdApi.loadData("myPlugin", "settings");
+const mySettings = BdApi.Data.load("myPlugin", "settings");
 ```
 
 </TabItem>
@@ -199,7 +199,7 @@ const mySettings = {};
 const keys = ["setting1", "setting2", "setting3", "setting4", "setting5"];
 
 for (const key of keys) {
-    mySettings[key] = BdApi.loadData("myPlugin", key);
+    mySettings[key] = BdApi.Data.load("myPlugin", key);
 }
 ```
 
@@ -236,7 +236,7 @@ One common issue developers run into is default settings. Having defaults is ext
 <TabItem value="js" label="JS">
 
 ```js showLineNumbers
-const mySettings = BdApi.loadData("myPlugin", "settings");
+const mySettings = BdApi.Data.load("myPlugin", "settings");
 const myButton = document.getElementById("my-button");
 myButton.style.color = mySettings.accentColor; // undefined
 ```
@@ -266,7 +266,7 @@ const myDefaults = {
     accentColor: "blue"
 };
 
-const mySettings = Object.assign({}, myDefaults, BdApi.loadData("myPlugin", "settings"));
+const mySettings = Object.assign({}, myDefaults, BdApi.Data.load("myPlugin", "settings"));
 const myButton = document.getElementById("my-button");
 myButton.style.color = mySettings.accentColor; // "blue"
 ```
@@ -296,7 +296,7 @@ const myDefaults = {
 };
 
 const mySettings = {};
-const storedData = BdApi.loadData("myPlugin", "settings");
+const storedData = BdApi.Data.load("myPlugin", "settings");
 Object.assign(mySettings, myDefaults, storedData);
 ```
 
@@ -449,7 +449,7 @@ function buildSetting(text, key, type, value, callback = () => {}) {
     input.addEventListener("change", () => {
         const newValue = type == "checkbox" ? input.checked : input.value;
         mySettings[key] = newValue;
-        BdApi.saveData(meta.name, "settings", mySettings);
+        BdApi.Data.save(meta.name, "settings", mySettings);
         callback(newValue);
     });
     setting.append(label, input);
@@ -495,7 +495,7 @@ If we put all the pieces together and combine it with the button we made in the 
         input.addEventListener("change", () => {
             const newValue = type == "checkbox" ? input.checked : input.value;
             mySettings[key] = newValue;
-            BdApi.saveData(meta.name, "settings", mySettings);
+            BdApi.Data.save(meta.name, "settings", mySettings);
             callback(newValue);
         });
         setting.append(label, input);
@@ -525,7 +525,7 @@ If we put all the pieces together and combine it with the button we made in the 
 
   return {
     start: () => {
-        Object.assign(mySettings, BdApi.loadData(meta.name, "settings"));
+        Object.assign(mySettings, BdApi.Data.load(meta.name, "settings"));
         const serverList = document.querySelector("#app-mount");
         serverList.append(myButton);
         updateButtonText();

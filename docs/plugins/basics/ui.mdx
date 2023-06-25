@@ -73,7 +73,7 @@ There are some utility functions from `BdApi` that help you build and display ce
 
 ### alert
 
-The `BdApi.alert()` method allows you to create and display a simple yet extensible informational modal. Its signature is `alert(title, content)`.
+The `BdApi.UI.alert()` method allows you to create and display a simple yet extensible informational modal. Its signature is `alert(title, content)`.
 
 The most straightforward way to use it, is to just use strings.
 
@@ -81,7 +81,7 @@ The most straightforward way to use it, is to just use strings.
 <TabItem value="code">
 
 ```js
-BdApi.alert("Hello World", "This is just a basic informational modal!");
+BdApi.UI.alert("Hello World", "This is just a basic informational modal!");
 ```
 
 </TabItem>
@@ -99,7 +99,7 @@ You can also pass in a react element for `content` but <u>not for `title`</u>. H
 <TabItem value="code">
 
 ```jsx
-BdApi.alert("Hello World", <div>This is just a basic informational modal!</div>);
+BdApi.UI.alert("Hello World", <div>This is just a basic informational modal!</div>);
 ```
 
 </TabItem>
@@ -125,7 +125,7 @@ function MySearchInput(props) {
             />;
 }
 
-BdApi.alert(
+BdApi.UI.alert(
     "Input Test",
     <MySearchInput
         placeholder="Testing..."
@@ -160,7 +160,7 @@ Under the covers, `alert` makes use of `showConfirmationModal`. This one is an e
 <TabItem value="code">
 
 ```js
-BdApi.showConfirmationModal("Hello World", "This is just a basic confirmation modal!");
+BdApi.UI.showConfirmationModal("Hello World", "This is just a basic confirmation modal!");
 ```
 
 </TabItem>
@@ -186,7 +186,7 @@ function MySearchInput(props) {
             />;
 }
 
-BdApi.showConfirmationModal(
+BdApi.UI.showConfirmationModal(
     "Input Test",
     <MySearchInput
         placeholder="Find..."
@@ -222,7 +222,7 @@ Since toasts are meant to be simple and straightforward messages to the user, ma
 <TabItem value="code">
 
 ```js
-BdApi.showToast("This is just a basic toast!");
+BdApi.UI.showToast("This is just a basic toast!");
 ```
 
 </TabItem>
@@ -272,7 +272,7 @@ This function has the same signature as `showToast` with the except that `conten
 <TabItem value="code">
 
 ```js
-BdApi.showNotice("This is just a basic informational notice!");
+BdApi.UI.showNotice("This is just a basic informational notice!");
 ```
 
 </TabItem>
@@ -290,7 +290,7 @@ They can do more than just show information though, you can also add multiple bu
 <TabItem value="code">
 
 ```js
-BdApi.showNotice(
+BdApi.UI.showNotice(
     "This is just a basic informational notice!",
     {
         type: "error",
