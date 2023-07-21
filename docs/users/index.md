@@ -25,15 +25,11 @@ BetterDiscord fully integrates Twitch emotes sourced from BTTV, Twitch, and FFZ.
 
 ### Live Editor
 
-BetterDiscord allows you to modify your Discord application and see the changes apply in real-time.
+BetterDiscord allows you to modify your Discord application and see the changes apply in real time.
 
 ### Transparency
 
 BetterDiscord can make the Discord application partially see-through leading to very cool designs and desktop environments.
-
-### Public Servers
-
-BetterDiscord adds a public server directory sourced from [DiscordServers.com](https://discordservers.com/). This is different from the built-in discovery feature of Discord because DiscordServer is a community-run listing and does not have the same requirements as discovery.
 
 ### Dual Boot
 
