@@ -64,7 +64,7 @@ This option determines whether or not line numbers should be shown.
 
 ### Minimap
 
-This option determines if the minimap that represents the code on the right side should be hidden or shown.
+This option determines if the minimap that represents the code on the right-hand side should be hidden or shown.
 
 ### Reference Tooltips
 
