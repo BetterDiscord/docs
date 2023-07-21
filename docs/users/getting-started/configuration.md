@@ -51,7 +51,7 @@ This option lets the CSS editor update as you type rather than waiting for you t
 
 ### Editor Location
 
-This option determines what editor should open when editing the custom CSS.
+This option determines which editor should open when editing custom CSS.
 
 
 ## Editor Preferences
