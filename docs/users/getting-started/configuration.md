@@ -60,7 +60,7 @@ Settings that affect all editors used inside BetterDiscord.
 
 ### Line Numbers
 
-This option determines whether or not line numbers should be shown.
+This option simply determines whether or not line numbers should be shown.
 
 ### Minimap
 
