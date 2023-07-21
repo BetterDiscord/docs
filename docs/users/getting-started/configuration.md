@@ -68,7 +68,7 @@ This option determines if the minimap that represents the code on the right-hand
 
 ### Reference Tooltips
 
-This option shows tooltips when hovering over parts of your code. For CSS this would be selector information. For JavaScript, this would be variable information.
+This option shows tooltips when hovering over parts of your code. For CSS, this would be selector information. For JavaScript, this would be variable information.
 
 ### Quick Suggestions
 
