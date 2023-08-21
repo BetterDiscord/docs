@@ -7,7 +7,7 @@ description: How to extend BetterDiscord.
 
 ## Video
 
-The second half of this video shows exaclty how to install addons.
+The second half of this video shows exactly how to install addons.
 
 <iframe width="850" height="478" src="https://www.youtube.com/embed/U0tTENsBS4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

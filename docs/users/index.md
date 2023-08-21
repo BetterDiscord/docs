@@ -31,10 +31,6 @@ BetterDiscord allows you to modify your Discord application and see the changes 
 
 BetterDiscord can make the Discord application partially see-through leading to very cool designs and desktop environments.
 
-### Public Servers
-
-BetterDiscord adds a public server directory sourced from [DiscordServers.com](https://discordservers.com/). This is different from the built-in discovery feature of Discord because DiscordServer is a community run listing and does not have the same requirements as discovery.
-
 ### Dual Boot
 
 BetterDiscord allows you to have multiple shortcuts to Discord that allow you to quickly boot with or without BetterDiscord. No need to fiddle with installing and uninstalling.
@@ -45,7 +41,7 @@ Plugins can increase the functionality and user experience of the app through Ja
 
 ### Themes
 
-Themes allow you to completely customize your client with CSS. You can either make your own theme, or download the wide variety of themes from our community.
+Themes allow you to completely customize your client with CSS. You can either make your own theme or download the wide variety of themes from our community.
 
 ## Keep in Touch
 - [Discord](https://betterdiscord.app/invite)

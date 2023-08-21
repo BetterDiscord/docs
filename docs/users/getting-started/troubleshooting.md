@@ -52,11 +52,11 @@ This is usually an issue with Discord moving around its installation location on
 <details>
 <summary>Installer won't open</summary>
 
-If you are on Linux try rnning with the `--no-sandbox`
+If you are on Linux try running with the `--no-sandbox`
 
 If the installer does not seem to open, follow these steps:
 1. Download and install [7-Zip](https://www.7-zip.org/)
-1. Right click and extract the BetterDiscord installer into a folder.
+1. Right-click and extract the BetterDiscord installer into a folder.
 1. Run the exe found in the folder.
 
 OR
@@ -68,7 +68,7 @@ Follow the [manual installation](../getting-started/installation/#manual-install
 <summary>Installer is all black</summary>
 
 Try one of the following:
- - Right click the installer and select run as Administrator.
+ - Right-click the installer and select run as Administrator.
  - Open the command prompt by pressing `win`+`r` type `cmd` and press enter. Then type `ipconfig /flushdns` and press enter in the window that appears.
  - Disable your anti-virus temporarily.
 
