@@ -266,10 +266,12 @@ body {
   /* justify-content: center; */
 }
 
-.theme-doc-sidebar-container {
-  /* --doc-sidebar-width: 30%; */
-  display: flex!important;
-  justify-content: flex-end;
+@media (min-width: 997px) {
+  .theme-doc-sidebar-container {
+    /* --doc-sidebar-width: 30%; */
+    display: flex!important;
+    justify-content: flex-end;
+  }
 }
 
 .theme-doc-sidebar-container > div {
@@ -346,6 +348,12 @@ body {
 
 html[data-theme="dark"] {
   --doc-sidebar-width: 30%;
+}
+
+@media (min-width: 997px) {
+  .sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module {
+    width: auto!important;
+  }
 }
 
 .anchor .hash-link {
