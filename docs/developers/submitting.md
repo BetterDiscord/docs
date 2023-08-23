@@ -19,14 +19,16 @@ Submissions are handled through the [BetterDiscord website](https://betterdiscor
 
 ![Submit an Addon](./img/submit.png)
 
-3. Wait for your account to be authorized.
- - If you have no plugins or themes detected on GitHub you may be automatically declined.
- - This process can take up to 2 days.
+1. Wait for your account to be authorized.
+   - If you have no plugins or themes detected on GitHub you may be automatically declined.
+   - The verification process can take up to 2 days.
 1. When approved, you can finish the submission forms for either a plugin or theme.
 1. Wait for the submission to be approved.
 
 
 ## Approval Process
+
+Due to our small team size, we have no guarantees for how long a review can take. Typically, they take no more than a month, but they can be as quick as a day.
 
 ### Review 
 
@@ -49,6 +51,12 @@ Submissions are handled through the [BetterDiscord website](https://betterdiscor
 
 
 ## Updating
+
+:::danger
+
+Due to GitHub's limitations, the site is very sensitive to your changes. If you force-push and break history, the site will not be able to keep track of the plugin. The same goes if you change your GitHub username.
+
+:::
 
 ### Your Addon
 

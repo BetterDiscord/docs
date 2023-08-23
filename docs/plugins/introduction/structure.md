@@ -22,7 +22,7 @@ This page only goes over the body of a plugin. Make sure you have read up on the
 
 ## Details
 
-BetterDiscord plugins must be in vanilla JavaScript and be contained in a single file in order to be loaded. That means if you want to use something like JSX, or TypeScript it must be transpiled. Similarly if you want to break out your code into multiple files it must be bundled. Both of these topics are covered later in the documentation.
+BetterDiscord plugins must be in vanilla JavaScript and be contained in a single file in order to be loaded. That means if you want to use something like JSX, or TypeScript it must be transpiled. Similarly if you want to break out your code into multiple files it must be bundled. Both of these topics are covered later in the documentation. In order to cut back on redundancy, your [addon meta](../../developers/addons.md) is provided as a plain object to your main function or constructor. You will see examples of this throughout the documentation.
 
 Plugin files must be named in the format `*.plugin.js` where `*` is representative of any string. Usually this matches the name of the plugin without any spaces or special characters, however that is not a requirement.
 

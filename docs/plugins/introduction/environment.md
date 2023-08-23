@@ -9,9 +9,21 @@ This section expands upon the general environment info
 
 ## Node.js
 
-BetterDiscord gives plugins access to the [Node.js](https://nodejs.org/) bundled into the Discord desktop application. This means anything you can do with Node.js can be done inside of a plugin. There are some caveats, especially when it comes to using modules from the [npm](https://www.npmjs.com/) ecosystem because Electron applications require many packages to be compiled specifically for use with Electron and for that specific platform/OS.
+BetterDiscord used to give direct access to the [Node.js](https://nodejs.org/) api directly in the renderer process. However, Discord made a change to their fork of Electron that made this impossible, practically speaking. That said, due to how important these APIs are, how ubiquitous their usage in plugins, and in the interest of backwards-compatibility, BetterDiscord has polyfilled certain APIs to make them available to plugins in the same way as before (`require`).
 
-The standard library of Node.js is fully available inside of BetterDiscord. For instance, if you want to load a file in the current directory you can just use the `fs` module.
+Currently, the list of polyfilled Node modules are:
+
+- Buffer
+- Crypto
+- Filesystem
+- HTTPS
+- Module
+- Request
+- VM
+
+These polyfills are not 100% exact replicas of these APIs but they are close enough that 99% of plugins had no issues when switching to this. In the future, BetterDiscord will introduce custom APIs with equivalent functionality, and deprecate the usage of these polyfills.
+
+However, for now feel free to use them. For instance, if you want to load a file in the current directory you can just use the `fs` module.
 ```js
 const fs = require("fs");
 const myData = fs.readFileSync("myfile.txt", "utf8");

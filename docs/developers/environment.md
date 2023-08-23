@@ -15,7 +15,7 @@ Discord Desktop is an [Electron](https://www.electronjs.org/) application which 
 
 To get a better sense of what this does, think of the limitations of making an application in a web browser. Actions like loading and saving local files, listening to keybinds globally, and controlling the user's clipboard are just not possible in the web browser. Most of these limitations are for security reasons, but with [Node.js](https://nodejs.org/), suddenly those are all very possible.
 
-This also means that BetterDiscord, and the plugins, have access to both of these environments as well.
+This also means that BetterDiscord, and the plugins via a [polyfill](../plugins/introduction/environment.md#nodejs), have access to both of these environments as well.
 
 ### Web Application
 
