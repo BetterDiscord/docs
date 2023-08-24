@@ -24,7 +24,7 @@ One thing to keep in mind going forward: without [bundling](./bundling.mdx), you
 
 BetterDiscord provides both the `React` and `ReactDOM` globals on the `BdApi` object. This gives you access to make functional components, make class-based components, or even render into an existing DOM node. Take a look at the example below to get an idea of how it might work in your own plugin.
 
-<Tabs className="code-tabs">
+<Tabs className="code-tabs" groupId="reactStyle">
 <TabItem value="Class">
 
 ```js showLineNumbers
@@ -52,7 +52,7 @@ function MyComponent() {
 
 Using hooks for functional components and state in class-based components also work just fine.
 
-<Tabs className="code-tabs">
+<Tabs className="code-tabs" groupId="reactStyle">
 <TabItem value="Class">
 
 ```js showLineNumbers
@@ -88,7 +88,7 @@ If you think that repeating `BdApi.React` over and over is a bit tedious, many d
 
 Some of the [UI related functions](../../api/ui.md) of BetterDiscord accept React Components as options to be rendered. Some accept React Nodes/Elements which is just having already called `createElement`. One good example is the confirmation modal. It's already a very helpful utility, but adding in your own custom React component allows for some very powerful UI and UX for end users. Just as a quick example, take a look at how we can combine the our `MyComponent` from before with the confirmation modal.
 
-```js showLineNumbers
+```js
 BdApi.showConfirmationModal("My Component Demo", BdApi.React.createElement(MyComponent));
 ```
 
@@ -100,7 +100,7 @@ How you use it is entirely up to you! You can put anything in these modals from 
 
 Speaking of settings panels, you might recall from [Plugin Structure](../introduction/structure.md) that plugins can have a `getSettingsPanel()` that return a React component. Look at this sample plugin below for a short example.
 
-```js
+```js showLineNumbers title="MyComponentDemo.plugin.js"
 /**
  * @name My Component Demo
  * @description Showing off a settings panel with a custom react component.

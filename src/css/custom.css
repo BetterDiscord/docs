@@ -62,6 +62,15 @@ html[data-theme='dark'] {
   border-radius: 0 0 var(--ifm-code-border-radius) var(--ifm-code-border-radius);
 }
 
+div[class*="codeBlockTitle"] {
+  background-color: #282A36;
+  border-radius: var(--ifm-code-border-radius) var(--ifm-code-border-radius) 0 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  color: var(--ifm-tabs-color);
+  border: 0;
+  padding: var(--ifm-tabs-padding-vertical) var(--ifm-tabs-padding-horizontal);
+}
+
 
 
 html[data-theme='dark'] .footer {
@@ -351,7 +360,7 @@ html[data-theme="dark"] {
 }
 
 @media (min-width: 997px) {
-  .sidebar_node_modules-\@docusaurus-theme-classic-lib-theme-DocSidebar-Desktop-styles-module {
+  div[class*="sidebar_"] {
     width: auto!important;
   }
 }
