@@ -106,7 +106,7 @@ const config = {
                 {
                   type: "doc",
                   docId: "discord/index",
-                  label: "Discord Internals",
+                  label: "Discord",
                 },
             ]
           },
