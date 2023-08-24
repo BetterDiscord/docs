@@ -149,7 +149,7 @@ const config = {
                 to: "/api/"
               },
               {
-                label: "Discord Internals",
+                label: "Discord Reference",
                 to: "/discord/"
               },
             ],

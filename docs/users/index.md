@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# Introduction
+# BetterDiscord
 
 ✔️ BetterDiscord is a client mod with endless flexibility and addons. The only limit to the customization is your own imagination.
 
