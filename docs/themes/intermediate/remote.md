@@ -26,23 +26,23 @@ So you've seen other themes that import and update automatically, and you've see
 
 To setup remote imports using GitHub Pages, we'll need to prepare your theme to be `@import` style. But before we get to that, let's make sure your GitHub repository it set up to serve GitHub Pages. Go to your repository on the GitHub website and click on the `Settings` tab on the top.
 
-![Tabs](github_tabs.png)
+![Tabs](./img/github_tabs.png)
 
 Then on the left-hand side, click on `Pages`.
 
-![PagesButton](github_pages.png)
+![PagesButton](./img/github_pages.png)
 
 From there, you should see a dropdown under `Build & Deployment`. Set it to deploy from a branch.
 
-![Deploy](github_deploy.png)
+![Deploy](./img/github_deploy.png)
 
 The last step is to make sure that the branch is set to your default branch. In most cases it is either `main` or `master`.
 
-![Branch](github_branch.png)
+![Branch](./img/github_branch.png)
 
 Now, just wait for GitHub to finish deploying your site. You can double check by refreshing the GitHub Pages settings and checking to see a message at the top about your deployment.
 
-![Live](github_live.png)
+![Live](./img/github_live.png)
 
 Note down the URL shown in this panel because it's what will be used for your theme. Actually converting your theme is the easy part. Basically, take your entire CSS and put it in a new file in the same repository as your `*.theme.css` file. Then add an import to your theme file using the format `https://<url>/<filename>.css`, replacing the bracketed values with your own (`<url>` should be the value from above). It might look a little something like below.
 

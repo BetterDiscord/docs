@@ -8,7 +8,7 @@ sidebar_position: 3
 
 There are many selectors that are helpful when developing your theme. But keep in mind, Discord is not using the bleeding edge versions of Chrome so not all of the very latest CSS selectors are supported. `:has` support was only recently added. The latest Chrome version in use as of writing is Chrome `108`. Here's what isn't supported at a brief glance.
 
-![CanIUse](caniuse.png)
+![CanIUse](./img/caniuse.png)
 
 You can view the list for yourself and click for details by checking out [CanIUse](https://caniuse.com/?compare=chrome+108&compareCats=CSS). They're a great resource to see what's supported in which browser, and you can even search by feature to see where it is and isn't supported.
 

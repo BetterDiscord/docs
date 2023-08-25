@@ -36,7 +36,7 @@ Let's get back to the guild list. The first step to theming it is to understand 
 <details>
 <summary>Guild List in DevTools</summary>
 
-![Guild List](./guild_list.png)
+![Guild List](./img/guild_list.png)
 
 </details>
 

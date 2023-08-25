@@ -20,7 +20,7 @@ If you want your theme to be transparent or transluscent to the desktop of your 
 
 You'll see that suddenly you can partially see your desktop through the Discord client. The style above is just a quick-and-dirty way to show that it's actually working. It's better to properly integrate transparency into your theme. That can include things like having glassy effects on elements by adding a [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter) with a blur. That gives you a cool effect.
 
-![backdrop](backdrop_filter.png)
+![backdrop](./img/backdrop_filter.png)
 
 You can also consider making just part of your theme see-through by keeping one section completely opaque. It adds an interesting dichotomy and a unique feel to your theme.
 
