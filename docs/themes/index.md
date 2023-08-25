@@ -20,7 +20,7 @@ The [Intermediate](./intermediate) guide starts to branch into some of the more 
 
 The [Advanced](./advanced) guide goes more in depth with advanced concepts including CSS preprocessing and optimizing your theme.
 
-The [Discord Reference](/api) section is purely a reference to what variables are available as well as the values.
+The [Discord Reference](../discord/variables.md) section is purely a reference to what variables are available as well as the values.
 
 ## Resources
 
