@@ -20,7 +20,7 @@ Since we're using VSCode as our point of reference, it's a good idea to work out
 
 Just like how we recommended in [the last section](./process.md#code-structure--strategy), let's start with the guild list and see how easy or difficult it can be to replicate the vibe of VSCode. Let's start with our theme file.
 
-```js multi=true title="MyTheme.theme.css"
+```js title="MyTheme.theme.css"
 /**
  * @name MyTheme
  * @author YourName
