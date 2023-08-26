@@ -8,11 +8,11 @@ Letting users configure your theme to their personal preference is one of the mo
 
 ## Using Variables
 
-### Why?
+### Why do I need them?
 
 If you weren't already aware, CSS variables (sometimes known as custom properties), are a way to reuse the same values over and over while making them easily changeable later. MDN, of course, has [a great article](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) on this. The best way to use these is to find values that you reuse over and over in your theme and turn them into a custom property you can change later. One of the most common use-cases in a theme is for the theme's main accent color. They're also frequently used for background colors and sizing of different elements. Every theme is a bit different in that regard, but they all follow the same general rule of thumb: If it's something you're doing repeatedly and consistently, making it a variable makes it easy to change later for both the end-users as well as for you.
 
-### How?
+### How can I use them?
 
 Using CSS variables in BetterDiscord is exactly like in regular CSS. Simply declare it somewhere high in the document tree and reuse it in your theme. At a glace it might look something like this:
 

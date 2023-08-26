@@ -17,15 +17,15 @@ You can view the list for yourself and click for details by checking out [CanIUs
 
 We touched on this a bit in [The Creative Process](./process.md) section, but we'll talk about some of the more detailed information here.
 
-### What?
+### What is specificity?
 
 Specificity determines what styles take precedence in order to style elements. It's like a race condition in traditional programming but in this case, instead of racing against another function over time, you're racing against another style over how specifically you are targeting a given element. The style with the the *most* specific selector wins. Unless there is a tie, in which case the one that __appears later in the document__ wins. This is a specific wording, not to be confused with the idea that the one added latest-in-time to the page wins. But rather, the one appears last in the DOM tree of the `document`.
 
-### Why?
+### Why do I need to know it?
 
 The reason why we care about specificity so much in BetterDiscord themes is because we are theming an already existing application. In traditional web development, you own all of the CSS and you can control what selectors you are using and you can be careful about colliding selectors. In this environment, you are competing against Discord's styles for each and every element that exists in the page. And you control neither the HTML nor the CSS on the page. So (nearly) every single style you write will need a selector that is overriding another in some way. That is why we care so much about specificity.
 
-### How?
+### How can I use it?
 
 Understanding the *how* of specificity is a very complex subject that browsers have to treat very carefully. This is out of scope for BetterDiscord's documentation, but if you are interested in how specificity is calculated, take a look at [MDN's article](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) on the subject. It explains it much better than we ever could.
 
