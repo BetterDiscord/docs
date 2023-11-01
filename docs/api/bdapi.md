@@ -22,6 +22,12 @@ An instance of [Data](./data) to manage data.
 **Type:** `Data`
 ___
 
+### Net
+An instance of [Net](./net) for networking requests.
+
+**Type:** `Net`
+___
+
 ### Patcher
 An instance of [Patcher](./patcher) to monkey patch functions.
 
