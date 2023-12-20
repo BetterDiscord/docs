@@ -19,10 +19,6 @@ Understand the basics in **under 2 minutes** by following this video guide:
 
 ## Core Features
 
-### Twitch Emotes
-
-BetterDiscord fully integrates Twitch emotes sourced from BTTV, Twitch, and FFZ.
-
 ### Live Editor
 
 BetterDiscord allows you to modify your Discord application and see the changes apply in real time.
