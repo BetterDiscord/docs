@@ -81,7 +81,7 @@ module.exports = () => {
 
 But whatever your preference, just pass those functions on up!
 
-All of those examples are valid ways of getting those functions back to BetterDisord. The main idea is that when BetterDiscord calls `require("./yourplugin.plugin.js")`, the `exports` needs to <u>either</u>:
+All of those examples are valid ways of getting those functions back to BetterDiscord. The main idea is that when BetterDiscord calls `require("./yourplugin.plugin.js")`, the `exports` needs to <u>either</u>:
 1. have both a `start()` and `stop()` prototype function.
 2. _be_ a function that returns an object containing both functions.
 
