@@ -120,6 +120,8 @@ Before we even configure Webpack proper, let's just quickly adjust our `package.
 Now with that out of the way, let's take a look at a general commonjs output Webpack configuration.
 
 ```js title="webpack.config.js" showLineNumbers
+const path = require("path");
+
 module.exports = {
   mode: "development",
   target: "node",
@@ -177,6 +179,7 @@ module.exports = {
 So if we put it all together we end up with a full config like this:
 
 ```js title="webpack.config.js" showLineNumbers
+const path = require("path");
 const webpack = require("webpack");
 const pkg = require("./package.json");
 const pluginConfig = require("./src/config.json");
