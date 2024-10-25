@@ -1,6 +1,6 @@
 # UI
 
-`UI` is a utility class for creating user interfaces. Instance is accessible through the [BdApi](./bdapi).
+`UI` is a utility class for creating user interfaces. Instance is accessible through the [BdApi](./bdapi.md).
 
 ## Properties
 

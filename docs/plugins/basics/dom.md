@@ -7,7 +7,7 @@ description: How to use DOM manipulation.
 
 If you're unfamiliar with the DOM it might be worth taking a look at the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) about it.
 
-Since we already know from [previous pages](../introduction/environment) that Discord is essentially a Chromium browser, we can access the DOM using typical methods.
+Since we already know from [previous pages](../introduction/environment.md) that Discord is essentially a Chromium browser, we can access the DOM using typical methods.
 
 ```js
 // Create a reference to the document
@@ -41,7 +41,7 @@ One thing to note from this code is the root container `document.getElementById(
 
 And while that works, it's not very practical or useful. And the location of the button is terrible. So what if we wanted to add it to the end of the guild/server list? Let's give it a try!
 
-First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [devtools](../../developers/devtools) and select the guild list on the left.
+First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [devtools](/developers/devtools) and select the guild list on the left.
 
 ![Server List](./img/servers.png)
 

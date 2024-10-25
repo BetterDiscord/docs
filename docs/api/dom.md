@@ -1,6 +1,6 @@
 # DOM
 
-`DOM` is a simple utility class for dom manipulation. An instance is available on [BdApi](./bdapi).
+`DOM` is a simple utility class for dom manipulation. An instance is available on [BdApi](./bdapi.md).
 
 ## Properties
 

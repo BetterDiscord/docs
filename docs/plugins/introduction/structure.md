@@ -87,7 +87,7 @@ All of those examples are valid ways of getting those functions back to BetterDi
 
 It may seem roundabout to do it this way, but this is what allows for developers to make use of uninstantiated classes like the example above.
 
-If you feel you have a solid grasp of how this works, take a look at the [Guidelines](./guidelines) before moving on to the [Basics](../basics) guide.
+If you feel you have a solid grasp of how this works, take a look at the [Guidelines](./guidelines.md) before moving on to the [Basics](../../basics) guide.
 
 #### Optional Functions
 

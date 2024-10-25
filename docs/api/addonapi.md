@@ -1,6 +1,6 @@
 # AddonAPI
 
-`AddonAPI` is a utility class for working with plugins and themes. Instances are accessible through the [BdApi](./bdapi).
+`AddonAPI` is a utility class for working with plugins and themes. Instances are accessible through the [BdApi](./bdapi.md).
 
 ## Properties
 

@@ -1,6 +1,6 @@
 # Data
 
-`Data` is a simple utility class for the management of plugin data. An instance is available on [BdApi](./bdapi).
+`Data` is a simple utility class for the management of plugin data. An instance is available on [BdApi](./bdapi.md).
 
 ## Properties
 

@@ -6,7 +6,7 @@ This module is still in beta and is subject to change. This API is mostly finali
 
 :::
 
-`Net` is a namespace for networking related utility functions. Instance is accessible through the [BdApi](./bdapi).
+`Net` is a namespace for networking related utility functions. Instance is accessible through the [BdApi](./bdapi.md).
 
 ## Properties
 
