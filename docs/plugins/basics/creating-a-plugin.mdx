@@ -13,7 +13,7 @@ Knowing what you want the plugin to do also allows you to reach out to our commu
 
 ## The Style
 
-Next, you'll need to decide which plugin style to use. As seen in the [plugin structure](../introduction/structure) docs, there a couple different ways to go about it. They are shown again below for clarity. Each one has pros and cons, but can each work well for simple to advanced plugins. In the end it ultimately comes down to the individual developer's style preference. A mix of the styles will be shown here in the docs.
+Next, you'll need to decide which plugin style to use. As seen in the [plugin structure](../introduction/structure.md) docs, there a couple different ways to go about it. They are shown again below for clarity. Each one has pros and cons, but can each work well for simple to advanced plugins. In the end it ultimately comes down to the individual developer's style preference. A mix of the styles will be shown here in the docs.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -100,7 +100,7 @@ module.exports = meta => {
 
 It's worth noting when deciding that each plugin is loaded similarly to a node module. This means that defining variables outside of the `module.exports` will not result in scope creep or variable bloat.
 
-Once you've got that decided, go ahead and save your template in your [plugins folder](../introduction/quick-start#plugin-folder) as `ExamplePlugin.plugin.js` and change `ExamplePlugin` to the name of your choice.
+Once you've got that decided, go ahead and save your template in your [plugins folder](../introduction/quick-start.mdx/#plugin-folder) as `ExamplePlugin.plugin.js` and change `ExamplePlugin` to the name of your choice.
 
 
 ## Things to Keep in Mind
@@ -109,8 +109,8 @@ There's a lot to keep in mind as you develop your plugin. One of the most import
 
 If you're looking to submit this plugin, or share it with others, it's worth keeping in mind what parts of the plugin are opinionated. For example, the way something is formatted or styled may look good to some and not to others.
 
-If you have these things in mind while you develop, you can add unique classes to elements for themes and users to take advantage of, or even add [plugin settings](./settings) which we'll get to a bit later.
+If you have these things in mind while you develop, you can add unique classes to elements for themes and users to take advantage of, or even add [plugin settings](./settings.mdx) which we'll get to a bit later.
 
 ## What's Next?
 
-If you feel comfortable with everything so far, you're probably safe to move on to making your plugin by first [interacting with the dom](./dom). Otherwise, take the time and experiment with the plugin templates and see what feels right, maybe even brush up on your JavaScript skills.
+If you feel comfortable with everything so far, you're probably safe to move on to making your plugin by first [interacting with the dom](./dom.md). Otherwise, take the time and experiment with the plugin templates and see what feels right, maybe even brush up on your JavaScript skills.

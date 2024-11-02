@@ -1,6 +1,6 @@
 # Utils
 
-`Utils` is a utility containing commonly reused functions. Instance is accessible through the [BdApi](./bdapi).
+`Utils` is a utility containing commonly reused functions. Instance is accessible through the [BdApi](./bdapi.md).
 
 ## Properties
 

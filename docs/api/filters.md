@@ -1,6 +1,6 @@
 # Filters
 
-Series of [Filters](./filters) to be used for finding webpack modules.
+Series of [Filters](./filters.md) to be used for finding webpack modules.
 
 ## Properties
 

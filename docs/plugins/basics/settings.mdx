@@ -9,7 +9,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Plugin Settings
 
-In BetterDiscord, plugins settings are very open-ended and flexible; there is no one correct way to do them. In this section we're going to look at one way to manage your settings. This includes using BetterDiscord to save and load the settings data, and making use of the `getSettingsPanel` function described in [plugin structure](../introduction/structure).
+In BetterDiscord, plugins settings are very open-ended and flexible; there is no one correct way to do them. In this section we're going to look at one way to manage your settings. This includes using BetterDiscord to save and load the settings data, and making use of the `getSettingsPanel` function described in [plugin structure](../introduction/structure.md).
 
 Using `getSettingsPanel` is the recommended way to show a settings panel to the user because it creates a consistent flow for the user. If every plugin added a button in the Discord UI for their own settings button, it could end up chaotic. Instead using `getSettingsPanel` allows your plugin to have a settings button on the plugins page in the BetterDiscord settings. Most users will expect a plugin to implement this if they have settings of any kind.
 
@@ -473,7 +473,7 @@ mySettingsPanel.append(buttonText, darkMode);
 
 As we can see here, this will now allow the saved value of the settings to be shown when the panel opens, and it will also allow the user to update the settings. And thanks to our helper function, these values will also be saved.
 
-If we put all the pieces together and combine it with the button we made in the [DOM](./dom) section, we might end up with a plugin like this:
+If we put all the pieces together and combine it with the button we made in the [DOM](./dom.md) section, we might end up with a plugin like this:
 
 ```js
 /**
@@ -552,4 +552,4 @@ If we put all the pieces together and combine it with the button we made in the 
 
 The new pieces here are the update functions `updateButtonText` and `updateButtonTheme` which are pretty straight-forward if you read through them. Otherwise, feel free to save this into your plugins folder and give it a test run. If you completed this section, you've successfully learned how to make a plugin with settings that actually work!
 
-When you're ready to move on, check out the next chapter, [UI Components](./ui), that goes over different UI elements within Discord and BetterDiscord.
+When you're ready to move on, check out the next chapter, [UI Components](./ui.mdx), that goes over different UI elements within Discord and BetterDiscord.

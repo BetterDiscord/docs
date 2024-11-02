@@ -1,6 +1,6 @@
 # ReactUtils
 
-`ReactUtils` is a utility class for interacting with React internals. Instance is accessible through the [BdApi](./bdapi). This is extremely useful for interacting with the internals of the UI.
+`ReactUtils` is a utility class for interacting with React internals. Instance is accessible through the [BdApi](./bdapi.md). This is extremely useful for interacting with the internals of the UI.
 
 ## Properties
 

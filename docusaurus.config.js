@@ -11,6 +11,7 @@ const config = {
   url: "https://docs.zerebos.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
+  trailingSlash: true,
   onBrokenMarkdownLinks: "warn",
   favicon: "favicon/favicon-96x96.png",
   organizationName: "betterdiscord",

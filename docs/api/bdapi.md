@@ -5,37 +5,37 @@
 ## Properties
 
 ### ContextMenu
-An instance of [ContextMenu](./contextmenu) for interacting with context menus.
+An instance of [ContextMenu](./contextmenu.md) for interacting with context menus.
 
 **Type:** `ContextMenu`
 ___
 
 ### DOM
-An instance of [DOM](./dom) to interact with the DOM.
+An instance of [DOM](./dom.md) to interact with the DOM.
 
 **Type:** `DOM`
 ___
 
 ### Data
-An instance of [Data](./data) to manage data.
+An instance of [Data](./data.md) to manage data.
 
 **Type:** `Data`
 ___
 
 ### Net
-An instance of [Net](./net) for networking requests.
+An instance of [Net](./net.md) for networking requests.
 
 **Type:** `Net`
 ___
 
 ### Patcher
-An instance of [Patcher](./patcher) to monkey patch functions.
+An instance of [Patcher](./patcher.md) to monkey patch functions.
 
 **Type:** `Patcher`
 ___
 
 ### Plugins
-An instance of [AddonAPI](./addonapi) to access plugins.
+An instance of [AddonAPI](./addonapi.md) to access plugins.
 
 **Type:** `AddonAPI`
 ___
@@ -53,31 +53,31 @@ The ReactDOM module being used inside Discord.
 ___
 
 ### ReactUtils
-An instance of [ReactUtils](./reactutils) to work with React.
+An instance of [ReactUtils](./reactutils.md) to work with React.
 
 **Type:** `ReactUtils`
 ___
 
 ### Themes
-An instance of [AddonAPI](./addonapi) to access themes.
+An instance of [AddonAPI](./addonapi.md) to access themes.
 
 **Type:** `AddonAPI`
 ___
 
 ### UI
-An instance of [UI](./ui) to create interfaces.
+An instance of [UI](./ui.md) to create interfaces.
 
 **Type:** `UI`
 ___
 
 ### Utils
-An instance of [Utils](./utils) for general utility functions.
+An instance of [Utils](./utils.md) for general utility functions.
 
 **Type:** `Utils`
 ___
 
 ### Webpack
-An instance of [Webpack](./webpack) to search for modules.
+An instance of [Webpack](./webpack.md) to search for modules.
 
 **Type:** `Webpack`
 ___

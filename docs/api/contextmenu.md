@@ -1,6 +1,6 @@
 # ContextMenu
 
-`ContextMenu` is a module to help patch and create context menus. Instance is accessible through the [BdApi](./bdapi).
+`ContextMenu` is a module to help patch and create context menus. Instance is accessible through the [BdApi](./bdapi.md).
 
 ## Properties
 
