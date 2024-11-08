@@ -8,8 +8,32 @@ description: Internal module reference.
 Documentation of available stores and their methods through [`BdApi.Webpack.getStore()`](/api/webpack#getstore).
 
 ```js
-// Example usage:
-const store = BdApi.Webpack.getStore("StoreName");
+// Store Examples
+const { Webpack } = BdApi;
+const UserStore = Webpack.getStore("UserStore");
+const ChannelStore = Webpack.getStore("ChannelStore");
+const GuildStore = Webpack.getStore("GuildStore");
+const GuildChannelStore = Webpack.getStore("GuildChannelStore");
+const GuildMemberStore = Webpack.getStore("GuildMemberStore")
+
+// Usage Examples
+const currentUser = UserStore.getCurrentUser(); 
+// -> {id: "user_id", username: "UserName", discriminator: "1234", ...}
+
+const allGuilds = GuildStore.getGuilds(); 
+// -> {guild_id_1: {name: "Guild Name 1", ...}, guild_id_2: {name: "Guild Name 2", ...}, ...}
+
+const guildChannels = GuildChannelStore.getChannels("guild_id"); 
+// -> {id: "guild_id", count: number, VOCAL: {}, SELECTABLE: {}, ...}
+
+const channel = ChannelStore.getChannel("channel_id"); 
+// -> {id: "channel_id", name: "Channel Name", type: "GUILD_TEXT", ...}
+
+const isInGuild = GuildMemberStore.isMember("guild_id", currentUser.id); 
+// -> true or false
+
+const guildRoles = GuildStore.getRoles("guild_id"); 
+// -> {role_id_1: {name: "Role Name 1", ...}, role_id_2: {name: "Role Name 2", ...}, ...}
 ```
 
 ---
