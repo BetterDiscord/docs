@@ -3,10 +3,6 @@ sidebar_position: 1
 description: Internal module reference.
 ---
 
-# Known Modules
-
-Documentation of available stores and their methods through [`BdApi.Webpack.getStore()`](/api/webpack#getstore).
-
 ```js
 // Store Examples
 const { Webpack } = BdApi;
@@ -35,6 +31,10 @@ const isInGuild = GuildMemberStore.isMember("guild_id", currentUser.id);
 const guildRoles = GuildStore.getRoles("guild_id"); 
 // -> {role_id_1: {name: "Role Name 1", ...}, role_id_2: {name: "Role Name 2", ...}, ...}
 ```
+
+# Known Modules
+
+Documentation of available stores and their methods through [`BdApi.Webpack.getStore()`](/api/webpack#getstore).
 
 ---
 
