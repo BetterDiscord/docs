@@ -5,7 +5,7 @@ description: Internal module reference.
 
 # Known Modules
 
-Documentation of available stores and their methods through BdApi.Webpack.getStore().
+Documentation of available stores and their methods through [`BdApi.Webpack.getStore()`](/api/webpack#getstore).
 
 ```js
 // Example usage:
