@@ -1,23 +1,60 @@
 ---
-hide_table_of_contents: true
-displayed_sidebar: homeSidebar
+layout: home
+
+title: Documentation
+
+hero:
+  name: BetterDiscord
+  text: User & Developer Documentation
+  tagline: Customize your Discord experience
+  actions:
+    - theme: brand
+      text: Quick Start
+      link: /users/
+    - theme: alt
+      text: Install Addons
+      link: /users/guides/installing-addons
+    - theme: alt
+      text: For Developers
+      link: /developers
+  image:
+    src: /branding/split.png
+    alt: VitePress
+
+features:
+  - icon: 📝
+    title: Live Editing
+    details: Customize the look and feel of Discord on the fly by adding css snippets!
+  - icon: 🔌
+    title: Plugins
+    details: Add and extend functionality bringing your efficiency to new heights.
+  - icon: 🎨
+    title: Themes
+    details: Transform Discord into another app or even a wallpaper of your choosing.
+  - icon: 🧑‍💻
+    title: Rapid Development
+    details: Create your own addons with our open-ended and flexible system.
 ---
 
-# BetterDiscord Documentation
 
-Welcome to the BetterDiscord Documentation. Here you'll find a series of User Guides, Developer Guides, as well as references for both our Plugin API, and some of Discord's internals.
+<style>
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #3e82e5 30%, #41d1ff);
 
-## Sections
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #3e82e5 50%, #41d1ff 50%);
+  --vp-home-hero-image-filter: blur(44px);
+}
 
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(56px);
+  }
+}
 
-<DocCardList items={[
-    {type: "link", href: "/users", label: "User Documentation", description: "Guides for new users!"},
-    {type: "link", href: "/developers", label: "Developer Documentation", description: "An overview for developers!"},
-    {type: "link", href: "/plugins", label: "Plugin Guides", description: "Guides to help you on your plugin journey!"},
-    {type: "link", href: "/themes", label: "Theme Guides", description: "Guides to help you make the perfect theme!"},
-    {type: "link", href: "/api", label: "Plugin API", description: "Reference for developers!"},
-    {type: "link", href: "/discord", label: "Discord Reference", description: "A good thing to bookmark!"},
-]} />
-```
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(68px);
+  }
+}
+</style>

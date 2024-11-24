@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+order: 5
 description: Quick submission guide.
 ---
 
@@ -52,7 +52,7 @@ Due to our small team size, we have no guarantees for how long a review can take
 
 ## Updating
 
-:::danger
+::: danger
 
 Due to GitHub's limitations, the site is very sensitive to your changes. If you force-push and break history, the site will not be able to keep track of the plugin. The same goes if you change your GitHub username.
 

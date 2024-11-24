@@ -1,6 +1,6 @@
 # Net
 
-:::info
+::: tip
 
 This module is still in beta and is subject to change. This API is mostly finalized, but if fundamental flaws are found during beta, the API may be reworked. Any plan to do so will be announced in Discord.
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+order: 6
 description: Work with other addons.
 ---
 
@@ -9,7 +9,7 @@ Within BetterDiscord you can interact with different addons in two main ways. Ei
 
 ## AddonAPI
 
-The addon api is available as part of `BdApi`. Theres two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This api has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [api reference](/api).
+The addon api is available as part of `BdApi`. Theres two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This api has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [api reference](/api/bdapi).
 
 ## Getting Addons
 
@@ -21,7 +21,7 @@ BdApi.Plugins.get("ZeresPluginLibrary");
 
 This will give you an object that includes the addon's meta information, as well as some other BetterDiscord internal information. Most notably there is also an `instance` property that is the current instance of the plugin. This is probably the most important property as it gives you access to directly interact.
 
-:::caution
+::: warning
 
 Modifying the values of this addon instance is unsupported. The `instance` property is also subject to change until a new standard is introduced.
 
@@ -74,7 +74,7 @@ Keep in mind there are many functions in plugins that <u>do not</u> require them
 
 From there, you can even directly call functions from your plugin. One common use-case for this is when you want to add an optional feature to your plugin that makes use of another plugin.
 
-```js showLineNumbers
+```js:line-numbers
 class MyPlugin {
     start() {
         let myGreeting = "Hello User!";

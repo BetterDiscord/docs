@@ -1,11 +1,11 @@
 ---
-sidebar_position: 4
+order: 4
 description: The requirements and format of a plugin.
 ---
 
 # Plugin Structure
 
-:::info
+::: tip
 
 This page only goes over the body of a plugin. Make sure you have read up on the [addon system](../../developers/addons.md) first.
 
@@ -87,7 +87,7 @@ All of those examples are valid ways of getting those functions back to BetterDi
 
 It may seem roundabout to do it this way, but this is what allows for developers to make use of uninstantiated classes like the example above.
 
-If you feel you have a solid grasp of how this works, take a look at the [Guidelines](./guidelines) before moving on to the [Basics](../basics) guide.
+If you feel you have a solid grasp of how this works, take a look at the [Guidelines](./guidelines) before moving on to the [Basics](../basics/creating-a-plugin.md) guide.
 
 #### Optional Functions
 

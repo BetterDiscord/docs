@@ -1,10 +1,10 @@
 ---
-sidebar_position: 1
+order: 1
 ---
 
 # The Creative Process
 
-If you've made it this far in the guide, you've hopefully learned about the [meta info](../../developers/addons.md#meta) comment and seen the [quick start](../introduction/quick-start.mdx) for themes. If not, please go and check those out first as they are crucial to making a BetterDiscord theme.
+If you've made it this far in the guide, you've hopefully learned about the [meta info](../../developers/addons.md#meta) comment and seen the [quick start](../introduction/quick-start.md) for themes. If not, please go and check those out first as they are crucial to making a BetterDiscord theme.
 
 If you just want a quick example of the basics, check out the [example](#example) section below. Otherwise, keep reading for a good overview of the creative process.
 

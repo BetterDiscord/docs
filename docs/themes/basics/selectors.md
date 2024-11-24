@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+order: 3
 ---
 
 # Working With Selectors
@@ -37,7 +37,7 @@ Rather than worrying about exact specificty calculations, let's try out a few ex
 
 For these examples, reference this HTML:
 
-```html showLineNumbers
+```html:line-numbers
 <div class="site-container">
   <main id="myContent">
     <h1>Text</h1>
@@ -49,7 +49,7 @@ For these examples, reference this HTML:
 
 Compare the two selectors below and check out the HTML. What color will the `Text` be?
 
-```css showLineNumbers
+```css:line-numbers
 #myContent h1 {
   color: red;
 }
@@ -65,7 +65,7 @@ If you said `blue` then you're correct. This is the more specific selector becau
 
 Now take a look at a slightly more complicated version. What's the new color of the `Text`?
 
-```css showLineNumbers
+```css:line-numbers
 #myContent h1 {
   color: green;
 }

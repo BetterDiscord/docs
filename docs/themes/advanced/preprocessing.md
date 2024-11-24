@@ -1,9 +1,6 @@
 ---
-sidebar_position: 1
+order: 1
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Preprocessing & Minification
 
@@ -77,7 +74,8 @@ Now, open your `package.json` and set up the build script that we'll be using la
 
 You'll notice we actually added two scripts, `build` and `build-prod`. The first one we can use for development since it outputs normal CSS. The second one we can use for our import because it outputs minified CSS by indicating to build in production mode. This is actually set up in our `postcss.config.js`, so let's set that up now.
 
-```js title="postcss.config.js"
+::: code-group
+```js [postcss.config.js]
 module.exports = ctx => {
     return {
         map: false,
@@ -88,6 +86,7 @@ module.exports = ctx => {
     };
 };
 ```
+:::
 
 As a quick explanation of what's going on here: `map: false` means we are not making sourcemaps, and that's a whole separate topic. It also means we are using two plugins, the ones we installed before. We load `postcss-easy-import` with no configured options. And `postcss-csso` is configured to run only in `production` mode and turn off otherwise.
 
@@ -95,10 +94,9 @@ As a quick explanation of what's going on here: `map: false` means we are not ma
 
 With the set up out of the way, we're actually almost done. Let's just make our CSS files.
 
-<Tabs className="code-tabs files">
-<TabItem value="src/index.css">
+::: code-group
 
-```css
+```css [src/index.css]
 @import "./guilds.css";
 
 :root {
@@ -106,10 +104,8 @@ With the set up out of the way, we're actually almost done. Let's just make our 
 }
 ```
 
-</TabItem>
-<TabItem value="src/guilds.css">
 
-```css showLineNumbers
+```css:line-numbers [src/guilds.css]
 .wrapper-2PSQCG,
 .svg-2ifYOU {
   width: 33px;
@@ -121,15 +117,14 @@ With the set up out of the way, we're actually almost done. Let's just make our 
   width: 33px;
 }
 ```
-
-</TabItem>
-</Tabs>
+:::
 
 Seems almost too easy, right? Well let's run `npm run build` anyways and see what happens.
 
 It seems to build just fine, and there's a new `dist` folder with an `import.css` inside.
 
-```css title="dist/import.css
+::: code-group
+```css [dist/import.css]
 .wrapper-2PSQCG,
 .svg-2ifYOU {
   width: 33px;
@@ -145,6 +140,7 @@ It seems to build just fine, and there's a new `dist` folder with an `import.css
     --background-tertiary: #333333;
 }
 ```
+:::
 
 If you got this same result then you're all set! PostCSS is working perfectly and now you can have unlimited files for your CSS.
 

@@ -1,10 +1,10 @@
 ---
-sidebar_position: 2
+order: 2
 ---
 
 # Creating A Theme
 
-:::info
+::: tip
 
 If you're just starting out with CSS, consider a more in-depth tutorial like the one from [MDN](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics). This guide is meant for those with some experience with CSS.
 
@@ -33,12 +33,11 @@ We actually don't need more than that to be a valid theme file for BetterDiscord
 
 Let's get back to the guild list. The first step to theming it is to understand its `html` structure and its styles. Open up DevTools and try to select the guild list. You might not end up with exactly the right element we're looking for but that's okay, take a look below for what we should start with.
 
-<details>
-<summary>Guild List in DevTools</summary>
+::: details Guild List in DevTools
 
 ![Guild List](./img/guild_list.png)
 
-</details>
+:::
 
 But you might be asking, why that element specifically? We select this element, because it's the highest element in the DOM tree without going into a shared container. That is to say, if you select the next ancestor in the DOM tree you'll see that it suddenly includes the chat, channel, and member list. Since we're targeting the guild list, this is our starting point. We can always traverse down the tree as needed.
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+order: 3
 description: The development environment.
 ---
 
@@ -23,7 +23,7 @@ The web application itself is made using the [React](https://reactjs.org/) UI li
 
 The actual full implementation of Discord's code is not known. It is possibly written in [TypeScript](https://www.typescriptlang.org/), very likely using modern [ES Modules](https://flaviocopes.com/es-modules/), and most definitely bundled with [Webpack](https://webpack.js.org/). The topic of Webpack will be covered later in these docs.
 
-:::caution
+::: warning
 
 If you're not familiar with any of the mentioned libraries, now is a good time to brush up before moving on.
 

@@ -1,10 +1,7 @@
 ---
-sidebar_position: 2
+order: 2
 description: Webpack but extraction.
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Webpack Modules
 
@@ -27,7 +24,7 @@ Plugins are able to access all of these types of modules through BetterDiscord's
 
 ## Finding Modules
 
-How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../../developers/devtools.mdx), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [api reference](../../api/webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
+How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../../developers/devtools.md), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [api reference](../../api/webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
 
 ## Filters
 
@@ -46,7 +43,7 @@ Of course, you are not required to use these helpers at all! You can use a compl
 
 ## Reverse Engineering
 
-:::caution
+::: warning
 
 Due to the nature of client modding, this section could be outdated by the time you read it since Discord's internals are always changing. However, the concepts used and learned here remain the same.
 
@@ -58,33 +55,23 @@ But to answer these questions, let's step through a very simple example. Let's s
 
 Now let's print out the property that looks like `__reactProps$2oq7t5kq3k5` instead. You'll see in this object all the React props specific to this element including an `onClick` function. Let's dive into this either by right-clicking and selecting `Show Function Definition` or by expanding the function and clicking on the function location.
 
-<Tabs>
-<TabItem value="Right-Click">
-
+::: details Right-Click
 ![right_click](./img/right_click.png)
+:::
 
-</TabItem>
-<TabItem value="Function Location">
-
+::: details Function Location
 ![function_location](./img/function_location.png)
-
-</TabItem>
-</Tabs>
+:::
 
 That will bring you to a large minified script that is hard to understand. But at the bottom left of your sources panel you should see a little `{}` icon. Go ahead and click that, it will format and beautify the file into something somewhat understandable.
 
-<Tabs>
-<TabItem value="Minified">
-
+::: details Minified
 ![click_minified](./img/click_minified.png)
+:::
 
-</TabItem>
-<TabItem value="Beautified">
-
+::: details Beautified
 ![click_script](./img/click_script.png)
-
-</TabItem>
-</Tabs>
+:::
 
 From what we see in this click listener, it looks like the function `u()` is the one really getting the event and processing it. Let's set a breakpoint inside this listener and click on the button. This will show us all the values at this point in time and we can figure out the value of `u`.
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+order: 2
 description: Internal UI references.
 ---
 
