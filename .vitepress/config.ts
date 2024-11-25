@@ -90,7 +90,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                 name: "highlight-bdapi",
                 preprocess(code, options) {
                     function findAllSubstringIndexes(str: string, substr: string): number[] {
-                        const indexes = [];
+                        const indexes: number[] = [];
                         let i = -1;
                         while ((i = str.indexOf(substr, i + 1)) !== -1) indexes.push(i);
                         return indexes;

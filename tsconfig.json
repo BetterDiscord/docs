@@ -15,5 +15,5 @@
         "noEmit": true,
         "target": "esnext"
     },
-    "include": [".vitepress/*.mts", "scripts/*"]
+    "include": [".vitepress/*.ts", ".vitepress/theme/*.ts", "scripts/*"]
 }

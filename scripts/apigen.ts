@@ -1,9 +1,11 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
 
-const parseAST = require("./parseast");
+import parseAST from "./parseast";
+import {Method, Property} from "./types";
 
-function getProps(properties) {
+
+function getProps(properties: Property[]) {
     const props = [];
     for (const prop of properties) {
         const deprecation = prop.deprecated ? ` <span class="deprecated">Deprecated</span>` : "";
@@ -28,7 +30,7 @@ const compactParamHeader = [
     `|:----------|:------:|:----------------------:|`,
 ];
 
-function getParams(method) {
+function getParams(method: Method) {
     const hasOptionalParams = method.parameters?.some(p => p.optional || p.value);
     const table = (hasOptionalParams ? fullParamHeader : compactParamHeader).slice(0);
     if (method.parameters) {
@@ -46,7 +48,7 @@ function getParams(method) {
     return table.join("\n") + "\n";
 }
 
-function getMethods(methods) {
+function getMethods(methods: Method[]) {
     const funcs = [];
     for (const method of methods) {
         const deprecation = method.deprecated ? ` <span class="deprecated">Deprecated</span>` : "";
@@ -74,8 +76,9 @@ const markdownTemplate = `# {{name}}
 
 {{methods}}`;
 
-function generateApiDoc(which, memberName) {
+function generateApiDoc(which: string, memberName?: string) {
     const data = parseAST(which, memberName);
+    if (!data) return console.error(`Could not process ${which}`);
     const outFile = path.resolve(__dirname, "..", "docs", "api", `${which.toLowerCase()}.md`);
     
     const finalMarkdown = markdownTemplate.replace("{{name}}", data.name)

@@ -1,24 +1,16 @@
 {
     "name": "@betterdiscord/docs",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "private": true,
     "scripts": {
-        "docusaurus": "docusaurus",
-        "start": "docusaurus start",
-        "build": "docusaurus build",
-        "swizzle": "docusaurus swizzle",
-        "deploy": "docusaurus deploy",
-        "clear": "docusaurus clear",
-        "serve": "docusaurus serve",
-        "write-translations": "docusaurus write-translations",
-        "write-heading-ids": "docusaurus write-heading-ids",
-        "api": "node scripts/apigen.js",
-        "lint": "eslint --ext .js --ignore-path .gitignore .",
-        "docs:dev": "vitepress dev .",
-        "docs:build": "vitepress build .",
-        "docs:preview": "vitepress preview ."
+        "api": "esrun scripts/apigen.ts",
+        "lint": "eslint --ext .ts --ignore-path .gitignore .",
+        "dev": "vitepress dev .",
+        "build": "vitepress build .",
+        "preview": "vitepress preview ."
     },
     "devDependencies": {
+        "@digitak/esrun": "^3.2.26",
         "@docusaurus/module-type-aliases": "^2.4.1",
         "@types/eslint": "^9.6.1",
         "eslint": "^9.15.0",
