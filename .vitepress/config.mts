@@ -1,5 +1,6 @@
 import {DefaultTheme, defineConfig, UserConfig} from "vitepress";
 import {VitePressSidebarOptions, withSidebar} from "vitepress-sidebar";
+import {bundledLanguages, LanguageRegistration} from "shiki";
 
 
 const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
@@ -111,7 +112,32 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                     }
                 },
             }
-        ]
+        ],
+        shikiSetup: async (shiki) => {
+            const css = await bundledLanguages.css();
+            const js = await bundledLanguages.js();
+
+            const bdcss: LanguageRegistration = {
+                ...css.default[0],
+                patterns: [
+                    {include: "#docblock"},
+                    {include: "#jsdoctype"},
+                    {include: "#inline-tags"},
+                    {include: "#comment"},
+                    ...css.default[0].patterns,
+                ],
+                repository: Object.assign({}, {
+                    "brackets": js.default[0].repository.brackets,
+                    "docblock": js.default[0].repository.docblock,
+                    "comment": js.default[0].repository.comment,
+                    "jsdoctype": js.default[0].repository.jsdoctype,
+                    "inline-tags": js.default[0].repository["inline-tags"]
+                }, css.default[0].repository),
+            };
+
+            await shiki.loadLanguage(bdcss);
+        },
+        theme: "dark-plus"
     }
 };
 

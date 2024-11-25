@@ -9,6 +9,214 @@ span.line .global-bdapi {
 
 
 
+/**
+ * Colors: Palette
+ *
+ * The primitive colors used for accent colors. These colors are referenced
+ * by functional colors such as "Text", "Background", or "Brand".
+ *
+ * Each colors have exact same color scale system with 3 levels of solid
+ * colors with different brightness, and 1 soft color.
+ *
+ * - `XXX-1`: The most solid color used mainly for colored text. It must
+ *   satisfy the contrast ratio against when used on top of `XXX-soft`.
+ *
+ * - `XXX-2`: The color used mainly for hover state of the button.
+ *
+ * - `XXX-3`: The color for solid background, such as bg color of the button.
+ *    It must satisfy the contrast ratio with pure white (#ffffff) text on
+ *    top of it.
+ *
+ * - `XXX-soft`: The color used for subtle background such as custom container
+ *    or badges. It must satisfy the contrast ratio when putting `XXX-1` colors
+ *    on top of it.
+ *
+ *    The soft color must be semi transparent alpha channel. This is crucial
+ *    because it allows adding multiple "soft" colors on top of each other
+ *    to create a accent, such as when having inline code block inside
+ *    custom containers.
+ * --------------------------------------------------------------------------*/
+
+/* :root {
+    --vp-c-gray-1: #dddde3;
+    --vp-c-gray-2: #e4e4e9;
+    --vp-c-gray-3: #ebebef;
+    --vp-c-gray-soft: rgba(142, 150, 170, 0.14);
+  
+    --vp-c-indigo-1: #3451b2;
+    --vp-c-indigo-2: #3a5ccc;
+    --vp-c-indigo-3: #5672cd;
+    --vp-c-indigo-soft: rgba(100, 108, 255, 0.14);
+  
+    --vp-c-purple-1: #6f42c1;
+    --vp-c-purple-2: #7e4cc9;
+    --vp-c-purple-3: #8e5cd9;
+    --vp-c-purple-soft: rgba(159, 122, 234, 0.14);
+  
+    --vp-c-green-1: #18794e;
+    --vp-c-green-2: #299764;
+    --vp-c-green-3: #30a46c;
+    --vp-c-green-soft: rgba(16, 185, 129, 0.14);
+  
+    --vp-c-yellow-1: #915930;
+    --vp-c-yellow-2: #946300;
+    --vp-c-yellow-3: #9f6a00;
+    --vp-c-yellow-soft: rgba(234, 179, 8, 0.14);
+  
+    --vp-c-red-1: #b8272c;
+    --vp-c-red-2: #d5393e;
+    --vp-c-red-3: #e0575b;
+    --vp-c-red-soft: rgba(244, 63, 94, 0.14);
+  
+    --vp-c-sponsor: #db2777;
+} */
+
+.dark {
+    /* --vp-c-gray-1: #515c67; */
+    /* --vp-c-gray-2: #414853; */
+    /* --vp-c-gray-3: #32363f; */
+    /* --vp-c-gray-soft: rgba(101, 117, 133, 0.16); */
+  
+    --vp-c-indigo-1: #5A88CE;
+    --vp-c-indigo-2: #3e82e5;
+    --vp-c-indigo-3: #195cbd;
+    --vp-c-indigo-soft: rgba(58, 113, 193, 0.1);
+  
+    /* --vp-c-purple-1: #c8abfa; */
+    /* --vp-c-purple-2: #a879e6; */
+    /* --vp-c-purple-3: #8e5cd9; */
+    /* --vp-c-purple-soft: rgba(159, 122, 234, 0.16); */
+  
+    --vp-c-green-1: #3ac172;
+    --vp-c-green-2: #30a46c;
+    --vp-c-green-3: #298459;
+    --vp-c-green-soft: rgba(58, 193, 114, 0.1);
+  
+    --vp-c-yellow-1: #fbbf24;
+    --vp-c-yellow-2: #da8b17;
+    --vp-c-yellow-3: #a46a0a;
+    --vp-c-yellow-soft: rgba(251, 191, 36, 0.1);
+  
+    --vp-c-red-1: #c13a3a;
+    --vp-c-red-2: #f14158;
+    --vp-c-red-3: #b62a3c;
+    --vp-c-red-soft: rgba(193, 58, 58, 0.1);
+}
+
+
+  /**
+   * Colors: Background
+   *
+   * - `bg`: The bg color used for main screen.
+   *
+   * - `bg-alt`: The alternative bg color used in places such as "sidebar",
+   *   or "code block".
+   *
+   * - `bg-elv`: The elevated bg color. This is used at parts where it "floats",
+   *   such as "dialog".
+   *
+   * - `bg-soft`: The bg color to slightly distinguish some components from
+   *   the page. Used for things like "carbon ads" or "table".
+   * -------------------------------------------------------------------------- */
+  
+:root {
+    /* --vp-c-bg: #ffffff; */
+    /* --vp-c-bg-alt: #f6f6f7; */
+    /* --vp-c-bg-elv: #ffffff; */
+    /* --vp-c-bg-soft: #f6f6f7; */
+}
+
+.dark {
+    --vp-c-bg: #14151B;
+    --vp-c-bg-alt: #0C0D10;
+    --vp-c-bg-elv: #20212B;
+    --vp-c-bg-soft: #20212B;
+}
+
+
+
+/**
+ * Colors: Borders
+ *
+ * - `divider`: This is used for separators. This is used to divide sections
+ *   within the same components, such as having separator on "h2" heading.
+ *
+ * - `border`: This is designed for borders on interactive components.
+ *   For example this should be used for a button outline.
+ *
+ * - `gutter`: This is used to divide components in the page. For example
+ *   the header and the lest of the page.
+ * -------------------------------------------------------------------------- */
+
+:root {
+    /* --vp-c-border: #c2c2c4; */
+    /* --vp-c-divider: #e2e2e3; */
+    /* --vp-c-gutter: #e2e2e3; */
+}
+  
+.dark {
+    /* --vp-c-border: #3c3f44; */
+    /* --vp-c-divider: #2e2e32; */
+    --vp-c-gutter: transparent;
+}
+
+
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+
+:root {
+    /* --vp-custom-block-font-size: 14px; */
+    /* --vp-custom-block-code-font-size: 13px; */
+  
+    /* --vp-custom-block-info-border: var(--vp-c-default-1); */
+    /* --vp-custom-block-info-text: var(--vp-c-text-1); */
+    /* --vp-custom-block-info-bg: var(--vp-c-default-soft); */
+    /* --vp-custom-block-info-code-bg: var(--vp-c-default-soft); */
+  
+    --vp-custom-block-note-border: var(--vp-c-default-1);
+    /* --vp-custom-block-note-text: var(--vp-c-default-1); */
+    /* --vp-custom-block-note-bg: var(--vp-c-default-soft); */
+    /* --vp-custom-block-note-code-bg: var(--vp-c-default-soft); */
+  
+    --vp-custom-block-tip-border: var(--vp-c-tip-1);
+    --vp-custom-block-tip-text: var(--vp-c-tip-1);
+    /* --vp-custom-block-tip-bg: var(--vp-c-tip-soft); */
+    /* --vp-custom-block-tip-code-bg: var(--vp-c-tip-soft); */
+  
+    --vp-custom-block-important-border: var(--vp-c-important-1);
+    --vp-custom-block-important-text: var(--vp-c-important-1);
+    /* --vp-custom-block-important-bg: var(--vp-c-important-soft); */
+    /* --vp-custom-block-important-code-bg: var(--vp-c-important-soft); */
+  
+    --vp-custom-block-warning-border: var(--vp-c-warning-1);
+    --vp-custom-block-warning-text: var(--vp-c-warning-1);
+    /* --vp-custom-block-warning-bg: var(--vp-c-warning-soft); */
+    /* --vp-custom-block-warning-code-bg: var(--vp-c-warning-soft); */
+  
+    --vp-custom-block-danger-border: var(--vp-c-danger-1);
+    --vp-custom-block-danger-text: var(--vp-c-danger-1);
+    /* --vp-custom-block-danger-bg: var(--vp-c-danger-soft); */
+    /* --vp-custom-block-danger-code-bg: var(--vp-c-danger-soft); */
+  
+    --vp-custom-block-caution-border: var(--vp-c-caution-1);
+    --vp-custom-block-caution-text: var(--vp-c-caution-1);
+    /* --vp-custom-block-caution-bg: var(--vp-c-caution-soft); */
+    /* --vp-custom-block-caution-code-bg: var(--vp-c-caution-soft); */
+  
+    /* --vp-custom-block-details-border: var(--vp-custom-block-info-border);
+    --vp-custom-block-details-text: var(--vp-custom-block-info-text);
+    --vp-custom-block-details-bg: var(--vp-custom-block-info-bg);
+    --vp-custom-block-details-code-bg: var(--vp-custom-block-info-code-bg); */
+}
+
+.custom-block {
+    border: 0;
+    border-left: 5px solid;
+}
+
+
 /* LEGACY DOCUSAURUS CSS BELOW FOR REFERENCING COLORS */
 /* :root {
     --ifm-color-primary: #3e82e5;

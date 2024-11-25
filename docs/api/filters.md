@@ -28,14 +28,14 @@ keys|...string|List of property names
 **Returns:** `function` - A filter that checks for a set of properties
 ___
 
-### byProps <span class="deprecated">Deprecated</span>
+### byProps <Badge type="danger">deprecated</Badge>
 
 
 
 **Returns:** `void`
 ___
 
-### byPrototypeFields <span class="deprecated">Deprecated</span>
+### byPrototypeFields <Badge type="danger">deprecated</Badge>
 
 
 

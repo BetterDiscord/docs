@@ -20,7 +20,8 @@ Since we're using VSCode as our point of reference, it's a good idea to work out
 
 Just like how we recommended in [the last section](./process.md#code-structure--strategy), let's start with the guild list and see how easy or difficult it can be to replicate the vibe of VSCode. Let's start with our theme file.
 
-```js title="MyTheme.theme.css"
+::: code-group
+```js [MyTheme.theme.css]
 /**
  * @name MyTheme
  * @author YourName
@@ -28,6 +29,7 @@ Just like how we recommended in [the last section](./process.md#code-structure--
  * @version 0.0.1
  */
 ```
+:::
 
 We actually don't need more than that to be a valid theme file for BetterDiscord to load. Go ahead and save that in the `themes` folder and open it up in your favorite editor. Now go back to Discord and enable your theme in BetterDiscord settings. Now, on every save, BetterDiscord will automatically reload your theme so you can see your changes as you go.
 

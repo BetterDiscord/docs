@@ -9,7 +9,8 @@ Here you can get a reference of all the different Discord CSS variables currentl
 
 ## Main Variables
 
-```css title="Root"
+::: code-group
+```css [Root]
 :root {
     --application-subscription-end: hsl(var(--application-subscription-end-hsl)/1);
     --application-subscription-end-hsl: 197 calc(var(--saturation-factor, 1)*98.8%) 32.4%;
@@ -897,12 +898,14 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --youtube-hsl: 0 calc(var(--saturation-factor, 1)*72.8%) 46.1%
 }
 ```
+:::
 
 ## Theme Variables
 
 ### Dark Theme
 
-```css title="Dark Theme"
+::: code-group
+```css [Dark Theme]
 .theme-dark {
     --activity-card-background: var(--primary-700);
     --android-navigation-bar-background: var(--primary-830);
@@ -1168,9 +1171,11 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --user-profile-header-overflow-background: hsl(var(--primary-700-hsl)/0.5)
 }
 ```
+:::
 
 ### Dark/Light Common
-```css title="Common"
+::: code-group
+```css [Common]
 .theme-dark,
 .theme-light {
     --black: var(--black-500);
@@ -1182,9 +1187,11 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --white: var(--white-500)
 }
 ```
+:::
 
 ### Light Theme
-```css title="Light Theme"
+::: code-group
+```css [Light Theme]
 .theme-light {
     --activity-card-background: var(--white-500);
     --android-navigation-bar-background: var(--primary-100);
@@ -1450,9 +1457,11 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --user-profile-header-overflow-background: hsl(var(--white-200-hsl)/0.5)
 }
 ```
+:::
 
 ### AMOLED Theme
-```css title="AMOLED Theme"
+::: code-group
+```css [AMOLED Theme]
 .theme-amoled {
     --background-accent: var(--dontuse-17);
     --background-floating: var(--dontuse-23);
@@ -1632,9 +1641,11 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --text-warning: var(--yellow-300)
 }
 ```
+:::
 
 ### Darker/AMOLED Common
-```css title="Dark Common"
+::: code-group
+```css [Dark Common]
 .theme-amoled,
 .theme-darker {
     --activity-card-background: var(--primary-700);
@@ -1732,10 +1743,12 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --white: var(--white-500)
 }
 ```
+:::
 
 
 ### Darker Theme Variables
-```css title="Darker Theme"
+::: code-group
+```css [Darker Theme]
 .theme-darker {
     --background-accent: var(--dontuse-15);
     --background-floating: var(--dontuse-18);
@@ -1915,11 +1928,13 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --text-warning: var(--yellow-300)
 }
 ```
+:::
 
 ## Shadows
 
 ### Dark
-```css title="Dark Shadows"
+::: code-group
+```css [Dark Shadows]
 .theme-dark {
     --shadow-border: 0 0 0 1px hsla(0, 0%, 100%, 0.08);
     --shadow-border-filter: drop-shadow(0 0 1px hsla(0, 0%, 100%, 0.08));
@@ -1947,10 +1962,12 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --shadow-top-low-filter: drop-shadow(0 -1px 4px rgba(0, 0, 0, 0.14))
 }
 ```
+:::
 
 
 ### Light
-```css title="Light Shadows"
+::: code-group
+```css [Light Shadows]
 .theme-light {
     --shadow-border: 0 0 0 1px rgba(0, 0, 0, 0.08);
     --shadow-border-filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.08));
@@ -1978,10 +1995,12 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --shadow-top-low-filter: drop-shadow(0 -1px 4px rgba(0, 0, 0, 0.08))
 }
 ```
+:::
 
 
 ### Darker/AMOLED
-```css title="Darker Shadows"
+::: code-group
+```css [Darker Shadows]
 .theme-amoled,
 .theme-darker {
     --shadow-border: 0 0 0 1px hsla(0, 0%, 100%, 0.08);
@@ -2010,9 +2029,11 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --shadow-top-low-filter: drop-shadow(0 -1px 4px rgba(0, 0, 0, 0.14))
 }
 ```
+:::
 
 ## Spacing
-```css title="Spacing"
+::: code-group
+```css [Spacing]
 :root {
     --spacing-4: 4px;
     --spacing-8: 8px;
@@ -2029,9 +2050,11 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --spacing-96: 96px
 }
 ```
+:::
 
 ## Borders
-```css title="Border Radii"
+::: code-group
+```css [Border Radii]
 :root {
     --radius-xs: 4px;
     --radius-sm: 8px;
@@ -2042,10 +2065,12 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --radius-round: 2147483647px
 }
 ```
+:::
 
 ## Elevations
 ### Dark
-```css title="Dark Elevations"
+::: code-group
+```css [Dark Elevations]
 .theme-dark {
     --guild-header-text-shadow: 0 1px 1px hsl(var(--black-500-hsl)/0.4);
     --elevation-stroke: 0 0 0 1px hsl(var(--primary-900-hsl)/0.15);
@@ -2054,10 +2079,12 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --elevation-high: 0 8px 16px hsl(var(--black-500-hsl)/0.24)
 }
 ```
+:::
 
 
 ### Light
-```css title="Light Elevations"
+::: code-group
+```css [Light Elevations]
 .theme-light {
     --guild-header-text-shadow: 0 1px 1px hsl(var(--white-500-hsl)/0.4);
     --elevation-stroke: 0 0 0 1px hsl(var(--primary-860-hsl)/0.08);
@@ -2066,10 +2093,12 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --elevation-high: 0 8px 16px hsl(var(--black-500-hsl)/0.16)
 }
 ```
+:::
 
 
 ## Fonts
-```css title="Fonts"
+::: code-group
+```css [Fonts]
 :root {
     --font-primary: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-display: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -2115,3 +2144,4 @@ Here you can get a reference of all the different Discord CSS variables currentl
     --font-code: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace
 }
 ```
+:::

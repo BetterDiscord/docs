@@ -82,13 +82,13 @@ An instance of [Webpack](./webpack) to search for modules.
 **Type:** `Webpack`
 ___
 
-### emotes <span class="deprecated">Deprecated</span>
+### emotes <Badge type="danger">deprecated</Badge>
 A reference object for BD's emotes.
 
 **Type:** `object`
 ___
 
-### settings <span class="deprecated">Deprecated</span>
+### settings <Badge type="danger">deprecated</Badge>
 A reference object to get BD's settings.
 
 **Type:** `object`
@@ -103,7 +103,13 @@ ___
 
 ## Methods
 
-### alert <span class="deprecated">Deprecated</span>
+::: danger
+
+All methods directly on the `BdApi` object have been deprecated for a long time and are slated for removal. Do not use these in new projects!
+
+:::
+
+### alert <Badge type="danger">deprecated</Badge>
 Shows a generic but very customizable modal.
 
 | Parameter |  Type  |       Description      |
@@ -114,7 +120,7 @@ content|string\|ReactElement\|Array.&lt;(string\|ReactElement)&gt;|A string of t
 **Returns:** `void`
 ___
 
-### clearCSS <span class="deprecated">Deprecated</span>
+### clearCSS <Badge type="danger">deprecated</Badge>
 Removes a `<style>` from the document corresponding to the given ID.
 
 | Parameter |  Type  |       Description      |
@@ -124,7 +130,7 @@ id|string|ID uses for the style element
 **Returns:** `void`
 ___
 
-### deleteData <span class="deprecated">Deprecated</span>
+### deleteData <Badge type="danger">deprecated</Badge>
 Deletes a piece of stored data. This is different than saving `null` or `undefined`.
 
 | Parameter |  Type  |       Description      |
@@ -135,7 +141,7 @@ key|string|Which piece of data to delete
 **Returns:** `void`
 ___
 
-### disableSetting <span class="deprecated">Deprecated</span>
+### disableSetting <Badge type="danger">deprecated</Badge>
 Disables a BetterDiscord setting by IDs.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -147,7 +153,7 @@ id|string|&#x274C;|*none*|Setting ID in the category
 **Returns:** `void`
 ___
 
-### enableSetting <span class="deprecated">Deprecated</span>
+### enableSetting <Badge type="danger">deprecated</Badge>
 Enables a BetterDiscord setting by IDs.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -159,7 +165,7 @@ id|string|&#x274C;|*none*|Setting ID in the category
 **Returns:** `void`
 ___
 
-### findAllModules <span class="deprecated">Deprecated</span>
+### findAllModules <Badge type="danger">deprecated</Badge>
 Finds multiple webpack modules using a filter.
 
 | Parameter |  Type  |       Description      |
@@ -169,7 +175,7 @@ filter|function|A filter given the exports, module, and moduleId. Returns `true`
 **Returns:** `Array` - Either an array of matching modules or an empty array
 ___
 
-### findModule <span class="deprecated">Deprecated</span>
+### findModule <Badge type="danger">deprecated</Badge>
 Finds a webpack module using a filter.
 
 | Parameter |  Type  |       Description      |
@@ -179,7 +185,7 @@ filter|function|A filter given the exports, module, and moduleId. Returns `true`
 **Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### findModuleByDisplayName <span class="deprecated">Deprecated</span>
+### findModuleByDisplayName <Badge type="danger">deprecated</Badge>
 Finds a webpack module by `displayName` property.
 
 | Parameter |  Type  |       Description      |
@@ -189,7 +195,7 @@ name|string|Desired `displayName` property
 **Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### findModuleByProps <span class="deprecated">Deprecated</span>
+### findModuleByProps <Badge type="danger">deprecated</Badge>
 Finds a webpack module by own properties.
 
 | Parameter |  Type  |       Description      |
@@ -199,7 +205,7 @@ props|...string|Any desired properties
 **Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### findModuleByPrototypes <span class="deprecated">Deprecated</span>
+### findModuleByPrototypes <Badge type="danger">deprecated</Badge>
 Finds a webpack module by own prototypes.
 
 | Parameter |  Type  |       Description      |
@@ -209,7 +215,7 @@ protos|...string|Any desired prototype properties
 **Returns:** `any` - Either the matching module or `undefined`
 ___
 
-### getBDData <span class="deprecated">Deprecated</span>
+### getBDData <Badge type="danger">deprecated</Badge>
 Gets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
@@ -219,7 +225,7 @@ key|string|Key of the data to load
 **Returns:** `any` - The stored data
 ___
 
-### getInternalInstance <span class="deprecated">Deprecated</span>
+### getInternalInstance <Badge type="danger">deprecated</Badge>
 Gets the internal React data of a specified node.
 
 | Parameter |  Type  |       Description      |
@@ -229,7 +235,7 @@ node|HTMLElement|Node to get the internal React data from.
 **Returns:** `object` - Either the found data or `undefined`
 ___
 
-### injectCSS <span class="deprecated">Deprecated</span>
+### injectCSS <Badge type="danger">deprecated</Badge>
 Adds a `<style>` to the document with the given ID.
 
 | Parameter |  Type  |       Description      |
@@ -240,7 +246,7 @@ css|string|CSS to apply to the document
 **Returns:** `void`
 ___
 
-### isSettingEnabled <span class="deprecated">Deprecated</span>
+### isSettingEnabled <Badge type="danger">deprecated</Badge>
 Gets a specific setting's status from BD.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -252,7 +258,7 @@ id|string|&#x274C;|*none*|Setting ID in the category
 **Returns:** `boolean` - If the setting is enabled
 ___
 
-### linkJS <span class="deprecated">Deprecated</span>
+### linkJS <Badge type="danger">deprecated</Badge>
 Automatically creates and links a remote JS script.
 
 | Parameter |  Type  |       Description      |
@@ -263,7 +269,7 @@ url|string|URL of the remote script
 **Returns:** `Promise` - Resolves upon onload event
 ___
 
-### loadData <span class="deprecated">Deprecated</span>
+### loadData <Badge type="danger">deprecated</Badge>
 Loads previously stored data.
 
 | Parameter |  Type  |       Description      |
@@ -274,7 +280,7 @@ key|string|Which piece of data to load
 **Returns:** `any` - The stored data
 ___
 
-### monkeyPatch <span class="deprecated">Deprecated</span>
+### monkeyPatch <Badge type="danger">deprecated</Badge>
 Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.   - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -291,7 +297,7 @@ options.silent|boolean|&#x2705;|false|Set to `true` if you want to suppress log 
 **Returns:** `function` - A function that cancels the monkey patch
 ___
 
-### onRemoved <span class="deprecated">Deprecated</span>
+### onRemoved <Badge type="danger">deprecated</Badge>
 Adds a listener for when the node is removed from the document body.
 
 | Parameter |  Type  |       Description      |
@@ -302,7 +308,7 @@ callback|function|Function to run when removed
 **Returns:** `void`
 ___
 
-### openDialog <span class="deprecated">Deprecated</span>
+### openDialog <Badge type="danger">deprecated</Badge>
 Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.  Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -324,7 +330,7 @@ options.modal|boolean|&#x2705;|false|Whether the dialog should act as a modal to
 **Returns:** `Promise.<object>` - Result of the dialog
 ___
 
-### saveData <span class="deprecated">Deprecated</span>
+### saveData <Badge type="danger">deprecated</Badge>
 Saves JSON-serializable data.
 
 | Parameter |  Type  |       Description      |
@@ -336,7 +342,7 @@ data|any|The data to be saved
 **Returns:** `void`
 ___
 
-### setBDData <span class="deprecated">Deprecated</span>
+### setBDData <Badge type="danger">deprecated</Badge>
 Sets some data in BetterDiscord's misc data.
 
 | Parameter |  Type  |       Description      |
@@ -346,7 +352,7 @@ key|string|Key of the data to store
 **Returns:** `any` - The stored data
 ___
 
-### showConfirmationModal <span class="deprecated">Deprecated</span>
+### showConfirmationModal <Badge type="danger">deprecated</Badge>
 Shows a generic but very customizable confirmation modal with optional confirm and cancel callbacks.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -363,7 +369,7 @@ options.onCancel|callable|&#x2705;|NOOP|Callback to occur when clicking the canc
 **Returns:** `string` - The key used for this modal
 ___
 
-### showNotice <span class="deprecated">Deprecated</span>
+### showNotice <Badge type="danger">deprecated</Badge>
 Shows a notice above Discord's chat layer.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -377,7 +383,7 @@ options.timeout|number|&#x2705;|10000|Timeout until the notice is closed. Will n
 **Returns:** `function` - A callback for closing the notice. Passing `true` as first parameter closes immediately without transitioning out.
 ___
 
-### showToast <span class="deprecated">Deprecated</span>
+### showToast <Badge type="danger">deprecated</Badge>
 Shows a toast similar to android towards the bottom of the screen.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -392,7 +398,7 @@ options.forceShow|boolean|&#x2705;|false|Whether to force showing the toast and 
 **Returns:** `void`
 ___
 
-### suppressErrors <span class="deprecated">Deprecated</span>
+### suppressErrors <Badge type="danger">deprecated</Badge>
 Wraps a given function in a `try..catch` block.
 
 | Parameter |  Type  |       Description      |
@@ -403,7 +409,7 @@ message|string|Additional message to print when an error occurs
 **Returns:** `function` - The new wrapped function
 ___
 
-### testJSON <span class="deprecated">Deprecated</span>
+### testJSON <Badge type="danger">deprecated</Badge>
 Tests a given object to determine if it is valid JSON.
 
 | Parameter |  Type  |       Description      |
@@ -413,7 +419,7 @@ data|object|Data to be tested
 **Returns:** `boolean` - Result of the test
 ___
 
-### toggleSetting <span class="deprecated">Deprecated</span>
+### toggleSetting <Badge type="danger">deprecated</Badge>
 Toggles a BetterDiscord setting by IDs.
 
 | Parameter |  Type  | Optional | Default |       Description      |
@@ -425,7 +431,7 @@ id|string|&#x274C;|*none*|Setting ID in the category
 **Returns:** `void`
 ___
 
-### unlinkJS <span class="deprecated">Deprecated</span>
+### unlinkJS <Badge type="danger">deprecated</Badge>
 Removes a remotely linked JS script.
 
 | Parameter |  Type  |       Description      |

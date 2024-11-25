@@ -8,7 +8,8 @@ order: 1
 
 If you already know the basics, or just prefer to learn by trying it yourself and poking around, try this basic theme template.
 
-```css showLineNumbers title="YourTheme.theme.css"
+::: code-group
+```css:line-numbers [YourTheme.theme.css]
 /**
  * @name YourTheme
  * @author YourName
@@ -21,6 +22,7 @@ If you already know the basics, or just prefer to learn by trying it yourself an
   --my-color: #000000;
 }
 ```
+:::
 
 Save this as `YourTheme.theme.css` in your themes folder (found below) and enable it!
 
