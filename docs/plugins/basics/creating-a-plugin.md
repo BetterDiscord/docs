@@ -16,7 +16,7 @@ Knowing what you want the plugin to do also allows you to reach out to our commu
 Next, you'll need to decide which plugin style to use. As seen in the [plugin structure](../introduction/structure) docs, there a couple different ways to go about it. They are shown again below for clarity. Each one has pros and cons, but can each work well for simple to advanced plugins. In the end it ultimately comes down to the individual developer's style preference. A mix of the styles will be shown here in the docs.
 
 ::: code-group
-```js:line-numbers [class]
+```js:line-numbers [Class]
 /**
  * @name ExamplePlugin
  * @author YourName
@@ -40,7 +40,7 @@ module.exports = class MyPlugin {
 ```
 
 
-```js:line-numbers [arrow]
+```js:line-numbers [Arrow]
 /**
  * @name ExamplePlugin
  * @author YourName
@@ -61,7 +61,7 @@ module.exports = meta => ({
 ```
 
 
-```js:line-numbers [return]
+```js:line-numbers [Return]
 /**
  * @name ExamplePlugin
  * @author YourName

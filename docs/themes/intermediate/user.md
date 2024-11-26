@@ -16,7 +16,6 @@ If you weren't already aware, CSS variables (sometimes known as custom propertie
 
 Using CSS variables in BetterDiscord is exactly like in regular CSS. Simply declare it somewhere high in the document tree and reuse it in your theme. At a glace it might look something like this:
 
-::: code-group
 ```css [YourTheme.theme.css]
 :root {
   --my-variable: red;
@@ -26,13 +25,11 @@ h1 {
   color: var(--my-variable);
 }
 ```
-:::
 
 In this case shown above, we've made a new variable `--my-variable` with the value of `red` on the `:root` selector. You'll find that 99% of themes use `:root` to set their variables since it's the highest in the DOM tree. In the next selector, we use the variable in the `color` property for `h1`. So all top level headings will not just be `red` but they will be `--my-variable`!
 
 This can also be done to set a single part of a property such as just the color of a border or box-shadow.
 
-::: code-group
 ```css [YourTheme.theme.css]
 :root {
   --my-variable: red;
@@ -42,7 +39,6 @@ h1 {
   border: 1px solid var(--my-variable);
 }
 ```
-:::
 
 It is very important to note that these cannot be used as properties or part of media queries. That is to say, both of these below are invalid.
 
@@ -126,7 +122,6 @@ Of course you can always add or remove information as you feel fits your theme a
 
 You can use comments directly next to the variables in the theme files to help guide users to customizing your theme. In the [last chapter](./remote.md) we talked about the Horizontal Server List mini-theme. Take a look at their theme file.
 
-::: code-group
 ```css [HorizontalServerList.theme.css]
 /**
  * @name Horizontal Server List
@@ -149,7 +144,6 @@ You can use comments directly next to the variables in the theme files to help g
   --HSL-server-alignment: flex-start; /* Alignment of the server list. | OPTIONS: flex-start, center, flex-end | DEFAULT: flex-start */
 }
 ```
-:::
 
 You can see in this theme that each variable has a comment with it adding a description, a default value, and some options for the user. This is often enough to get them going in the right direction. 
 
@@ -169,7 +163,6 @@ The main drawbacks to this are that it is less accessible to the user as they ne
 
 Since BetterDiscord has a Custom CSS feature, you can also direct users to apply variables there. This option usually works better with themes that have their documentation in their README because you can direct the user to copy and paste a section of code to get them started like this.
 
-::: code-group
 ```css [Custom CSS]
 /* My custom variables for YourTheme */
 :root {
@@ -179,6 +172,5 @@ Since BetterDiscord has a Custom CSS feature, you can also direct users to apply
   --shadow-distance: 14px;
 }
 ```
-:::
 
 Coupling this with the documentation in your README can be a very robust way to support user configured variables. It also avoids the potential for their variables being overwritten upon a theme file update since Custom CSS is completely separate.

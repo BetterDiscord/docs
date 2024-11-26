@@ -9,7 +9,7 @@ description: Get started fast.
 
 If you already know the basics, or just prefer to learn by trying it yourself and poking around, try this basic plugin template.
 
-```js:line-numbers
+```js:line-numbers [YourPlugin.plugin.js]
 /**
  * @name YourPlugin
  * @author YourName

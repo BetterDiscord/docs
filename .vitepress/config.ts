@@ -1,7 +1,10 @@
 import {DefaultTheme, defineConfig, UserConfig} from "vitepress";
 import {VitePressSidebarOptions, withSidebar} from "vitepress-sidebar";
 import {bundledLanguages, LanguageRegistration} from "shiki";
+import {groupIconMdPlugin, groupIconVitePlugin, localIconLoader} from "vitepress-plugin-group-icons";
 
+
+const bdIcon = localIconLoader(import.meta.url, "../docs/public/branding/logo_small.svg");
 
 const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
     srcDir: "./docs",
@@ -137,7 +140,25 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
 
             await shiki.loadLanguage(bdcss);
         },
-        theme: "dark-plus"
+        theme: "dark-plus",
+        config: (md) => {
+            md.use(groupIconMdPlugin);
+        }
+    },
+    vite: {
+        plugins: [
+            groupIconVitePlugin({
+                customIcon: {
+                    ".babelrc": "vscode-icons:file-type-babel",
+                    "js": "vscode-icons:file-type-js",
+                    "jsx": "vscode-icons:file-type-js",
+                    "json": "vscode-icons:file-type-json",
+                    ".plugin.js": bdIcon,
+                    ".theme.css": bdIcon,
+                    // TODO: consider adding platform icons
+                },
+            })
+        ]
     }
 };
 

@@ -99,7 +99,6 @@ Note that the `src/config.json` __does not include__ a version number. This is b
 
 Before we even configure Webpack proper, let's just quickly adjust our `package.json` to add our build script.
 
-::: code-group
 ```json [package.json]
 {
   "scripts": {
@@ -107,11 +106,9 @@ Before we even configure Webpack proper, let's just quickly adjust our `package.
   }
 }
 ```
-:::
 
 Now with that out of the way, let's take a look at a general commonjs output Webpack configuration.
 
-::: code-group
 ```js:line-numbers [webpack.config.js]
 const path = require("path");
 
@@ -132,7 +129,6 @@ module.exports = {
   },
 };
 ```
-:::
 
 And if you were to build the plugin (`npm run build`) with this, it would look pretty good, you would even see that the default export of `src/index.js` is assigned to `module.exports`. But it wouldn't load in BetterDiscord. That's because the meta comment at the top wouldn't be generated.
 
@@ -157,7 +153,6 @@ const meta = (() => {
 
 If you notice, this gets the version from `package.json` which answers our question from earlier. Now `meta` contains the comment string, all we have to do is add it to the beginning of the file at the end of the build.
 
-::: code-group
 ```js:line-numbers [webpack.config.js]
 const webpack = require("webpack");
 
@@ -170,11 +165,9 @@ module.exports = {
   ]
 }
 ```
-:::
 
 So if we put it all together we end up with a full config like this:
 
-::: code-group
 ```js:line-numbers [webpack.config.js]
 const path = require("path");
 const webpack = require("webpack");
@@ -211,7 +204,6 @@ module.exports = {
   ]
 };
 ```
-:::
 
 Now if you build it (`npm run build`) and copy it over to your `plugins` folder, you should see a little toast letting you know that it loaded successfully. 
 
@@ -278,7 +270,6 @@ npm install --save-dev raw-loader
 
 Add a little `rules` section to your Webpack config and also allow `.css` files to be resolved.
 
-::: code-group
 ```js [webpack.config.js]
 module.exports = {
   ...,
@@ -293,7 +284,6 @@ module.exports = {
   ...
 }
 ```
-:::
 
 This configures `raw-loader` to affect CSS files by using the regex `/\.css$/` which checks for any filenames being included that end with `.css`. Perfect for our use-case here. 
 
@@ -301,7 +291,6 @@ This configures `raw-loader` to affect CSS files by using the regex `/\.css$/` w
 
 Now how do we use it? Create your CSS somewhere in your source directory. Then simply `require`/`import` it and treat it like a string!
 
-::: code-group
 ```js:line-numbers [src/index.js]
 import styles from "./styles.css";
 
@@ -319,7 +308,6 @@ export default class MyPlugin {
   }
 }
 ```
-:::
 
 Go ahead and give it a try, you'll find it's really that easy!
 
@@ -338,7 +326,6 @@ npm install --save-dev @babel/core @babel/preset-env @babel/preset-react babel-l
 
 Create a new `.babelrc` file that includes the two presets we just installed.
 
-::: code-group
 ```json:line-numbers [.babelrc]
 {
   "presets": [
@@ -355,11 +342,9 @@ Create a new `.babelrc` file that includes the two presets we just installed.
   ]
 }
 ```
-:::
 
 Now adjust your Webpack config to resolve `.jsx` files and use `babel-loader` for `.jsx` files
 
-::: code-group
 ```js:line-numbers [webpack.config.js]
 module.exports = {
   // ...,
@@ -374,7 +359,6 @@ module.exports = {
   // ...
 }
 ```
-:::
 
 You can optionally use `babel-loader` on all `.js` files as well if you have other transpilation needs, but here we're just using it as a JSX converter.
 
@@ -382,7 +366,6 @@ You can optionally use `babel-loader` on all `.js` files as well if you have oth
 
 If you remember our original Webpack setup from before, let's change our `src/component.js` to `src/component.jsx`.
 
-::: code-group
 ```jsx:line-numbers [src/component.jsx]
 export default function MyComponent({disabled = false}) {
     const [isDisabled, setDisabled] = BdApi.React.useState(disabled);
@@ -391,11 +374,9 @@ export default function MyComponent({disabled = false}) {
           </button>;
 }
 ```
-:::
 
 Now if you were to build this and open your settings panel, you would get an error saying `React is not defined`. That's because `babel-loader` using `React.createElement` and not `BdApi.React.createElement`. There's two ways to get around this, the easiest is to just put `const React = BdApi.React;` at the top of your component file. That's fine for a single file, but as your plugin expands it becomes very tedious. You can solve this with one small adjustment to the `.babelrc`.
 
-::: code-group
 ```json:line-numbers [.babelrc]
 {
   "presets": [
@@ -410,7 +391,6 @@ Now if you were to build this and open your settings panel, you would get an err
   ]
 }
 ```
-:::
 
 Now try building and opening your settings panel again, you'll see it loads just fine!
 

@@ -74,7 +74,6 @@ Now, open your `package.json` and set up the build script that we'll be using la
 
 You'll notice we actually added two scripts, `build` and `build-prod`. The first one we can use for development since it outputs normal CSS. The second one we can use for our import because it outputs minified CSS by indicating to build in production mode. This is actually set up in our `postcss.config.js`, so let's set that up now.
 
-::: code-group
 ```js [postcss.config.js]
 module.exports = ctx => {
     return {
@@ -86,7 +85,6 @@ module.exports = ctx => {
     };
 };
 ```
-:::
 
 As a quick explanation of what's going on here: `map: false` means we are not making sourcemaps, and that's a whole separate topic. It also means we are using two plugins, the ones we installed before. We load `postcss-easy-import` with no configured options. And `postcss-csso` is configured to run only in `production` mode and turn off otherwise.
 
@@ -123,7 +121,6 @@ Seems almost too easy, right? Well let's run `npm run build` anyways and see wha
 
 It seems to build just fine, and there's a new `dist` folder with an `import.css` inside.
 
-::: code-group
 ```css [dist/import.css]
 .wrapper-2PSQCG,
 .svg-2ifYOU {
@@ -140,7 +137,6 @@ It seems to build just fine, and there's a new `dist` folder with an `import.css
     --background-tertiary: #333333;
 }
 ```
-:::
 
 If you got this same result then you're all set! PostCSS is working perfectly and now you can have unlimited files for your CSS.
 

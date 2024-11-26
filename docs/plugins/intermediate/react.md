@@ -79,7 +79,6 @@ How you use it is entirely up to you! You can put anything in these modals from 
 
 Speaking of settings panels, you might recall from [Plugin Structure](../introduction/structure.md) that plugins can have a `getSettingsPanel()` that return a React component. Look at this sample plugin below for a short example.
 
-::: code-group
 ```js:line-numbers [MyComponentDemo.plugin.js]
 /**
  * @name My Component Demo
@@ -102,7 +101,6 @@ module.exports = class test {
   }
 }
 ```
-:::
 
 Your plugin will show that it has a settings panel.
 
