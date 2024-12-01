@@ -37,21 +37,23 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
         logo: "/branding/logo_large.svg",
         nav: [
             {text: "Home", link: "/"},
-            {text: "User Guides", link: "/users/"},
+            {text: "User Guides", link: "/users/", activeMatch: "/users/"},
             {
                 text: "Developer Guides",
                 items: [
-                    {text: "General", link: "/developers/"},
-                    {text: "Plugins", link: "/plugins/"},
-                    {text: "Themes", link: "/themes/"},
-                ]
+                    {text: "General", link: "/developers/", activeMatch: "/developers/"},
+                    {text: "Plugins", link: "/plugins/", activeMatch: "/plugins/"},
+                    {text: "Themes", link: "/themes/", activeMatch: "/themes/"},
+                ],
+                activeMatch: "/(?:developers|plugins|themes)/"
             },
             {
                 text: "Reference",
                 items: [
-                    {text: "API", link: "/api/"},
-                    {text: "Discord", link: "/discord/"},
-                ]
+                    {text: "API", link: "/api/", activeMatch: "/api/"},
+                    {text: "Discord", link: "/discord/", activeMatch: "/discord/"},
+                ],
+                activeMatch: "/(?:api|discord)/"
             },
         ],
 

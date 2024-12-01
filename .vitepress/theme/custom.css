@@ -28,6 +28,18 @@ span.line .global-bdapi {
 }
 
 
+/* TODO: poll this */
+/* .vp-doc a.header-anchor {
+    position: initial;
+    margin: 0 0 0 5px;
+    opacity: 1;
+}
+
+.vp-doc a.header-anchor:hover {
+    color: var(--vp-c-brand-1);
+    text-decoration: underline;
+} */
+
 
 /**
  * Colors: Palette
