@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+order: 2
 description: Customize BetterDiscord to your liking.
 ---
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 3
+order: 3
 description: The development environment.
 ---
 
@@ -37,4 +37,4 @@ BetterDiscord provides an API for plugins. The guides here show how it's used an
 
 ## Discord's Internals
 
-Inside of this environment, BetterDiscord provides access to Discord's internals via searching their modules. Understanding and using these modules is a task left to the developer. But the [advanced](../advanced/) guide provides some insight on how to get started. Searching through and using Discord's own modules are some of the most important skills for building complex plugins.
+Inside of this environment, BetterDiscord provides access to Discord's internals via searching their modules. Understanding and using these modules is a task left to the developer. But the [advanced](../advanced/patching.md) guide provides some insight on how to get started. Searching through and using Discord's own modules are some of the most important skills for building complex plugins.

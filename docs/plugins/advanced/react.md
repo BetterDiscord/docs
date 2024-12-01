@@ -1,10 +1,7 @@
 ---
-sidebar_position: 3
+order: 3
 description: Adding to an existing React tree.
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # React Injection
 
@@ -14,7 +11,7 @@ This guide involves [function patching](./patching.md). If you have not read tha
 
 ### What does it mean?
 
-When we say React Injection, we're referring to adding/removing/alterting components in the React render tree used by Discord. In the [React](../intermediate/react.mdx) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
+When we say React Injection, we're referring to adding/removing/alterting components in the React render tree used by Discord. In the [React](../intermediate/react.md) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
 
 ### Why would I need it?
 
@@ -24,7 +21,7 @@ When we say React Injection, we're referring to adding/removing/alterting compon
 
 ### How can I do it?
 
-:::caution
+::: warning
 
 It's important that you make your changes in an error-safe way whenever possible. React errors tend to propagate to the root node and show the "crashed client" screen.
 
@@ -36,13 +33,13 @@ Well if you've got a hang of function patching, then you're already halfway ther
 
 ### Setup
 
-:::caution
+::: warning
 
 Due to the nature of client modding, this section could be outdated by the time you read it since Discord's internals are always changing. However, the concepts used and learned here remain the same.
 
 :::
 
-Make sure you've gone over the [DevTools](../../developers/devtools.mdx), [Function Patching](./patching.md), and [Webpack](./webpack.md) guides before this and have your React DevTools all set up.
+Make sure you've gone over the [DevTools](../../developers/devtools.md), [Function Patching](./patching.md), and [Webpack](./webpack.md) guides before this and have your React DevTools all set up.
 
 What we want to target in this walkthrough is the little section at the top of your DM list.
 
@@ -107,18 +104,13 @@ BdApi.Patcher.after("debug", PrivateChannels, "Z", (_, __, returnValue) => {
 
 With this simple patch, we will log out the return value on ever render call but let the original return value still work. With that in place, try switching to a guild and then back to your DM list. You should see a new log in your console.
 
-<Tabs>
-<TabItem value="Right-Click">
-
+::: details Right-Click
 ![return_value](./img/return_value.png)
+:::
 
-</TabItem>
-<TabItem value="Function Location">
-
+::: details Function Location
 ![return_value_expanded](./img/return_value_expanded.png)
-
-</TabItem>
-</Tabs>
+:::
 
 What you see here if a fairly typical result of one of these render calls. Take a second and get familiar with the structure, it's likely you'll be seeing a lot more of them going forward. However, since we want to see where to add our component, expand the tree out like we did above in the second image.
 
@@ -128,7 +120,7 @@ Take a look at the objects near the cursor in the image. This seems to be exactl
 
 You'll end up with a path like `returnValue.props.children.props.children`. Also note that this is an array of children, so it's easy enough to just append to this array without any special handling. Let's give it a try in our patch.
 
-:::tip
+::: tip
 
 It's a good ideal to undo the previous patches with `BdApi.Patcher.unpatchAll("debug")` before subsequent patches.
 

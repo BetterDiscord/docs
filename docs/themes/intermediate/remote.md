@@ -1,9 +1,6 @@
 ---
-sidebar_position: 1
+order: 1
 ---
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
 # Remote Imports
 
@@ -46,10 +43,9 @@ Now, just wait for GitHub to finish deploying your site. You can double check by
 
 Note down the URL shown in this panel because it's what will be used for your theme. Actually converting your theme is the easy part. Basically, take your entire CSS and put it in a new file in the same repository as your `*.theme.css` file. Then add an import to your theme file using the format `https://<url>/<filename>.css`, replacing the bracketed values with your own (`<url>` should be the value from above). It might look a little something like below.
 
-<Tabs className="code-tabs files">
-<TabItem value="MyTheme.theme.css">
+::: code-group
 
-```css
+```css [MyTheme.theme.css]
 /**
  * @name MyTheme
  * @author YourName
@@ -60,10 +56,8 @@ Note down the URL shown in this panel because it's what will be used for your th
 @import url("https://myname.github.io/MyTheme/import.css");
 ```
 
-</TabItem>
-<TabItem value="import.css">
 
-```css showLineNumbers
+```css:line-numbers [import.css]
 :root {
     --background-tertiary: #333333;
 }
@@ -79,9 +73,6 @@ Note down the URL shown in this panel because it's what will be used for your th
   width: 33px;
 }
 ```
-
-</TabItem>
-</Tabs>
 
 Go ahead and commit that to your repository, and after just a few minutes, GitHub will deploy your theme to be importable over GitHub Pages. Go ahead and put your new theme file in your `themes` folder and give it a try! If it works, great, otherwise double check the status of your deployment on GitHub.
 

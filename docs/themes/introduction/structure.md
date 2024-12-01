@@ -1,10 +1,10 @@
 ---
-sidebar_position: 4
+order: 4
 ---
 
 # Theme Structure
 
-:::info
+::: tip
 
 This page only goes over the body of a theme. Make sure you have read up on the [addon system](../../developers/addons.md) first.
 
@@ -20,4 +20,4 @@ Theme files are split into two main pieces, the meta and the css. If either of t
 
 ### CSS
 
-Unlike [plugins](../../plugins), themes are left open-ended and unstructured. This allows for full developer control of the theme.
+Unlike [plugins](../../plugins/index.md), themes are left open-ended and unstructured. This allows for full developer control of the theme.

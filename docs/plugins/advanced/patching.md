@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+order: 1
 description: Patch other functions with your function.
 ---
 
@@ -26,7 +26,7 @@ function yourTarget() {}
 
 then you can't really affect it. However, if your target is part of an object in some way, like being contained in an imported module, you can overwrite that reference with your own function causing everyone to call your function instead.
 
-```js showLineNumbers
+```js:line-numbers
 const someObject = {
     yourTarget: function() {
         console.log("red");
@@ -56,7 +56,7 @@ If you take a look at the highlighted section, we are creating a new function `m
 
 Luckily, BetterDiscord already has a system in place to manage multiple patches per function and allows you to target different patch types. This means if you want to do a `before` or `after` patch, you no longer have to manually replace the function and retain references and call the original. All of this is done for you with `BdApi.Patcher`. Let's take a look at how our example above could be done with this module.
 
-```js showLineNumbers
+```js:line-numbers
 const someObject = {
     yourTarget: function() {
         console.log("red");
@@ -83,7 +83,7 @@ This code has the some effect as before, causing `targetUser` to instead log `gr
 
 For all of these examples, our setup is the following:
 
-```js showLineNumbers
+```js:line-numbers
 function someGlobal() {
     console.log("global function");
     return 2;
@@ -107,7 +107,7 @@ In this setup, `someGlobal` is a function that cannot be patched because there i
 
 If there's a function you want to modify the arguments for, a `before` patch is the right one for you. Take a look at this patch below.
 
-```js showLineNumbers
+```js:line-numbers
 BdApi.Patcher.before("MyPlugin", someModule, "otherMethod", (thisObject, args) => {
     console.log(args);
 });
@@ -119,7 +119,7 @@ someModule.otherMethod("something");
 
 In this example we didn't modify the arguments, we just wanted to log them out to see what kind of values we might get. This is a good technique to help modify arguments selectively. Suppose we don't mind that `something` is logged, but we don't like when `token` is logged. How might that look?
 
-```js showLineNumbers
+```js:line-numbers
 BdApi.Patcher.before("MyPlugin", someModule, "otherMethod", (thisObject, args) => {
     const firstArgument = args[0];
     // highlight-start
@@ -139,7 +139,7 @@ This highlighted section checks when someone passes `token` as the value to `oth
 
 You may have already seen a basic `instead` patch in the [section above](#how-can-i-patch-a-function) but let's take a look at a slightly more complex version.
 
-```js showLineNumbers
+```js:line-numbers
 function myFunction(val) {
     console.log(`Intercepted ${val}`);
 }
@@ -161,7 +161,7 @@ Take alook at the function we define in the `instead` patch. We have a new param
 
 This type of patch is perhaps the most frequently used in plugins, but if you've stuck with us for the first two, this one will be easy to get the hang of.
 
-```js showLineNumbers
+```js:line-numbers
 BdApi.Patcher.after("MyPlugin", someModule, "method", (thisObject, args, returnValue) => {
     return returnValue * 2;
 });
@@ -178,7 +178,7 @@ const myNewNumber = 5 / someModule.method(5);
 
 Now let's switch up our return value for only `5`.
 
-```js showLineNumbers
+```js:line-numbers
 BdApi.Patcher.after("MyPlugin", someModule, "method", (thisObject, args, returnValue) => {
     if (args[0] === 5) return {};
 });
@@ -186,7 +186,7 @@ BdApi.Patcher.after("MyPlugin", someModule, "method", (thisObject, args, returnV
 
 In our patch this time, we `return` a value only in the case of `5`, in all other cases the default `return` of the original function is used because we didn't return anything. If we wanted to stop that we could put a `return null;` on the next line. You may have also noticed that our return is no longer a value. So what happens to our case above?
 
-```js showLineNumbers
+```js:line-numbers
 BdApi.Patcher.after("MyPlugin", someModule, "method", (thisObject, args, returnValue) => {
     if (args[0] === 5) return {};
 });

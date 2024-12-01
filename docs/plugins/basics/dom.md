@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+order: 2
 description: How to use DOM manipulation.
 ---
 
@@ -51,7 +51,7 @@ So lets do it manually. Since this element has no `id` or `class` but it does ha
 
 Since that didn't work out, let's take another look. We can see there are a couple unique classes in the ancestor hierarchy like `tree-3agP2X` and `guilds-2JjMmN`. We can combine these with the fact the `aria-label` only exists on the element we are targeting to create a selector like `.tree-3agP2X > div > div[aria-label]`. Since this doesn't depend on the *value* of the `aria-label` attribute, it will still work regardless of language. Note: there are other selectors that work as well, this is just an example.
 
-:::info
+::: tip
 
 Many of Discord's classes end in weird strings like `-3agP2X` because they use a system that prevents class collisions automatically. This means these strings are subject to change. A better way to get the desired class name will be covered in later sections.
 

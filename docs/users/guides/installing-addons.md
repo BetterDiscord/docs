@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+order: 1
 description: How to extend BetterDiscord.
 ---
 
@@ -9,7 +9,7 @@ description: How to extend BetterDiscord.
 
 The second half of this video shows exactly how to install addons.
 
-<iframe width="850" height="478" src="https://www.youtube.com/embed/U0tTENsBS4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="688" height="386" src="https://www.youtube.com/embed/U0tTENsBS4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Step-by-Step
 

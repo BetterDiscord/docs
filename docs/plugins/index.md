@@ -1,10 +1,10 @@
 ---
-sidebar_position: 1
+order: 0
 ---
 
 # Overview
 
-:::info
+::: tip
 
 This documentation and the accompanying guides assume you already know JavaScript and are familiar with the modern JavaScript constructs and concepts. If you're not, check out the resources section below!
 
@@ -12,17 +12,17 @@ This documentation and the accompanying guides assume you already know JavaScrip
 
 These docs consist of this introduction which gives you an idea of what to expect, an overview on plugins and the development environment, a few guides, and an API reference.
 
-The [Introduction](./introduction) section gives a lot of background information on plugins requirements, the development environment, and the tools at your disposal.
+The [Introduction](./introduction/quick-start.md) section gives a lot of background information on plugins requirements, the development environment, and the tools at your disposal.
 
-The [Basics](./basics) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/bdapi) has to offer.
+The [Basics](./basics/creating-a-plugin.md) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/bdapi) has to offer.
 
-The [Intermediate](./intermediate) guide starts to branch into some of the 3rd-party libraries that can be used to enhance your plugins.
+The [Intermediate](./intermediate/bundling.md) guide starts to branch into some of the 3rd-party libraries that can be used to enhance your plugins.
 
-The [Advanced](./advanced) guide goes more in depth with advanced concepts that are important to making good and complicated plugins that smoothly integrate into Discord.
+The [Advanced](./advanced/patching.md) guide goes more in depth with advanced concepts that are important to making good and complicated plugins that smoothly integrate into Discord.
 
-The [API Reference](/api) section is purely a reference to what APIs are available, the parameters and return types of any functions, and descriptions of their properties. If you've seen any code documentation before, this will look familiar.
+The [API Reference](/api/index.md) section is purely a reference to what APIs are available, the parameters and return types of any functions, and descriptions of their properties. If you've seen any code documentation before, this will look familiar.
 
-Lastly the [Discord Internals](./discord) section is a reference that goes hand-in-hand with the advanced guide. It's an ever-changing reference point of what is available for use within Discord's code.
+Lastly the [Discord Internals](/discord/index.md) section is a reference that goes hand-in-hand with the advanced guide. It's an ever-changing reference point of what is available for use within Discord's code.
 
 ## Resources
 

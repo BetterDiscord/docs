@@ -2,11 +2,11 @@
 /node_modules
 
 # Production
-/build
+.vitepress/dist
 
 # Generated files
-.docusaurus
 .cache-loader
+.vitepress/cache
 
 # Misc
 .DS_Store

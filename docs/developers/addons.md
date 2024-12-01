@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+order: 4
 description: The requirements and format of an addon.
 ---
 

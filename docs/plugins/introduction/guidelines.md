@@ -1,5 +1,5 @@
 ---
-sidebar_position: 5
+order: 5
 description: Rules for all plugins.
 ---
 
