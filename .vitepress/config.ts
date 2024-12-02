@@ -31,7 +31,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
 
         ["link", {rel: "icon", href: "/favicon/favicon-96x96.png"}],
     ],
-    // cleanUrls: true,
+    cleanUrls: true,
     themeConfig: {
         siteTitle: false,
         logo: "/branding/logo_large.svg",
@@ -178,15 +178,20 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         frontmatterOrderDefaultValue: 1,
     },
     {
+        rootGroupText: "Discord Internals",
         documentRootPath: "docs",
         scanStartPath: "discord",
         basePath: "/discord/",
         resolvePath: "/discord/",
         useTitleFromFileHeading: true,
-        includeRootIndexFile: true, 
+        includeRootIndexFile: true,
         sortFolderTo: "bottom",
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,
+        hyphenToSpace: true,
+        capitalizeEachWords: true,
+        useFolderLinkFromIndexFile: true,
+        useFolderTitleFromIndexFile: true,
     },
     {
         documentRootPath: "docs",
