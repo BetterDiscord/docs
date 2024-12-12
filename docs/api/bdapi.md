@@ -115,6 +115,12 @@ ___
 
 ## Methods
 
+::: danger
+
+All methods directly on the `BdApi` object have been deprecated for a long time and are slated for removal. Do not use these in new projects!
+
+:::
+
 ### alert <Badge type="danger">deprecated</Badge>
 Shows a generic but very customizable modal.
 
