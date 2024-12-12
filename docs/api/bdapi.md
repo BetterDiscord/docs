@@ -4,6 +4,12 @@
 
 ## Properties
 
+### Components
+A set of [react components](./components.md) plugins can make use of.
+
+**Type:** `Components`
+___
+
 ### ContextMenu
 An instance of [ContextMenu](./contextmenu) for interacting with context menus.
 
@@ -22,8 +28,14 @@ An instance of [Data](./data) to manage data.
 **Type:** `Data`
 ___
 
+### Logger
+An instance of [Logger](./logger.md) for logging information.
+
+**Type:** `Logger`
+___
+
 ### Net
-An instance of [Net](./net) for networking requests.
+An instance of [Net](./net.md) for using network related tools.
 
 **Type:** `Net`
 ___
@@ -281,7 +293,10 @@ key|string|Which piece of data to load
 ___
 
 ### monkeyPatch <Badge type="danger">deprecated</Badge>
-Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.   - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.  - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
+Monkey-patches a method on an object. The patching callback may be run before, after or instead of target method.
+
+ - Be careful when monkey-patching. Think not only about original functionality of target method and your changes, but also about developers of other plugins, who may also patch this method before or after you. Try to change target method behaviour as little as possible, and avoid changing method signatures.
+ - Display name of patched method is changed, so you can see if a function has been patched (and how many times) while debugging or in the stack trace. Also, patched methods have property `__monkeyPatched` set to `true`, in case you want to check something programmatically.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -309,7 +324,7 @@ callback|function|Function to run when removed
 ___
 
 ### openDialog <Badge type="danger">deprecated</Badge>
-Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.  Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
+Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api. Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
