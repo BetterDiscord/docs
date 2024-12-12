@@ -19,6 +19,55 @@ content|string\|ReactElement\|Array.&lt;(string\|ReactElement)&gt;|A string of t
 **Returns:** `void`
 ___
 
+### buildSettingItem
+Creates a single setting wrapped in a setting item that has a name and note.
+The shape of the object should match the props of the component you want to render, check the
+`BdApi.Components` section for details. Shown below are ones common to all setting types.
+
+| Parameter |  Type  | Optional | Default |       Description      |
+|:----------|:------:|:--------:|:-------:|:----------------------:|
+setting|object|&#x274C;|*none*|
+setting.type|string|&#x274C;|*none*|One of: dropdown, number, switch, text, slider, radio, keybind, color, custom
+setting.id|string|&#x274C;|*none*|Identifier to used for callbacks
+setting.name|string|&#x274C;|*none*|Visual name to display
+setting.note|string|&#x274C;|*none*|Visual description to display
+setting.value|any|&#x274C;|*none*|Current value of the setting
+setting.children|ReactElement|&#x2705;|*none*|Only used for "custom" type
+setting.onChange|CallableFunction|&#x2705;|*none*|Callback when the value changes (only argument is new value)
+setting.disabled|boolean|&#x2705;|false|Whether this setting is disabled
+setting.inline|boolean|&#x2705;|true|Whether the input should render inline with the name (this is false by default for radio type)
+
+**Returns:** `void`
+___
+
+### buildSettingsPanel
+Creates a settings panel (react element) based on json-like data.
+
+The `settings` array here is an array of the same settings types described in `buildSetting` above.
+However, this API allows one additional setting "type" called `category`. This has the same properties
+as the Group React Component found under the `Components` API.
+
+`onChange` will always be given 3 arguments: category id, setting id, and setting value. In the case
+that you have settings on the "root" of the panel, the category id is `null`. Any `onChange`
+listeners attached to individual settings will fire before the panel-level change listener.
+
+`onDrawerToggle` is given 2 arguments: category id, and the current shown state. You can use this to
+save drawer states.
+
+`getDrawerState` is given 2 arguments: category id, and the default shown state. You can use this to
+recall a saved drawer state.
+
+| Parameter |  Type  | Optional | Default |       Description      |
+|:----------|:------:|:--------:|:-------:|:----------------------:|
+props|object|&#x274C;|*none*|
+props.settings|Array.&lt;object&gt;|&#x274C;|*none*|Array of settings to show
+props.onChange|CallableFunction|&#x274C;|*none*|Function called on every change
+props.onDrawerToggle|CallableFunction|&#x2705;|*none*|Optionally used to save drawer states
+props.getDrawerState|CallableFunction|&#x2705;|*none*|Optionially used to recall drawer states
+
+**Returns:** `void`
+___
+
 ### createTooltip
 Creates a tooltip to automatically show on hover.
 
@@ -36,7 +85,7 @@ options.disabled|boolean|&#x2705;|false|Whether the tooltip should be disabled f
 ___
 
 ### openDialog
-Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api.  Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
+Gives access to the [Electron Dialog](https://www.electronjs.org/docs/latest/api/dialog/) api. Returns a `Promise` that resolves to an `object` that has a `boolean` cancelled and a `filePath` string for saving and a `filePaths` string array for opening.
 
 | Parameter |  Type  | Optional | Default |       Description      |
 |:----------|:------:|:--------:|:-------:|:----------------------:|
@@ -57,6 +106,34 @@ options.modal|boolean|&#x2705;|false|Whether the dialog should act as a modal to
 **Returns:** `Promise.<object>` - Result of the dialog
 ___
 
+### showChangelogModal
+Shows a changelog modal in a similar style to Discord's. Customizable with images, videos, colored sections and supports markdown.
+
+The changes option is a array of objects that have this typing:
+```ts
+interface Changes {
+    title: string;
+    type: "fixed" | "added" | "progress" | "changed";
+    items: Array<string>;
+    blurb?: string;
+}
+```
+
+| Parameter |  Type  | Optional | Default |       Description      |
+|:----------|:------:|:--------:|:-------:|:----------------------:|
+options|object|&#x274C;|*none*|Information to display in the modal
+options.title|string|&#x274C;|*none*|Title to show in the modal header
+options.subtitle|string|&#x274C;|*none*|Title to show below the main header
+options.blurb|string|&#x2705;|*none*|Text to show in the body of the modal before the list of changes
+options.banner|string|&#x2705;|*none*|URL to an image to display as the banner of the modal
+options.video|string|&#x2705;|*none*|Youtube link or url of a video file to use as the banner
+options.poster|string|&#x2705;|*none*|URL to use for the video freeze-frame poster
+options.footer|string\|ReactElement\|Array.&lt;(string\|ReactElement)&gt;|&#x2705;|*none*|What to show in the modal footer
+options.changes|Array.&lt;Changes&gt;|&#x2705;|*none*|List of changes to show (see description for details)
+
+**Returns:** `string` - The key used for this modal.
+___
+
 ### showConfirmationModal
 Shows a generic but very customizable confirmation modal with optional confirm and cancel callbacks.
 
@@ -70,6 +147,7 @@ options.confirmText|string|&#x2705;|Okay|Text for the confirmation/submit button
 options.cancelText|string|&#x2705;|Cancel|Text for the cancel button
 options.onConfirm|callable|&#x2705;|NOOP|Callback to occur when clicking the submit button
 options.onCancel|callable|&#x2705;|NOOP|Callback to occur when clicking the cancel button
+options.onClose|callable|&#x2705;|NOOP|Callback to occur when exiting the modal
 
 **Returns:** `string` - The key used for this modal.
 ___

@@ -63,3 +63,26 @@ options.ignore|Array.&lt;string&gt;|&#x2705;|[]|Array of strings to use as keys 
 
 **Returns:** `void`
 ___
+
+### getNestedValue
+Gets a nested value (if it exists) of an object safely. keyPath should be something like `key.key2.key3`.
+Numbers can be used for arrays as well like `key.key2.array.0.id`.
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+obj|object|object to get nested value from
+keyPath|string|key path to the desired value
+
+**Returns:** `void`
+___
+
+### semverCompare
+This works on semantic versioning e.g. "1.0.0".
+
+| Parameter |  Type  |       Description      |
+|:----------|:------:|:----------------------:|
+currentVersion|string|
+newVersion|string|
+
+**Returns:** `number` - 0 indicates equal, -1 indicates left hand greater, 1 indicates right hand greater
+___

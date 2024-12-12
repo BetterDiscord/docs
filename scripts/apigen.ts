@@ -79,7 +79,7 @@ const markdownTemplate = `# {{name}}
 function generateApiDoc(which: string, memberName?: string) {
     const data = parseAST(which, memberName);
     if (!data) return console.error(`Could not process ${which}`);
-    const outFile = path.resolve(__dirname, "..", "docs", "api", `${which.toLowerCase()}.md`);
+    const outFile = path.resolve(__dirname, "docs", "api", `${which.toLowerCase()}.md`);
     
     const finalMarkdown = markdownTemplate.replace("{{name}}", data.name)
                                   .replace("{{description}}", data.description)
@@ -100,3 +100,5 @@ generateApiDoc("ReactUtils");
 generateApiDoc("Utils");
 generateApiDoc("DOM");
 generateApiDoc("ContextMenu");
+generateApiDoc("Logger", "module:Logger~Logger");
+generateApiDoc("Components");

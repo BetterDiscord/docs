@@ -66,6 +66,9 @@ Toasts are a BetterDiscord-specific term for a small tooltip-like popup that app
 
 ## BdApi Helpers
 
+> [!NOTE]
+> This section is still being updated for the BetterDiscord v1.11.0 update!
+
 There are some utility functions from `BdApi` that help you build and display certain UI elements. Using them instead of building your own saves you code and helps ensure a consistent UI/UX for the end user across plugins. While they may work for a large range of cases, for advanced UIs (and ones not handled in `BdApi`) you will need to build your own.
 
 ### alert
@@ -125,6 +128,85 @@ BdApi.UI.alert(
 
 Important to note for later that `alert` returns a unique modal ID used internally by Discord. We won't be going over its usage here--it's safe to ignore--but may be covered by advanced guides.
 
+
+### buildSettingItem & buildSettingsPanel
+
+This are covered in the [previous guide](./settings.md) in the section going over how to build a settings menu!
+
+
+### createTooltip
+
+If you're not using React, this little utility can come in handy. If you give it an HTML element to follow, a label, and an optional set of options, this will generate a return a nifty little tooltip.
+
+```js
+// This tooltip will automatically show/hide as the user hovers myElement
+const tooltip = BdApi.UI.createTooltip(myElement, "My label", {side: "bottom"});
+
+// But, we can also forcibly show (or hide) the tooltip to fit our needs
+tooltip.show()
+```
+
+The default options object for `createTooltip` looks something like this:
+```json
+{
+    "style": "primary",
+    "side": "top",
+    "preventFlip": false,
+    "disabled": true
+}
+```
+
+The sides available are top, right, bottom, and left.
+
+The styles available are primary, info, success, warn, and danger.
+
+You can also directly access the elements of the tooltip afterwards. So if you need to update the label you can do something like this:
+
+```js
+tooltip.labelElement.textContent = "New label";
+
+// Or even fancier
+const myNewLabel = BdApi.DOM.parseHTML(`<div class="foo">New label text</div>`);
+tooltip.labelElement.textContent = "";
+tooltip.labelElement.append(myNewLabel);
+```
+
+The options with this tooltip are surprisingly wide, so your best bet is to play around with it in console and get a feel for it.
+
+### showChangelogModal
+
+When you want to show the user that you've added some cool features or fixed some nasty bugs, this function can help you show it in a clean and consistent way.
+
+```js
+BdApi.UI.showChangelogModal({
+    title: "My Plugin",
+    subtitle: `version ${version}`,
+    blurb: "A summary of this update",
+    changes: [
+        {
+            title: "New Features",
+            type: "added",
+            blurb: "Summary of the new features",
+            items: [
+                "Added feature A!",
+                "Refactored feature B into feature C!"
+            ]
+        },
+        {
+            title: "Bugs Eliminated",
+            type: "fixed",
+            items: [
+                "No more corrupt settings.",
+                "Clicking the button does stuff."
+            ]
+        }
+    ]
+});
+```
+
+You can check the [api reference](../../api/ui.md) for more details, but this little snippet shows the most important features. Notably, this changelog api can also allow you to display a banner image, a youtube video, or a direct video above all of the text. This can be useful when you need to add a showcase of new things or if you just want to have a consistent branding. There are also 4 change "types". In the snippet we see fixed and added, there are also improved and progress.
+
+For now, plugins will have to decide when to display the changelog modal, though it is planned to be more automated in a future BetterDiscord update. For an example of how to do this check out this [Demo Plugin](https://gist.github.com/zerebos/b13adc05f22df008ee5d0411d9d18ff0) featuring the new APIs for BetterDiscord v1.11.0.
 
 ### showConfirmationModal
 
