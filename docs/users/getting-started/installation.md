@@ -17,7 +17,7 @@ If you experience any issues following these steps, try the [troubleshooting](./
 
 If you prefer a video tutorial, take a look at this:
 
-<iframe width="688" height="386" src="https://www.youtube.com/embed/n_CCYtIZj0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="width: 100%; aspect-ratio: 16 / 9; max-width: 688px;" src="https://www.youtube.com/embed/n_CCYtIZj0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Step-by-Step
 
