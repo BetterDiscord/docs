@@ -36,6 +36,7 @@ These are guidelines that all themes are expected to abide by. Any themes that v
    - If used, provide sensible fallbacks for other languages.
 
 ## Design
-1. Themes should not be a low-effort recolor or background change. Themes should significantly alter the look and feel of Discord.
-1. Themes should generally have full coverage of most common pages, popouts, modals and controls.
-   - Changing Discord's CSS variables does not provide full coverage of the app's look and feel.
+1. Themes should provide a cohesive design that notably alters the look and feel of Discord.
+   - A simple recoloring via CSS variables or adding a background image is not considered notable.
+1. Themes should be designed to seamlessly integrate with any unthemed sections, ensuring a smooth and consistent experience across the entire interface
+   - Try to leave as few unthemed sections as possible in order to improve the user experience.
