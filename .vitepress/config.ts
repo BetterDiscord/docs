@@ -142,7 +142,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
 
             await shiki.loadLanguage(bdcss);
         },
-        theme: "dark-plus",
+        theme: {dark: "dark-plus", light: "light-plus"},
         config: (md) => {
             md.use(groupIconMdPlugin);
         }
