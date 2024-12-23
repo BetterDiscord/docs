@@ -14,6 +14,7 @@ These are guidelines that all themes are expected to abide by. Any themes that v
  1. Addons must not discriminate whom can use it.
  1. Addons must not collect user data without opt-in consent.
  1. Addons must not include explicit sexual material or other adult content.
+ 1. Addons must have English language support.
 
 
 ## Usability
@@ -35,5 +36,7 @@ These are guidelines that all themes are expected to abide by. Any themes that v
    - If used, provide sensible fallbacks for other languages.
 
 ## Design
-1. Themes should not be a basic recolor or background change. Themes should significantly alter the look and feel of Discord.
-1. Themes should have full coverage of most common pages, popouts, modals and controls. Keep in mind that changing Discord's variables does not provide full coverage of the app.
+1. Themes should provide a cohesive design that notably alters the look and feel of Discord.
+   - A simple recoloring via CSS variables or adding a background image is not considered notable.
+1. Themes should be designed to seamlessly integrate with any unthemed sections, ensuring a smooth and consistent experience across the entire interface
+   - Try to leave as few unthemed sections as possible in order to improve the user experience.
