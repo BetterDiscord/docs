@@ -51,7 +51,7 @@ Due to the nature of client modding, this section could be outdated by the time 
 
 Now that we know what information we can search on, how do we even find a module we want to get? And once we find it, how do we know whether it's even accessible? Keep in mind that some modules in Discord are completely wrapped and cannot be accessed through this API or through reflection of any kind.
 
-But to answer these questions, let's step through a very simple example. Let's say we want to open settings programmtically. We know that the settings button can do that, so we'll start there. Begin by selecting that element and printing it out in console with `$0`. You'll see in the autocomplete that it has some property that looks like `__reactFiber$2oq7t5kq3k5`. Go ahead and select that and print it out. This is the data React currently has about this node. Using this is a good way to understand how React works and a great way to start with reverse engineering in Discord. Through this you can walk the React tree and see all the elements React knows about. But we are more interested in the properties of this `button` because we want to essentially duplicate the `onClick` listener.
+But to answer these questions, let's step through a very simple example. Let's say we want to open settings programmatically. We know that the settings button can do that, so we'll start there. Begin by selecting that element and printing it out in console with `$0`. You'll see in the autocomplete that it has some property that looks like `__reactFiber$2oq7t5kq3k5`. Go ahead and select that and print it out. This is the data React currently has about this node. Using this is a good way to understand how React works and a great way to start with reverse engineering in Discord. Through this you can walk the React tree and see all the elements React knows about. But we are more interested in the properties of this `button` because we want to essentially duplicate the `onClick` listener.
 
 Now let's print out the property that looks like `__reactProps$2oq7t5kq3k5` instead. You'll see in this object all the React props specific to this element including an `onClick` function. Let's dive into this either by right-clicking and selecting `Show Function Definition` or by expanding the function and clicking on the function location.
 
@@ -111,7 +111,7 @@ And there it is, the object we wanted, with the function we wanted. You might ha
 
 ![default_export](./img/default_export.png)
 
-Now the `Z` is back and BetterDisord returned the whole module, not just the default export. So let's stick with the first version since we just want to use the object directly. And let's take a look at the `open` function definition and figure out how it works so we can use it.
+Now the `Z` is back and BetterDiscord returned the whole module, not just the default export. So let's stick with the first version since we just want to use the object directly. And let's take a look at the `open` function definition and figure out how it works so we can use it.
 
 ![open](./img/open.png)
 

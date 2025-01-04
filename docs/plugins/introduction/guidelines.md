@@ -34,7 +34,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 1. Plugins must not make use of the `child_process` node module.
    - Existing plugins are exempt, but no new plugins shall use this. This is due in part to the security risk, and in part due to an impending Discord update that will break this module.
 1. Plugins must not modify global variables, global objects, or existing `prototype`s.
-1. Plugins must not access BetterDiscord globals ouside of the official API.
+1. Plugins must not access BetterDiscord globals outside of the official API.
 1. Plugins must not access webpack modules outside of the official API.
 1. Plugins must not waste hardware resources.
     - e.g., repeated webpack searching without caching, storing unnecessary data in memory.
@@ -50,6 +50,6 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
     - This includes but is not limited to: hidden channels, deleted messages, invisible/offline status distinction.
 1. Plugins must not use remote libraries.
    - Necessary dependencies should be either bundled or a separate plugin.
-1. Plugins must not use closed source nor self-hosted binaries or libaries.
+1. Plugins must not use closed source nor self-hosted binaries or libraries.
 1. Plugins must not be obfuscated, minified, include sourcemaps, or be otherwise deceitful.
 1. Plugins must not bypass the addon approval system by implementing their own update system.

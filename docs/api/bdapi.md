@@ -143,7 +143,7 @@ id|string|ID uses for the style element
 ___
 
 ### deleteData <Badge type="danger">deprecated</Badge>
-Deletes a piece of stored data. This is different than saving `null` or `undefined`.
+Deletes a piece of stored data. This is different from saving `null` or `undefined`.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|
@@ -336,7 +336,7 @@ options.title|string|&#x2705;|*none*|Title for the titlebar
 options.message|string|&#x2705;|*none*|Message for the dialog
 options.showOverwriteConfirmation|boolean|&#x2705;|false|Whether the user should be prompted when overwriting a file
 options.showHiddenFiles|boolean|&#x2705;|false|Whether hidden files should be shown in the dialog
-options.promptToCreate|boolean|&#x2705;|false|Whether the user should be prompted to create non-existant folders
+options.promptToCreate|boolean|&#x2705;|false|Whether the user should be prompted to create non-existent folders
 options.openDirectory|boolean|&#x2705;|false|Whether the user should be able to select a directory as a target
 options.openFile|boolean|&#x2705;|true|Whether the user should be able to select a file as a target
 options.multiSelections|boolean|&#x2705;|false|Whether the user should be able to select multiple targets

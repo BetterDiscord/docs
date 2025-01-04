@@ -10,7 +10,7 @@ Making the Discord client transparent enough to have a background can actually t
 
 ## Desktop
 
-If you want your theme to be transparent or transluscent to the desktop of your computer, it's very easy to support that. First, enable that option in BetterDiscord settings and restart. Then go to your theme and add
+If you want your theme to be transparent or translucent to the desktop of your computer, it's very easy to support that. First, enable that option in BetterDiscord settings and restart. Then go to your theme and add
 
 ```css
 :root {

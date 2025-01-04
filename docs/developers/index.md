@@ -15,7 +15,7 @@ Currently, BetterDiscord only supports two main types of addons: [Plugins](../pl
 
 ## Plugins
 
-Plugins are a type of addon that focus on functionality by adding something new to the Discord client. This could be as simple as a button that says hello, or basic end-to-end ecryption. Plugins can also modify existing functionality in the client like altering exisiting buttons to perform different actions, or even remove functionality entirely. All of this is done using JavaScript with minimal requirements to allow for personal preference and style in programming. To read more about making them, check out the [plugin documentation](../plugins/) after finishing this section.
+Plugins are a type of addon that focus on functionality by adding something new to the Discord client. This could be as simple as a button that says hello, or basic end-to-end encryption. Plugins can also modify existing functionality in the client like altering exisiting buttons to perform different actions, or even remove functionality entirely. All of this is done using JavaScript with minimal requirements to allow for personal preference and style in programming. To read more about making them, check out the [plugin documentation](../plugins/) after finishing this section.
 
 ## Themes
 

@@ -84,7 +84,7 @@ module.exports = meta => {
 ```
 :::
 
-It's worth noting when deciding that each plugin is loaded similarly to a node module. This means that defining variables outside of the `module.exports` will not result in scope creep or variable bloat.
+It's worth noting when deciding that each plugin is loaded similarly to a node module. This means that defining variables outside the `module.exports` will not result in scope creep or variable bloat.
 
 Once you've got that decided, go ahead and save your template in your [plugins folder](../introduction/quick-start#plugin-folder) as `ExamplePlugin.plugin.js` and change `ExamplePlugin` to the name of your choice.
 

@@ -42,7 +42,7 @@ message|...any|Messages to have logged.
 ___
 
 ### log
-Logs used for basic loggin.
+Logs used for basic logging.
 
 | Parameter |  Type  |       Description      |
 |:----------|:------:|:----------------------:|

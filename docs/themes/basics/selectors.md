@@ -19,7 +19,7 @@ We touched on this a bit in [The Creative Process](./process.md) section, but we
 
 ### What is specificity?
 
-Specificity determines what styles take precedence in order to style elements. It's like a race condition in traditional programming but in this case, instead of racing against another function over time, you're racing against another style over how specifically you are targeting a given element. The style with the the *most* specific selector wins. Unless there is a tie, in which case the one that __appears later in the document__ wins. This is a specific wording, not to be confused with the idea that the one added latest-in-time to the page wins. But rather, the one appears last in the DOM tree of the `document`.
+Specificity determines what styles take precedence in order to style elements. It's like a race condition in traditional programming but in this case, instead of racing against another function over time, you're racing against another style over how specifically you are targeting a given element. The style with the *most* specific selector wins. Unless there is a tie, in which case the one that __appears later in the document__ wins. This is a specific wording, not to be confused with the idea that the one added latest-in-time to the page wins. But rather, the one appears last in the DOM tree of the `document`.
 
 ### Why do I need to know it?
 
@@ -31,7 +31,7 @@ Understanding the *how* of specificity is a very complex subject that browsers h
 
 ### Examples
 
-Rather than worrying about exact specificty calculations, let's try out a few examples to see if we can understand it a bit more conceptually.
+Rather than worrying about exact specificity calculations, let's try out a few examples to see if we can understand it a bit more conceptually.
 
 #### Setup
 

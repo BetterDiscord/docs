@@ -131,7 +131,7 @@ Important to note for later that `alert` returns a unique modal ID used internal
 
 ### buildSettingItem & buildSettingsPanel
 
-This are covered in the [previous guide](./settings.md) in the section going over how to build a settings menu!
+These are covered in the [previous guide](./settings.md) in the section going over how to build a settings menu!
 
 
 ### createTooltip

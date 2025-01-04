@@ -51,7 +51,7 @@ Please see the table below for details on the fields.
 
 |Field|Required|Description|
 |-----|:------:|-----------|
-|name|&#x2705;|The name of the addon. Typcially does not contain spaces, but is allowed.|
+|name|&#x2705;|The name of the addon. Typically does not contain spaces, but is allowed.|
 |author|&#x2705;|The name of you the developer.|
 |description|&#x2705;|A basic description of the what the addon does.|
 |version|&#x2705;|Version representing the current update level. [Semantic versioning](https://semver.org/) recommended.|

@@ -54,7 +54,7 @@ Where you store this object in your plugin is up to the individual developer. It
 
 ### Saving Settings
 
-BetterDiscord gives you an easy way to save your settings in a JSON file using `BdApi.Data.save`. This function takes your plugin's name, the key you want to save and the corresponding data to save. This means you can save your entire settings object from above under a single key, or save each key invidually. See the examples below to help understand the difference.
+BetterDiscord gives you an easy way to save your settings in a JSON file using `BdApi.Data.save`. This function takes your plugin's name, the key you want to save and the corresponding data to save. This means you can save your entire settings object from above under a single key, or save each key individually. See the examples below to help understand the difference.
 
 Saving the whole settings object under a single key:
 
@@ -246,7 +246,7 @@ myButton.style.color = mySettings.accentColor; // "blue"
 ```
 :::
 
-In this case, the button ends up blue instead of red. While not entirely desireable, it does not cause unexpected issues. This same concept can be applied to adding new settings that did not exist. 
+In this case, the button ends up blue instead of red. While not entirely desirable, it does not cause unexpected issues. This same concept can be applied to adding new settings that did not exist. 
 
 The key here is the call to `Object.assign()`. This function extends objects using other objects, essentially combining and overriding the keys. [MDN has a great explanation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) of the details of how this works. In this case, the order is important. You want the loaded data to override any existing value in the default object, so the loaded data comes last in the list. You'll notice that the target object is an empty object `{}`. If you use the default settings object instead, that __object will be modified__ so when you go to use it again in the future the values may be overridden. Using `{}` means a new object will be created and returned. An equivalent and more verbose version is shown below:
 
@@ -449,7 +449,7 @@ module.exports = class DemoPlugin {
 
 ### Classic HTML
 
-Since we're using `getSettingsPanel()` we need to create an html element that not only represents our settings, but allows the user to change them. The best way to do this is to turn each setting into an input and display it to the user. Let's say for example we have this setting schema:
+Since we're using `getSettingsPanel()` we need to create a html element that not only represents our settings, but allows the user to change them. The best way to do this is to turn each setting into an input and display it to the user. Let's say for example we have this setting schema:
 
 ```js:line-numbers
 {

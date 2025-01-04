@@ -4,7 +4,7 @@ order: 1
 
 # Preprocessing & Minification
 
-This section of the guide will walk you through the the concepts of preprocessing and minification with CSS and then do a small walkthrough.
+This section of the guide will walk you through the concepts of preprocessing and minification with CSS and then do a small walkthrough.
 
 ## Background
 
@@ -16,17 +16,17 @@ Minification is just transpiling your css to use as few characters as possible. 
 
 ### Why would I want one?
 
-These systems can enable you to make more complex themes that are easily maintainable. They can help cut down on reptition and reused code. They can also allow you to break your css out into multiple files and compile them together into one at the end. Whereas minification allows CSS loaded remotely to load faster because there is less data for a user to download.
+These systems can enable you to make more complex themes that are easily maintainable. They can help cut down on repetition and reused code. They can also allow you to break your css out into multiple files and compile them together into one at the end. Whereas minification allows CSS loaded remotely to load faster because there is less data for a user to download.
 
 ## Preprocessor Options
 
 There are many options these days when it comes to CSS preprocessors. The most popular options are Sass/scss, Less, Stylus, and PostCSS*. You can read a brief introduction to each of them [here](https://www.bitdegree.org/tutorials/css-preprocessor/). Or for even more options take a look at [this article](https://www.sitepoint.com/6-current-options-css-preprocessors/).
 
-*PostCSS is a bit of an exception because it is more of a postprocessor,, it can do all sorts of things with your CSS including handling the preprocessing through the other 3 mentioned preprocessors. Also unlike the others, PostCSS does not have all of the features out of the gate, it is a modular system so you only include what features you need.
+*PostCSS is a bit of an exception because it is more of a postprocessor, it can do all sorts of things with your CSS including handling the preprocessing through the other 3 mentioned preprocessors. Also unlike the others, PostCSS does not have all of the features out of the gate, it is a modular system so you only include what features you need.
 
 ### Which is right for me?
 
-We don't know. Only you can make that decision for you and your project. The big preprocessors all generally have the same features and capabilites so it often comes down to personal preference of syntax. By far the most popular is SCSS which is a syntax for Sass. The most free and open ended is Stylus since it allows you to include or omit as much syntax as you want. Then there's PostCSS, which by default just uses regular CSS syntax but can be expanded to do just about anything. Raygun gives a really good breakdown on all this different syntaxes with multiple examples in [their article](https://raygun.com/blog/css-preprocessors-examples/). We recommend giving it a look to help you decide.
+We don't know. Only you can make that decision for you and your project. The big preprocessors all generally have the same features and capabilities so it often comes down to personal preference of syntax. By far the most popular is SCSS which is a syntax for Sass. The most free and open-ended is Stylus since it allows you to include or omit as much syntax as you want. Then there's PostCSS, which by default just uses regular CSS syntax but can be expanded to do just about anything. Raygun gives a really good breakdown on all this different syntaxes with multiple examples in [their article](https://raygun.com/blog/css-preprocessors-examples/). We recommend giving it a look to help you decide.
 
 ## Walkthrough
 
@@ -90,7 +90,7 @@ As a quick explanation of what's going on here: `map: false` means we are not ma
 
 ### Code
 
-With the set up out of the way, we're actually almost done. Let's just make our CSS files.
+With the set-up out of the way, we're actually almost done. Let's just make our CSS files.
 
 ::: code-group
 
@@ -117,7 +117,7 @@ With the set up out of the way, we're actually almost done. Let's just make our 
 ```
 :::
 
-Seems almost too easy, right? Well let's run `npm run build` anyways and see what happens.
+Seems almost too easy, right? Well let's run `npm run build` anyway and see what happens.
 
 It seems to build just fine, and there's a new `dist` folder with an `import.css` inside.
 

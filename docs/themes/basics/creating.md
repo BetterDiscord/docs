@@ -59,7 +59,7 @@ Next, let's see if we can make the guild list even narrower. The bar in VSCode i
 }
 ```
 
-Save once again and you'll see that the guild list shrunk as expected! But, the guilds didn't shrink with it and they got cut off. This is where theming in BetterDiscord differentiates from typical web development, traversing the DOM tree to find out what else has to be overidden to actually do what you want. Let's do that together! Checking each node as we go, the first one we see that sets its own width has the selector `.listItem-3SmSlK` which sets it to `72px`. Let's go ahead and change that to `50px` as well.
+Save once again and you'll see that the guild list shrunk as expected! But, the guilds didn't shrink with it and they got cut off. This is where theming in BetterDiscord differentiates from typical web development, traversing the DOM tree to find out what else has to be overridden to actually do what you want. Let's do that together! Checking each node as we go, the first one we see that sets its own width has the selector `.listItem-3SmSlK` which sets it to `72px`. Let's go ahead and change that to `50px` as well.
 
 ```css
 .guilds-2JjMmN,
@@ -87,7 +87,7 @@ Well that didn't work. Let's check what went wrong. Immediately we see the next 
 }
 ```
 
-Wow what a difference that makes! The guild list suddenly ooks and feels a lot different from where we started and we've barely done anything. There's still that issue with the expanded folder backgrounds, so lets select that element and see what's going on.
+Wow what a difference that makes! The guild list suddenly looks and feels a lot different from where we started and we've barely done anything. There's still that issue with the expanded folder backgrounds, so let's select that element and see what's going on.
 
 Ah looks like another `48px`, we can easily change that to `33px` to match. But what about `left`? Since that's an alignment, we'll have to scale that too. `12px` is `16.6667%` of `72px` so that's `8.333px` for our size, and we'll round down again to `8px` and see if that's enough.
 

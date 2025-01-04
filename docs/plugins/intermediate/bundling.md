@@ -237,7 +237,7 @@ We'll be using those in our new plugin that we will write ourselves. Making a pl
 }
 ```
 
-But you can call `YourPluginName` anything, it's just used to differeniate between taps. Now we have to write some code that can actually copy the file. The way we'll be showing here is platform agnostic but verbose, so feel free to change it up to work only for your own system.
+But you can call `YourPluginName` anything, it's just used to differentiate between taps. Now we have to write some code that can actually copy the file. The way we'll be showing here is platform agnostic but verbose, so feel free to change it up to work only for your own system.
 
 ```js:line-numbers
 const userConfig = (() => {

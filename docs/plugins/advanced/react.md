@@ -11,7 +11,7 @@ This guide involves [function patching](./patching.md). If you have not read tha
 
 ### What does it mean?
 
-When we say React Injection, we're referring to adding/removing/alterting components in the React render tree used by Discord. In the [React](../intermediate/react.md) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
+When we say React Injection, we're referring to adding/removing/altering components in the React render tree used by Discord. In the [React](../intermediate/react.md) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
 
 ### Why would I need it?
 
@@ -59,7 +59,7 @@ Let's take a look at this component and see if it's exported like we did in the 
 
 ![view_source](./img/view_source.png)
 
-And of course also beautify the code with the button a the bottom left. You'll see a render function much like this.
+And of course also beautify the code with the button at the bottom left. You'll see a render function much like this.
 
 ![react_render](./img/react_render.png)
 

@@ -11,7 +11,7 @@ No not the one burning up, but the development environment for BetterDiscord plu
 
 ### Desktop Application
 
-Discord Desktop is an [Electron](https://www.electronjs.org/) application which means it is _essentially_ a chromium web browser that only displays Discord. That is an oversimplification but it's a good high level understanding to have. What makes Electron more than just a browser, is that it bundles Node.js with it, giving every Electron application the ability to interact beyond the capabilities of a web browser and make use of the user's computer.
+Discord Desktop is an [Electron](https://www.electronjs.org/) application which means it is _essentially_ a Chromium web browser that only displays Discord. That is an oversimplification, but it's a good high level understanding to have. What makes Electron more than just a browser, is that it bundles Node.js with it, giving every Electron application the ability to interact beyond the capabilities of a web browser and make use of the user's computer.
 
 To get a better sense of what this does, think of the limitations of making an application in a web browser. Actions like loading and saving local files, listening to keybinds globally, and controlling the user's clipboard are just not possible in the web browser. Most of these limitations are for security reasons, but with [Node.js](https://nodejs.org/), suddenly those are all very possible.
 

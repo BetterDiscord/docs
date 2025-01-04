@@ -14,7 +14,7 @@ A function patch an advanced technique for plugins that allow you to modify exis
 
 ### Why would I use one?
 
-It's a great way to modify or extend Discord's functionality with your own while keeping integration mostly seemless. It can also act as a way to modify the way Discord works currently. Take the plugin [HideDisabledEmojis](https://betterdiscord.app/plugin/HideDisabledEmojis) for example, it uses function patching to modify the way Discord's internal functions work to stop trying to render emojis the user cannot use. Your possibilities for the plugins you can make increase exponentially, and the quality usually ends up being higher due to the tight integration with Discord.
+It's a great way to modify or extend Discord's functionality with your own while keeping integration mostly seamless. It can also act as a way to modify the way Discord works currently. Take the plugin [HideDisabledEmojis](https://betterdiscord.app/plugin/HideDisabledEmojis) for example, it uses function patching to modify the way Discord's internal functions work to stop trying to render emojis the user cannot use. Your possibilities for the plugins you can make increase exponentially, and the quality usually ends up being higher due to the tight integration with Discord.
 
 ### How can I patch a function?
 
@@ -76,7 +76,7 @@ BdApi.Patcher.instead("MyPlugin", someObject, "yourTarget", () => console.log("g
 targetUser(); // Now logs "green"
 ```
 
-This code has the some effect as before, causing `targetUser` to instead log `green`. But lets take a closer look at the highlighted line. We have a call to `BdApi.Patcher.instead` which indicates we want to create an `instead` patch. We pass it `"MyPlugin"` which is an identifier used later to help removed all your patches with `BdApi.Patcher.unpatchAll`. Then we give it the target object `someObject` and the key of our target inside that object `yourTarget` and our new function to override the original. BetterDiscord takes care of the rest and even allows other plugins to patch on top of yours.
+This code has the same effect as before, causing `targetUser` to instead log `green`. But let's take a closer look at the highlighted line. We have a call to `BdApi.Patcher.instead` which indicates we want to create an `instead` patch. We pass it `"MyPlugin"` which is an identifier used later to help removed all your patches with `BdApi.Patcher.unpatchAll`. Then we give it the target object `someObject` and the key of our target inside that object `yourTarget` and our new function to override the original. BetterDiscord takes care of the rest and even allows other plugins to patch on top of yours.
 
 
 ## Examples
@@ -155,7 +155,7 @@ someModule.method(1); // > Intercepted other
 someModule.method(1); // > undefined
 ```
 
-Take alook at the function we define in the `instead` patch. We have a new parameter `originalFunction` that BetterDiscord gives us to use as we see fit. In this example we use it for a specific value. If the value is `5` we let the original function run and return without modification. If the value is `1` we pass it to an external function and let that handle the arguments and the return. Otherwise, the function has no return value at all. This is a huge change to the function. It used to always return a value and now it only returns values for two cases. This is a good demonstration how much power function patching can have.
+Take a look at the function we define in the `instead` patch. We have a new parameter `originalFunction` that BetterDiscord gives us to use as we see fit. In this example we use it for a specific value. If the value is `5` we let the original function run and return without modification. If the value is `1` we pass it to an external function and let that handle the arguments and the return. Otherwise, the function has no return value at all. This is a huge change to the function. It used to always return a value, and now it only returns values for two cases. This is a good demonstration how much power function patching can have.
 
 ### After
 

@@ -21,7 +21,7 @@ Currently, the list of polyfilled Node modules are:
 - Request
 - VM
 
-These polyfills are not 100% exact replicas of these APIs but they are close enough that 99% of plugins had no issues when switching to this. In the future, BetterDiscord will introduce custom APIs with equivalent functionality, and deprecate the usage of these polyfills.
+These polyfills are not 100% exact replicas of these APIs, but they are close enough that 99% of plugins had no issues when switching to this. In the future, BetterDiscord will introduce custom APIs with equivalent functionality, and deprecate the usage of these polyfills.
 
 However, for now feel free to use them. For instance, if you want to load a file in the current directory you can just use the `fs` module.
 ```js

@@ -63,7 +63,7 @@ props|object|&#x274C;|*none*|
 props.settings|Array.&lt;object&gt;|&#x274C;|*none*|Array of settings to show
 props.onChange|CallableFunction|&#x274C;|*none*|Function called on every change
 props.onDrawerToggle|CallableFunction|&#x2705;|*none*|Optionally used to save drawer states
-props.getDrawerState|CallableFunction|&#x2705;|*none*|Optionially used to recall drawer states
+props.getDrawerState|CallableFunction|&#x2705;|*none*|Optionally used to recall drawer states
 
 **Returns:** `void`
 ___
@@ -109,7 +109,7 @@ ___
 ### showChangelogModal
 Shows a changelog modal in a similar style to Discord's. Customizable with images, videos, colored sections and supports markdown.
 
-The changes option is a array of objects that have this typing:
+The changes option is an array of objects that have this typing:
 ```ts
 interface Changes {
     title: string;

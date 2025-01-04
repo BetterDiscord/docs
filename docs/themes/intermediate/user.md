@@ -87,7 +87,7 @@ h1 {
 }
 ```
 
-Since `red` is not a valid border size, the whole `border` property value is considered invalid. This can lead to misstyled or broken looking elements. An easy way around this is to double define your style.
+Since `red` is not a valid border size, the whole `border` property value is considered invalid. This can lead to miss styled or broken looking elements. An easy way around this is to double define your style.
 
 ```css
 :root {

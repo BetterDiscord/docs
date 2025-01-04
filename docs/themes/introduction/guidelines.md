@@ -22,7 +22,7 @@ These are guidelines that all themes are expected to abide by. Any themes that v
    - e.g. hiding potentially important actions, unreadable text contrast, use of harmful animations, and flashing text.
 1. Do not target a specific user or group of users in a negative way (do not attempt to "ban" people).
 1. Do not encourage users to further violate Discord's [Terms of Service](https://discord.com/terms), or promote content from outside of the official repository.
-1. Try to maintain support for Discord's accessability features.
+1. Try to maintain support for Discord's accessibility features.
 1. Maintain performance on modern hardware.
    - This can be done by limiting the use of intensive animations, filters and effects.
 

@@ -55,7 +55,7 @@ Here are a few tips for improving your attribute selectors.
 
 ### Animations & Transitions
 
-There are a few different techniques that improve your animations and transitions. One of the first is understanding the rule of thumb: "Do not animate CSS properties that trigger layout or painting whenever possible." This includes properties like heigh and width that could cause other elements to move around as you animate. It is very difficult to produce smooth and performant animations in these cases.
+There are a few different techniques that improve your animations and transitions. One of the first is understanding the rule of thumb: "Do not animate CSS properties that trigger layout or painting whenever possible." This includes properties like height and width that could cause other elements to move around as you animate. It is very difficult to produce smooth and performant animations in these cases.
 
 You can indicate to the browser before animations and transitions what properties will change which can help the browser optimize performance. Just add `will-change: property;` to the element in question.
 

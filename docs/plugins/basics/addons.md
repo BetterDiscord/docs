@@ -9,7 +9,7 @@ Within BetterDiscord you can interact with different addons in two main ways. Ei
 
 ## AddonAPI
 
-The addon api is available as part of `BdApi`. Theres two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This api has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [api reference](/api/bdapi).
+The addon api is available as part of `BdApi`. There's two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This api has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [api reference](/api/bdapi).
 
 ## Getting Addons
 
@@ -43,7 +43,7 @@ If you have the ID of the addon you'd like to toggle, this is pretty straightfor
 BdApi.Themes.toggle("Nox");
 ```
 
-Of course you can have more granular control and specifically enable or disable when you need to. You can even combine all three.
+Of course, you can have more granular control and specifically enable or disable when you need to. You can even combine all three.
 
 ```js
 BdApi.Themes.enable("Nox");  // Nox is now enabled
