@@ -23,7 +23,7 @@ No, the mobile versions of Discord work completely differently and are not compa
 
 ### Can I have multiple installations of BetterDiscord?
 
-Yes you can. There can be one BetterDiscord installation per Discord installation. It is common to see people install BetterDiscord to both Canary and Stable. Settings are not sync's between.
+Yes you can. There can be one BetterDiscord installation per Discord installation. It is common to see people install BetterDiscord to both Canary and Stable. Settings are not synced between.
 
 ### How do I uninstall BetterDiscord?
 

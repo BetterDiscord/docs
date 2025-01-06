@@ -94,19 +94,19 @@ Your installer is out of date, please go to the [BetterDiscord website](https://
 :::
 
 
-::: details ❌ EACCES: permission denied, mkdir, or any error where at "shims" there is a "mkdir" error
+::: details ❌ EACCES: permission denied, mkdir or any error where at "shims" there is a "mkdir" error
 
 The Discord installation has been corrupted. Try to reinstall Discord. If Discord fails to reinstall or you still run into this error then your best bet is [cleanly uninstalling Discord](https://discordtips.com/how-to-fully-uninstall-discord/) then installing it again.
 :::
 
 
-::: details ❌ Cannot read property "hasOwnProperty" of undefined" error
+::: details ❌ Cannot read property "hasOwnProperty" of undefined error
 
 Fully close Discord. Fully deactivate any VPNs or firewalls. Make sure your installer is up to date. Then try again. If that still doesn't work, see the previous entry about cleanly removing and reinstalling Discord.
 :::
 
 
-::: details ❌ getaddrinfo ENOTFOUND api.github.com"
+::: details ❌ getaddrinfo ENOTFOUND api.github.com
 
 Disable your antivirus or swap your DNS servers. There is a good guide to do the latter found here: https://www.ionos.com/digitalguide/server/configuration/how-to-change-dns-server/
 :::
