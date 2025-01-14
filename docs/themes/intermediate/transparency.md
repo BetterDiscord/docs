@@ -24,6 +24,8 @@ You'll see that suddenly you can partially see your desktop through the Discord 
 
 You can also consider making just part of your theme see-through by keeping one section completely opaque. It adds an interesting dichotomy and a unique feel to your theme.
 
+Note that using `backdrop-filter` above a transparent window will **not** blur anything behind it. It will only blur the elements within the Discord client itself, and on some platforms may leave some unpleasant rendering artifacts.
+
 ## Builder
 
 If you really just want to make a theme where you have a background image, or to see through to your desktop, don't fire up your editor just yet. A community member has made a theme builder than can take existing BetterDiscord themes and customize them as you see fit, including adding background images or making them see-through to the desktop. For more information check out the website here: [https://bdeditor.dev/](https://bdeditor.dev/)

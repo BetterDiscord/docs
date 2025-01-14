@@ -27,6 +27,10 @@ span.line .global-bdapi {
     }
 }
 
+.vp-doc p {
+    text-wrap: pretty;
+}
+
 
 /* TODO: poll this */
 /* .vp-doc a.header-anchor {
