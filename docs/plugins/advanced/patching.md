@@ -76,7 +76,7 @@ BdApi.Patcher.instead("MyPlugin", someObject, "yourTarget", () => console.log("g
 targetUser(); // Now logs "green"
 ```
 
-This code has the some effect as before, causing `targetUser` to instead log `green`. But lets take a closer look at the highlighted line. We have a call to `BdApi.Patcher.instead` which indicates we want to create an `instead` patch. We pass it `"MyPlugin"` which is an identifier used later to help removed all your patches with `BdApi.Patcher.unpatchAll`. Then we give it the target object `someObject` and the key of our target inside that object `yourTarget` and our new function to override the original. BetterDiscord takes care of the rest and even allows other plugins to patch on top of yours.
+This code has the same effect as before, causing `targetUser` to instead log `green`. But lets take a closer look at the highlighted line. We have a call to `BdApi.Patcher.instead` which indicates we want to create an `instead` patch. We pass it `"MyPlugin"` which is an identifier used later to help removed all your patches with `BdApi.Patcher.unpatchAll`. Then we give it the target object `someObject` and the key of our target inside that object `yourTarget` and our new function to override the original. BetterDiscord takes care of the rest and even allows other plugins to patch on top of yours.
 
 
 ## Examples

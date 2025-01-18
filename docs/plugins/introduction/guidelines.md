@@ -30,6 +30,8 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 
 ## Code
 
+1. Your plugin's codebase must be made and written primarily by you.
+   - You may not submit an automatically-generated plugin (AI or otherwise), a customized version of someone else's plugin, or a codebase written by someone other than you.
 1. Plugins must set `module.exports`
 1. Plugins must not make use of the `child_process` node module.
    - Existing plugins are exempt, but no new plugins shall use this. This is due in part to the security risk, and in part due to an impending Discord update that will break this module.
