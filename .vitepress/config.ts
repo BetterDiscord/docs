@@ -83,10 +83,19 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
         },
 
         search: {
-            provider: "local"
+            provider: "algolia",
+            options: {
+                appId: "JI19E3KHGR",
+                apiKey: "22fcfe9bbb67cc5b6ca5f34ed217e525",
+                indexName: "betterdiscord"
+            }
         },
-        
+
         outline: "deep",
+    },
+
+    sitemap: {
+        hostname: "https://docs.betterdiscord.app"
     },
 
     markdown: {
@@ -100,7 +109,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                         while ((i = str.indexOf(substr, i + 1)) !== -1) indexes.push(i);
                         return indexes;
                     }
-                
+
                     const words = ["BdApi"];
                     options.decorations ||= [];
                     for (const word of words) {
@@ -172,7 +181,7 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         basePath: "/api/",
         resolvePath: "/api/",
         useTitleFromFileHeading: true,
-        includeRootIndexFile: true, 
+        includeRootIndexFile: true,
         sortFolderTo: "bottom",
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,
@@ -199,7 +208,7 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         basePath: "/users/",
         resolvePath: "/users/",
         useTitleFromFileHeading: true,
-        includeRootIndexFile: true, 
+        includeRootIndexFile: true,
         capitalizeEachWords: true,
         collapsed: false,
         sortFolderTo: "bottom",
@@ -213,7 +222,7 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         basePath: "/developers/",
         resolvePath: "/developers/",
         useTitleFromFileHeading: true,
-        includeRootIndexFile: true, 
+        includeRootIndexFile: true,
         sortFolderTo: "bottom",
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,
@@ -224,7 +233,7 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         basePath: "/plugins/",
         resolvePath: "/plugins/",
         useTitleFromFileHeading: true,
-        includeRootIndexFile: true, 
+        includeRootIndexFile: true,
         capitalizeEachWords: true,
         collapsed: false,
         sortFolderTo: "bottom",
@@ -238,7 +247,7 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         basePath: "/themes/",
         resolvePath: "/themes/",
         useTitleFromFileHeading: true,
-        includeRootIndexFile: true, 
+        includeRootIndexFile: true,
         capitalizeEachWords: true,
         collapsed: false,
         sortFolderTo: "bottom",
