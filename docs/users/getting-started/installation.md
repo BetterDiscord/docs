@@ -55,7 +55,7 @@ For those that can't get the automatic installers to work, those that want more 
 
 #### 1. Clone the BetterDiscord repository
 ```bash
-git clone https://github.com/BetterDiscord/BetterDiscord.git
+git clone --single-branch -b main https://github.com/BetterDiscord/BetterDiscord.git
 ```
 If this fails due to region lock or something similar, you can download a zipped copy directly from https://github.com/BetterDiscord/BetterDiscord/archive/refs/heads/main.zip
 
