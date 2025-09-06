@@ -1,153 +1,158 @@
----
-order: 2
-description: How to use DOM manipulation.
----
+/**
+ * @name discord_utils
+ * @version 4.0.0
+ * @description 각종 디스코드 기능
+ * @author Zenth
+ */
 
-# Using the DOM
+module.exports = class AutoHashTag {
+  constructor() {
+    this.patcher = BdApi.Patcher;
+    this.storageKey = "AutoHashTag_Config";
+    this.sendMessageFunc = null;
+    this.defaultConfig = {
+      mode: "option1",       
+      customText3: "",       
+      customSuffix4: ""      
+    };
+  }
 
-If you're unfamiliar with the DOM it might be worth taking a look at the [MDN documentation](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model) about it.
+  start() {
+    this.sendMessageFunc = BdApi.findModuleByProps("sendMessage");
+    if (!this.sendMessageFunc) {
+      BdApi.showToast("sendMessage 모듈을 찾지 못했습니다!", { type: "error" });
+      return;
+    }
 
-Since we already know from [previous pages](../introduction/environment) that Discord is essentially a Chromium browser, we can access the DOM using typical methods.
+    this.patcher.before("AutoHashTag", this.sendMessageFunc, "sendMessage", (_, args) => {
+      let msg = args[1];
+      if (msg && typeof msg.content === "string") {
+        const config = BdApi.getData("AutoHashTag", this.storageKey) || this.defaultConfig;
 
-```js
-// Create a reference to the document
-const myDocument = document;
+        switch (config.mode) {
+          case "option1": {
+            const prefix = "# ";
+            if (!msg.content.startsWith(prefix)) msg.content = prefix + msg.content;
+            break;
+          }
+          case "option2": {
+            const prefix = "-# ";
+            if (!msg.content.startsWith(prefix)) msg.content = prefix + msg.content;
+            break;
+          }
+          case "option3": {
+            const suffix = `\n-# ${config.customText3 || ""}`;
+            if (!msg.content.endsWith(suffix)) msg.content += suffix;
+            break;
+          }
+          case "option4": {
+            const suffix = config.customSuffix4 || "";
+            if (suffix && !msg.content.endsWith(suffix)) msg.content += suffix;
+            break;
+          }
+        }
+      }
+    });
 
-// Create an element
-const myElement = document.createElement("div");
+    BdApi.showToast("AutoHashTag 플러그인 활성화", { type: "success" });
+  }
 
-// Get an existing element by selector
-const existingElement = document.querySelector(".button");
+  stop() {
+    this.patcher.unpatchAll("AutoHashTag");
+    BdApi.showToast("AutoHashTag 플러그인 비활성화", { type: "info" });
+  }
 
-// Add an event listener
-existingElement.addEventListener("click", () => {console.log("clicked!");});
-```
+  getSettingsPanel() {
+    const panel = document.createElement("div");
+    panel.style.padding = "15px";
+    panel.style.color = "#fff";
 
-You should hopefully be familiar with everything shown above, if not it might be a good idea to check out the MDN link at the beginning of this page.
+    const title = document.createElement("h3");
+    title.textContent = "AutoHashTag 설정";
+    title.style.marginBottom = "10px";
+    panel.appendChild(title);
 
-Now as to how we can apply this to plugins in Discord, let's try an example of adding a button that shows an alert when clicked. It might look something like this:
+    const options = [
+      { label: "기능 1: # 앞에 붙임", value: "option1" },
+      { label: "기능 2: -# 앞에 붙임", value: "option2" },
+      { label: "기능 3: 줄바꿈 + -# + 메시지 (뒤에 붙임)", value: "option3" },
+      { label: "기능 4: 사용자 접미사 (뒤에 붙임)", value: "option4" }
+    ];
 
-```js
-const myButton = document.createElement("button");
-myButton.textContent = "Click me!";
-myButton.addEventListener("click", () => {window.alert("Hello World!");});
-const root = document.getElementById("app-mount");
-root.append(myButton);
-```
+    const config = BdApi.getData("AutoHashTag", this.storageKey) || this.defaultConfig;
 
-You can try this right in the console of your Discord client, and you should see a button appear at the bottom of your screen. Clicking it should give you a `Hello World!` popup.
+    options.forEach(opt => {
+      const container = document.createElement("div");
+      container.style.margin = "5px 0";
 
-One thing to note from this code is the root container `document.getElementById("app-mount")`. Since Discord uses React as their front-end rendering system, their app needs to be "mounted" into the normal DOM hierarchy. Typically, this is in a root container with ID `app-mount`.
+      const radio = document.createElement("input");
+      radio.type = "radio";
+      radio.name = "autohashtag_mode";
+      radio.value = opt.value;
+      radio.checked = config.mode === opt.value;
+      radio.addEventListener("change", () => {
+        config.mode = opt.value;
+        BdApi.setData("AutoHashTag", this.storageKey, config);
+        BdApi.showToast(`${opt.label} 선택됨`, { type: "success" });
+        toggleInputs();
+      });
 
-And while that works, it's not very practical or useful. And the location of the button is terrible. So what if we wanted to add it to the end of the guild/server list? Let's give it a try!
+      const label = document.createElement("label");
+      label.textContent = opt.label;
+      label.style.marginLeft = "8px";
 
-First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [devtools](../../developers/devtools) and select the guild list on the left.
+      container.appendChild(radio);
+      container.appendChild(label);
+      panel.appendChild(container);
+    });
 
-![Server List](./img/servers.png)
+    const inputContainer3 = document.createElement("div");
+    inputContainer3.style.marginTop = "10px";
 
-If yours looks like the one above, you've got the right element. Now we need to come up with a selector for the element. You can try to use the built in method by right clicking the element, then going to `Copy > Copy Selector`. But that usually yields unwieldly selectors like `#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > nav > ul > div.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt > div:nth-child(3)` in this case.
+    const label3 = document.createElement("label");
+    label3.textContent = "기능 3 메시지:";
+    label3.style.display = "block";
+    label3.style.marginBottom = "5px";
+    inputContainer3.appendChild(label3);
 
-So lets do it manually. Since this element has no `id` or `class` but it does have an `aria-label` attribute, it seems obvious to use an attribute selector like `[aria-label="Servers"]`. This does have a big problem however. This value changes based on the language the user has Discord set to. So while this may work for you in English, it won't work for many many others. If you're unfamiliar with `aria-label` or accessible web browsing in general, once again [MDN has great documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) on this topic.
+    const input3 = document.createElement("input");
+    input3.type = "text";
+    input3.style.width = "100%";
+    input3.value = config.customText3 || "";
+    input3.addEventListener("input", () => {
+      config.customText3 = input3.value;
+      BdApi.setData("AutoHashTag", this.storageKey, config);
+    });
+    inputContainer3.appendChild(input3);
+    panel.appendChild(inputContainer3);
 
-Since that didn't work out, let's take another look. We can see there are a couple unique classes in the ancestor hierarchy like `tree-3agP2X` and `guilds-2JjMmN`. We can combine these with the fact the `aria-label` only exists on the element we are targeting to create a selector like `.tree-3agP2X > div > div[aria-label]`. Since this doesn't depend on the *value* of the `aria-label` attribute, it will still work regardless of language. Note: there are other selectors that work as well, this is just an example.
+    const inputContainer4 = document.createElement("div");
+    inputContainer4.style.marginTop = "10px";
 
-::: tip
+    const label4 = document.createElement("label");
+    label4.textContent = "기능 4 접미사:";
+    label4.style.display = "block";
+    label4.style.marginBottom = "5px";
+    inputContainer4.appendChild(label4);
 
-Many of Discord's classes end in weird strings like `-3agP2X` because they use a system that prevents class collisions automatically. This means these strings are subject to change. A better way to get the desired class name will be covered in later sections.
+    const input4 = document.createElement("input");
+    input4.type = "text";
+    input4.style.width = "100%";
+    input4.value = config.customSuffix4 || "";
+    input4.addEventListener("input", () => {
+      config.customSuffix4 = input4.value;
+      BdApi.setData("AutoHashTag", this.storageKey, config);
+    });
+    inputContainer4.appendChild(input4);
+    panel.appendChild(inputContainer4);
 
-:::
+    function toggleInputs() {
+      inputContainer3.style.display = config.mode === "option3" ? "block" : "none";
+      inputContainer4.style.display = config.mode === "option4" ? "block" : "none";
+    }
 
-If we use our selector with our previous code, we can add our button to the guild list.
+    toggleInputs();
 
-```js
-const myButton = document.createElement("button");
-myButton.textContent = "Click me!";
-myButton.addEventListener("click", () => {window.alert("Hello World!");});
-const serverList = document.querySelector(".tree-3agP2X > div > div[aria-label]");
-serverList.append(myButton);
-```
-
-If you try this out on console, you should see your button at the bottom of the guild list (you may have to scroll down). Clicking it should still cause your alert to appear.
-
-One problem that is common when working with Discord (and react) is sometimes your elements disappear. This could be from React refreshing the view and purging your element, or the user changes views (changing channel or server). This may even happen to your button in the guild list when that refreshes.
-
-How can we prevent this? Well we can't with normal DOM manipulation. But we _can_ work around it. We can detect when our button is removed and re-add it. Enter [mutation observers](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver).
-
-
-```js
-// This part adds our button
-const myButton = document.createElement("button");
-myButton.textContent = "Click me!";
-myButton.addEventListener("click", () => {window.alert("Hello World!");});
-const serverList = document.querySelector(".tree-3agP2X > div > div[aria-label]");
-serverList.append(myButton);
-
-
-// This part waits for it to be removed
-const myCallback = mutations => {
-    // We only care about our button being removed
-    if (mutations.removedNodes.length === 0) return;
-
-    // Convert to array to allow array functions
-    const removedNodes = Array.from(mutations.removedNodes);
-
-    // We only care about our button
-    if (!removedNodes.includes(myButton)) return;
-
-    // Getting here means our button was removed, lets add it back
-    serverList.append(myButton);
-};
-const myObserver = new MutationObserver(myCallback);
-const observerOptions = {
-    childList: true,
-    subtree: false // We don't need subtree, only direct children
-};
-myObserver.observe(serverList, observerOptions);
-```
-
-This will now re-append the button anytime it is removed from the server list. The code is a little inconvenient to write, and it's very specific to that button. But thankfully, [BdApi](/api/bdapi) has a utility function that can help called `onRemoved`. This code rewritten would look something like this:
-
-```js
-// This part adds our button
-const myButton = document.createElement("button");
-myButton.textContent = "Click me!";
-myButton.addEventListener("click", () => {window.alert("Hello World!");});
-const serverList = document.querySelector(".tree-3agP2X > div > div[aria-label]");
-serverList.append(myButton);
-
-// This part re-adds it when removed
-BdApi.DOM.onRemoved(myButton, () => {
-    serverList.append(myButton);
-});
-```
-
-This is much cleaner and more descriptive of the action being taken. This is just one of the many helper functions that exist in `BdApi`. You'll learn more as you go through the docs. In fact, there are two more functions `addStyle` and `removeStyle` that can be helpful for our button example.
-
-These are pretty simple and straightforward. Say we added a class `my-button` to our button from before. We could then style it with css externally using this snippet:
-```css
-.my-button {
-    padding: 4px;
-    border-radius: 5px;
-    background: black;
-    color: white;
-}
-```
-
-which is great and works, but we need to have it in our plugin. You can either create and add your own stylesheet to the document using the techniques at the beginning of this page, or you just use `BdApi.DOM.addStyle`. Given an ID and your css, it'll take care of the rest.
-
-```js
-BdApi.DOM.addStyle("myPluginName", `.my-button {
-    padding: 4px;
-    border-radius: 5px;
-    background: black;
-    color: white;
-}`);
-```
-
-which can later be removed using the same ID from before
-
-```js
-BdApi.DOM.removeStyle("myPluginName");
-```
-
-Try playing around with this and all the techniques discussed above. When you feel comfortable, go ahead and move on to the next section.
+    return panel;
+  }
+};  
