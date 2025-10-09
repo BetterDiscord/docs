@@ -35,7 +35,7 @@ These are guidelines that all themes are expected to abide by. Any themes that v
 1. Minimize usage of language-specific selectors (e.g. `aria-label` attributes).
    - If used, provide sensible fallbacks for other languages.
 1. Avoid overspecificity 
-   - e.g. overuse of !important, excessive nesting, unnecessarily qualifying selectors with type selectors
+   - e.g. superfluous use of !important, excessive nesting, unnecessarily qualifying selectors with type selectors
 
 ## Design
 1. Themes should provide a cohesive design that notably alters the look and feel of Discord.
