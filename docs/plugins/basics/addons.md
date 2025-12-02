@@ -9,7 +9,7 @@ Within BetterDiscord you can interact with different addons in two main ways. Ei
 
 ## AddonAPI
 
-The addon api is available as part of `BdApi`. Theres two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This api has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [api reference](/api/bdapi).
+The addon api is available as part of `BdApi`. Theres two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This api has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [api reference](/api/).
 
 ## Getting Addons
 

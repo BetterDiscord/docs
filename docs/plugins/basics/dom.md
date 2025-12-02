@@ -105,7 +105,7 @@ const observerOptions = {
 myObserver.observe(serverList, observerOptions);
 ```
 
-This will now re-append the button anytime it is removed from the server list. The code is a little inconvenient to write, and it's very specific to that button. But thankfully, [BdApi](/api/bdapi) has a utility function that can help called `onRemoved`. This code rewritten would look something like this:
+This will now re-append the button anytime it is removed from the server list. The code is a little inconvenient to write, and it's very specific to that button. But thankfully, [BdApi](/api/classes/BdApi.md) has a utility function that can help called `onRemoved`. This code rewritten would look something like this:
 
 ```js
 // This part adds our button

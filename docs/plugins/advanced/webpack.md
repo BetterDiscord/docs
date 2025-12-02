@@ -24,7 +24,7 @@ Plugins are able to access all of these types of modules through BetterDiscord's
 
 ## Finding Modules
 
-How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../../developers/devtools.md), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [api reference](../../api/webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
+How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../../developers/devtools.md), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [api reference](/api/classes/Webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
 
 ## Filters
 

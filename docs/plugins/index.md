@@ -14,7 +14,7 @@ These docs consist of this introduction which gives you an idea of what to expec
 
 The [Introduction](./introduction/quick-start.md) section gives a lot of background information on plugins requirements, the development environment, and the tools at your disposal.
 
-The [Basics](./basics/creating-a-plugin.md) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/bdapi) has to offer.
+The [Basics](./basics/creating-a-plugin.md) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/classes/BdApi.md) has to offer.
 
 The [Intermediate](./intermediate/bundling.md) guide starts to branch into some of the 3rd-party libraries that can be used to enhance your plugins.
 

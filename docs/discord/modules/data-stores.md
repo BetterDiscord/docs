@@ -1,6 +1,6 @@
 # Data Stores
 
-This is a reference of most of available internal data stores as well as their properties and methods. All the store listed here can be found through [`BdApi.Webpack.getStore()`](/api/webpack#getstore) using the names seen here.
+This is a reference of most of available internal data stores as well as their properties and methods. All the store listed here can be found through [`BdApi.Webpack.getStore()`](/api/classes/Webpack.md#getstore) using the names seen here.
 
 
 ## Useful Snippets
@@ -41,22 +41,22 @@ const GuildChannelStore = Webpack.getStore("GuildChannelStore");
 const GuildMemberStore = Webpack.getStore("GuildMemberStore")
 
 
-const currentUser = UserStore.getCurrentUser(); 
+const currentUser = UserStore.getCurrentUser();
 // -> {id: "user_id", username: "UserName", discriminator: "1234", ...}
 
-const allGuilds = GuildStore.getGuilds(); 
+const allGuilds = GuildStore.getGuilds();
 // -> {guild_id_1: {name: "Guild Name 1", ...}, guild_id_2: {name: "Guild Name 2", ...}, ...}
 
-const guildChannels = GuildChannelStore.getChannels("guild_id"); 
+const guildChannels = GuildChannelStore.getChannels("guild_id");
 // -> {id: "guild_id", count: number, VOCAL: {}, SELECTABLE: {}, ...}
 
-const channel = ChannelStore.getChannel("channel_id"); 
+const channel = ChannelStore.getChannel("channel_id");
 // -> {id: "channel_id", name: "Channel Name", type: "GUILD_TEXT", ...}
 
-const isInGuild = GuildMemberStore.isMember("guild_id", currentUser.id); 
+const isInGuild = GuildMemberStore.isMember("guild_id", currentUser.id);
 // -> true or false
 
-const guildRoles = GuildStore.getRoles("guild_id"); 
+const guildRoles = GuildStore.getRoles("guild_id");
 // -> {role_id_1: {name: "Role Name 1", ...}, role_id_2: {name: "Role Name 2", ...}, ...}
 ```
 :::
