@@ -1,5 +1,5 @@
 import {DefaultTheme, defineConfig, UserConfig} from "vitepress";
-import {VitePressSidebarOptions, withSidebar} from "vitepress-sidebar";
+import {withSidebar, generateSidebar} from "vitepress-sidebar";
 import {bundledLanguages, LanguageRegistration} from "shiki";
 import {groupIconMdPlugin, groupIconVitePlugin, localIconLoader} from "vitepress-plugin-group-icons";
 
@@ -41,11 +41,11 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
             {
                 text: "Developer Guides",
                 items: [
-                    {text: "General", link: "/developers/", activeMatch: "/developers/"},
+                    // {text: "General", link: "/developers/", activeMatch: "/developers/"},
                     {text: "Plugins", link: "/plugins/", activeMatch: "/plugins/"},
                     {text: "Themes", link: "/themes/", activeMatch: "/themes/"},
                 ],
-                activeMatch: "/(?:developers|plugins|themes)/"
+                activeMatch: "/(?:plugins|themes)/"
             },
             {
                 text: "Reference",
@@ -181,7 +181,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
 };
 
 
-const SIDEBARS: VitePressSidebarOptions[] = [
+const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
     {
         documentRootPath: "docs",
         scanStartPath: "api",
@@ -226,17 +226,17 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         frontmatterOrderDefaultValue: 1,
         manualSortFileNameByPriority: ["getting-started", "guides"],
     },
-    {
-        documentRootPath: "docs",
-        scanStartPath: "developers",
-        basePath: "/developers/",
-        resolvePath: "/developers/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-    },
+    // {
+    //     documentRootPath: "docs",
+    //     scanStartPath: "developers",
+    //     basePath: "/developers/",
+    //     resolvePath: "/developers/",
+    //     useTitleFromFileHeading: true,
+    //     includeRootIndexFile: true,
+    //     sortFolderTo: "bottom",
+    //     sortMenusByFrontmatterOrder: true,
+    //     frontmatterOrderDefaultValue: 1,
+    // },
     {
         documentRootPath: "docs",
         scanStartPath: "plugins",
@@ -245,11 +245,14 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         useTitleFromFileHeading: true,
         includeRootIndexFile: true,
         capitalizeEachWords: true,
+        followSymlinks: true,
+        useFolderTitleFromIndexFile: true,
+        excludeFilesByFrontmatterFieldName: "hide",
         collapsed: false,
         sortFolderTo: "bottom",
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["introduction", "basics", "intermediate", "advanced"],
+        manualSortFileNameByPriority: ["introduction", "tutorials", "ui", "concepts", "publishing"],
     },
     {
         documentRootPath: "docs",
@@ -259,11 +262,14 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         useTitleFromFileHeading: true,
         includeRootIndexFile: true,
         capitalizeEachWords: true,
+        followSymlinks: true,
+        useFolderTitleFromIndexFile: true,
+        excludeFilesByFrontmatterFieldName: "hide",
         collapsed: false,
         sortFolderTo: "bottom",
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["introduction", "basics", "intermediate", "advanced"],
+        manualSortFileNameByPriority: ["introduction", "tutorials", "concepts", "publishing"],
     },
 ];
 
