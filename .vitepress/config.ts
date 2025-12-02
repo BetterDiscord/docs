@@ -113,16 +113,16 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                     const words = ["BdApi"];
                     options.decorations ||= [];
                     for (const word of words) {
-                    const indexes = findAllSubstringIndexes(code, word);
-                    for (const index of indexes) {
-                        options.decorations.push({
-                            start: index,
-                            end: index + word.length,
-                            properties: {
-                                "class": "global-bdapi",
-                            },
-                        });
-                    }
+                        const indexes = findAllSubstringIndexes(code, word);
+                        for (const index of indexes) {
+                            options.decorations.push({
+                                start: index,
+                                end: index + word.length,
+                                properties: {
+                                    "class": "global-bdapi",
+                                },
+                            });
+                        }
                     }
                 },
             }
@@ -170,7 +170,14 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                 },
             })
         ]
-    }
+    },
+    transformPageData: (pageData) => {
+        if (pageData.relativePath.startsWith("api/")) {
+            pageData.frontmatter.outline = [2, 3];
+        }
+
+        return pageData;
+    },
 };
 
 
@@ -180,8 +187,11 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         scanStartPath: "api",
         basePath: "/api/",
         resolvePath: "/api/",
-        useTitleFromFileHeading: true,
+        useTitleFromFrontmatter: true,
+        // useTitleFromFileHeading: true,
         includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        collapsed: false,
         sortFolderTo: "bottom",
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,
@@ -254,7 +264,8 @@ const SIDEBARS: VitePressSidebarOptions[] = [
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,
         manualSortFileNameByPriority: ["introduction", "basics", "intermediate", "advanced"],
-    }
+    },
 ];
 
-export default defineConfig(withSidebar(VITEPRESS_CONFIG, SIDEBARS));
+const userConfig: Partial<UserConfig> = withSidebar(VITEPRESS_CONFIG, SIDEBARS);
+export default defineConfig(userConfig);

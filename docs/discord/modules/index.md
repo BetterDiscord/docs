@@ -8,7 +8,7 @@ description: Internal module reference.
 > [!IMPORTANT]
 > Keep in mind that Discord's internals are not officially documented and are subject to change at any time. You can check the timestamp at the bottom of each page to see when the reference was last updated.
 
-Discord uses Webpack as their bundler and through [`BdApi.Webpack`](/api/webpack.md) we are able to grab a number of their internal modules for our own use. There are several commonly known types of modules and this section of the documentation serves as a living reference of some of these modules.
+Discord uses Webpack as their bundler and through [`BdApi.Webpack`](/api/classes/Webpack.md) we are able to grab a number of their internal modules for our own use. There are several commonly known types of modules and this section of the documentation serves as a living reference of some of these modules.
 
 ## Data Stores
 

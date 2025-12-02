@@ -204,13 +204,13 @@ BdApi.UI.showChangelogModal({
 });
 ```
 
-You can check the [api reference](../../api/ui.md) for more details, but this little snippet shows the most important features. Notably, this changelog api can also allow you to display a banner image, a youtube video, or a direct video above all of the text. This can be useful when you need to add a showcase of new things or if you just want to have a consistent branding. There are also 4 change "types". In the snippet we see fixed and added, there are also improved and progress.
+You can check the [api reference](/api/classes/UI.md) for more details, but this little snippet shows the most important features. Notably, this changelog api can also allow you to display a banner image, a youtube video, or a direct video above all of the text. This can be useful when you need to add a showcase of new things or if you just want to have a consistent branding. There are also 4 change "types". In the snippet we see fixed and added, there are also improved and progress.
 
 For now, plugins will have to decide when to display the changelog modal, though it is planned to be more automated in a future BetterDiscord update. For an example of how to do this check out this [Demo Plugin](https://gist.github.com/zerebos/b13adc05f22df008ee5d0411d9d18ff0) featuring the new APIs for BetterDiscord v1.11.0.
 
 ### showConfirmationModal
 
-Under the covers, `alert` makes use of `showConfirmationModal`. This one is an even more extensible and useful helper function. Similar to `alert` this has a `title` and `content` parameter that accept the same types as before. It's full signature is `showConfirmationModal(title, content, options = {})`. For a full list of options check the [api reference](/api/bdapi). We'll be going over some of the more useful ones here.
+Under the covers, `alert` makes use of `showConfirmationModal`. This one is an even more extensible and useful helper function. Similar to `alert` this has a `title` and `content` parameter that accept the same types as before. It's full signature is `showConfirmationModal(title, content, options = {})`. For a full list of options check the [api reference](/api/). We'll be going over some of the more useful ones here.
 
 
 ```js
