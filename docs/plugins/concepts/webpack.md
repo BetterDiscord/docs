@@ -111,7 +111,7 @@ And there it is, the object we wanted, with the function we wanted. You might ha
 
 ![default_export](./img/default_export.png)
 
-Now the `Z` is back and BetterDisord returned the whole module, not just the default export. So let's stick with the first version since we just want to use the object directly. And let's take a look at the `open` function definition and figure out how it works so we can use it.
+Now the `Z` is back and BetterDiscord returned the whole module, not just the default export. So let's stick with the first version since we just want to use the object directly. And let's take a look at the `open` function definition and figure out how it works so we can use it.
 
 ![open](./img/open.png)
 
