@@ -108,3 +108,13 @@ BdApi.UI.showConfirmationModal(
 Here clicking `Search` will close the modal and call the `onConfirm` function we passed. Similarly clicking `Nevermind` will call `onCancel`. If the user exits the modal either by pressing `escape` on their keyboard or by clicking outside of the modal on the dark background, `onCancel` will also be called in this case.
 
 Much like `alert` the function returns a unique modal ID.
+
+## Invite Modals
+
+BetterDiscord provides an easy API for opening Discord's native invite modal using normal invite codes.
+
+```js
+BdApi.UI.showInviteModal("XXXXXX")
+```
+
+![Invite Modal](./img/modal_invite.png)

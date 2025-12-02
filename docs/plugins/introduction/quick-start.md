@@ -20,8 +20,8 @@ If you already know the basics, or just prefer to learn by trying it yourself an
 module.exports = class YourPlugin {
     start() {
       // Called when the plugin is activated (including after reloads)
-      BdApi.alert("Hello World!", "This is my first plugin!");
-    } 
+      BdApi.UI.alert("Hello World!", "This is my first plugin!");
+    }
 
     stop() {
       // Called when the plugin is deactivated

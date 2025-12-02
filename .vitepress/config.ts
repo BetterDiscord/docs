@@ -94,6 +94,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
         outline: "deep",
     },
 
+    // base: "/docs/",
     sitemap: {
         hostname: "https://docs.betterdiscord.app"
     },
@@ -248,7 +249,8 @@ const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
         followSymlinks: true,
         useFolderTitleFromIndexFile: true,
         excludeFilesByFrontmatterFieldName: "hide",
-        collapsed: false,
+        collapsed: true,
+        collapseDepth: 2,
         sortFolderTo: "bottom",
         sortMenusByFrontmatterOrder: true,
         frontmatterOrderDefaultValue: 1,

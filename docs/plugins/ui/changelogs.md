@@ -1,6 +1,6 @@
 # Changelogs
 
-Changelogs are a way to show users what's new or fixed with your plugin. This is a great way to let users know when you've fixed high priority items.
+Changelogs are a way to show users what's new or fixed with your plugin. This is a great way to let users know when you've fixed high priority items. And while they are a type of [modal](./modals.md), they are so important we gave them their own section.
 
 ![Changelog Example](./img/changelog.png)
 

@@ -262,194 +262,7 @@ Object.assign(mySettings, myDefaults, storedData);
 
 ## Settings Menu
 
-### Panel Builder
-
-> [!NOTE]
-> This section is still being updated for the BetterDiscord v1.11.0 update! Consider it a work-in-progress.
-
-BetterDiscord provides some helpful utilities to make building a settings panel easy. Most notably would be the `buildSettingsPanel` method. As the name implies, it can build the entire panel for you. For a quick demo on how this works, take a look at the demo plugin below and try it out in your Discord installation.
-
-::: details Demo Plugin
-
-```js:line-numbers [DemoPlugin.plugin.js]
-/**
- * @name Demo Plugin
- * @description Demonstrating some newly introduced APIs and how to use them.
- * @version 0.1.0
- * @author BetterDiscord
- */
-
-
-const config = {
-    changelog: [
-        {
-            title: "New Stuff",
-            type: "added",
-            items: [
-                "Added more settings",
-                "Added changelog"
-            ]
-        },
-        {
-            title: "Bugs Squashed",
-            type: "fixed",
-            items: [
-                "React errors on reload"
-            ]
-        },
-        {
-            title: "Improvements",
-            type: "improved",
-            items: [
-                "Improvements to the base plugin"
-            ]
-        },
-        {
-            title: "On-going",
-            type: "progress",
-            items: [
-                "More modals and popouts being added",
-                "More classes and modules being added"
-            ]
-        }
-    ],
-    settings: [
-        {type: "switch", id: "grandOverride", name: "Panel Root Setting", note: "This could be any setting type", value: false},
-        {
-            type: "category",
-            id: "basic",
-            name: "Basic Settings",
-            collapsible: true,
-            shown: false,
-            settings: [
-                {type: "color", id: "color", name: "Basic Colorpicker", note: "Basic color picker with no fluff", value: "#ff0000", colors: null, inline: true},
-                {
-                    type: "dropdown",
-                    id: "dropdown",
-                    name: "Basic Dropdown",
-                    note: "Basic dropdown with no fluff",
-                    value: "arbitrary",
-                    options: [
-                        {label: "Test 1", value: 50},
-                        {label: "Test 2", value: "arbitrary"},
-                        {label: "Final Test", value: {label: "Test 1", value: 50}}
-                    ]
-                },
-                {type: "file", id: "file", name: "Basic Filepicker", note: "Basic filepicker with no fluff"},
-                {type: "keybind", id: "keybind", name: "Basic Keybind", note: "Basic keybind with no fluff", value: ["Control", "H"]},
-                {type: "number", id: "number", name: "Basic Number", note: "Basic number input with no fluff", value: 50},
-                {
-                    type: "radio",
-                    id: "radio",
-                    name: "Basic Radio",
-                    note: "Basic radio with no fluff",
-                    value: "test",
-                    options: [
-                        {name: "First", value: 33},
-                        {name: "Another", value: "test"},
-                        {name: "Something", value: 66},
-                        {name: "Last", value: "last"}
-                    ]
-                },
-                {type: "slider", id: "slider", name: "Basic Slider", note: "Basic slider with no fluff", value: 30, min: 20, max: 50},
-                {type: "switch", id: "switch", name: "Basic Switch", note: "Basic switch with no fluff", value: false},
-                {type: "text", id: "text", name: "Basic Textbox", note: "Basic textbox with no fluff", value: "default value"},
-            ]
-        },
-        {
-            type: "category",
-            id: "advanced",
-            name: "Advanced Settings",
-            collapsible: true,
-            shown: false,
-            settings: [
-                {type: "color", id: "advanced-color", name: "Advanced Colorpicker", note: "Color picker with fluff", value: "#ff0000", defaultValue: "#3E82E5", inline: true},
-                {
-                    type: "dropdown",
-                    id: "advanced-dropdown",
-                    name: "Advanced Dropdown",
-                    note: "Dropdown with transparent style",
-                    style: "transparent",
-                    value: "arbitrary",
-                    options: [
-                        {label: "Test 1", value: 50},
-                        {label: "Test 2", value: "arbitrary"},
-                        {label: "Final Test", value: {label: "Test 1", value: 50}}
-                    ]
-                },
-                {type: "file", id: "advanced-file", name: "Advanced Filepicker", note: "Filepicker with multiple, accept, and clearable", multiple: true, clearable: true, accept: "image/*"},
-                {type: "keybind", id: "advanced-keybind", name: "Advanced Keybind", note: "Keybind with max count and clearable", value: ["Control", "Shift", "K"], max: 5, clearable: true},
-                {type: "number", id: "advanced-number", name: "Advanced Number", note: "Number input with step", value: 50, min: 10, max: 100, step: 5},
-                {
-                    type: "radio",
-                    id: "advanced-radio",
-                    name: "Advanced Radio",
-                    note: "Radio with option descriptions and colors",
-                    value: "test",
-                    options: [
-                        {name: "First", value: 33, description: "This is additional info", color: "#ff0000"},
-                        {name: "Another", value: "test", color: "#00ff00"},
-                        {name: "Something", value: 66, description: "It does not have to be used on every option", color: "#0000ff"},
-                        {name: "Last", value: "last", color: "#ffffff"}
-                    ]
-                },
-                {type: "slider", id: "advanced-slider", name: "Advanced Slider", note: "Slider with units, step, and markers", value: 48, min: 32, max: 128, units: "px", markers: [32, 48, 64, 96, 128], inline: false},
-                {type: "text", id: "advanced-text", name: "Advanced Textbox", note: "Textbox with placeholder and max length", value: "value", placeholder: "Enter text...", maxLength: 6},
-            ]
-        },
-        {
-            type: "category",
-            id: "disabled",
-            name: "Disabled Settings",
-            collapsible: true,
-            shown: false,
-            settings: []
-        }
-    ]
-};
-
-// Make disabled versions of every single other setting as the last category
-config.settings[config.settings.length - 1].settings = [
-    ...config.settings[config.settings.length - 3].settings.map(s => ({...s, disabled: true})),
-    ...config.settings[config.settings.length - 2].settings.map(s => ({...s, disabled: true})),
-];
-
-module.exports = class DemoPlugin {
-    constructor(meta) {
-        this.meta = meta;
-        this.api = new BdApi(this.meta.name);
-    }
-
-    start() {
-        const savedVersion = this.api.Data.load("version");
-        if (savedVersion !== this.meta.version) {
-            this.api.UI.showChangelogModal({
-                title: this.meta.name,
-                subtitle: this.meta.version,
-                blurb: "This is a bit of extra text",
-                changes: config.changelog
-            });
-            this.api.Data.save("version", this.meta.version);
-        }
-    }
-
-    stop() {
-    }
-
-    getSettingsPanel() {
-        return BdApi.UI.buildSettingsPanel({
-            settings: config.settings,
-            onChange: (category, id, value) => console.log(category, id, value),
-        });
-    }
-}
-
-```
-:::
-
-### Classic HTML
-
-Since we're using `getSettingsPanel()` we need to create an html element that not only represents our settings, but allows the user to change them. The best way to do this is to turn each setting into an input and display it to the user. Let's say for example we have this setting schema:
+For both of these examples below let's assume we have this simple settings scheme and defaults:
 
 ```js:line-numbers
 {
@@ -458,7 +271,171 @@ Since we're using `getSettingsPanel()` we need to create an html element that no
 }
 ```
 
+
+### Panel Builder
+
+BetterDiscord now provides it's own JSON-like panel builder API. It's an incredibly convenient but still powerful API. You can see more detailed information in the [UI Components](../ui/settings/overview.md) section of the documentation. Here, we'll be going over how to apply this API to this specific plugin we've been building.
+
+#### Create The Data
+
+First we need to create the appropriate JSON data for these two settings.
+
+```js:line-numbers
+const buttonTextSetting = {
+    id: "buttonText",
+    name: "Button Text",
+    type: "text",
+    value: "Click Me!"
+};
+
+const darkModeSetting = {
+    id: "darkMode",
+    name: "Dark Mode",
+    type: "switch",
+    value: true
+};
+```
+
+This has already done most of the work for us as it will give us a proper UI including input, labels, keyboard navigation and more. But in order to make this usable in our plugin, we need to wrap this in our `buildSettingsPanel()` API. We can return that directly to `getSettingsPanel()` leaving our plugin looking something like this:
+
+```js:line-numbers [TutorialPlugin.plugin.js]
+/**
+ * @name TutorialPlugin
+ * @author YourName
+ * @description Learning how to make BetterDiscord plugins!
+ * @version 0.0.1
+ */
+
+module.exports = meta => {
+
+  return {
+    start: () => {
+
+    },
+    stop: () => {
+
+    },
+    getSettingsPanel: () => {
+        const buttonTextSetting = {
+            id: "buttonText",
+            name: "Button Text",
+            type: "text",
+            value: "Click Me!"
+        };
+
+        const darkModeSetting = {
+            id: "darkMode",
+            name: "Dark Mode",
+            type: "switch",
+            value: true
+        };
+
+        return BdApi.UI.buildSettingsPanel({settings: [buttonTextSetting, darkModeSetting]});
+    }
+  }
+};
+```
+
+This gives us a decent looking settings panel right out of the gate.
+
+![Basic Builder](./img/builder_basic.png)
+
+#### Reacting To Settings
+
+But how do we actually save and use these settings? We simply add an `onChange` to the settings panel and check the IDs.
+
+```js:line-numbers
+BdApi.UI.buildSettingsPanel({
+    onChange: (_, id, value) => mySettings[id] = value
+    settings: [buttonTextSetting, darkModeSetting]
+});
+```
+
+Note that the `_` here represents the group `id` but since we have no groups, we don't need it. Otherwise, it's incredible straightforward to update our settings object.
+
+#### Final Builder Panel
+
+To prove it really works and is that simple, let's combine this plugin with the one we made in the [DOM](./dom.md) tutorial. Splicing them together gives us something like this:
+
+```js:line-numbers [TutorialPlugin.plugin.js]
+/**
+ * @name TutorialPlugin
+ * @author YourName
+ * @description Learning how to make BetterDiscord plugins!
+ * @version 0.0.1
+ */
+
+module.exports = meta => {
+
+    const mySettings = {buttonText: "Click me!", darkMode: true};
+
+    const myButton = document.createElement("button");
+    myButton.addEventListener("click", () => {window.alert("Hello World!");});
+
+    function updateButtonText() {
+        myButton.textContent = mySettings.buttonText;
+    }
+
+    function updateButtonTheme() {
+        if (mySettings.darkMode) {
+            myButton.style.color = "white";
+            myButton.style.backgroundColor = "black";
+        }
+        else {
+            myButton.style.color = "black";
+            myButton.style.backgroundColor = "white";
+        }
+    }
+
+    return {
+        start: () => {
+            Object.assign(mySettings, BdApi.Data.load(meta.name, "settings"));
+            const serverList = document.querySelector(".tutorialContainer__1f388");
+            serverList.append(myButton);
+            updateButtonText();
+            updateButtonTheme();
+        },
+        stop: () => {
+            myButton.remove();
+        },
+        getSettingsPanel: () => {
+            const buttonTextSetting = {
+                id: "buttonText",
+                name: "Button Text",
+                type: "text",
+                value: mySettings.buttonText
+            };
+
+            const darkModeSetting = {
+                id: "darkMode",
+                name: "Dark Mode",
+                type: "switch",
+                value: mySettings.darkMode
+            };
+
+            return BdApi.UI.buildSettingsPanel({
+                onChange: (_, id, value) => {
+                    mySettings[id] = value;
+                    BdApi.Data.save(meta.name, "settings", mySettings);
+                    if (id === "buttonText") updateButtonText();
+                    if (id === "darkMode") updateButtonTheme();
+                },
+                settings: [buttonTextSetting, darkModeSetting]
+            });
+        }
+    };
+};
+```
+
+Be sure to take note of the change in our `onChange` function where we call `updateButtonText` and `updateButtonTheme` to make the plugin truly reactive to the settings. But importantly we're doing all of it including saving the settings from a single simple listener. This API scales well and the settings can be generated programmatically fairly easily so you don't need to manually create the JSON data. To dive deeper check the settings section of the [UI components](../ui/settings/overview.md) documentation.
+
+### Classic HTML
+
+Since we're using `getSettingsPanel()` we need to create an html element that not only represents our settings, but allows the user to change them. The best way to do this is to turn each setting into an input and display it to the user.```
+
 The first setting, `buttonText` is a string, which is best represented by a text input `input[type=text]`. The second, `darkMode` is a boolean, best represented by a checkbox `input[type=checkbox]`.
+
+#### Create The HTML
 
 So if we were doing this with just html, it might look something like this:
 
@@ -507,7 +484,7 @@ mySettingsPanel.append(buttonTextSetting, darkModeSetting);
 
 It's a bit long winded, but that's how it would look using vanilla js with no helper functions. Nonetheless we have a `mySettingsPanel` which represents the html we created. Let's put this into a plugin and see how it looks. Don't forget to `return` your `mySettingsPanel`!
 
-```js:line-numbers
+```js:line-numbers [TutorialPlugin.plugin.js]
 /**
  * @name TutorialPlugin
  * @author YourName
@@ -567,6 +544,8 @@ Enable your plugin in settings, and click the plugin settings button. You should
 
 ![Ugly Settings](./img/plugin_settings.png)
 
+#### Reacting To HTML
+
 It's not very pretty right now, but that's okay because we're focusing on functionality for the purpose of this tutorial.
 
 Speaking of functionality however, this panel doesn't do much. It does not show the current value and it does not respond to updates by the user. Let's fix that.
@@ -620,9 +599,11 @@ mySettingsPanel.append(buttonText, darkMode);
 
 As we can see here, this will now allow the saved value of the settings to be shown when the panel opens, and it will also allow the user to update the settings. And thanks to our helper function, these values will also be saved.
 
+#### Final HTML Panel
+
 If we put all the pieces together and combine it with the button we made in the [DOM](./dom) section, we might end up with a plugin like this:
 
-```js:line-numbers
+```js:line-numbers [TutorialPlugin.plugin.js]
 /**
  * @name TutorialPlugin
  * @author YourName
