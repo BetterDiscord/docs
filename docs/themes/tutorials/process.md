@@ -4,7 +4,7 @@ order: 1
 
 # The Creative Process
 
-If you've made it this far in the guide, you've hopefully learned about the [meta info](../../developers/addons.md#meta) comment and seen the [quick start](../introduction/quick-start.md) for themes. If not, please go and check those out first as they are crucial to making a BetterDiscord theme.
+If you've made it this far in the guide, you've hopefully learned about the [meta info](../introduction/structure.md#meta) comment and seen the [quick start](../introduction/quick-start.md) for themes. If not, please go and check those out first as they are crucial to making a BetterDiscord theme.
 
 If you just want a quick example of the basics, check out the [example](#example) section below. Otherwise, keep reading for a good overview of the creative process.
 
@@ -36,8 +36,8 @@ A good way to structure your code is the same way we would recommend implementin
 
 ### Specificity
 
-Choosing the specificity of your selectors is key to the development of your theme. Having selectors with a higher specificity than Discord's will cause your styles to override their styles. Higher specificity selectors can also have some [performance considerations](../advanced/performance.md) especially for low-power devices. You can also use `!important` for this purpose, but we generally recommend avoiding this outside of overriding inline styles for the most part due to all the other issues it can cause. Another thing to keep in mind is that, generally speaking, your CSS will be added later than Discord's CSS. And if you know your CSS, having two selectors in the same `document` with the same specificity means the one that "appeared later" gets priority. This is a good technique to override some of Discord's styles without going overboard with the descendant selector. You'll learn more about selectors in the [next section](./selectors.md) of the guide.
+Choosing the specificity of your selectors is key to the development of your theme. Having selectors with a higher specificity than Discord's will cause your styles to override their styles. Higher specificity selectors can also have some [performance considerations](../concepts/performance.md) especially for low-power devices. You can also use `!important` for this purpose, but we generally recommend avoiding this outside of overriding inline styles for the most part due to all the other issues it can cause. Another thing to keep in mind is that, generally speaking, your CSS will be added later than Discord's CSS. And if you know your CSS, having two selectors in the same `document` with the same specificity means the one that "appeared later" gets priority. This is a good technique to override some of Discord's styles without going overboard with the descendant selector. You'll learn more about selectors in the [next section](./selectors.md) of the guide.
 
 ### Resources
 
-Themes are allowed to use external resources via `@import`. This is actually covered more in depth [later in the guide](../intermediate/remote.md). But this is still something to consider when implementing your theme. Do you want to make use of external resources like icons? Or would you prefer to keep them in the theme itself via [Data URIs](https://css-tricks.com/data-uris/)? You can also think about integrating other themes to your own like Horizontal Server List from before.
+Themes are allowed to use external resources via `@import`. This is actually covered more in depth [later in the guide](./remote.md). But this is still something to consider when implementing your theme. Do you want to make use of external resources like icons? Or would you prefer to keep them in the theme itself via [Data URIs](https://css-tricks.com/data-uris/)? You can also think about integrating other themes to your own like Horizontal Server List from before.

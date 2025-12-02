@@ -41,7 +41,7 @@ One thing to note from this code is the root container `document.getElementById(
 
 And while that works, it's not very practical or useful. And the location of the button is terrible. So what if we wanted to add it to the end of the guild/server list? Let's give it a try!
 
-First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [devtools](../../developers/devtools) and select the guild list on the left.
+First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [devtools](../introduction/devtools.md) and select the guild list on the left.
 
 ![Server List](./img/servers.png)
 

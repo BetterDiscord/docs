@@ -11,7 +11,7 @@ This guide involves [function patching](./patching.md). If you have not read tha
 
 ### What does it mean?
 
-When we say React Injection, we're referring to adding/removing/alterting components in the React render tree used by Discord. In the [React](../intermediate/react.md) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
+When we say React Injection, we're referring to adding/removing/alterting components in the React render tree used by Discord. In the [React](../tutorials/react.md) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
 
 ### Why would I need it?
 
@@ -39,7 +39,7 @@ Due to the nature of client modding, this section could be outdated by the time 
 
 :::
 
-Make sure you've gone over the [DevTools](../../developers/devtools.md), [Function Patching](./patching.md), and [Webpack](./webpack.md) guides before this and have your React DevTools all set up.
+Make sure you've gone over the [DevTools](../introduction/devtools.md), [Function Patching](./patching.md), and [Webpack](./webpack.md) guides before this and have your React DevTools all set up.
 
 What we want to target in this walkthrough is the little section at the top of your DM list.
 
@@ -63,7 +63,7 @@ And of course also beautify the code with the button a the bottom left. You'll s
 
 ![react_render](./img/react_render.png)
 
-As we did in the last chapter, let's scroll up and check for this `i` to be exported. As we scroll up it appears that `i` is wrapped inside of this module and when we get to the top we can see only an object called `z` is exported. 
+As we did in the last chapter, let's scroll up and check for this `i` to be exported. As we scroll up it appears that `i` is wrapped inside of this module and when we get to the top we can see only an object called `z` is exported.
 
 ![react_exports](./img/react_exports.png)
 

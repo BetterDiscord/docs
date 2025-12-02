@@ -246,7 +246,7 @@ myButton.style.color = mySettings.accentColor; // "blue"
 ```
 :::
 
-In this case, the button ends up blue instead of red. While not entirely desireable, it does not cause unexpected issues. This same concept can be applied to adding new settings that did not exist. 
+In this case, the button ends up blue instead of red. While not entirely desireable, it does not cause unexpected issues. This same concept can be applied to adding new settings that did not exist.
 
 The key here is the call to `Object.assign()`. This function extends objects using other objects, essentially combining and overriding the keys. [MDN has a great explanation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) of the details of how this works. In this case, the order is important. You want the loaded data to override any existing value in the default object, so the loaded data comes last in the list. You'll notice that the target object is an empty object `{}`. If you use the default settings object instead, that __object will be modified__ so when you go to use it again in the future the values may be overridden. Using `{}` means a new object will be created and returned. An equivalent and more verbose version is shown below:
 
@@ -413,7 +413,7 @@ config.settings[config.settings.length - 1].settings = [
     ...config.settings[config.settings.length - 3].settings.map(s => ({...s, disabled: true})),
     ...config.settings[config.settings.length - 2].settings.map(s => ({...s, disabled: true})),
 ];
- 
+
 module.exports = class DemoPlugin {
     constructor(meta) {
         this.meta = meta;
@@ -519,10 +519,10 @@ module.exports = meta => {
 
   return {
     start: () => {
-      
+
     },
     stop: () => {
-      
+
     },
     getSettingsPanel: () => {
         const mySettingsPanel = document.createElement("div");
@@ -699,4 +699,4 @@ If we put all the pieces together and combine it with the button we made in the 
 
 The new pieces here are the update functions `updateButtonText` and `updateButtonTheme` which are pretty straight-forward if you read through them. Otherwise, feel free to save this into your plugins folder and give it a test run. If you completed this section, you've successfully learned how to make a plugin with settings that actually work!
 
-When you're ready to move on, check out the next chapter, [UI Components](./ui), that goes over different UI elements within Discord and BetterDiscord.
+When you're ready to move on, check out the next chapter, [UI Components](../ui/changelogs.md), that goes over different UI elements within Discord and BetterDiscord.

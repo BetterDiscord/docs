@@ -70,7 +70,7 @@ And a fully filled out meta using all the fields would look something like this:
 
 ### Overview
 
-BetterDiscord plugins must be in vanilla JavaScript and be contained in a single file in order to be loaded. That means if you want to use something like JSX, or TypeScript it must be transpiled. Similarly if you want to break out your code into multiple files it must be bundled. Both of these topics are covered later in the documentation. In order to cut back on redundancy, your [addon meta](../../developers/addons.md) is provided as a plain object to your main function or constructor. You will see examples of this throughout the documentation.
+BetterDiscord plugins must be in vanilla JavaScript and be contained in a single file in order to be loaded. That means if you want to use something like JSX, or TypeScript it must be transpiled. Similarly if you want to break out your code into multiple files it must be bundled. Both of these topics are covered later in the documentation. In order to cut back on redundancy, your [addon meta](#meta) is provided as a plain object to your main function or constructor. You will see examples of this throughout the documentation.
 
 Plugin files must be named in the format `*.plugin.js` where `*` is representative of any string. Usually this matches the name of the plugin without any spaces or special characters, however that is not a requirement.
 
@@ -135,7 +135,7 @@ All of those examples are valid ways of getting those functions back to BetterDi
 
 It may seem roundabout to do it this way, but this is what allows for developers to make use of uninstantiated classes like the example above.
 
-If you feel you have a solid grasp of how this works, take a look at the [Guidelines](./guidelines) before moving on to the [Basics](../basics/creating-a-plugin.md) guide.
+If you feel you have a solid grasp of how this works, take a look at the [Guidelines](./guidelines) before moving on to the [Basics](../tutorials/creating-a-plugin.md) guide.
 
 #### Optional Functions
 

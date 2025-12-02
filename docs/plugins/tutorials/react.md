@@ -12,7 +12,7 @@ This is not a tutorial on React in general, just on using it in Discord and Bett
 :::
 
 
-Since Discord itself is made using React, it's really easy to make use of within a plugin. It's also very convenient for [React Injection](../advanced/react.md) which we'll get to later on.
+Since Discord itself is made using React, it's really easy to make use of within a plugin. It's also very convenient for [React Injection](../concepts/react.md) which we'll get to later on.
 
 One thing to keep in mind going forward: without [bundling](./bundling.md), you cannot use JSX style react components in a plugin. For that reason, this section will be done without any JSX.
 
@@ -137,6 +137,6 @@ BdApi.ReactDOM.unmountComponentAtNode(element);
 
 And your button will be gone!
 
-One thing to keep in mind, because Discord is contantly changing elements around, if your element gets removed from the `document`, you should unmount your component. Otherwise, you'll end up with a memory leak. You'll also still be trying to use UI that isn't even visible to the user. You can combine the `unmountComponentAtNode` function with the `MutationObserver` from [Using the DOM](../basics/dom.md) to automatically unmount whenever your element is removed from the `document`.
+One thing to keep in mind, because Discord is contantly changing elements around, if your element gets removed from the `document`, you should unmount your component. Otherwise, you'll end up with a memory leak. You'll also still be trying to use UI that isn't even visible to the user. You can combine the `unmountComponentAtNode` function with the `MutationObserver` from [Using the DOM](./dom.md) to automatically unmount whenever your element is removed from the `document`.
 
-Lastly, while this does render React inside of the Discord client, it doesn't actually render as part of Discord's React tree. This might seem inconsequential, but it can be the difference between things working and not. If you're re-using internal Discord components, especially components involving popouts and tooltips, they won't work outside of Discord's tree. If you're interested in rendering inside of Discord's React tree, you'll learn more in the [React Injection](../advanced/react.md) later on.
+Lastly, while this does render React inside of the Discord client, it doesn't actually render as part of Discord's React tree. This might seem inconsequential, but it can be the difference between things working and not. If you're re-using internal Discord components, especially components involving popouts and tooltips, they won't work outside of Discord's tree. If you're interested in rendering inside of Discord's React tree, you'll learn more in the [React Injection](../concepts/react.md) later on.
