@@ -47,9 +47,7 @@ For those that can't get the automatic installers to work, those that want more 
 ### Prerequisites
 
 - Git - https://git-scm.com/downloads
-- Node.js - https://nodejs.org/en/download/
-- npm - (comes with node on most systems)
-- pnpm - `npm install -g pnpm`
+- Bun - https://bun.com/docs/installation
 
 ### Steps
 
@@ -65,35 +63,28 @@ cd BetterDiscord
 ```
 
 #### 3. Install dependencies
-First install `pnpm` if you have not done so already
+Install BetterDiscord's dependencies
 ```bash
-npm install -g pnpm
-```
-
-Then install BetterDiscord's dependencies
-```bash
-pnpm install
+bun install
 ```
 
 #### 4. Build BetterDiscord
-
-This will create an `injector.js`, `preload.js`, and `renderer.js` in the `dist/` folder.
+This will create `injector.js`, `preload.js`, `renderer.js`, and an `/editor` directory in the `dist/` directory.
 ```bash
-pnpm build
+bun run build
 ```
 
-#### 5. Install to Discord
-
+#### 5. Inject into Discord
 ::: code-group
 ```bash [Stable]
-pnpm inject
+bun inject
 ```
 
 ```bash [Canary]
-pnpm inject canary
+bun inject canary
 ```
 
 ```bash [PTB]
-pnpm inject ptb
+bun inject ptb
 ```
 :::
