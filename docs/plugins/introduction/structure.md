@@ -38,7 +38,7 @@ And a fully filled out meta using all the fields would look something like this:
  * @donate https://paypal.me/
  * @patreon https://patreon.com/
  * @website https://github.com/BetterDiscord/BetterDiscord
- * @source https://gist.github.com/rauenzi/e5f4d02fc3085a53872b0236cd6f8225
+ * @source https://gist.github.com/zerebos/e5f4d02fc3085a53872b0236cd6f8225
  */
  ```
 
