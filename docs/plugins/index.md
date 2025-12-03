@@ -4,6 +4,8 @@ order: 0
 
 # Overview
 
+Plugins are a type of addon that focus on functionality by adding something new to the Discord client. This could be as simple as a button that says hello, or basic end-to-end ecryption. Plugins can also modify existing functionality in the client like altering exisiting buttons to perform different actions, or even remove functionality entirely. All of this is done using JavaScript with minimal requirements to allow for personal preference and style in programming.
+
 ::: tip
 
 This documentation and the accompanying guides assume you already know JavaScript and are familiar with the modern JavaScript constructs and concepts. If you're not, check out the resources section below!
@@ -14,11 +16,9 @@ These docs consist of this introduction which gives you an idea of what to expec
 
 The [Introduction](./introduction/quick-start.md) section gives a lot of background information on plugins requirements, the development environment, and the tools at your disposal.
 
-The [Basics](./basics/creating-a-plugin.md) guide walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/classes/BdApi.md) has to offer.
+The [Tutorials](./tutorials/creating-a-plugin.md) section walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/classes/BdApi.md) has to offer.
 
-The [Intermediate](./intermediate/bundling.md) guide starts to branch into some of the 3rd-party libraries that can be used to enhance your plugins.
-
-The [Advanced](./advanced/patching.md) guide goes more in depth with advanced concepts that are important to making good and complicated plugins that smoothly integrate into Discord.
+The [Concepts](./concepts/patching.md) guide goes more in depth with advanced concepts that are important to making good and complicated plugins that smoothly integrate into Discord.
 
 The [API Reference](/api/index.md) section is purely a reference to what APIs are available, the parameters and return types of any functions, and descriptions of their properties. If you've seen any code documentation before, this will look familiar.
 

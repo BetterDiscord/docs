@@ -12,4 +12,4 @@ Discord uses Webpack as their bundler and through [`BdApi.Webpack`](/api/classes
 
 ## Data Stores
 
-This common type of modules holds data that is used throughout the entire app by Discord. This includes local caches of information about users, guilds, roles, or anything else that may otherwise need to be pulled from the server. Having access to these can greatly enhance any plugin you may be working on. You can take a look at a mostly comprehensive list on the next page, or you can check out the [plugin guide](/plugins/advanced/webpack.md) for a walkthrough and tips on reverse engineering individual methods.
+This common type of modules holds data that is used throughout the entire app by Discord. This includes local caches of information about users, guilds, roles, or anything else that may otherwise need to be pulled from the server. Having access to these can greatly enhance any plugin you may be working on. You can take a look at a mostly comprehensive list on the next page, or you can check out the [plugin guide](../../plugins/concepts/webpack.md) for a walkthrough and tips on reverse engineering individual methods.
