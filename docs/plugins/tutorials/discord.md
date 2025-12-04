@@ -14,14 +14,12 @@ This is a pretty common technique for modifying Discord's main functions. It's m
 Say we want to change what happens when we click the home button to do something else.
 
 
-```js
+```js{3-5}
 const homeButton = document.querySelector(".listItemWrapper-3d87LP");
 const myNewAction = event => {
-    // highlight-start
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
-    // highlight-end
 
     console.log("Clicked the home button!");
 };

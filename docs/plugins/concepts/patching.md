@@ -26,7 +26,7 @@ function yourTarget() {}
 
 Then you can't really affect it. However, if your target is part of an object in some way, like being contained in an imported module, you can overwrite that reference with your own function causing everyone to call your function instead.
 
-```js:line-numbers
+```js:line-numbers{13-17}
 const someObject = {
     yourTarget: function() {
         console.log("red");
@@ -39,13 +39,11 @@ function targetUser() {
 
 targetUser(); // Logs "red"
 
-// highlight-start
 function myNewFunction() {
     console.log("green");
 }
 
 someObject.yourTarget = myNewFunction;
-// highlight-end
 
 targetUser(); // Now logs "green"
 ```
@@ -56,7 +54,7 @@ If you take a look at the highlighted section, we are creating a new function `m
 
 Luckily, BetterDiscord already has a system in place to manage multiple patches per function and allows you to target different patch types. This means if you want to do a `before` or `after` patch, you no longer have to manually replace the function and retain references and call the original. All of this is done for you with `BdApi.Patcher`. Let's take a look at how our example above could be done with this module.
 
-```js:line-numbers
+```js:line-numbers{13}
 const someObject = {
     yourTarget: function() {
         console.log("red");
@@ -69,9 +67,7 @@ function targetUser() {
 
 targetUser(); // Logs "red"
 
-// highlight-start
 BdApi.Patcher.instead("MyPlugin", someObject, "yourTarget", () => console.log("green"));
-// highlight-end
 
 targetUser(); // Now logs "green"
 ```
@@ -119,14 +115,13 @@ someModule.otherMethod("something");
 
 In this example we didn't modify the arguments, we just wanted to log them out to see what kind of values we might get. This is a good technique to help modify arguments selectively. Suppose we don't mind that `something` is logged, but we don't like when `token` is logged. How might that look?
 
-```js:line-numbers
+```js:line-numbers{4-6}
 BdApi.Patcher.before("MyPlugin", someModule, "otherMethod", (thisObject, args) => {
     const firstArgument = args[0];
-    // highlight-start
+
     if (firstArgument === "token") {
         args[0] = "redacted";
     }
-    // highlight-end
 });
 
 someModule.otherMethod("something"); // > My value something

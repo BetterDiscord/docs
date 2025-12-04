@@ -185,14 +185,14 @@ Before we move on, notice that we added an `Array.isArray()` check to the filter
 
 Now we can actually rewrite our patch from earlier.
 
-```js
+```js{8}
 const myFilter = prop => Array.isArray(prop) && prop.some(element => element.key === "friends");
 const PrivateChannels = BdApi.Webpack.getByStrings("getPrivateChannelIds", {defaultExport: false});
 
 BdApi.Patcher.after("debug", PrivateChannels, "Z", (_, __, returnValue) => {
     const myElement = BdApi.React.createElement("button", null, "Hello World!");
     const buttons = BdApi.Utils.findInTree(returnValue, myFilter, {walkable: ["props", "children"]});
-    // highlight-next-line
+
     buttons?.push(myElement);
 });
 ```

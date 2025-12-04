@@ -603,7 +603,7 @@ As we can see here, this will now allow the saved value of the settings to be sh
 
 If we put all the pieces together and combine it with the button we made in the [DOM](./dom) section, we might end up with a plugin like this:
 
-```js:line-numbers [TutorialPlugin.plugin.js]
+```js:line-numbers{31-44} [TutorialPlugin.plugin.js]
 /**
  * @name TutorialPlugin
  * @author YourName
@@ -634,7 +634,6 @@ If we put all the pieces together and combine it with the button we made in the 
     const myButton = document.createElement("button");
     myButton.addEventListener("click", () => {window.alert("Hello World!");});
 
-    // highlight-start
     function updateButtonText() {
         myButton.textContent = mySettings.buttonText;
     }
@@ -649,7 +648,6 @@ If we put all the pieces together and combine it with the button we made in the 
             myButton.style.backgroundColor = "white";
         }
     }
-    // highlight-end
 
   return {
     start: () => {

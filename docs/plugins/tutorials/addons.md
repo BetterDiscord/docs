@@ -74,13 +74,13 @@ Keep in mind there are many functions in plugins that <u>do not</u> require them
 
 From there, you can even directly call functions from your plugin. One common use-case for this is when you want to add an optional feature to your plugin that makes use of another plugin.
 
-```js:line-numbers
+```js:line-numbers{7}
 class MyPlugin {
     start() {
         let myGreeting = "Hello User!";
         if (BdApi.Plugins.isEnabled("Zalgo")) {
             const zalgoPlugin = BdApi.Plugins.get("Zalgo").instance;
-            // highlight-next-line
+
             if (zalgoPlugin?.format) {
                 myGreeting = zalgoPlugin.format(myGreeting);
             }
