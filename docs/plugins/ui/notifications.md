@@ -6,7 +6,7 @@ Notifications in this context are in-app notifications that sit above the rest o
 
 ## Creating Notifications
 
-One of the simplest examples is the notification above. It can be created with a single simple call to the BetterDiscord api.
+One of the simplest examples is the notification above. It can be created with a single simple call to the BetterDiscord API.
 
 ```js
 BdApi.UI.showNotification({

@@ -30,7 +30,7 @@ Fixing issues like this involves the following:
 
 ::: details "Well, this is awkward" or "You died, looks like you got slaughtered by an Error Level 9000"
 
-This type of error is usually caused by plugins or BetterDiscord being out of date. Ensure your copy of BetterDiscord and your plugins and keys are up to date.
+This type of error is usually caused by plugins or BetterDiscord being out of date. Ensure your copy of BetterDiscord and your plugins and keys are up-to-date.
 
 :::
 
@@ -56,7 +56,7 @@ If you are on Linux try running with the `--no-sandbox`
 If the installer does not seem to open, follow these steps:
 1. Download and install [7-Zip](https://www.7-zip.org/)
 1. Right-click and extract the BetterDiscord installer into a folder.
-1. Run the exe found in the folder.
+1. Run the .exe found in the folder.
 
 OR
 
@@ -69,7 +69,7 @@ Follow the [manual installation](../getting-started/installation.md#manual-insta
 Try one of the following:
  - Right-click the installer and select run as Administrator.
  - Open the command prompt by pressing `win`+`r` type `cmd` and press enter. Then type `ipconfig /flushdns` and press enter in the window that appears.
- - Disable your anti-virus temporarily.
+ - Disable your antivirus temporarily.
 
 OR
 
@@ -96,13 +96,13 @@ Your installer is out of date, please go to the [BetterDiscord website](https://
 
 ::: details ❌ EACCES: permission denied, mkdir", or any error where at "shims" there is a "mkdir" error
 
-The Discord installation has been corrupted. Try to reinstall Discord. If Discord fails to reinstall or you still run into this error then your best bet is [cleanly uninstalling Discord](https://discordtips.com/how-to-fully-uninstall-discord/) then installing it again.
+The Discord installation has been corrupted. Try to reinstall Discord. If Discord fails to reinstall, or you still run into this error then your best bet is [cleanly uninstalling Discord](https://discordtips.com/how-to-fully-uninstall-discord/) then installing it again.
 :::
 
 
 ::: details ❌ Cannot read property "hasOwnProperty" of undefined" error
 
-Fully close Discord. Fully deactivate any VPNs or firewalls. Make sure your installer is up to date. Then try again. If that still doesn't work, see the previous entry about cleanly removing and resinstalling Discord.
+Fully close Discord. Fully deactivate any VPNs or firewalls. Make sure your installer is up-to-date. Then try again. If that still doesn't work, see the previous entry about cleanly removing and reinstalling Discord.
 :::
 
 

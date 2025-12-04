@@ -19,7 +19,7 @@ BdApi.UI.alert("Hello World", "This is just a basic informational modal!");
 :::
 
 
-You can also pass in a react element for `content` but <u>not for `title`</u>. However, this means you are on your own for functionality and styling. In the last example we saw that the `content` text was colored and themed properly. But let's try just wrapping a string in a react element.
+You can also pass in a React element for `content` but <u>not for `title`</u>. However, this means you are on your own for functionality and styling. In the last example we saw that the `content` text was colored and themed properly. But let's try just wrapping a string in a React element.
 
 
 ```jsx
@@ -30,7 +30,7 @@ BdApi.UI.alert("Hello World", <div>This is just a basic informational modal!</di
 ![React Alert](./img/alert_react.png)
 :::
 
-And since we are able to use react here for `content`, it also allows us to pass in a whole tree of elements or custom components. This allows for some very interesting alert possibilities.
+And since we are able to use React here for `content`, it also allows us to pass in a whole tree of elements or custom components. This allows for some very interesting alert possibilities.
 
 
 ```jsx
@@ -59,11 +59,11 @@ BdApi.UI.alert(
 ![React Console](./img/alert_console.png)
 :::
 
-Important to note for later that `alert` returns a unique modal ID used internally by Discord. We won't be going over its usage here--it's safe to ignore--but may be covered by advanced guides.
+Important to note for later that `alert` returns a unique modal ID used internally by Discord. We won't be going over its usage here–it's safe to ignore–but may be covered by advanced guides.
 
 ## Confirmation Modals
 
-Under the covers, `alert` makes use of `showConfirmationModal`. This one is an even more extensible and useful helper function. Similar to `alert` this has a `title` and `content` parameter that accept the same types as before. It's full signature is `showConfirmationModal(title, content, options = {})`. For a full list of options check the [api reference](/api/). We'll be going over some of the more useful ones here.
+Under the covers, `alert` makes use of `showConfirmationModal`. This one is an even more extensible and useful helper function. Similar to `alert` this has a `title` and `content` parameter that accept the same types as before. Its full signature is `showConfirmationModal(title, content, options = {})`. For a full list of options check the [API reference](/api/). We'll be going over some of the more useful ones here.
 
 
 ```js
@@ -75,7 +75,7 @@ BdApi.UI.showConfirmationModal("Hello World", "This is just a basic confirmation
 :::
 
 
-Looking at the result of this one, we can see there is an additional "cancel" button. We can change the text of both of those buttons as well as respond to either of them being clicked using the `options` in this example.
+Looking at the result of this one, we can see there is an additional "cancel" button. We can change the text of both of those buttons and respond to either of them being clicked using the `options` in this example.
 
 ```jsx
 function MySearchInput(props) {
@@ -105,7 +105,7 @@ BdApi.UI.showConfirmationModal(
 ![Advanced Confirmation](./img/confirmation_advanced.png)
 :::
 
-Here clicking `Search` will close the modal and call the `onConfirm` function we passed. Similarly clicking `Nevermind` will call `onCancel`. If the user exits the modal either by pressing `escape` on their keyboard or by clicking outside of the modal on the dark background, `onCancel` will also be called in this case.
+Here clicking `Search` will close the modal and call the `onConfirm` function we passed. Similarly, clicking `Nevermind` will call `onCancel`. If the user exits the modal either by pressing `escape` on their keyboard or by clicking outside the modal on the dark background, `onCancel` will also be called in this case.
 
 Much like `alert` the function returns a unique modal ID.
 

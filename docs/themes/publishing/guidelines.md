@@ -4,7 +4,7 @@ order: 1
 
 # Theme Guidelines
 
-These are guidelines that all themes are expected to abide by. Any themes that violates these <u>will not</u> be added to the BetterDiscord website or marked as official or approved in any fashion. Existing themes that push updates that violate these guidelines will have their updates denied.
+These are guidelines that all themes are expected to abide by. Any theme that violates these <u>will not</u> be added to the BetterDiscord website or marked as official or approved in any fashion. Existing themes that push updates that violate these guidelines will have their updates denied.
 
 ## General Guidelines
 
@@ -22,14 +22,14 @@ These are guidelines that all themes are expected to abide by. Any themes that v
    - e.g. hiding potentially important actions, unreadable text contrast, use of harmful animations, and flashing text.
 1. Do not target a specific user or group of users in a negative way (do not attempt to "ban" people).
 1. Do not encourage users to further violate Discord's [Terms of Service](https://discord.com/terms), or promote content from outside of the official repository.
-1. Try to maintain support for Discord's accessability features.
+1. Try to maintain support for Discord's accessibility features.
 1. Maintain performance on modern hardware.
-   - This can be done by limiting the use of intensive animations, filters and effects.
+   - This can be done by limiting the use of intensive animations, filters, and effects.
 
 ## Code
 1. Your theme's codebase must be made and written primarily by you.
    - You may not submit an automatically-generated theme, a customized version of someone else's theme, or a codebase written by someone other than you.
-1. Only import code from trusted services. (Github, Gitlab, Google Fonts, etc...)
+1. Only import code from trusted services. (GitHub, GitLab, Google Fonts, etc...)
 1. Do not abuse remote resources to gather user information, use untrusted content, or circumvent security permissions.
 1. You may reverse-engineer or use other people's code, provided you have proper permission and your theme's core design does not rely on third-party code.
 1. Minimize usage of language-specific selectors (e.g. `aria-label` attributes).

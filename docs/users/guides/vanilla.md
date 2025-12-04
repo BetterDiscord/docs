@@ -12,7 +12,7 @@ This feature requires some basic computer literacy.
 
 :::
 
-BetterDiscord allows you to return to vanilla Discord functionality without having to remove BetterDiscord. This is useful for those that like to switch back and forth. This is done using the `--vanilla` command line flag. There are two ways this can be used. You can either do this as a one-off or setup a shortcut for yourself to easily boot between normal Discord and BetterDiscord.
+BetterDiscord allows you to return to vanilla Discord functionality without having to remove BetterDiscord. This is useful for those that like to switch back and forth. This is done using the `--vanilla` command line flag. There are two ways this can be used. You can either do this as a one-off or set up a shortcut for yourself to easily boot between normal Discord and BetterDiscord.
 
 
 ## One-off

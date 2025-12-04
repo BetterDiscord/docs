@@ -35,6 +35,6 @@ BdApi.UI.showChangelogModal({
 });
 ```
 
-You can check the [api reference](/api/classes/UI.md#showchangelogmodal) for more details, but this little snippet shows the most important features. Notably, this changelog api can also allow you to display a banner image, a youtube video, or a direct video above all of the text. This can be useful when you need to add a showcase of new things or if you just want to have a consistent branding. There are also 4 change "types". In the snippet we see fixed and added, there are also improved and progress.
+You can check the [API reference](/api/classes/UI.md#showchangelogmodal) for more details, but this little snippet shows the most important features. Notably, this changelog API can also allow you to display a banner image, a YouTube video, or a direct video above all the text. This can be useful when you need to add a showcase of new things or if you just want to have a consistent branding. There are also 4 change "types". In the snippet we see fixed and added, there are also improved and progress.
 
 For now, plugins will have to decide when to display the changelog modal, though it is planned to be more automated in a future BetterDiscord update. For an example of how to do this check out this [Demo Plugin](https://gist.github.com/zerebos/b13adc05f22df008ee5d0411d9d18ff0) featuring the new APIs for BetterDiscord v1.11.0.

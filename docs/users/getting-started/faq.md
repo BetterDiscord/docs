@@ -7,7 +7,7 @@ description: Questions asked frequently.
 
 ### Is BetterDiscord against Discord's Terms of Service (ToS)?
 
-Yes, but unless you do something egregious, such as use it to selfbot or use unapproved plugins, you'll be fine.
+Yes, but unless you do something egregious, such as use it to self-bot or use unapproved plugins, you'll be fine.
 
 ### Is BetterDiscord against Discord's Application/API Terms?
 
@@ -23,7 +23,7 @@ No, the mobile versions of Discord work completely differently and are not compa
 
 ### Can I have multiple installations of BetterDiscord?
 
-Yes you can. There can be one BetterDiscord installation per Discord installation. It is common to see people install BetterDiscord to both Canary and Stable. Settings are not sync'd between.
+Yes you can. There can be one BetterDiscord installation per Discord installation. It is common to see people install BetterDiscord to both Canary and Stable. Settings are not synced between.
 
 ### How do I uninstall BetterDiscord?
 

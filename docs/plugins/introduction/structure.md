@@ -8,7 +8,7 @@ description: The requirements and format of a plugin.
  - There are currently only two types of addons: plugins and themes.
  - Distributed addons are limited to a single file.
  - The distributed file must be named in the form `<name>.<type>.<ext>` where name is the addon name, type is the addon type, and ext is the standard file extension.
- - Addon files are split into two major sections, the meta and the body.
+ - Addon files are split into two major sections, the meta, and the body.
  - Meta sections (described more below) contain important information about the addon for BetterDiscord, the body section is the main portion of developer content.
  - Addons are dynamically added, removed, and updated to match the files on the users' system.
 
@@ -47,15 +47,15 @@ And a fully filled out meta using all the fields would look something like this:
 
 |Field|Required|Description|
 |-----|:------:|-----------|
-|name|&#x2705;|The name of the addon. Typcially does not contain spaces, but is allowed.|
+|name|&#x2705;|The name of the addon. Typically, does not contain spaces, but is allowed.|
 |author|&#x2705;|The name of you the developer.|
-|description|&#x2705;|A basic description of the what the addon does.|
+|description|&#x2705;|A basic description of what the addon does.|
 |version|&#x2705;|Version representing the current update level. [Semantic versioning](https://semver.org/) recommended.|
 |invite|&#x274C;|A Discord invite code, useful for directing users to a support server.|
 |authorId|&#x274C;|Discord snowflake ID of the developer. This allows users to get in touch.|
 |authorLink|&#x274C;|Link to use for the author's name on the addon pages.|
 |donate|&#x274C;|Link to donate to the developer.|
-|patreon|&#x274C;|Link to the patreon of the developer.|
+|patreon|&#x274C;|Link to the Patreon of the developer.|
 |website|&#x274C;|Developer's (or addon's) website link.|
 |source|&#x274C;|Link to the source on GitHub of the addon.|
 
@@ -70,11 +70,11 @@ And a fully filled out meta using all the fields would look something like this:
 
 ### Overview
 
-BetterDiscord plugins must be in vanilla JavaScript and be contained in a single file in order to be loaded. That means if you want to use something like JSX, or TypeScript it must be transpiled. Similarly if you want to break out your code into multiple files it must be bundled. Both of these topics are covered later in the documentation. In order to cut back on redundancy, your [addon meta](#meta) is provided as a plain object to your main function or constructor. You will see examples of this throughout the documentation.
+BetterDiscord plugins must be in vanilla JavaScript and be contained in a single file in order to be loaded. That means if you want to use something like JSX, or TypeScript it must be transpiled. Similarly, if you want to break out your code into multiple files it must be bundled. Both of these topics are covered later in the documentation. In order to cut back on redundancy, your [addon meta](#meta) is provided as a plain object to your main function or constructor. You will see examples of this throughout the documentation.
 
 Plugin files must be named in the format `*.plugin.js` where `*` is representative of any string. Usually this matches the name of the plugin without any spaces or special characters, however that is not a requirement.
 
-Plugin files are split into two main pieces, the meta and the plugin code. If either of these are missing the plugin will not load.
+Plugin files are split into two main pieces, the meta, and the plugin code. If either of these are missing the plugin will not load.
 
 ### Details
 
@@ -92,7 +92,7 @@ module.exports = () => ({
 });
 ```
 
-But that of course is not the only way to do it. Many people like the syntactic sugar and extensibility of classes
+But that of course is not the only way to do it. Many people like the syntactic sugar and extensibility of classes.
 
 ```js
 module.exports = class {
@@ -105,7 +105,7 @@ module.exports = class {
 };
 ```
 
-while others prefer a more modular functional style.
+While others prefer a more modular functional style.
 
 ```js
 const start = () => {};
@@ -143,7 +143,7 @@ These are functions that plugins _can_ make use of but are not required at all. 
 
 ##### getSettingsPanel
 
-This function allows your plugins to have a settings panel displayed through BetterDiscord. The expected return type is either an `HTMLElement` or a React element. Returning a `string` representing the HTML is deprecated.
+This function allows your plugins to have a settings panel displayed through BetterDiscord. The expected return type is either a `HTMLElement` or a React element. Returning a `string` representing the HTML is deprecated.
 
 ##### observer
 

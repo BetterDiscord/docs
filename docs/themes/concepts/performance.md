@@ -26,7 +26,7 @@ Attribute selectors are great and very useful. But they also mean more computati
 
 ### Animations & Transitions
 
-This section may feel a little more obvious than the last, but having more animations can lead to a drop in performance. More animations means more calculations for the users computer to handle and more rendering for it to deal with. The same can be said for transitions. This is usually not as bad when the user has a dedicated GPU and they have hardware acceleration enabled, but this is definitely not the case for all users. What's worse, is that web rendering doesn't always get put onto the dedicated GPU even if it exists and hardware acceleration is on. There are some ways to try and trick it though that we'll go over in the next section.
+This section may feel a little more obvious than the last, but having more animations can lead to a drop in performance. More animations mean more calculations for the user's computer to handle and more rendering for it to deal with. The same can be said for transitions. This is usually not as bad when the user has a dedicated GPU, and they have hardware acceleration enabled, but this is definitely not the case for all users. What's worse, is that web rendering doesn't always get put onto the dedicated GPU even if it exists and hardware acceleration is on. There are some ways to try and trick it though that we'll go over in the next section.
 
 ## Optimizations
 
@@ -55,10 +55,10 @@ Here are a few tips for improving your attribute selectors.
 
 ### Animations & Transitions
 
-There are a few different techniques that improve your animations and transitions. One of the first is understanding the rule of thumb: "Do not animate CSS properties that trigger layout or painting whenever possible." This includes properties like heigh and width that could cause other elements to move around as you animate. It is very difficult to produce smooth and performant animations in these cases.
+There are a few different techniques that improve your animations and transitions. One of the first is understanding the rule of thumb: "Do not animate CSS properties that trigger layout or painting whenever possible." This includes properties like height and width that could cause other elements to move around as you animate. It is very difficult to produce smooth and performant animations in these cases.
 
 You can indicate to the browser before animations and transitions what properties will change which can help the browser optimize performance. Just add `will-change: property;` to the element in question.
 
-As we talked about above, not all animations will be rendering on the GPU when available. There a couple ways to try and trigger this, and it usually involves creating new paint layers. If you're unfamiliar with this concept, that's understandable, it's a concept internal to web browsers. But if you do want to go down this route, you can try adding a 3d `transform` to the element that does nothing (`transform: translateZ(0)`). This works in all browsers. If you're targeting just modern browsers (like Chrome/Discord) then it's enough to just do `will-change: transform`.
+As we talked about above, not all animations will be rendering on the GPU when available. There are a couple of ways to try and trigger this, and it usually involves creating new paint layers. If you're unfamiliar with this concept, that's understandable, it's a concept internal to web browsers. But if you do want to go down this route, you can try adding a 3d `transform` to the element that does nothing (`transform: translateZ(0)`). This works in all browsers. If you're targeting just modern browsers (like Chrome/Discord) then it's enough to just do `will-change: transform`.
 
 If you want to learn more about performant CSS animations and even learn how to debug your own, check out the [animation guide](https://web.dev/animations-guide/) from web.dev.

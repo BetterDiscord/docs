@@ -14,7 +14,7 @@ A function patch an advanced technique for plugins that allow you to modify exis
 
 ### Why would I use one?
 
-It's a great way to modify or extend Discord's functionality with your own while keeping integration mostly seemless. It can also act as a way to modify the way Discord works currently. Take the plugin [HideDisabledEmojis](https://betterdiscord.app/plugin/HideDisabledEmojis) for example, it uses function patching to modify the way Discord's internal functions work to stop trying to render emojis the user cannot use. Your possibilities for the plugins you can make increase exponentially, and the quality usually ends up being higher due to the tight integration with Discord.
+It's a great way to modify or extend Discord's functionality with your own while keeping integration mostly seamless. It can also act as a way to modify the way Discord works currently. Take the plugin [HideDisabledEmojis](https://betterdiscord.app/plugin/HideDisabledEmojis) for example, it uses function patching to modify the way Discord's internal functions work to stop trying to render emojis the user cannot use. Your possibilities for the plugins you can make increase exponentially, and the quality usually ends up being higher due to the tight integration with Discord.
 
 ### How can I patch a function?
 
@@ -24,7 +24,7 @@ Unfortunately, you can't patch a function *directly*, you have to modify the *re
 function yourTarget() {}
 ```
 
-then you can't really affect it. However, if your target is part of an object in some way, like being contained in an imported module, you can overwrite that reference with your own function causing everyone to call your function instead.
+Then you can't really affect it. However, if your target is part of an object in some way, like being contained in an imported module, you can overwrite that reference with your own function causing everyone to call your function instead.
 
 ```js:line-numbers
 const someObject = {
@@ -50,7 +50,7 @@ someObject.yourTarget = myNewFunction;
 targetUser(); // Now logs "green"
 ```
 
-If you take a look at the highlighted section, we are creating a new function `myNewFunction` that logs `green` and assigning it to `someObject.yourTarget` effectively overwriting the target function. That means when `targetUser` is called again, your function gets run successfully because it references the `someObject` object. This here is known as an `instead` patch because it completely replaces the target. All patches start this way but can expanded to become a `before` or `after` patch by storing a reference and calling the original function. This also opens the door to subpatches and multiple users, but that can get complicated very fast.
+If you take a look at the highlighted section, we are creating a new function `myNewFunction` that logs `green` and assigning it to `someObject.yourTarget` effectively overwriting the target function. That means when `targetUser` is called again, your function gets run successfully because it references the `someObject` object. This here is known as an `instead` patch because it completely replaces the target. All patches start this way but can be expanded to become a `before` or `after` patch by storing a reference and calling the original function. This also opens the door to subpatches and multiple users, but that can get complicated very fast.
 
 #### BetterDiscord
 
@@ -76,7 +76,7 @@ BdApi.Patcher.instead("MyPlugin", someObject, "yourTarget", () => console.log("g
 targetUser(); // Now logs "green"
 ```
 
-This code has the same effect as before, causing `targetUser` to instead log `green`. But lets take a closer look at the highlighted line. We have a call to `BdApi.Patcher.instead` which indicates we want to create an `instead` patch. We pass it `"MyPlugin"` which is an identifier used later to help removed all your patches with `BdApi.Patcher.unpatchAll`. Then we give it the target object `someObject` and the key of our target inside that object `yourTarget` and our new function to override the original. BetterDiscord takes care of the rest and even allows other plugins to patch on top of yours.
+This code has the same effect as before, causing `targetUser` to instead log `green`. But let's take a closer look at the highlighted line. We have a call to `BdApi.Patcher.instead` which indicates we want to create an `instead` patch. We pass it `"MyPlugin"` which is an identifier used later to help removed all your patches with `BdApi.Patcher.unpatchAll`. Then we give it the target object `someObject` and the key of our target inside that object `yourTarget` and our new function to override the original. BetterDiscord takes care of the rest and even allows other plugins to patch on top of yours.
 
 
 ## Examples
@@ -101,7 +101,7 @@ const someModule = {
 };
 ```
 
-In this setup, `someGlobal` is a function that cannot be patched because there is no reference to replace. However `someModule.method` and `someModule.otherMethod` can both be patched.
+In this setup, `someGlobal` is a function that cannot be patched because there is no reference to replace. However, `someModule.method` and `someModule.otherMethod` can both be patched.
 
 ### Before
 
@@ -155,7 +155,7 @@ someModule.method(1); // > Intercepted other
 someModule.method(1); // > undefined
 ```
 
-Take alook at the function we define in the `instead` patch. We have a new parameter `originalFunction` that BetterDiscord gives us to use as we see fit. In this example we use it for a specific value. If the value is `5` we let the original function run and return without modification. If the value is `1` we pass it to an external function and let that handle the arguments and the return. Otherwise, the function has no return value at all. This is a huge change to the function. It used to always return a value and now it only returns values for two cases. This is a good demonstration how much power function patching can have.
+Take a look at the function we define in the `instead` patch. We have a new parameter `originalFunction` that BetterDiscord gives us to use as we see fit. In this example we use it for a specific value. If the value is `5` we let the original function run and return without modification. If the value is `1` we pass it to an external function and let that handle the arguments and the return. Otherwise, the function has no return value at all. This is a huge change to the function. It used to always return a value, and now it only returns values for two cases. This is a good demonstration how much power function patching can have.
 
 ### After
 
@@ -170,7 +170,7 @@ someModule.method(5); // > 16
 someModule.method();  // > 6
 ```
 
-You'll notice that `originalFunction` from before has turned into `returnValue`. Here we simply multiply that by `2` every time and return the value to the caller. So that means for any number we pass, the original function applies and returns, then our patch picks up that value and multiplies by `2`, then the function caller finally gets their value. The BetterDiscord `Patcher` will use whatever `return` value you use. However if you *don't* return anything, then the original return value is used. This can have profound effects. Consider this case below:
+You'll notice that `originalFunction` from before has turned into `returnValue`. Here we simply multiply that by `2` every time and return the value to the caller. So that means for any number we pass, the original function applies and returns, then our patch picks up that value and multiplies by `2`, then the function caller finally gets their value. The BetterDiscord `Patcher` will use whatever `return` value you use. However, if you *don't* return anything, then the original return value is used. This can have profound effects. Consider this case below:
 
 ```js
 const myNewNumber = 5 / someModule.method(5);

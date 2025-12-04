@@ -1,6 +1,6 @@
 # Tooltips
 
-Tooltips are yet another overlay element. These are very similar to popouts but much much smaller and usually point to a specific element to indicate that it is giving additional information about it. This is used to make clean buttons or clarify text.
+Tooltips are yet another overlay element. These are very similar to popouts but much smaller and usually point to a specific element to indicate that it is giving additional information about it. This is used to make clean buttons or clarify text.
 
 ![Tooltip Example](./img/tooltip.png)
 
@@ -30,7 +30,7 @@ The sides available are top, right, bottom, and left.
 
 The styles available are primary, info, success, warn, and danger.
 
-You can also directly access the elements of the tooltip afterwards. So if you need to update the label you can do something like this:
+You can also directly access the elements of the tooltip afterward. So if you need to update the label you can do something like this:
 
 ```js
 tooltip.labelElement.textContent = "New label";

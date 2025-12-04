@@ -30,4 +30,4 @@ When fully configured you get a very fancy color input.
 
 ## Acceptable Values
 
-Colors can either be a numerical value representing the color or a hexstring, the latter of which is demonstrated above. The numerical value is common inside Discord's internal code so it is interesting to know about this format. The numerical values are just the literal conversion from the hex value in the hexstring to base 10 decimal.
+Colors can either be a numerical value representing the color or a hex string, the latter of which is demonstrated above. The numerical value is common inside Discord's internal code so it is interesting to know about this format. The numerical values are just the literal conversion from the hex value in the hex string to base 10 decimal.

@@ -4,7 +4,7 @@ order: 1
 
 # Overview
 
-Themes are exactly as they sound, a way to completely alter the look and feel of the client. Some themes might just add a background image to the client, while others try to emulate the look and feel of other programs, or even other operating systems. They do this by using pure css like a webpage as opposed to using preset names that limit the creativity of developers.
+Themes are exactly as they sound, a way to completely alter the look and feel of the client. Some themes might just add a background image to the client, while others try to emulate the look and feel of other programs, or even other operating systems. They do this by using pure CSS like a webpage as opposed to using preset names that limit the creativity of developers.
 
 ::: tip
 
@@ -26,6 +26,6 @@ The [Discord Reference](../discord/variables.md) section is purely a reference t
 
 The following resources will be handy for learning and reference:
 
-- MDN CSS Basics - https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
+- MDN CSS basics - https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
 - Chrome DevTools - https://developer.chrome.com/docs/devtools/
 - CSS-Tricks - https://css-tricks.com/

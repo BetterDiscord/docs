@@ -11,7 +11,7 @@ These are tools that help with both general web development, and working with th
 
 If you have past web development experience you are probably already familiar with the Chrome/Chromium DevTools. If not, it might be a good idea to give [its documentation](https://developer.chrome.com/docs/devtools/) a once-over.
 
-Working in this Discord (and BetterDiscord) environment, we have access to these DevTools. Discord has this disabled by default, but it is possible to reenable this functionality in the BetterDiscord settings. Go to the BetterDiscord Settings page and find the Developer Settings. Then check the option for DevTools.
+Working in this Discord (and BetterDiscord) environment, we have access to these DevTools. Discord has this disabled by default, but it is possible to re-enable this functionality in the BetterDiscord settings. Go to the BetterDiscord Settings page and find the Developer Settings. Then check the option for DevTools.
 
 ![Developer Tools](./img/developer_settings.png)
 
@@ -23,7 +23,7 @@ If you have past web development experience but not a lot of React experience, i
 
 Since this environment is one with Chromium DevTools, we can add extensions meant for those DevTools. Unfortunately, this is not packaged with Discord or BetterDiscord, but BetterDiscord can add the React DevTools for you if you download it and place it in the BetterDiscord folder.
 
-To get this setup, download this [special manifest v2](https://github.com/mondaychen/react/raw/017f120369d80a21c0e122106bd7ca1faa48b8ee/packages/react-devtools-extensions/ReactDevTools.zip) version of the extension. Currently the version in the Chrome extension store only works for manifest v3 which is not compatible with electron.
+To get this setup, download this [special manifest v2](https://github.com/mondaychen/react/raw/017f120369d80a21c0e122106bd7ca1faa48b8ee/packages/react-devtools-extensions/ReactDevTools.zip) version of the extension. Currently, the version in the Chrome extension store only works for manifest v3 which is not compatible with electron.
 
 Open your BetterDiscord folder and make a new folder inside called `extensions`. Within this folder, make another new folder with the React DevTools extension ID `fmkadmapgofadopljbjfkapdkoienihi`. The path should look something like `<BetterDiscord>/extensions/fmkadmapgofadopljbjfkapdkoienihi/`. Extract the contents of the `zip` you downloaded directly to this folder.
 

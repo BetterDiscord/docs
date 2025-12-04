@@ -24,7 +24,7 @@ No clue. They all have their pros and cons, and Snipcart breaks it down really w
 
 ::: tip
 
-This section will be going over how to setup Webpack for use with BetterDiscord. Check the documentation for your own bundler to find configuration options similar to what's shown here.
+This section will be going over how to set up Webpack for use with BetterDiscord. Check the documentation for your own bundler to find configuration options similar to what's shown here.
 
 :::
 
@@ -56,7 +56,7 @@ The basic plugin structure consists of a source folder, `src`, an entry point `s
 
 ### Making The Plugin
 
-To keep things simple, let's take the plugin from the [previous section](./react.md) and try to separate it out and build it with Webpack. If we identify the parts of that plugin, we end up with the meta comment, the react component, and the main plugin class. So that corresponds to three different files shown below.
+To keep things simple, let's take the plugin from the [previous section](./react.md) and try to separate it out and build it with Webpack. If we identify the parts of that plugin, we end up with the meta comment, the React component, and the main plugin class. So that corresponds to three different files shown below.
 
 
 ::: code-group
@@ -107,7 +107,7 @@ Before we even configure Webpack proper, let's just quickly adjust our `package.
 }
 ```
 
-Now with that out of the way, let's take a look at a general commonjs output Webpack configuration.
+Now with that out of the way, let's take a look at a general CommonJS output Webpack configuration.
 
 ```js:line-numbers [webpack.config.js]
 const path = require("path");
@@ -237,7 +237,7 @@ We'll be using those in our new plugin that we will write ourselves. Making a pl
 }
 ```
 
-But you can call `YourPluginName` anything, it's just used to differeniate between taps. Now we have to write some code that can actually copy the file. The way we'll be showing here is platform agnostic but verbose, so feel free to change it up to work only for your own system.
+But you can call `YourPluginName` anything, it's just used to differentiate between taps. Now we have to write some code that can actually copy the file. The way we'll be showing here is platform-agnostic but verbose, so feel free to change it up to work only for your own system.
 
 ```js:line-numbers
 const userConfig = (() => {
@@ -268,7 +268,7 @@ npm install --save-dev raw-loader
 
 #### Configuration
 
-Add a little `rules` section to your Webpack config and also allow `.css` files to be resolved.
+Add a little `rules` section to your Webpack config and allow `.css` files to be resolved.
 
 ```js [webpack.config.js]
 module.exports = {
@@ -375,7 +375,7 @@ export default function MyComponent({disabled = false}) {
 }
 ```
 
-Now if you were to build this and open your settings panel, you would get an error saying `React is not defined`. That's because `babel-loader` using `React.createElement` and not `BdApi.React.createElement`. There's two ways to get around this, the easiest is to just put `const React = BdApi.React;` at the top of your component file. That's fine for a single file, but as your plugin expands it becomes very tedious. You can solve this with one small adjustment to the `.babelrc`.
+Now if you were to build this and open your settings panel, you would get an error saying `React is not defined`. That's because `babel-loader` using `React.createElement` and not `BdApi.React.createElement`. There are two ways to get around this, the easiest is to just put `const React = BdApi.React;` at the top of your component file. That's fine for a single file, but as your plugin expands it becomes very tedious. You can solve this with one small adjustment to the `.babelrc`.
 
 ```json:line-numbers [.babelrc]
 {
