@@ -11,7 +11,7 @@ This guide involves [function patching](./patching.md). If you have not read tha
 
 ### What does it mean?
 
-When we say React Injection, we're referring to adding/removing/alterting components in the React render tree used by Discord. In the [React](../tutorials/react.md) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
+When we say React Injection, we're referring to adding/removing/altering components in the React render tree used by Discord. In the [React](../tutorials/react.md) section of the guide, we went over rendering our own components using `ReactDOM` which created our own React trees rendering outside of Discord's tree. With injection, we can either be part of Discord's tree with our own elements, or we can modify Discord's tree before a render finishes.
 
 ### Why would I need it?
 
@@ -27,7 +27,7 @@ It's important that you make your changes in an error-safe way whenever possible
 
 :::
 
-Well if you've got a hang of function patching, then you're already halfway there. You'll need to find your React component in an exposed module and override the render function with an `after` patch. From there you'll have to walk the rendered react nodes to find where you want to make your changes. There are traversal utilities in `BdApi` that can help with this, you'll see more about those in the walkthrough. Then you'll have to make your changes
+Well if you've got a hang of function patching, then you're already halfway there. You'll need to find your React component in an exposed module and override the render function with an `after` patch. From there you'll have to walk the rendered React nodes to find where you want to make your changes. There are traversal utilities in `BdApi` that can help with this, you'll see more about those in the walkthrough. Then you'll have to make your changes
 
 ## Walkthrough
 
@@ -51,7 +51,7 @@ We want to add a new button here, so let's select it in React DevTools component
 
 ![react_parent](./img/react_parent.png)
 
-But take a look at the `props` on the right hand side. This seems to be just a simple container that is reusable and not specific to this component. It's not a good target for patching because it would have effects elsewhere as well. The first one that looks like it has potential is shown below.
+But take a look at the `props` on the right-hand side. This seems to be just a simple container that is reusable and not specific to this component. It's not a good target for patching because it would have effects elsewhere as well. The first one that looks like it has potential is shown below.
 
 ![react_candidate](./img/react_candidate.png)
 
@@ -59,19 +59,19 @@ Let's take a look at this component and see if it's exported like we did in the 
 
 ![view_source](./img/view_source.png)
 
-And of course also beautify the code with the button a the bottom left. You'll see a render function much like this.
+And of course also beautify the code with the button at the bottom left. You'll see a render function much like this.
 
 ![react_render](./img/react_render.png)
 
-As we did in the last chapter, let's scroll up and check for this `i` to be exported. As we scroll up it appears that `i` is wrapped inside of this module and when we get to the top we can see only an object called `z` is exported.
+As we did in the last chapter, let's scroll up and check for this `i` to be exported. As we scroll up it appears that `i` is wrapped inside this module and when we get to the top we can see only an object called `z` is exported.
 
 ![react_exports](./img/react_exports.png)
 
-Scroll back and you can find this `z` that uses `i` internally and does not expose it in any other way. Let's go back to the Components panel and keep going up this subtree until we find another candidate. We find one at the top of our subtree.
+Scroll back, and you can find this `z` that uses `i` internally and does not expose it in any other way. Let's go back to the Components panel and keep going up this subtree until we find another candidate. We find one at the top of our subtree.
 
 ![react_ancestor](./img/react_ancestor.png)
 
-Let's take a look at the source once more. The code looks oddly familiar and it's already formatted. It's actually the same module we were looking at before! Except this time we are using the `z` component, so since we know this one is exported, we have found our target.
+Let's take a look at the source once more. The code looks oddly familiar, and it's already formatted. It's actually the same module we were looking at before! Except this time we are using the `z` component, so since we know this one is exported, we have found our target.
 
 ### Getting The Target
 
@@ -102,7 +102,7 @@ BdApi.Patcher.after("debug", PrivateChannels, "Z", (_, __, returnValue) => {
 });
 ```
 
-With this simple patch, we will log out the return value on ever render call but let the original return value still work. With that in place, try switching to a guild and then back to your DM list. You should see a new log in your console.
+With this simple patch, we will log out the return value on every render call but let the original return value still work. With that in place, try switching to a guild and then back to your DM list. You should see a new log in your console.
 
 ::: details Right-Click
 ![return_value](./img/return_value.png)
@@ -139,7 +139,7 @@ This patch should just add a simple button saying `Hello World` to this list of 
 
 ![our_button](./img/our_button.png)
 
-And there we have it! A react button of our own creation rendered inside of Discord's React tree inside of Discord's UI. There are more complicated situations, but this should be a good jump start to help you get on your way. If you're interested in more, there's some additional information below.
+And there we have it! A React button of our own creation rendered inside of Discord's React tree inside of Discord's UI. There are more complicated situations, but this should be a good jump start to help you get on your way. If you're interested in more, there's some additional information below.
 
 ## Tips & Tricks
 
@@ -160,7 +160,7 @@ You can also make use of error boundaries to prevent the error from crashing the
 
 ### Multi-Patching
 
-One thing to keep in mind when making your patches is that you may not be the only plugin attempting to patch a certain component. There are a couple quick steps to massively improve your compatibility with one another.
+One thing to keep in mind when making your patches is that you may not be the only plugin attempting to patch a certain component. There are a couple of quick steps to massively improve your compatibility with one another.
 
 Let's say we want to add a child component where one doesn't exist. Simple as setting the `children` property to your component right? Well that works great but what about if another plugin wanted to do the same? It would have been better if you started with an array `[]` so future patches can just add to the array.
 
@@ -185,16 +185,16 @@ Before we move on, notice that we added an `Array.isArray()` check to the filter
 
 Now we can actually rewrite our patch from earlier.
 
-```js
+```js{8}
 const myFilter = prop => Array.isArray(prop) && prop.some(element => element.key === "friends");
 const PrivateChannels = BdApi.Webpack.getByStrings("getPrivateChannelIds", {defaultExport: false});
 
 BdApi.Patcher.after("debug", PrivateChannels, "Z", (_, __, returnValue) => {
     const myElement = BdApi.React.createElement("button", null, "Hello World!");
     const buttons = BdApi.Utils.findInTree(returnValue, myFilter, {walkable: ["props", "children"]});
-    // highlight-next-line
+
     buttons?.push(myElement);
 });
 ```
 
-It's an easy change but it makes the code so much more robust. And take a look at the highlighted line. We're making use of the optional chaining operator `?.` which will protect us in cases where `findInTree` is unable to find our target due to Discord changes. Now you can take this technique and make even the most complex patches much more resilient to updates.
+It's an easy change, but it makes the code so much more robust. And take a look at the highlighted line. We're making use of the optional chaining operator `?.` which will protect us in cases where `findInTree` is unable to find our target due to Discord changes. Now you can take this technique and make even the most complex patches much more resilient to updates.

@@ -60,9 +60,9 @@ Settings that affect all editors used inside BetterDiscord.
 
 ### Line Numbers
 
-This option simply determines whether or not line numbers should be shown.
+This option simply determines whether line numbers should be shown.
 
-### Minimap
+### minimap
 
 This option determines if the minimap that represents the code on the right-hand side should be hidden or shown.
 
@@ -90,7 +90,7 @@ Settings related to the main window of Discord.
 
 ### Enable Transparency
 
-This option enables Electron's transparency mode. By itself, this option doesn't do much, but if you have a theme that changes the opacity of the root element, you can actually see through the Discord client to your desktop. On Windows, having this enabled breaks aero snapping and other common window features. This is a limitation of Electron itself and not something BetterDiscord can fix.
+This option enables Electron's transparency mode. By itself, this option doesn't do much, but if you have a theme that changes the opacity of the root element, you can actually see through the Discord client to your desktop. On Windows, having this enabled breaks Aero snapping and other common window features. This is a limitation of Electron itself and not something BetterDiscord can fix.
 
 ### Remove Minimum Size
 

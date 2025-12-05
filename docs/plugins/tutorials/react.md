@@ -65,7 +65,7 @@ If you think that repeating `BdApi.React` over and over is a bit tedious, many d
 
 ## React in BetterDiscord
 
-Some of the [UI related functions](/api/classes/UI.md) of BetterDiscord accept React Components as options to be rendered. Some accept React Nodes/Elements which is just having already called `createElement`. One good example is the confirmation modal. It's already a very helpful utility, but adding in your own custom React component allows for some very powerful UI and UX for end users. Just as a quick example, take a look at how we can combine the our `MyComponent` from before with the confirmation modal.
+Some of the [UI related functions](/api/classes/UI.md) of BetterDiscord accept React Components as options to be rendered. Some accept React Nodes/Elements which is just having already called `createElement`. One good example is the confirmation modal. It's already a very helpful utility, but adding in your own custom React component allows for some very powerful UI and UX for end users. Just as a quick example, take a look at how we can combine our `MyComponent` from before with the confirmation modal.
 
 ```js
 BdApi.UI.showConfirmationModal("My Component Demo", BdApi.React.createElement(MyComponent));
@@ -75,7 +75,7 @@ And here's how it looks.
 
 ![Plugin Modal](./img/plugin_modal.png)
 
-How you use it is entirely up to you! You can put anything in these modals from something as simple as text information, to full blown settings panels.
+How you use it is entirely up to you! You can put anything in these modals from something as simple as text information, to full-blown settings panels.
 
 Speaking of settings panels, you might recall from [Plugin Structure](../introduction/structure.md) that plugins can have a `getSettingsPanel()` that return a React component. Look at this sample plugin below for a short example.
 
@@ -137,6 +137,6 @@ BdApi.ReactDOM.unmountComponentAtNode(element);
 
 And your button will be gone!
 
-One thing to keep in mind, because Discord is contantly changing elements around, if your element gets removed from the `document`, you should unmount your component. Otherwise, you'll end up with a memory leak. You'll also still be trying to use UI that isn't even visible to the user. You can combine the `unmountComponentAtNode` function with the `MutationObserver` from [Using the DOM](./dom.md) to automatically unmount whenever your element is removed from the `document`.
+One thing to keep in mind, because Discord is constantly changing elements around, if your element gets removed from the `document`, you should unmount your component. Otherwise, you'll end up with a memory leak. You'll also still be trying to use UI that isn't even visible to the user. You can combine the `unmountComponentAtNode` function with the `MutationObserver` from [Using the DOM](./dom.md) to automatically unmount whenever your element is removed from the `document`.
 
-Lastly, while this does render React inside of the Discord client, it doesn't actually render as part of Discord's React tree. This might seem inconsequential, but it can be the difference between things working and not. If you're re-using internal Discord components, especially components involving popouts and tooltips, they won't work outside of Discord's tree. If you're interested in rendering inside of Discord's React tree, you'll learn more in the [React Injection](../concepts/react.md) later on.
+Lastly, while this does render React inside the Discord client, it doesn't actually render as part of Discord's React tree. This might seem inconsequential, but it can be the difference between things working and not. If you're re-using internal Discord components, especially components involving popouts and tooltips, they won't work outside of Discord's tree. If you're interested in rendering inside of Discord's React tree, you'll learn more in the [React Injection](../concepts/react.md) later on.

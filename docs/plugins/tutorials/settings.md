@@ -7,7 +7,7 @@ description: How to have settings in your plugin.
 
 In BetterDiscord, plugins settings are very open-ended and flexible; there is no one correct way to do them. In this section we're going to look at one way to manage your settings. This includes using BetterDiscord to save and load the settings data, and making use of the `getSettingsPanel` function described in [plugin structure](../introduction/structure).
 
-Using `getSettingsPanel` is the recommended way to show a settings panel to the user because it creates a consistent flow for the user. If every plugin added a button in the Discord UI for their own settings button, it could end up chaotic. Instead using `getSettingsPanel` allows your plugin to have a settings button on the plugins page in the BetterDiscord settings. Most users will expect a plugin to implement this if they have settings of any kind.
+Using `getSettingsPanel` is the recommended way to show a settings panel to the user because it creates a consistent flow for the user. If every plugin added a button in the Discord UI for their own settings button, it could end up chaotic. Instead, using `getSettingsPanel` allows your plugin to have a settings button on the plugins page in the BetterDiscord settings. Most users will expect a plugin to implement this if they have settings of any kind.
 
 ## Managing Settings
 
@@ -54,7 +54,7 @@ Where you store this object in your plugin is up to the individual developer. It
 
 ### Saving Settings
 
-BetterDiscord gives you an easy way to save your settings in a JSON file using `BdApi.Data.save`. This function takes your plugin's name, the key you want to save and the corresponding data to save. This means you can save your entire settings object from above under a single key, or save each key invidually. See the examples below to help understand the difference.
+BetterDiscord gives you an easy way to save your settings in a JSON file using `BdApi.Data.save`. This function takes your plugin's name, the key you want to save and the corresponding data to save. This means you can save your entire settings object from above under a single key, or save each key individually. See the examples below to help understand the difference.
 
 Saving the whole settings object under a single key:
 
@@ -133,7 +133,7 @@ for (const key of keys) {
 :::
 
 
-The first options--saving the entire object under a single key--may seem redundant at first, but it allows the saving to be done in a single operation. Having it under a `settings` key means you can save other plugin relevant data under different keys without worrying about key collision. It also means that when you load the settings, you can load it in a single operation without having to know the keys beforehand.
+The first options&mdash;saving the entire object under a single key&mdash;may seem redundant at first, but it allows the saving to be done in a single operation. Having it under a `settings` key means you can save other plugin relevant data under different keys without worrying about key collision. It also means that when you load the settings, you can load it in a single operation without having to know the keys beforehand.
 
 
 ### Loading Settings
@@ -246,7 +246,7 @@ myButton.style.color = mySettings.accentColor; // "blue"
 ```
 :::
 
-In this case, the button ends up blue instead of red. While not entirely desireable, it does not cause unexpected issues. This same concept can be applied to adding new settings that did not exist.
+In this case, the button ends up blue instead of red. While not entirely desirable, it does not cause unexpected issues. This same concept can be applied to adding new settings that did not exist.
 
 The key here is the call to `Object.assign()`. This function extends objects using other objects, essentially combining and overriding the keys. [MDN has a great explanation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign) of the details of how this works. In this case, the order is important. You want the loaded data to override any existing value in the default object, so the loaded data comes last in the list. You'll notice that the target object is an empty object `{}`. If you use the default settings object instead, that __object will be modified__ so when you go to use it again in the future the values may be overridden. Using `{}` means a new object will be created and returned. An equivalent and more verbose version is shown below:
 
@@ -274,7 +274,7 @@ For both of these examples below let's assume we have this simple settings schem
 
 ### Panel Builder
 
-BetterDiscord now provides it's own JSON-like panel builder API. It's an incredibly convenient but still powerful API. You can see more detailed information in the [UI Components](../ui/settings/overview.md) section of the documentation. Here, we'll be going over how to apply this API to this specific plugin we've been building.
+BetterDiscord now provides its own JSON-like panel builder API. It's an incredibly convenient but still powerful API. You can see more detailed information in the [UI Components](../ui/settings/overview.md) section of the documentation. Here, we'll be going over how to apply this API to this specific plugin we've been building.
 
 #### Create The Data
 
@@ -427,17 +427,17 @@ module.exports = meta => {
 };
 ```
 
-Be sure to take note of the change in our `onChange` function where we call `updateButtonText` and `updateButtonTheme` to make the plugin truly reactive to the settings. But importantly we're doing all of it including saving the settings from a single simple listener. This API scales well and the settings can be generated programmatically fairly easily so you don't need to manually create the JSON data. To dive deeper check the settings section of the [UI components](../ui/settings/overview.md) documentation.
+Be sure to take note of the change in our `onChange` function where we call `updateButtonText` and `updateButtonTheme` to make the plugin truly reactive to the settings. But importantly we're doing all of it including saving the settings from a single simple listener. This API scales well, and the settings can be generated programmatically fairly easily so you don't need to manually create the JSON data. To dive deeper check the settings section of the [UI components](../ui/settings/overview.md) documentation.
 
 ### Classic HTML
 
-Since we're using `getSettingsPanel()` we need to create an html element that not only represents our settings, but allows the user to change them. The best way to do this is to turn each setting into an input and display it to the user.```
+Since we're using `getSettingsPanel()` we need to create an HTML element that not only represents our settings, but allows the user to change them. The best way to do this is to turn each setting into an input and display it to the user.```
 
 The first setting, `buttonText` is a string, which is best represented by a text input `input[type=text]`. The second, `darkMode` is a boolean, best represented by a checkbox `input[type=checkbox]`.
 
 #### Create The HTML
 
-So if we were doing this with just html, it might look something like this:
+So if we were doing this with just HTML, it might look something like this:
 
 ```html:line-numbers
 <div id="my-settings">
@@ -482,7 +482,7 @@ darkModeSetting.append(darkModeLabel, darkModeInput);
 mySettingsPanel.append(buttonTextSetting, darkModeSetting);
 ```
 
-It's a bit long winded, but that's how it would look using vanilla js with no helper functions. Nonetheless we have a `mySettingsPanel` which represents the html we created. Let's put this into a plugin and see how it looks. Don't forget to `return` your `mySettingsPanel`!
+It's a bit long-winded, but that's how it would look using vanilla JS with no helper functions. Nonetheless, we have a `mySettingsPanel` which represents the HTML we created. Let's put this into a plugin and see how it looks. Don't forget to `return` your `mySettingsPanel`!
 
 ```js:line-numbers [TutorialPlugin.plugin.js]
 /**
@@ -548,7 +548,7 @@ Enable your plugin in settings, and click the plugin settings button. You should
 
 It's not very pretty right now, but that's okay because we're focusing on functionality for the purpose of this tutorial.
 
-Speaking of functionality however, this panel doesn't do much. It does not show the current value and it does not respond to updates by the user. Let's fix that.
+Speaking of functionality however, this panel doesn't do much. It does not show the current value, and it does not respond to updates by the user. Let's fix that.
 
 ```js:line-numbers
 // Input element from above
@@ -603,7 +603,7 @@ As we can see here, this will now allow the saved value of the settings to be sh
 
 If we put all the pieces together and combine it with the button we made in the [DOM](./dom) section, we might end up with a plugin like this:
 
-```js:line-numbers [TutorialPlugin.plugin.js]
+```js:line-numbers{31-44} [TutorialPlugin.plugin.js]
 /**
  * @name TutorialPlugin
  * @author YourName
@@ -634,7 +634,6 @@ If we put all the pieces together and combine it with the button we made in the 
     const myButton = document.createElement("button");
     myButton.addEventListener("click", () => {window.alert("Hello World!");});
 
-    // highlight-start
     function updateButtonText() {
         myButton.textContent = mySettings.buttonText;
     }
@@ -649,7 +648,6 @@ If we put all the pieces together and combine it with the button we made in the 
             myButton.style.backgroundColor = "white";
         }
     }
-    // highlight-end
 
   return {
     start: () => {

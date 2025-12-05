@@ -7,7 +7,7 @@ description: A guide to the basics.
 
 ## The Idea
 
-The first thing to do when making a plugin, is to know what exactly you're trying to make. This helps limit the scope of what you're looking through in Discord's DOM tree or internal code, and also helps you structure your plugins. For example, a fully-fledged plugin that handles end-to-end encryption may need a bit more scaffolding than a plugin that just adds a button or some text to the screen.
+The first thing to do when making a plugin, is to know what exactly you're trying to make. This helps limit the scope of what you're looking through in Discord's DOM tree or internal code, and helps you structure your plugins. For example, a fully-fledged plugin that handles end-to-end encryption may need a bit more scaffolding than a plugin that just adds a button or some text to the screen.
 
 Knowing what you want the plugin to do also allows you to reach out to our community of developers and ask for help. It's much easier to help someone with a specific task or end-goal rather than someone that "just wants to make a plugin".
 
@@ -84,14 +84,14 @@ module.exports = meta => {
 ```
 :::
 
-It's worth noting when deciding that each plugin is loaded similarly to a node module. This means that defining variables outside of the `module.exports` will not result in scope creep or variable bloat.
+It's worth noting when deciding that each plugin is loaded similarly to a node module. This means that defining variables outside the `module.exports` will not result in scope creep or variable bloat.
 
 Once you've got that decided, go ahead and save your template in your [plugins folder](../introduction/quick-start#plugin-folder) as `ExamplePlugin.plugin.js` and change `ExamplePlugin` to the name of your choice.
 
 
 ## Things to Keep in Mind
 
-There's a lot to keep in mind as you develop your plugin. One of the most important being how to cleanup when the plugin is disabled. This may seem straightforward, but if you don't have it in mind as you develop, it may slip through the cracks. Say you add some text to the DOM and no longer have a reference to it. When it's time to disable and cleanup, you have to search through the DOM again just to find this node. Instead, if you had remembered that this will need to be cleaned up, you could have kept a reference in order to easily remove it later.
+There's a lot to keep in mind as you develop your plugin. One of the most important being how to clean up when the plugin is disabled. This may seem straightforward, but if you don't have it in mind as you develop, it may slip through the cracks. Say you add some text to the DOM and no longer have a reference to it. When it's time to disable and clean up, you have to search through the DOM again just to find this node. Instead, if you had remembered that this will need to be cleaned up, you could have kept a reference in order to easily remove it later.
 
 If you're looking to submit this plugin, or share it with others, it's worth keeping in mind what parts of the plugin are opinionated. For example, the way something is formatted or styled may look good to some and not to others.
 
@@ -99,4 +99,4 @@ If you have these things in mind while you develop, you can add unique classes t
 
 ## What's Next?
 
-If you feel comfortable with everything so far, you're probably safe to move on to making your plugin by first [interacting with the dom](./dom). Otherwise, take the time and experiment with the plugin templates and see what feels right, maybe even brush up on your JavaScript skills.
+If you feel comfortable with everything so far, you're probably safe to move on to making your plugin by first [interacting with the DOM](./dom). Otherwise, take the time and experiment with the plugin templates and see what feels right, maybe even brush up on your JavaScript skills.

@@ -12,7 +12,7 @@ If you just want a quick example of the basics, check out the [example](#example
 
 This may seem obvious, but you can't make a theme without some sort of design in mind. There are many different methods for this, and different levels as well. Some people go into it with a vague mental image of how they want to make the client look. Some people mock up their own designs in Photoshop or other similar software. There's also people that use something else as a reference like how the theme [Slate](https://betterdiscord.app/theme/Slate) is based on the [GitHub Desktop](https://desktop.github.com/) application.
 
-We would definitely recommend the latter two options when it comes to designing a themes. It helps keep your theme consistent, and prevents forgetting what you wanted to do.
+We would definitely recommend the latter two options when it comes to designing a theme. It helps keep your theme consistent, and prevents forgetting what you wanted to do.
 
 ### Layout & Usability
 
@@ -20,7 +20,7 @@ When you're designing your theme, keep in mind that you have essentially full co
 
 ### Color Scheme
 
-Every good theme needs a good color scheme, and there are plenty of tools online that help you generate entire color palettes such as [Coolers](https://coolors.co/) (no that's not a typo 😁) which can automatically generate entire palettes or work with existing ones to generate complementary or shaded schemes. Definitely play around with these tools to come up with your own color scheme and do your best to stick with it as you make your theme. Having a set color scheme before implementing makes the code more seamless from the start, and it also makes it smoother because you don't have to stumble over different parts of the design to make a decision.
+Every good theme needs a good color scheme. There are plenty of tools online that help you generate entire color palettes such as [Coolers](https://coolors.co/) (no that's not a typo 😁) which can automatically generate entire palettes or work with existing ones to generate complementary or shaded schemes. Definitely play around with these tools to come up with your own color scheme and do your best to stick with it as you make your theme. Having a set color scheme before implementing makes the code more seamless from the start, and it also makes it smoother because you don't have to stumble over different parts of the design to make a decision.
 
 ### Icons
 

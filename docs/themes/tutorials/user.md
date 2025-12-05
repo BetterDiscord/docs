@@ -10,13 +10,13 @@ Letting users configure your theme to their personal preference is one of the mo
 
 ### Why do I need them?
 
-If you weren't already aware, CSS variables (sometimes known as custom properties), are a way to reuse the same values over and over while making them easily changeable later. MDN, of course, has [a great article](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) on this. The best way to use these is to find values that you reuse over and over in your theme and turn them into a custom property you can change later. One of the most common use-cases in a theme is for the theme's main accent color. They're also frequently used for background colors and sizing of different elements. Every theme is a bit different in that regard, but they all follow the same general rule of thumb: If it's something you're doing repeatedly and consistently, making it a variable makes it easy to change later for both the end-users as well as for you.
+If you weren't already aware, CSS variables (sometimes known as custom properties), are a way to reuse the same values over and over while making them easily changeable later. MDN, of course, has [a great article](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties) on this. The best way to use these is to find values that you reuse over and over in your theme and turn them into a custom property you can change later. One of the most common use-cases in a theme is for the theme's main accent color. They're also frequently used for background colors and sizing of different elements. Every theme is a bit different in that regard, but they all follow the same general rule of thumb: If it's something you're doing repeatedly and consistently, making it a variable makes it easy to change later for both the end-users and for you.
 
 For example, BetterDiscord already offers a variable that you can use in your themes. It's called `--os-accent-color`. This variable represents the accent color of the user's operating system. This is useful for making your theme feel more native to the user's system.
 
 ### How can I use them?
 
-Using CSS variables in BetterDiscord is exactly like in regular CSS. Simply declare it somewhere high in the document tree and reuse it in your theme. At a glace it might look something like this:
+Using CSS variables in BetterDiscord is exactly like in regular CSS. Simply declare it somewhere high in the document tree and reuse it in your theme. At a glance it might look something like this:
 
 ```css [YourTheme.theme.css]
 :root {
@@ -28,7 +28,7 @@ h1 {
 }
 ```
 
-In this case shown above, we've made a new variable `--my-variable` with the value of `red` on the `:root` selector. You'll find that 99% of themes use `:root` to set their variables since it's the highest in the DOM tree. In the next selector, we use the variable in the `color` property for `h1`. So all top level headings will not just be `red` but they will be `--my-variable`!
+In this case shown above, we've made a new variable `--my-variable` with the value of `red` on the `:root` selector. You'll find that 99% of themes use `:root` to set their variables since it's the highest in the DOM tree. In the next selector, we use the variable in the `color` property for `h1`. So all top level headings will not just be `red`, but they will be `--my-variable`!
 
 This can also be done to set a single part of a property such as just the color of a border or box-shadow.
 
@@ -107,7 +107,7 @@ h1 {
 }
 ```
 
-Since `red` is not a valid border size, the whole `border` property value is considered invalid. This can lead to misstyled or broken looking elements. An easy way around this is to double define your style.
+Since `red` is not a valid border size, the whole `border` property value is considered invalid. This can lead to incorrectly styled, or broken looking elements. An easy way around this is to double define your style.
 
 ```css
 :root {
@@ -136,7 +136,7 @@ This is a good option for more complex themes that have many variables with many
 |`--accent-color`|Accent color used throughout the theme|`blue`|Any color type|
 |`--flex`|How flex items should be aligned|`flex-start`|`flex-start`, `center`, `flex-end`|
 
-Of course you can always add or remove information as you feel fits your theme and customization level.
+Of course, you can always add or remove information as you feel fits your theme and customization level.
 
 ### Theme File
 

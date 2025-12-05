@@ -41,13 +41,13 @@ One thing to note from this code is the root container `document.getElementById(
 
 And while that works, it's not very practical or useful. And the location of the button is terrible. So what if we wanted to add it to the end of the guild/server list? Let's give it a try!
 
-First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [devtools](../introduction/devtools.md) and select the guild list on the left.
+First, we need to find the DOM subtree for the guild list, the easiest way to do that is to use inspect element from [DevTools](../introduction/devtools.md) and select the guild list on the left.
 
 ![Server List](./img/servers.png)
 
-If yours looks like the one above, you've got the right element. Now we need to come up with a selector for the element. You can try to use the built in method by right clicking the element, then going to `Copy > Copy Selector`. But that usually yields unwieldly selectors like `#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > nav > ul > div.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt > div:nth-child(3)` in this case.
+If yours looks like the one above, you've got the right element. Now we need to come up with a selector for the element. You can try to use the built-in method by right-clicking the element, then going to `Copy > Copy Selector`. But that usually yields unwieldy selectors like `#app-mount > div.appDevToolsWrapper-1QxdQf > div > div.app-3xd6d0 > div > div.layers-OrUESM.layers-1YQhyW > div > div.container-1eFtFS > nav > ul > div.scroller-3X7KbA.none-2-_0dP.scrollerBase-_bVAAt > div:nth-child(3)` in this case.
 
-So lets do it manually. Since this element has no `id` or `class` but it does have an `aria-label` attribute, it seems obvious to use an attribute selector like `[aria-label="Servers"]`. This does have a big problem however. This value changes based on the language the user has Discord set to. So while this may work for you in English, it won't work for many many others. If you're unfamiliar with `aria-label` or accessible web browsing in general, once again [MDN has great documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) on this topic.
+So let's do it manually. Since this element has no `id` or `class`, but it does have an `aria-label` attribute, it seems obvious to use an attribute selector like `[aria-label="Servers"]`. This does have a big problem, however. This value changes based on the language the user has Discord set to. So while this may work for you in English, it won't work for many others. If you're unfamiliar with `aria-label` or accessible web browsing in general, once again [MDN has great documentation](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label) on this topic.
 
 Since that didn't work out, let's take another look. We can see there are a couple unique classes in the ancestor hierarchy like `tree-3agP2X` and `guilds-2JjMmN`. We can combine these with the fact the `aria-label` only exists on the element we are targeting to create a selector like `.tree-3agP2X > div > div[aria-label]`. Since this doesn't depend on the *value* of the `aria-label` attribute, it will still work regardless of language. Note: there are other selectors that work as well, this is just an example.
 
@@ -123,7 +123,7 @@ BdApi.DOM.onRemoved(myButton, () => {
 
 This is much cleaner and more descriptive of the action being taken. This is just one of the many helper functions that exist in `BdApi`. You'll learn more as you go through the docs. In fact, there are two more functions `addStyle` and `removeStyle` that can be helpful for our button example.
 
-These are pretty simple and straightforward. Say we added a class `my-button` to our button from before. We could then style it with css externally using this snippet:
+These are pretty simple and straightforward. Say we added a class `my-button` to our button from before. We could then style it with CSS externally using this snippet:
 ```css
 .my-button {
     padding: 4px;
@@ -133,7 +133,7 @@ These are pretty simple and straightforward. Say we added a class `my-button` to
 }
 ```
 
-which is great and works, but we need to have it in our plugin. You can either create and add your own stylesheet to the document using the techniques at the beginning of this page, or you just use `BdApi.DOM.addStyle`. Given an ID and your css, it'll take care of the rest.
+Which is great and works, but we need to have it in our plugin. You can either create and add your own stylesheet to the document using the techniques at the beginning of this page, or you just use `BdApi.DOM.addStyle`. Given an ID and your CSS, it'll take care of the rest.
 
 ```js
 BdApi.DOM.addStyle("myPluginName", `.my-button {
@@ -144,7 +144,7 @@ BdApi.DOM.addStyle("myPluginName", `.my-button {
 }`);
 ```
 
-which can later be removed using the same ID from before
+Which can later be removed using the same ID from before, like this:
 
 ```js
 BdApi.DOM.removeStyle("myPluginName");

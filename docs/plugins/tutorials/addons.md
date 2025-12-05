@@ -5,15 +5,15 @@ description: Work with other addons.
 
 # Addon Interaction
 
-Within BetterDiscord you can interact with different addons in two main ways. Either through direct interaction--like where one plugin puts something in the global scope, and another plugin uses it--or through the `BdApi`. That second one is what we'll be taking a look at today.
+Within BetterDiscord you can interact with different addons in two main ways. Either through direct interaction&mdash;like where one plugin puts something in the global scope, and another plugin uses it&mdash;or through the `BdApi`. That second one is what we'll be taking a look at today.
 
 ## AddonAPI
 
-The addon api is available as part of `BdApi`. Theres two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This api has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [api reference](/api/).
+The addon API is available as part of `BdApi`. There are two instances, one for plugins and one for themes at `BdApi.Plugins` and `BdApi.Themes` respectively. This API has a few helpful utilities for interacting with other plugins, and even has the current addon folder as a property. For a more exhaustive list of available methods and properties, take a look at the [API reference](/api/).
 
 ## Getting Addons
 
-You can get a specific addon if you know the addon ID using `get(id)`. For example to get the instance of ZeresPluginLibrary you can do
+You can get a specific addon if you know the addon ID using `get(id)`. For example, to get the instance of ZeresPluginLibrary you can do
 
 ```js
 BdApi.Plugins.get("ZeresPluginLibrary");
@@ -27,13 +27,13 @@ Modifying the values of this addon instance is unsupported. The `instance` prope
 
 :::
 
-Alternatively you can get _all_ the available addons in a giant array.
+Alternatively, you can get _all_ the available addons in a giant array.
 
 ```js
 BdApi.Plugins.getAll();
 ```
 
-This is useful if you need to interact with many addons, or if your checking for existence of others.
+This is useful if you need to interact with many addons, or if you're checking for existence of others.
 
 ## Toggling Addons
 
@@ -43,7 +43,7 @@ If you have the ID of the addon you'd like to toggle, this is pretty straightfor
 BdApi.Themes.toggle("Nox");
 ```
 
-Of course you can have more granular control and specifically enable or disable when you need to. You can even combine all three.
+Of course, you can have more granular control and specifically enable or disable when you need to. You can even combine all three.
 
 ```js
 BdApi.Themes.enable("Nox");  // Nox is now enabled
@@ -74,13 +74,13 @@ Keep in mind there are many functions in plugins that <u>do not</u> require them
 
 From there, you can even directly call functions from your plugin. One common use-case for this is when you want to add an optional feature to your plugin that makes use of another plugin.
 
-```js:line-numbers
+```js:line-numbers{7}
 class MyPlugin {
     start() {
         let myGreeting = "Hello User!";
         if (BdApi.Plugins.isEnabled("Zalgo")) {
             const zalgoPlugin = BdApi.Plugins.get("Zalgo").instance;
-            // highlight-next-line
+
             if (zalgoPlugin?.format) {
                 myGreeting = zalgoPlugin.format(myGreeting);
             }

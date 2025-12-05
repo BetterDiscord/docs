@@ -4,7 +4,7 @@ order: 0
 
 # Overview
 
-Plugins are a type of addon that focus on functionality by adding something new to the Discord client. This could be as simple as a button that says hello, or basic end-to-end ecryption. Plugins can also modify existing functionality in the client like altering exisiting buttons to perform different actions, or even remove functionality entirely. All of this is done using JavaScript with minimal requirements to allow for personal preference and style in programming.
+Plugins are a type of addon that focus on functionality by adding something new to the Discord client. This could be as simple as a button that says hello, or basic end-to-end encryption. Plugins can also modify existing functionality in the client like altering existing buttons to perform different actions, or even remove functionality entirely. All of this is done using JavaScript with minimal requirements to allow for personal preference and style in programming.
 
 ::: tip
 
@@ -28,7 +28,7 @@ Lastly the [Discord Internals](/discord/index.md) section is a reference that go
 
 The following resources will be handy for learning and reference:
 
-- Modern Javascript: The Modern JavaScript Tutorial - https://javascript.info/
+- Modern JavaScript: The Modern JavaScript Tutorial - https://javascript.info/
 - Chrome DevTools - https://developer.chrome.com/docs/devtools/
 - ReactJS: Official Tutorial - https://reactjs.org/tutorial/tutorial.html
 - React DevTools - https://react-devtools-tutorial.vercel.app/

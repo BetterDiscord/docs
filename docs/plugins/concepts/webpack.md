@@ -24,11 +24,11 @@ Plugins are able to access all of these types of modules through BetterDiscord's
 
 ## Finding Modules
 
-How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../introduction/devtools.md), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [api reference](/api/classes/Webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
+How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../introduction/devtools.md), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [API reference](/api/classes/Webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
 
 ## Filters
 
-The API for searching through modules uses the concept of "filters". At it's core, a filter is just a function that gets a reference to a module and returns `true` if it's the one you want, and `false` otherwise. Being able to craft these filters is important, and there are some helper functions from the API to make it easier.
+The API for searching through modules uses the concept of "filters". At its core, a filter is just a function that gets a reference to a module and returns `true` if it's the one you want, and `false` otherwise. Being able to craft these filters is important, and there are some helper functions from the API to make it easier.
 
 | Filter | Description |
 |:-------|:------------|
@@ -51,7 +51,7 @@ Due to the nature of client modding, this section could be outdated by the time 
 
 Now that we know what information we can search on, how do we even find a module we want to get? And once we find it, how do we know whether it's even accessible? Keep in mind that some modules in Discord are completely wrapped and cannot be accessed through this API or through reflection of any kind.
 
-But to answer these questions, let's step through a very simple example. Let's say we want to open settings programmtically. We know that the settings button can do that, so we'll start there. Begin by selecting that element and printing it out in console with `$0`. You'll see in the autocomplete that it has some property that looks like `__reactFiber$2oq7t5kq3k5`. Go ahead and select that and print it out. This is the data React currently has about this node. Using this is a good way to understand how React works and a great way to start with reverse engineering in Discord. Through this you can walk the React tree and see all the elements React knows about. But we are more interested in the properties of this `button` because we want to essentially duplicate the `onClick` listener.
+But to answer these questions, let's step through a very simple example. Let's say we want to open settings programmatically. We know that the settings button can do that, so we'll start there. Begin by selecting that element and printing it out in console with `$0`. You'll see in the autocomplete that it has some property that looks like `__reactFiber$2oq7t5kq3k5`. Go ahead and select that and print it out. This is the data React currently has about this node. Using this is a good way to understand how React works and a great way to start with reverse engineering in Discord. Through this you can walk the React tree and see all the elements React knows about. But we are more interested in the properties of this `button` because we want to essentially duplicate the `onClick` listener.
 
 Now let's print out the property that looks like `__reactProps$2oq7t5kq3k5` instead. You'll see in this object all the React props specific to this element including an `onClick` function. Let's dive into this either by right-clicking and selecting `Show Function Definition` or by expanding the function and clicking on the function location.
 
@@ -73,11 +73,11 @@ That will bring you to a large minified script that is hard to understand. But a
 ![click_script](./img/click_script.png)
 :::
 
-From what we see in this click listener, it looks like the function `u()` is the one really getting the event and processing it. Let's set a breakpoint inside this listener and click on the button. This will show us all the values at this point in time and we can figure out the value of `u`.
+From what we see in this click listener, it looks like the function `u()` is the one really getting the event and processing it. Let's set a breakpoint inside this listener and click on the button. This will show us all the values at this point in time, and we can figure out the value of `u`.
 
 ![breakpoint_click](./img/breakpoint_click.png)
 
-Take a look at the bottom right of our panel here. `u` seems to be part of the current closure and it corresponds to a function in another script. Once again lets go see the source of that script and beautify it. This leads us to a function called `handleOpenAccountSettings` which calls `handleOpenSettings` which happens to be right there as well. It seems to open settings, this calls `h.Z.open`. The easiest way to find out is once again a breakpoint.
+Take a look at the bottom right of our panel here. `u` seems to be part of the current closure, and it corresponds to a function in another script. Once again lets go see the source of that script and beautify it. This leads us to a function called `handleOpenAccountSettings` which calls `handleOpenSettings` which happens to be right there as well. It seems to open settings, this calls `h.Z.open`. The easiest way to find out is once again a breakpoint.
 
 ![breakpoint_handle](./img/breakpoint_handle.png)
 
@@ -143,7 +143,7 @@ Do you remember this pattern from earlier?
     })
 ```
 
-Did you notice that `Z` wasn't the only option here? `kWm` is also there, and it represents other potential exports by a module. Discord uses [SWC](https://swc.rs/) to transpile their code and it mangles the name of exports into unreadable things like this. This is fine if the export these keys point to is an object. But when the key points directly to a function, we will need the name of the key as well in order to perform [function patching](./patching.md).
+Did you notice that `Z` wasn't the only option here? `kWm` is also there, and it represents other potential exports by a module. Discord uses [SWC](https://swc.rs/) to transpile their code. SWC mangles the names of exports into unreadable things like this. This is fine if the export these keys point to is an object. But when the key points directly to a function, we will need the name of the key as well in order to perform [function patching](./patching.md).
 
 Thankfully, BetterDiscord has an API exactly for this case because it can be so frustrating to do manually. It's called `BdApi.Webpack.getWithKey` and as the name suggests, it gets a module/value along with the corresponding key. Here is a quick example usage:
 
@@ -156,4 +156,4 @@ Here we are looking for the function that opens the context menus in Discord and
 
 ### searchExports
 
-You probably noticed on the example directly above we used `{searchExports: true}`, this is an option available to all the Webpack APIs that causes BetterDiscord to loop over all the exports of every module to see if they match your filter rather than testing the whole module at once. This is used a lot in plugins when searching for objects, classes, and instantiations since patching with the key is not crucial.
+You probably noticed in the example directly above that we used `{searchExports: true}`. This is an option available to all the Webpack APIs. It causes BetterDiscord to loop over all the exports of every module to see if they match your filter rather than testing the whole module at once. This is used a lot in plugins when searching for objects, classes, and instantiations since patching with the key is not crucial.

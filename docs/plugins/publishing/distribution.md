@@ -8,7 +8,7 @@ order: 2
 
 ### GitHub
 
-Your addon file needs to be committed in your GitHub respository in it's final form (e.g. a single `PluginName.plugin.js` or `ThemeName.theme.css`). This file is the only format that BetterDiscord or the website can understand and work with. It does not matter if this is on a separate branch from your main source code or not, just anywhere as part of the repository. But it must be consistent, moving the file later can break the updating later on. You can use GitHub Actions, normal commits, or even upload via the web UI in GitHub to add and update the file.
+Your addon file needs to be committed in your GitHub repository in its final form (e.g. a single `PluginName.plugin.js` or `ThemeName.theme.css`). This file is the only format that BetterDiscord or the website can understand and work with. It does not matter if this is on a separate branch from your main source code or not, just anywhere as part of the repository. But it must be consistent, moving the file later can break the updating later on. You can use GitHub Actions, normal commits, or even upload via the web UI in GitHub to add and update the file.
 
 ### Website
 

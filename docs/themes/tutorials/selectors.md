@@ -6,7 +6,7 @@ order: 3
 
 ## Background
 
-There are many selectors that are helpful when developing your theme. But keep in mind, Discord is not using the bleeding edge versions of Chrome so not all of the very latest CSS selectors are supported. `:has` support was only recently added. The latest Chrome version in use as of writing is Chrome `108`. Here's what isn't supported at a brief glance.
+There are many selectors that are helpful when developing your theme. But keep in mind, Discord is not using the bleeding edge versions of Chrome so not all the very latest CSS selectors are supported. `:has` support was only recently added. The latest Chrome version in use as of writing is Chrome `108`. Here's what isn't supported at a brief glance.
 
 ![CanIUse](./img/caniuse.png)
 
@@ -19,11 +19,11 @@ We touched on this a bit in [The Creative Process](./process.md) section, but we
 
 ### What is specificity?
 
-Specificity determines what styles take precedence in order to style elements. It's like a race condition in traditional programming but in this case, instead of racing against another function over time, you're racing against another style over how specifically you are targeting a given element. The style with the the *most* specific selector wins. Unless there is a tie, in which case the one that __appears later in the document__ wins. This is a specific wording, not to be confused with the idea that the one added latest-in-time to the page wins. But rather, the one appears last in the DOM tree of the `document`.
+Specificity determines what styles take precedence in order to style elements. It's like a race condition in traditional programming but in this case, instead of racing against another function over time, you're racing against another style over how specifically you are targeting a given element. The style with the *most* specific selector wins. Unless there is a tie, in which case the one that __appears later in the document__ wins. This is a specific wording, not to be confused with the idea that the one added latest-in-time to the page wins. But rather, the one appears last in the DOM tree of the `document`.
 
 ### Why do I need to know it?
 
-The reason why we care about specificity so much in BetterDiscord themes is because we are theming an already existing application. In traditional web development, you own all of the CSS and you can control what selectors you are using and you can be careful about colliding selectors. In this environment, you are competing against Discord's styles for each and every element that exists in the page. And you control neither the HTML nor the CSS on the page. So (nearly) every single style you write will need a selector that is overriding another in some way. That is why we care so much about specificity.
+The reason why we care about specificity so much in BetterDiscord themes is because we are theming an already existing application. In traditional web development, you own all the CSS and you can control what selectors you are using, and you can be careful about colliding selectors. In this environment, you are competing against Discord's styles for each and every element that exists in the page. And you control neither the HTML nor the CSS on the page. So (nearly) every single style you write will need a selector that is overriding another in some way. That is why we care so much about specificity.
 
 ### How can I use it?
 
@@ -31,7 +31,7 @@ Understanding the *how* of specificity is a very complex subject that browsers h
 
 ### Examples
 
-Rather than worrying about exact specificty calculations, let's try out a few examples to see if we can understand it a bit more conceptually.
+Rather than worrying about exact specificity calculations, let's try out a few examples to see if we can understand it a bit more conceptually.
 
 #### Setup
 
@@ -79,7 +79,7 @@ Now take a look at a slightly more complicated version. What's the new color of 
 }
 ```
 
-In this case, the answer is `green`. If you said `blue` thinking that the selectors were equal so the last one declared wins, that's good thinking but not quite right. These selectors are actually not quite equal. For the second selector, the attribute selector, you can consider this a "generalized" selector because it's really selecting through an attribute, and it can be any attribute. We just happened to pick `id` in this case. Comparatively, `#myContent` *directly* selects the element by id, so it has a higher specificity weight than an attribute selector even though it's checking `id`. As for the `:where()` selector, this is actually a special case. Using `:where()` allows you to be more selective in what you are targeting but is defined to have a specificity weight of `0`. Hence our text turning `green`.
+In this case, the answer is `green`. If you said `blue` thinking that the selectors were equal so the last one declared wins, that's good thinking but not quite right. These selectors are actually not quite equal. For the second selector, the attribute selector, you can consider this a "generalized" selector because it's really selecting through an attribute, and it can be any attribute. We just happened to pick `id` in this case. Comparatively, `#myContent` *directly* selects the element by id, so it has a higher specificity weight than an attribute selector even though it's checking `id`. As for the `:where()` selector, this is actually a special case. Using `:where()` allows you to be more selective in what you are targeting but is defined to have a specificity weight of `0`. Hence, our text turning `green`.
 
 It is worth noting that `:not()`, `:is()`, and `:has()` all also have a specificity weight of `0` **by themselves**. The selectors used inside the parentheses *do* have an effect on the specificity weight.
 
@@ -107,7 +107,7 @@ There are some selectors, pseudo-selectors, and pseudo-classes that are used way
  - Attribute selectors used frequently for checking the state of inputs
    - They can also be used to be more tolerant of Discord's class changes
    - `:disabled` and `:checked` are also used for inputs
- - `:nth-child()` and `:nth-of-type` are used when a tree is lacking classes but the structure is stable
+ - `:nth-child()` and `:nth-of-type` are used when a tree is lacking classes, but the structure is stable
  - `:root` is used constantly for CSS variables
 
-But remember, you are competing with Discord's styles so these selectors can get pretty crazy. Some styles are even inlined requiring the use of `!important`. Your best bet is to try out some of these selectors on the Discord client itself and experiment with what works and what doesn't. Another good idea is to look at existing themes and see how other developers tackle certain styles.
+But remember, you are competing with Discord's styles, so these selectors can get pretty crazy. Some styles are even inlined requiring the use of `!important`. Your best bet is to try out some of these selectors on the Discord client itself and experiment with what works and what doesn't. Another good idea is to look at existing themes and see how other developers tackle certain styles.

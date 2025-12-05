@@ -1,6 +1,6 @@
 # Keybind
 
-The keybind input works based on the names of keys and can started with a simple set of keys.
+The keybind input works based on the names of keys and can configured with a simple set of keys.
 
 ```ts
 const Keybind = {
