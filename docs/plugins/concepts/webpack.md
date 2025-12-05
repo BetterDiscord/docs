@@ -143,7 +143,7 @@ Do you remember this pattern from earlier?
     })
 ```
 
-Did you notice that `Z` wasn't the only option here? `kWm` is also there, and it represents other potential exports by a module. Discord uses [SWC](https://swc.rs/) to transpile their code, which mangles the names of exports into unreadable things like this. This is fine if the export these keys point to is an object. But when the key points directly to a function, we will need the name of the key as well in order to perform [function patching](./patching.md).
+Did you notice that `Z` wasn't the only option here? `kWm` is also there, and it represents other potential exports by a module. Discord uses [SWC](https://swc.rs/) to transpile their code. SWC mangles the names of exports into unreadable things like this. This is fine if the export these keys point to is an object. But when the key points directly to a function, we will need the name of the key as well in order to perform [function patching](./patching.md).
 
 Thankfully, BetterDiscord has an API exactly for this case because it can be so frustrating to do manually. It's called `BdApi.Webpack.getWithKey` and as the name suggests, it gets a module/value along with the corresponding key. Here is a quick example usage:
 
