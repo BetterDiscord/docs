@@ -56,7 +56,7 @@ If you are on Linux try running with the `--no-sandbox`
 If the installer does not seem to open, follow these steps:
 1. Download and install [7-Zip](https://www.7-zip.org/)
 1. Right-click and extract the BetterDiscord installer into a folder.
-1. Run the .exe found in the folder.
+1. Run the `.exe` found in the folder.
 
 OR
 
@@ -96,7 +96,7 @@ Your installer is out of date, please go to the [BetterDiscord website](https://
 
 ::: details ❌ EACCES: permission denied, mkdir", or any error where at "shims" there is a "mkdir" error
 
-The Discord installation has been corrupted. Try to reinstall Discord. If Discord fails to reinstall, or you still run into this error then your best bet is [cleanly uninstalling Discord](https://discordtips.com/how-to-fully-uninstall-discord/) then installing it again.
+The Discord installation has been corrupted. Try to reinstall Discord. If Discord fails to reinstall, or if you still run into this error, then your best bet is [cleanly uninstalling Discord,](https://discordtips.com/how-to-fully-uninstall-discord/) then installing it again.
 :::
 
 

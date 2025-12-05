@@ -59,7 +59,7 @@ BdApi.UI.alert(
 ![React Console](./img/alert_console.png)
 :::
 
-Important to note for later that `alert` returns a unique modal ID used internally by Discord. We won't be going over its usage here–it's safe to ignore–but may be covered by advanced guides.
+Important to note for later that `alert` returns a unique modal ID used internally by Discord. We won't be going over its usage here&mdash;it's safe to ignore&mdash;but may be covered by advanced guides.
 
 ## Confirmation Modals
 

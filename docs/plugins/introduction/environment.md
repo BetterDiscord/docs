@@ -61,7 +61,7 @@ const fs = require("fs");
 const myData = fs.readFileSync("myfile.txt", "utf8");
 ```
 
-Though this guide won't be giving a tutorial on the Node.js standard library–their official docs do that–you will see example usages throughout.
+Though this guide won't be giving a tutorial on the Node.js standard library&mdash;their official docs do that&mdash;you will see example usages throughout.
 
 ## Plugin API
 

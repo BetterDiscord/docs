@@ -133,7 +133,7 @@ for (const key of keys) {
 :::
 
 
-The first options–saving the entire object under a single key–may seem redundant at first, but it allows the saving to be done in a single operation. Having it under a `settings` key means you can save other plugin relevant data under different keys without worrying about key collision. It also means that when you load the settings, you can load it in a single operation without having to know the keys beforehand.
+The first options&mdash;saving the entire object under a single key&mdash;may seem redundant at first, but it allows the saving to be done in a single operation. Having it under a `settings` key means you can save other plugin relevant data under different keys without worrying about key collision. It also means that when you load the settings, you can load it in a single operation without having to know the keys beforehand.
 
 
 ### Loading Settings

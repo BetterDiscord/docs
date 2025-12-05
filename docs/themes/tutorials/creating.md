@@ -14,7 +14,7 @@ Let's start with the premise that we want to make Discord look more like [Visual
 
 ## Analysis
 
-Since we're using VSCode as our point of reference, it's a good idea to work out how to map one UI to the other. With VSCode, it's not too difficult. There are the controls on the left panel which is narrow, just like the guild list. We can map those together. The `Explorer` pane of VSCode roughly lines up with where the channel list, DM list, and account container are in Discord. The main editor panel can map to the general chat area, while the terminal at the bottom can map to the text area. But what do we do about the member list on the right? There is no default right-hand panel in VSCode. But the color scheme and layout of the member list is roughly the same as the channel list, so we can map that to the `Explorer` pane as well and make the interface somewhat symmetrical.
+Since we're using VSCode as our point of reference, it's a good idea to work out how to map one UI to the other. With VSCode, it's not too difficult. There are the controls on the left panel which is narrow, just like the guild list. We can map those together. The `Explorer` pane of VSCode roughly lines up with where the channel list, DM list, and account container are in Discord. The main editor panel can map to the general chat area, while the terminal at the bottom can map to the `textarea`. But what do we do about the member list on the right? There is no default right-hand panel in VSCode. But the color scheme and layout of the member list is roughly the same as the channel list, so we can map that to the `Explorer` pane as well and make the interface somewhat symmetrical.
 
 ## Implementing
 
@@ -39,7 +39,7 @@ Let's get back to the guild list. The first step to theming it is to understand 
 
 :::
 
-But you might be asking why that element specifically? We select this element, because it's the highest element in the DOM tree without going into a shared container. That is to say, if you select the next ancestor in the DOM tree you'll see that it suddenly includes the chat, channel, and member list. Since we're targeting the guild list, this is our starting point. We can always traverse down the tree as needed.
+But you might be asking: "Why that element specifically?" We select this element, because it's the highest element in the DOM tree without going into a shared container. That is to say, if you select the next ancestor in the DOM tree you'll see that it suddenly includes the chat, channel, and member list. Since we're targeting the guild list, this is our starting point. We can always traverse down the tree as needed.
 
 Looking at this element however, we can see that the background for the guild list is being set on this element. Check the `Styles` panel in the screenshot above. We can see it's being set to a variable called `--background-tertiary`. So we have two options, override the background for this element, or set this Discord variable to our value. Let's try for the latter and add this to our theme:
 

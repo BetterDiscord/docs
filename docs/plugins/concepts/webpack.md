@@ -143,7 +143,7 @@ Do you remember this pattern from earlier?
     })
 ```
 
-Did you notice that `Z` wasn't the only option here? `kWm` is also there, and it represents other potential exports by a module. Discord uses [SWC](https://swc.rs/) to transpile their code, and it mangles the name of exports into unreadable things like this. This is fine if the export these keys point to is an object. But when the key points directly to a function, we will need the name of the key as well in order to perform [function patching](./patching.md).
+Did you notice that `Z` wasn't the only option here? `kWm` is also there, and it represents other potential exports by a module. Discord uses [SWC](https://swc.rs/) to transpile their code, which mangles the name of exports into unreadable things like this. This is fine if the export these keys point to is an object. But when the key points directly to a function, we will need the name of the key as well in order to perform [function patching](./patching.md).
 
 Thankfully, BetterDiscord has an API exactly for this case because it can be so frustrating to do manually. It's called `BdApi.Webpack.getWithKey` and as the name suggests, it gets a module/value along with the corresponding key. Here is a quick example usage:
 
@@ -156,4 +156,4 @@ Here we are looking for the function that opens the context menus in Discord and
 
 ### searchExports
 
-You probably noticed in the example directly above that we used `{searchExports: true}`. This is an option available to all the Webpack APIs. It causes BetterDiscord to loop over all the exports of every module to see if they match your filter, rather than testing the whole module at once. This is used a lot in plugins when searching for objects, classes, and instantiations, since patching with the key is not crucial.
+You probably noticed in the example directly above that we used `{searchExports: true}`. This is an option available to all the Webpack APIs. It causes BetterDiscord to loop over all the exports of every module to see if they match your filter rather than testing the whole module at once. This is used a lot in plugins when searching for objects, classes, and instantiations since patching with the key is not crucial.

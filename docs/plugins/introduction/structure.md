@@ -8,7 +8,7 @@ description: The requirements and format of a plugin.
  - There are currently only two types of addons: plugins and themes.
  - Distributed addons are limited to a single file.
  - The distributed file must be named in the form `<name>.<type>.<ext>` where name is the addon name, type is the addon type, and ext is the standard file extension.
- - Addon files are split into two major sections, the meta, and the body.
+ - Addon files are split into two major sections: the meta and the body.
  - Meta sections (described more below) contain important information about the addon for BetterDiscord, the body section is the main portion of developer content.
  - Addons are dynamically added, removed, and updated to match the files on the users' system.
 
@@ -47,7 +47,7 @@ And a fully filled out meta using all the fields would look something like this:
 
 |Field|Required|Description|
 |-----|:------:|-----------|
-|name|&#x2705;|The name of the addon. Typically, does not contain spaces, but is allowed.|
+|name|&#x2705;|The name of the addon. It typically does not contain spaces, but it is allowed.|
 |author|&#x2705;|The name of you the developer.|
 |description|&#x2705;|A basic description of what the addon does.|
 |version|&#x2705;|Version representing the current update level. [Semantic versioning](https://semver.org/) recommended.|
@@ -74,7 +74,7 @@ BetterDiscord plugins must be in vanilla JavaScript and be contained in a single
 
 Plugin files must be named in the format `*.plugin.js` where `*` is representative of any string. Usually this matches the name of the plugin without any spaces or special characters, however that is not a requirement.
 
-Plugin files are split into two main pieces, the meta, and the plugin code. If either of these are missing the plugin will not load.
+Plugin files are split into two main pieces: the meta and the plugin code. If either of these are missing the plugin will not load.
 
 ### Details
 
@@ -92,7 +92,7 @@ module.exports = () => ({
 });
 ```
 
-But that of course is not the only way to do it. Many people like the syntactic sugar and extensibility of classes.
+But that, of course, is not the only way to do it. Many people like the syntactic sugar and extensibility of classes. For example:
 
 ```js
 module.exports = class {
@@ -105,7 +105,7 @@ module.exports = class {
 };
 ```
 
-While others prefer a more modular functional style.
+Others prefer a more modular functional style:
 
 ```js
 const start = () => {};
@@ -116,7 +116,7 @@ module.exports.start = start;
 module.exports.stop = stop;
 ```
 
-Of course there's those that prefer to wrap themselves up for safekeeping.
+Of course, there's those that prefer to wrap themselves up for safekeeping:
 
 ```js
 module.exports = () => {

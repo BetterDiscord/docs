@@ -112,7 +112,7 @@ With this simple patch, we will log out the return value on every render call bu
 ![return_value_expanded](./img/return_value_expanded.png)
 :::
 
-What you see here if a fairly typical result of one of these render calls. Take a second and get familiar with the structure, its likely you'll be seeing a lot more of them going forward. However, since we want to see where to add our component, expand the tree out like we did above in the second image.
+What you see here if a fairly typical result of one of these render calls. Take a second and get familiar with the structure, it's likely you'll be seeing a lot more of them going forward. However, since we want to see where to add our component, expand the tree out like we did above in the second image.
 
 Take a look at the objects near the cursor in the image. This seems to be exactly where we want to render. Take a note of the object path to this object or copy it using the built-in tool.
 

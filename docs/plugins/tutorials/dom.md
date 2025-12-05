@@ -144,7 +144,7 @@ BdApi.DOM.addStyle("myPluginName", `.my-button {
 }`);
 ```
 
-Which can later be removed using the same ID from before
+Which can later be removed using the same ID from before, like this:
 
 ```js
 BdApi.DOM.removeStyle("myPluginName");

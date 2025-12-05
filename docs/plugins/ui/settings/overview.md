@@ -8,7 +8,7 @@ order: 0
 It's recommended that you read the [related tutorial](../../tutorials/settings.md#panel-builder) before proceeding!
 :::
 
-BetterDiscord provides a convenient suite of setting types either via a JSON-like API or via direct React Component usage. That said, do keep in mind that you <u>are not limited</u> to these built-in settings types or even the format. Even the JSON-like API provides a way to use it hybrid with custom components for advanced users. These APIs simply act as a convenient way for plugin developers to quickly scaffold Discord-like settings panels consistently. These APIs and components are stable since they are created by BetterDiscord entirely and are not a wrapper around Discord's internal components.
+BetterDiscord provides a convenient suite of setting types either via a JSON-like API or via direct React Component usage. That said, do keep in mind that you <u>are not limited</u> to these built-in settings types or even the format. Even the JSON-like API provides a way to use it hybrid with custom components for advanced users. These APIs simply act as a convenient way for plugin developers to quickly scaffold settings panels that look and feel native to Discord. These APIs and components are stable since they are created by BetterDiscord entirely and are not a wrapper around Discord's internal components.
 
 ## Demo
 
@@ -40,7 +40,7 @@ Setting Groups are just a list of setting items with some additional UI. If you 
 
 ### Settings Panel
 
-This is the highest level component, and it acts as the wrapper to all of your settings UI. It is a pretty generic component that allows for plenty of customization including custom components.
+This is the highest level component and acts as the wrapper to all of your settings UI. It is a pretty generic component that allows for plenty of customization including custom components.
 
 ## Usage
 

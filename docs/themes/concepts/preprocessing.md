@@ -22,7 +22,7 @@ These systems can enable you to make more complex themes that are easily maintai
 
 There are many options these days when it comes to CSS preprocessors. The most popular options are Sass/SCSS, Less, Stylus, and PostCSS*. You can read a brief introduction to each of them [here](https://www.bitdegree.org/tutorials/css-preprocessor/). Or for even more options take a look at [this article](https://www.sitepoint.com/6-current-options-css-preprocessors/).
 
-*PostCSS is a bit of an exception because it is more of a post-processor, it can do all sorts of things with your CSS including handling the preprocessing through the other 3 mentioned preprocessors. Also unlike the others, PostCSS does not have all the features out of the gate, it is a modular system so you only include what features you need.
+*PostCSS is a bit of an exception because it is more of a post-processor, it can do all sorts of things with your CSS including handling the preprocessing through the other 3 mentioned preprocessors. Also unlike the others, PostCSS does not have many features out of the gate, it is a modular system so you only include what features you need.
 
 ### Which is right for me?
 
@@ -90,7 +90,7 @@ As a quick explanation of what's going on here: `map: false` means we are not ma
 
 ### Code
 
-With the set-up out of the way, we're actually almost done. Let's just make our CSS files.
+With the setup out of the way, we're actually almost done. Let's just make our CSS files.
 
 ::: code-group
 
@@ -119,7 +119,7 @@ With the set-up out of the way, we're actually almost done. Let's just make our 
 
 Seems almost too easy, right? Well let's run `npm run build` anyway and see what happens.
 
-It seems to build just fine, and there's a new `dist` folder with a `import.css` inside.
+It seems to build just fine, and there's a new `dist` folder with an `import.css` inside.
 
 ```css [dist/import.css]
 .wrapper-2PSQCG,

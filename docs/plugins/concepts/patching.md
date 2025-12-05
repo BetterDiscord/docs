@@ -18,13 +18,15 @@ It's a great way to modify or extend Discord's functionality with your own while
 
 ### How can I patch a function?
 
-Unfortunately, you can't patch a function *directly*, you have to modify the *reference* to the function that other code uses. That means if your target function is just a locally or globally available function like this
+Unfortunately, you can't patch a function *directly*, you have to modify the *reference* to the function that other code uses. That means if your target function is just a locally or globally available function like this:
 
 ```js
 function yourTarget() {}
 ```
 
-Then you can't really affect it. However, if your target is part of an object in some way, like being contained in an imported module, you can overwrite that reference with your own function causing everyone to call your function instead.
+then you can't really affect it. 
+
+However, if your target is part of an object in some way, like being contained in an imported module, you can overwrite that reference with your own function causing everyone to call your function instead.
 
 ```js:line-numbers{13-17}
 const someObject = {
