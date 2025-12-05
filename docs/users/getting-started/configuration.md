@@ -62,9 +62,9 @@ Settings that affect all editors used inside BetterDiscord.
 
 This option simply determines whether line numbers should be shown.
 
-### Mini-map
+### minimap
 
-This option determines if the mini-map that represents the code on the right-hand side should be hidden or shown.
+This option determines if the minimap that represents the code on the right-hand side should be hidden or shown.
 
 ### Reference Tooltips
 
