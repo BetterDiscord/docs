@@ -11,12 +11,15 @@ hero:
     - theme: brand
       text: Quick Start
       link: /users/
-    - theme: alt
-      text: Install Addons
-      link: /users/guides/installing-addons
+    # - theme: alt
+    #   text: Install Addons
+    #   link: /users/guides/installing-addons
     - theme: alt
       text: For Developers
-      link: /developers
+      link: /plugins
+    - theme: alt
+      text: For Themers
+      link: /themes
   image:
     src: /branding/split.png
     alt: VitePress
