@@ -40,7 +40,73 @@ If you prefer a video tutorial, take a look at this:
 
 
 
+## Command Line Installation
+
+If you're comfortable using a terminal, the BetterDiscord CLI lets you install and update quickly. For full details, see the [CLI guide](../guides/cli).
+
+### Install the CLI
+
+Choose one of these methods:
+
+::: code-group
+```bash [npm]
+npm install -g @betterdiscord/cli
+```
+
+```bash [Homebrew]
+brew install betterdiscord/tap/bdcli
+```
+
+
+```bash [winget]
+winget install betterdiscord.cli
+```
+
+```bash [Go]
+go install github.com/betterdiscord/cli@latest
+```
+
+```bash [Binary]
+# Download the latest release for your platform
+# https://github.com/BetterDiscord/cli/releases
+```
+:::
+
+### Install BetterDiscord
+
+Most people can use the Stable channel:
+
+```bash
+bdcli install --channel stable
+```
+
+Other channels are available too:
+
+```bash
+bdcli install --channel ptb
+bdcli install --channel canary
+```
+
+If Discord is installed in a custom location, point to it directly:
+
+```bash
+bdcli install --path /path/to/Discord
+```
+
+
+Notes:
+- If neither `--path` nor `--channel` is specified, it defaults to Stable.
+- The `--path` and `--channel` flags are mutually exclusive.
+
+
+
 ## Manual Installation
+
+::: danger
+
+This section is primarily meant for developers and contributors to BetterDiscord. Users should only do this as a last resort.
+
+:::
 
 For those that can't get the automatic installers to work, those that want more control over their installation, and for developers.
 

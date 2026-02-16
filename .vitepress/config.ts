@@ -167,6 +167,10 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                     "json": "vscode-icons:file-type-json",
                     ".plugin.js": bdIcon,
                     ".theme.css": bdIcon,
+                    "homebrew": "https://brew.sh/assets/img/homebrew.svg",
+                    "go": "https://go.dev/images/favicon-gopher.svg",
+                    ".go": "https://go.dev/images/favicon-gopher.svg",
+                    "winget": "vscode-icons:file-type-favicon",
                     // TODO: consider adding platform icons
                 },
             })
