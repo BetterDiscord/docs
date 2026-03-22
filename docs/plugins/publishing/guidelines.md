@@ -16,7 +16,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 1. Addons must not collect user data without opt-in consent.
 1. Addons must not include explicit sexual material or other adult content.
 1. Addons must have English language support.
-1. Addons submitted as plugins must include JavaScript logic or interactivity; pure CSS snippets for element removal/hiding are not permitted.
+
 
 
 ## Scope
@@ -28,6 +28,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 1. Plugins must not modify the BetterDiscord UI.
    - This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.
 1. Plugins must not touch or use BetterDiscord's files.
+1. Addons submitted as plugins must include JavaScript logic or interactivity; pure CSS snippets for element removal/hiding are not permitted.
 
 
 ## Code
