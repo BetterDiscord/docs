@@ -18,7 +18,6 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 1. Addons must have English language support.
 
 
-
 ## Scope
 
 1. Plugins must clean up all changes/modification made by the plugin when it is disabled.
