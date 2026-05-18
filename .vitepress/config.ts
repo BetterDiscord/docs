@@ -6,6 +6,101 @@ import {groupIconMdPlugin, groupIconVitePlugin, localIconLoader} from "vitepress
 
 const bdIcon = localIconLoader(import.meta.url, "../docs/public/branding/logo_small.svg");
 
+
+const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
+    // {
+    //     documentRootPath: "docs",
+    //     scanStartPath: "api",
+    //     basePath: "/api/",
+    //     resolvePath: "/api/",
+    //     useTitleFromFrontmatter: true,
+    //     // useTitleFromFileHeading: true,
+    //     includeRootIndexFile: true,
+    //     capitalizeEachWords: true,
+    //     collapsed: true,
+    //     collapseDepth: 1,
+    //     sortFolderTo: "bottom",
+    //     sortMenusByFrontmatterOrder: true,
+    //     frontmatterOrderDefaultValue: 1,
+    // },
+    {
+        rootGroupText: "Discord Internals",
+        documentRootPath: "docs",
+        scanStartPath: "discord",
+        basePath: "/discord/",
+        resolvePath: "/discord/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        hyphenToSpace: true,
+        capitalizeEachWords: true,
+        useFolderLinkFromIndexFile: true,
+        useFolderTitleFromIndexFile: true,
+    },
+    {
+        documentRootPath: "docs",
+        scanStartPath: "users",
+        basePath: "/users/",
+        resolvePath: "/users/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        collapsed: false,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        manualSortFileNameByPriority: ["getting-started", "guides"],
+    },
+    // {
+    //     documentRootPath: "docs",
+    //     scanStartPath: "developers",
+    //     basePath: "/developers/",
+    //     resolvePath: "/developers/",
+    //     useTitleFromFileHeading: true,
+    //     includeRootIndexFile: true,
+    //     sortFolderTo: "bottom",
+    //     sortMenusByFrontmatterOrder: true,
+    //     frontmatterOrderDefaultValue: 1,
+    // },
+    {
+        documentRootPath: "docs",
+        scanStartPath: "plugins",
+        basePath: "/plugins/",
+        resolvePath: "/plugins/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        followSymlinks: true,
+        useFolderTitleFromIndexFile: true,
+        excludeFilesByFrontmatterFieldName: "hide",
+        collapsed: true,
+        collapseDepth: 2,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        manualSortFileNameByPriority: ["introduction", "tutorials", "ui", "concepts", "publishing"],
+    },
+    {
+        documentRootPath: "docs",
+        scanStartPath: "themes",
+        basePath: "/themes/",
+        resolvePath: "/themes/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        followSymlinks: true,
+        useFolderTitleFromIndexFile: true,
+        excludeFilesByFrontmatterFieldName: "hide",
+        collapsed: false,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        manualSortFileNameByPriority: ["introduction", "tutorials", "concepts", "publishing"],
+    },
+];
+
 const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
     srcDir: "./docs",
     title: "BetterDiscord",
@@ -50,7 +145,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
             {
                 text: "Reference",
                 items: [
-                    {text: "API", link: "/api/", activeMatch: "/api/"},
+                    {text: "API", link: "/api/BdApi", activeMatch: "/api/"},
                     {text: "Discord", link: "/discord/", activeMatch: "/discord/"},
                 ],
                 activeMatch: "/(?:api|discord)/"
@@ -88,6 +183,33 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                 appId: "JI19E3KHGR",
                 apiKey: "22fcfe9bbb67cc5b6ca5f34ed217e525",
                 indexName: "betterdiscord"
+            }
+        },
+
+        sidebar: {
+            ...generateSidebar(SIDEBARS),
+            "/api/": {
+                base: "/api/",
+                items: [
+                    {
+                        text: "API Reference",
+                        items: [
+                            { text: "BdApi", link: "BdApi" },
+                            { text: "Components", link: "Components" },
+                            { text: "Commands", link: "CommandAPI" },
+                            { text: "Data", link: "Data" },
+                            { text: "DOM", link: "DOM" },
+                            { text: "Hooks", link: "Hooks" },
+                            { text: "Logger", link: "Logger" },
+                            { text: "Patcher", link: "Patcher" },
+                            { text: "Plugins/Themes", link: "AddonAPI" },
+                            { text: "ReactUtils", link: "ReactUtils" },
+                            { text: "UI", link: "UI" },
+                            { text: "Utils", link: "Utils" },
+                            { text: "Webpack", link: "Webpack" }
+                        ]
+                    }
+                ]
             }
         },
 
@@ -185,100 +307,4 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
     },
 };
 
-
-const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
-    {
-        documentRootPath: "docs",
-        scanStartPath: "api",
-        basePath: "/api/",
-        resolvePath: "/api/",
-        useTitleFromFrontmatter: true,
-        // useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        capitalizeEachWords: true,
-        collapsed: true,
-        collapseDepth: 1,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-    },
-    {
-        rootGroupText: "Discord Internals",
-        documentRootPath: "docs",
-        scanStartPath: "discord",
-        basePath: "/discord/",
-        resolvePath: "/discord/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        hyphenToSpace: true,
-        capitalizeEachWords: true,
-        useFolderLinkFromIndexFile: true,
-        useFolderTitleFromIndexFile: true,
-    },
-    {
-        documentRootPath: "docs",
-        scanStartPath: "users",
-        basePath: "/users/",
-        resolvePath: "/users/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        capitalizeEachWords: true,
-        collapsed: false,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["getting-started", "guides"],
-    },
-    // {
-    //     documentRootPath: "docs",
-    //     scanStartPath: "developers",
-    //     basePath: "/developers/",
-    //     resolvePath: "/developers/",
-    //     useTitleFromFileHeading: true,
-    //     includeRootIndexFile: true,
-    //     sortFolderTo: "bottom",
-    //     sortMenusByFrontmatterOrder: true,
-    //     frontmatterOrderDefaultValue: 1,
-    // },
-    {
-        documentRootPath: "docs",
-        scanStartPath: "plugins",
-        basePath: "/plugins/",
-        resolvePath: "/plugins/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        capitalizeEachWords: true,
-        followSymlinks: true,
-        useFolderTitleFromIndexFile: true,
-        excludeFilesByFrontmatterFieldName: "hide",
-        collapsed: true,
-        collapseDepth: 2,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["introduction", "tutorials", "ui", "concepts", "publishing"],
-    },
-    {
-        documentRootPath: "docs",
-        scanStartPath: "themes",
-        basePath: "/themes/",
-        resolvePath: "/themes/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        capitalizeEachWords: true,
-        followSymlinks: true,
-        useFolderTitleFromIndexFile: true,
-        excludeFilesByFrontmatterFieldName: "hide",
-        collapsed: false,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["introduction", "tutorials", "concepts", "publishing"],
-    },
-];
-
-const userConfig: Partial<UserConfig> = withSidebar(VITEPRESS_CONFIG, SIDEBARS);
-export default defineConfig(userConfig);
+export default defineConfig(VITEPRESS_CONFIG);

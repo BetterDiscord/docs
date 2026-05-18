@@ -1,0 +1,3 @@
+# Type Alias: ButtonProps
+
+> **ButtonProps** = `PropsWithChildren`\<\{ `buttonRef?`: `RefObject`\<`HTMLButtonElement` \| `null`\>; `className?`: `string`; `color?`: *typeof* [`ButtonColors`](ButtonColors.md)\[keyof *typeof* [`ButtonColors`](ButtonColors.md)\]; `disabled?`: `boolean`; `grow?`: `boolean`; `look?`: *typeof* [`ButtonLooks`](ButtonLooks.md)\[keyof *typeof* [`ButtonLooks`](ButtonLooks.md)\]; `onClick?`: `MouseEventHandler`\<`HTMLButtonElement`\>; `onKeyDown?`: `KeyboardEventHandler`\<`HTMLButtonElement`\>; `size?`: *typeof* [`ButtonSizes`](ButtonSizes.md)\[keyof *typeof* [`ButtonSizes`](ButtonSizes.md)\]; `type?`: `"button"` \| `"submit"` \| `"reset"`; \}\>

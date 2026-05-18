@@ -1,0 +1,19 @@
+{
+    "plugin": [
+        "typedoc-plugin-markdown",
+        "typedoc-plugin-merge-modules",
+        "typedoc-plugin-missing-exports"
+    ],
+    "out": "./docs/api",
+    "entryPoints": [
+        "./bd-source/src/betterdiscord/api/*.ts"
+    ],
+    "tsconfig": "./bd-source/tsconfig.json",
+    "readme": "none",
+    "hidePageHeader": true,
+    "hideBreadcrumbs": true,
+    "disableSources": true,
+    "router": "structure",
+    "parametersFormat": "table",
+    "excludeExternals": true
+}

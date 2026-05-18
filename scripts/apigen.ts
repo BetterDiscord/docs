@@ -1,104 +1,20 @@
-import fs from "node:fs";
-import path from "node:path";
+import { $ } from "bun";
+import { existsSync } from "node:fs";
 
-import parseAST from "./parseast";
-import {Method, Property} from "./types";
+const forceClone = process.argv.includes("--forceClone");
+const sourceExists = existsSync("bd-source");
 
-
-function getProps(properties: Property[]) {
-    const props = [];
-    for (const prop of properties) {
-        const deprecation = prop.deprecated ? ` <span class="deprecated">Deprecated</span>` : "";
-        let propString = "";
-        propString += `### ${prop.name}${deprecation}\n`;
-        propString += `${prop.description}\n\n`;
-        propString += `**Type:** \`${prop.type}\`\n`;
-        propString += "___\n";
-        props.push(propString);
-    }
-    return props.join("\n");
+if(forceClone && sourceExists) {
+    console.log("Removing existing source...");
+    await $`rm -rf bd-source`;
 }
 
-
-const fullParamHeader = [
-    `| Parameter |  Type  | Optional | Default |       Description      |`,
-    `|:----------|:------:|:--------:|:-------:|:----------------------:|`,
-];
-
-const compactParamHeader = [
-    `| Parameter |  Type  |       Description      |`,
-    `|:----------|:------:|:----------------------:|`,
-];
-
-function getParams(method: Method) {
-    const hasOptionalParams = method.parameters?.some(p => p.optional || p.value);
-    const table = (hasOptionalParams ? fullParamHeader : compactParamHeader).slice(0);
-    if (method.parameters) {
-        for (const parameter of method.parameters) {
-            const paramString = [];
-            paramString.push(parameter.name);
-            paramString.push(parameter.type.replace(/\|/g, "\\|").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
-            if (hasOptionalParams) paramString.push(parameter.optional || parameter.value ? "&#x2705;" : "&#x274C;");
-            if (hasOptionalParams) paramString.push(parameter.value ?? "*none*");
-            paramString.push(parameter.description);
-            table.push(paramString.join("|"));
-        }
-        table.push("");
-    }
-    return table.join("\n") + "\n";
+if(!sourceExists || forceClone) {
+    console.log("Cloning BetterDiscord source...");
+    await $`git clone https://github.com/BetterDiscord/BetterDiscord.git bd-source`;
 }
 
-function getMethods(methods: Method[]) {
-    const funcs = [];
-    for (const method of methods) {
-        const deprecation = method.deprecated ? ` <span class="deprecated">Deprecated</span>` : "";
-        let methodString = "";
-        methodString += `### ${method.name}${deprecation}\n`;
-        methodString += `${method.description}\n\n`;
-        methodString += method.parameters ? getParams(method) : "\n";
-        methodString += `**Returns:** \`${method?.returns?.type ?? "void"}\`${method?.returns?.description ? " - " + method?.returns?.description : ""}\n`;
-        methodString += "___\n";
-        funcs.push(methodString);
-    }
-    return funcs.join("\n");
-}
+console.log("Generating API documentation...");
+await $`bunx typedoc`;
 
-
-const markdownTemplate = `# {{name}}
-
-{{description}}
-
-## Properties
-
-{{properties}}
-
-## Methods
-
-{{methods}}`;
-
-function generateApiDoc(which: string, memberName?: string) {
-    const data = parseAST(which, memberName);
-    if (!data) return console.error(`Could not process ${which}`);
-    const outFile = path.resolve(__dirname, "docs", "api", `${which.toLowerCase()}.md`);
-    
-    const finalMarkdown = markdownTemplate.replace("{{name}}", data.name)
-                                  .replace("{{description}}", data.description)
-                                  .replace("{{properties}}", getProps(data.properties))
-                                  .replace("{{methods}}", getMethods(data.methods));
-    fs.writeFileSync(outFile, finalMarkdown);
-}
-
-generateApiDoc("BdApi");
-generateApiDoc("AddonAPI");
-generateApiDoc("Patcher");
-generateApiDoc("Webpack");
-generateApiDoc("Filters", "Webpack.Filters");
-
-generateApiDoc("Data");
-generateApiDoc("UI");
-generateApiDoc("ReactUtils");
-generateApiDoc("Utils");
-generateApiDoc("DOM");
-generateApiDoc("ContextMenu");
-generateApiDoc("Logger", "module:Logger~Logger");
-generateApiDoc("Components");
+console.log("Done!");
