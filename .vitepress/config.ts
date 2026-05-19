@@ -38,17 +38,6 @@ const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
         frontmatterOrderDefaultValue: 1,
         manualSortFileNameByPriority: ["getting-started", "guides"],
     },
-    // {
-    //     documentRootPath: "docs",
-    //     scanStartPath: "developers",
-    //     basePath: "/developers/",
-    //     resolvePath: "/developers/",
-    //     useTitleFromFileHeading: true,
-    //     includeRootIndexFile: true,
-    //     sortFolderTo: "bottom",
-    //     sortMenusByFrontmatterOrder: true,
-    //     frontmatterOrderDefaultValue: 1,
-    // },
     {
         documentRootPath: "docs",
         scanStartPath: "plugins",

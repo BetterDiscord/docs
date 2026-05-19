@@ -24,7 +24,7 @@ or its static properties can be used directly.
 
 ### Commands
 
-> `static` **Commands**: [`CommandAPI`](CommandAPI.md) = `CommandsAPI`
+> `static` **Commands**: [`CommandAPI`](CommandAPI.md)
 
 An instance of [CommandAPI](CommandAPI.md) for adding slash commands
 
@@ -32,7 +32,7 @@ An instance of [CommandAPI](CommandAPI.md) for adding slash commands
 
 ### Components
 
-> `static` **Components**: [`Components`](Components.md) = `ComponentsInstance`
+> `static` **Components**: [`Components`](Components.md)
 
 A set of react components plugins can make use of
 
@@ -40,7 +40,7 @@ A set of react components plugins can make use of
 
 ### ContextMenu
 
-> `static` **ContextMenu**: [`ContextMenu`](ContextMenu.md) = `ContextMenuAPI`
+> `static` **ContextMenu**: [`ContextMenu`](ContextMenu.md)
 
 An instance of [ContextMenu](ContextMenu.md) for interacting with context menus
 
@@ -48,7 +48,7 @@ An instance of [ContextMenu](ContextMenu.md) for interacting with context menus
 
 ### Data
 
-> `static` **Data**: [`Data`](Data.md) = `DataAPI`
+> `static` **Data**: [`Data`](Data.md)
 
 An instance of [Data](Data.md) to manage data
 
@@ -56,7 +56,7 @@ An instance of [Data](Data.md) to manage data
 
 ### DOM
 
-> `static` **DOM**: [`DOM`](DOM.md) = `DOMAPI`
+> `static` **DOM**: [`DOM`](DOM.md)
 
 An instance of [DOM](DOM.md) to interact with the DOM
 
@@ -64,7 +64,7 @@ An instance of [DOM](DOM.md) to interact with the DOM
 
 ### Hooks
 
-> `static` **Hooks**: [`Hooks`](Hooks.md) = `HooksAPI`
+> `static` **Hooks**: [`Hooks`](Hooks.md)
 
 An instance of [Hooks](Hooks.md) for react hooks
 
@@ -72,7 +72,7 @@ An instance of [Hooks](Hooks.md) for react hooks
 
 ### Logger
 
-> `static` **Logger**: [`Logger`](Logger.md) = `DefaultLogger`
+> `static` **Logger**: [`Logger`](Logger.md)
 
 An instance of [Logger](Logger.md) for logging information
 
@@ -80,7 +80,7 @@ An instance of [Logger](Logger.md) for logging information
 
 ### Net
 
-> `static` **Net**: [`Net`](Net.md) = `NetInstance`
+> `static` **Net**: [`Net`](Net.md)
 
 An instance of [Net](Net.md) for using network related tools
 
@@ -88,7 +88,7 @@ An instance of [Net](Net.md) for using network related tools
 
 ### Patcher
 
-> `static` **Patcher**: [`Patcher`](Patcher.md) = `PatcherAPI`
+> `static` **Patcher**: [`Patcher`](Patcher.md)
 
 An instance of [Patcher](Patcher.md) to monkey patch functions
 
@@ -96,7 +96,7 @@ An instance of [Patcher](Patcher.md) to monkey patch functions
 
 ### Plugins
 
-> `static` **Plugins**: [`AddonAPI`](AddonAPI.md) = `PluginAPI`
+> `static` **Plugins**: [`AddonAPI`](AddonAPI.md)
 
 An instance of [AddonAPI](AddonAPI.md) to access plugins
 
@@ -104,7 +104,7 @@ An instance of [AddonAPI](AddonAPI.md) to access plugins
 
 ### React
 
-> `static` **React**: *typeof* `React` = `DiscordModules.React`
+> `static` **React**: *typeof* `React`
 
 The React module being used inside Discord
 
@@ -112,7 +112,7 @@ The React module being used inside Discord
 
 ### ReactDOM
 
-> `static` **ReactDOM**: `__module` & `__module`
+> `static` **ReactDOM**: *typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`
 
 The ReactDOM module being used inside Discord
 
@@ -120,7 +120,7 @@ The ReactDOM module being used inside Discord
 
 ### ReactUtils
 
-> `static` **ReactUtils**: [`ReactUtils`](ReactUtils.md) = `ReactUtilsInstance`
+> `static` **ReactUtils**: [`ReactUtils`](ReactUtils.md)
 
 An instance of [ReactUtils](ReactUtils.md) to work with React
 
@@ -128,7 +128,7 @@ An instance of [ReactUtils](ReactUtils.md) to work with React
 
 ### Themes
 
-> `static` **Themes**: [`AddonAPI`](AddonAPI.md) = `ThemeAPI`
+> `static` **Themes**: [`AddonAPI`](AddonAPI.md)
 
 An instance of [AddonAPI](AddonAPI.md) to access themes
 
@@ -136,7 +136,7 @@ An instance of [AddonAPI](AddonAPI.md) to access themes
 
 ### UI
 
-> `static` **UI**: [`UI`](UI.md) = `UIInstance`
+> `static` **UI**: [`UI`](UI.md)
 
 An instance of [UI](UI.md) to create interfaces
 
@@ -144,7 +144,7 @@ An instance of [UI](UI.md) to create interfaces
 
 ### Utils
 
-> `static` **Utils**: [`Utils`](Utils.md) = `UtilsInstance`
+> `static` **Utils**: [`Utils`](Utils.md)
 
 An instance of [Utils](Utils.md) for general utility functions
 
@@ -160,7 +160,7 @@ A reference string for BD's version
 
 ### Webpack
 
-> `static` **Webpack**: [`Webpack`](Webpack.md) = `WebpackInstance`
+> `static` **Webpack**: [`Webpack`](Webpack.md)
 
 An instance of [Webpack](Webpack.md) to search for modules
 

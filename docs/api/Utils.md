@@ -37,10 +37,6 @@ be triggered. The function will be called after it stops being called for
 
 Adapted from the version by David Walsh (https://davidwalsh.name/javascript-debounce-function)
 
-Returns a function, that, as long as it continues to be invoked, will not
-be triggered. The function will be called after it stops being called for
-N milliseconds.
-
 #### Type Parameters
 
 | Type Parameter |
@@ -51,24 +47,14 @@ N milliseconds.
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `executor` | `T` | Function to debounce |
-| `delay` | `number` | Time to delay in milliseconds |
-
-#### Returns
-
-(...`args`) => `void`
-
-#### Param
-
-The function to be debounced
-
-#### Param
-
-Number of ms to delay calls
+| `executor` | `T` | The function to be debounced |
+| `delay` | `number` | Number of ms to delay calls |
 
 #### Returns
 
 A debounced version of the function
+
+(...`args`) => `void`
 
 ***
 
@@ -81,31 +67,16 @@ of `extenders` have priority, that is to say if one sets a key to be a primitive
 it will be overwritten with the next one with the same key. If it is an object,
 and the keys match, the object is extended. This happens recursively.
 
-Deep extends an object with a set of other objects. Objects later in the list
-of `extenders` have priority, that is to say if one sets a key to be a primitive,
-it will be overwritten with the next one with the same key. If it is an object,
-and the keys match, the object is extended. This happens recursively.
-
 #### Parameters
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `target` | `object` | Target object for extension |
-| ...`extenders` | `object`[] | Series of objects to use for extension |
+| `target` | `object` | - |
+| ...`extenders` | `object`[] | Objects to extend with |
 
 #### Returns
 
 `object`
-
-#### Param
-
-Object to be extended
-
-#### Param
-
-Objects to extend with
-
-#### Returns
 
 A reference to `extendee`
 
@@ -196,8 +167,6 @@ Maps the properties of one object onto another based on a set of filters
 
 Compares two semantic versions, e.g. "1.0.0"
 
-This works on semantic versioning e.g. "1.0.0".
-
 #### Parameters
 
 | Parameter | Type | Description |
@@ -208,14 +177,6 @@ This works on semantic versioning e.g. "1.0.0".
 #### Returns
 
 `-1` \| `0` \| `1`
-
-0 indicates equal, -1 indicates left hand greater, 1 indicates right hand greater
-
-#### Param
-
-#### Param
-
-#### Returns
 
 0 indicates equal, -1 indicates left hand greater, 1 indicates right hand greater
 
