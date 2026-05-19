@@ -1,5 +1,5 @@
 import { $ } from "bun";
-import { existsSync, rmSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, rmSync, readFileSync, writeFileSync, renameSync } from "node:fs";
 import { join } from "node:path";
 
 const forceClone = process.argv.includes("--forceClone");
@@ -22,8 +22,8 @@ console.log("Cleaning up...");
 const baseDir = join("docs", "api");
 const bdApiPath = join(baseDir, "BdApi.md");
 
-// Remove the readme file that snuck in
-rmSync(join(baseDir, "README.md"), { force: true });
+// Rename README.md to index.md
+renameSync(join(baseDir, "README.md"), join(baseDir, "index.md"));
 
 // Remove the initialization information from BdApi
 let apiText = readFileSync(bdApiPath, "utf-8");
