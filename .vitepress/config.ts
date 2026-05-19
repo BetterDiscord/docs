@@ -1,5 +1,5 @@
 import {DefaultTheme, defineConfig, UserConfig} from "vitepress";
-import {withSidebar, generateSidebar} from "vitepress-sidebar";
+import {generateSidebar} from "vitepress-sidebar";
 import {bundledLanguages, LanguageRegistration} from "shiki";
 import {groupIconMdPlugin, groupIconVitePlugin, localIconLoader} from "vitepress-plugin-group-icons";
 
@@ -8,21 +8,6 @@ const bdIcon = localIconLoader(import.meta.url, "../docs/public/branding/logo_sm
 
 
 const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
-    // {
-    //     documentRootPath: "docs",
-    //     scanStartPath: "api",
-    //     basePath: "/api/",
-    //     resolvePath: "/api/",
-    //     useTitleFromFrontmatter: true,
-    //     // useTitleFromFileHeading: true,
-    //     includeRootIndexFile: true,
-    //     capitalizeEachWords: true,
-    //     collapsed: true,
-    //     collapseDepth: 1,
-    //     sortFolderTo: "bottom",
-    //     sortMenusByFrontmatterOrder: true,
-    //     frontmatterOrderDefaultValue: 1,
-    // },
     {
         rootGroupText: "Discord Internals",
         documentRootPath: "docs",
