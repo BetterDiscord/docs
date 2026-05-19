@@ -1,12 +1,12 @@
 import { $ } from "bun";
-import { existsSync } from "node:fs";
+import { existsSync, rmSync } from "node:fs";
 
 const forceClone = process.argv.includes("--forceClone");
 const sourceExists = existsSync("bd-source");
 
 if(forceClone && sourceExists) {
     console.log("Removing existing source...");
-    await $`rm -rf bd-source`;
+    rmSync("bd-source", { recursive: true, force: true });
 }
 
 if(!sourceExists || forceClone) {
@@ -16,5 +16,8 @@ if(!sourceExists || forceClone) {
 
 console.log("Generating API documentation...");
 await $`bunx typedoc`;
+
+console.log("Cleaning up...");
+rmSync("./docs/api/README.md", { force: true });
 
 console.log("Done!");
