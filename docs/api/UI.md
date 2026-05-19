@@ -1,16 +1,6 @@
 # Class: UI
 
-`UI` is a utility class for creating user interfaces. Instance is accessible through the [BdApi](BdApi.md).
-
-## Constructors
-
-### Constructor
-
-> **new UI**(): `UI`
-
-#### Returns
-
-`UI`
+`UI` is a utility class for creating user interfaces. An instance is available on [BdApi](BdApi.md).
 
 ## Methods
 

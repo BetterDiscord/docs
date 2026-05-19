@@ -1,28 +1,11 @@
 # Class: BoundHooks
 
+`BoundHooks` is a utility class for React hooks, with plugin scoping automatically supplied.
+An instance is available on instances of [BdApi](BdApi.md).
+
 ## Extends
 
 - [`BaseHooks`](BaseHooks.md)
-
-## Constructors
-
-### Constructor
-
-> **new BoundHooks**(`callerName`): `BoundHooks`
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `callerName` | `string` |
-
-#### Returns
-
-`BoundHooks`
-
-#### Overrides
-
-[`BaseHooks`](BaseHooks.md).[`constructor`](BaseHooks.md#constructor)
 
 ## Properties
 

@@ -5,16 +5,6 @@
 - [`DOM`](DOM.md)
 - [`BoundDOM`](BoundDOM.md)
 
-## Constructors
-
-### Constructor
-
-> **new BaseDOM**(): `BaseDOM`
-
-#### Returns
-
-`BaseDOM`
-
 ## Accessors
 
 ### screenHeight

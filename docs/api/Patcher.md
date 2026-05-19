@@ -1,17 +1,7 @@
 # Class: Patcher
 
-`Patcher` is a utility class for modifying existing functions. Instance is accessible through the [BdApi](BdApi.md).
-This is extremely useful for modifying the internals of Discord by adjusting return value or React renders, or arguments of internal functions.
-
-## Constructors
-
-### Constructor
-
-> **new Patcher**(): `Patcher`
-
-#### Returns
-
-`Patcher`
+`Patcher` is a utility class for modifying existing functions. An instance is available on [BdApi](BdApi.md).
+This is extremely useful for modifying the internals of Discord by adjusting return values of React renders, or arguments of internal functions.
 
 ## Methods
 

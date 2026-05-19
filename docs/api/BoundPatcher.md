@@ -1,20 +1,8 @@
 # Class: BoundPatcher
 
-## Constructors
-
-### Constructor
-
-> **new BoundPatcher**(`callerName`): `BoundPatcher`
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `callerName` | `string` |
-
-#### Returns
-
-`BoundPatcher`
+`BoundPatcher` is a utility class for modifying existing functions, with plugin scoping automatically supplied.
+An instance is available on instances of [BdApi](BdApi.md).
+This is extremely useful for modifying the internals of Discord by adjusting return values of React renders, or arguments of internal functions.
 
 ## Methods
 

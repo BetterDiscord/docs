@@ -1,17 +1,7 @@
 # Class: CommandAPI
 
-`CommandAPI` is a utility class for managing commands. Instance is accessible through the BdApi.
+`CommandAPI` is a utility class for managing commands. An instance is available on [BdApi](BdApi.md).
 This allows plugins to register and manage their own commands.
-
-## Constructors
-
-### Constructor
-
-> **new CommandAPI**(): `CommandAPI`
-
-#### Returns
-
-`CommandAPI`
 
 ## Properties
 

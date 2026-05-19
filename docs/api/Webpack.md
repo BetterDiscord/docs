@@ -1,17 +1,7 @@
 # Class: Webpack
 
-`Webpack` is a utility class for getting internal webpack modules. Instance is accessible through the [BdApi](BdApi.md).
+`Webpack` is a utility class for getting internal webpack modules. An instance is available on [BdApi](BdApi.md).
 This is extremely useful for interacting with the internals of Discord.
-
-## Constructors
-
-### Constructor
-
-> **new Webpack**(): `Webpack`
-
-#### Returns
-
-`Webpack`
 
 ## Properties
 

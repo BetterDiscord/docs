@@ -1,22 +1,6 @@
 # Class: AddonAPI
 
-`AddonAPI` is a utility class for working with plugins and themes. Instances are accessible through the [BdApi](BdApi.md).
-
-## Constructors
-
-### Constructor
-
-> **new AddonAPI**(`manager`): `AddonAPI`
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `manager` | [`AddonManager`](AddonManager.md) |
-
-#### Returns
-
-`AddonAPI`
+`AddonAPI` is a utility class for working with plugins and themes. Instances are available on [BdApi](BdApi.md).
 
 ## Accessors
 

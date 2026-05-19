@@ -1,22 +1,7 @@
 # Class: BoundData
 
-`Data` is a simple utility class for the management of plugin data. An instance is available on [BdApi](BdApi.md).
-
-## Constructors
-
-### Constructor
-
-> **new BoundData**(`pluginName`): `BoundData`
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `pluginName` | `string` |
-
-#### Returns
-
-`BoundData`
+`BoundData` is a simple utility class for the management of plugin data, with plugin scoping automatically supplied.
+An instance is available on instances of [BdApi](BdApi.md).
 
 ## Methods
 

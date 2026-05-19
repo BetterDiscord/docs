@@ -5,16 +5,6 @@
 - [`Hooks`](Hooks.md)
 - [`BoundHooks`](BoundHooks.md)
 
-## Constructors
-
-### Constructor
-
-> **new BaseHooks**(): `BaseHooks`
-
-#### Returns
-
-`BaseHooks`
-
 ## Properties
 
 ### useForceUpdate

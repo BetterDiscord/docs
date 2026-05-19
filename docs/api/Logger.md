@@ -2,23 +2,6 @@
 
 `Logger` is a helper class to log data in a nice and consistent way. An instance is available on [BdApi](BdApi.md).
 
-## Constructors
-
-### Constructor
-
-> **new Logger**(`nameStyle?`, `messageStyle?`): `Logger`
-
-#### Parameters
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `nameStyle?` | `string` | CSS to style the plugin name |
-| `messageStyle?` | `string` | CSS to style the main message |
-
-#### Returns
-
-`Logger`
-
 ## Methods
 
 ### debug()

@@ -1,28 +1,11 @@
 # Class: BoundDOM
 
+`BoundDOM` is a simple utility class for dom manipulation, with plugin scoping optionally automatically supplied.
+An instance is available on instances of [BdApi](BdApi.md).
+
 ## Extends
 
 - [`BaseDOM`](BaseDOM.md)
-
-## Constructors
-
-### Constructor
-
-> **new BoundDOM**(`callerName`): `BoundDOM`
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `callerName` | `string` |
-
-#### Returns
-
-`BoundDOM`
-
-#### Overrides
-
-[`BaseDOM`](BaseDOM.md).[`constructor`](BaseDOM.md#constructor)
 
 ## Accessors
 

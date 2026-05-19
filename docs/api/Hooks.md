@@ -1,22 +1,10 @@
 # Class: Hooks
 
+`Hooks` is a utility class for React hooks. An instance is available on [BdApi](BdApi.md).
+
 ## Extends
 
 - [`BaseHooks`](BaseHooks.md)
-
-## Constructors
-
-### Constructor
-
-> **new Hooks**(): `Hooks`
-
-#### Returns
-
-`Hooks`
-
-#### Inherited from
-
-[`BaseHooks`](BaseHooks.md).[`constructor`](BaseHooks.md#constructor)
 
 ## Properties
 

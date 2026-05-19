@@ -2,16 +2,6 @@
 
 `Data` is a simple utility class for the management of plugin data. An instance is available on [BdApi](BdApi.md).
 
-## Constructors
-
-### Constructor
-
-> **new Data**(): `Data`
-
-#### Returns
-
-`Data`
-
 ## Methods
 
 ### delete()

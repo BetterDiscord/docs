@@ -6,20 +6,6 @@
 
 - [`BaseDOM`](BaseDOM.md)
 
-## Constructors
-
-### Constructor
-
-> **new DOM**(): `DOM`
-
-#### Returns
-
-`DOM`
-
-#### Inherited from
-
-[`BaseDOM`](BaseDOM.md).[`constructor`](BaseDOM.md#constructor)
-
 ## Accessors
 
 ### screenHeight

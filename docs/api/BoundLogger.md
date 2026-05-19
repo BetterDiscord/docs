@@ -1,22 +1,7 @@
 # Class: BoundLogger
 
-## Constructors
-
-### Constructor
-
-> **new BoundLogger**(`pluginName?`, `nameStyle?`, `messageStyle?`): `BoundLogger`
-
-#### Parameters
-
-| Parameter | Type | Description |
-| ------ | ------ | ------ |
-| `pluginName?` | `string` | - |
-| `nameStyle?` | `string` | CSS to style the plugin name |
-| `messageStyle?` | `string` | CSS to style the main message |
-
-#### Returns
-
-`BoundLogger`
+`BoundLogger` is a helper class to log data in a nice and consistent way, with plugin scoping automatically supplied.
+An instance is available on instances of [BdApi](BdApi.md).
 
 ## Methods
 

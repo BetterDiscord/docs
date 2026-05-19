@@ -1,14 +1,6 @@
 # Class: Components
 
-## Constructors
-
-### Constructor
-
-> **new Components**(): `Components`
-
-#### Returns
-
-`Components`
+`Components` is a utility containing commonly used React components. An instance is available on [BdApi](BdApi.md).
 
 ## Properties
 
@@ -176,11 +168,21 @@
 
 ### Spinner
 
-> **Spinner**: \{(`props`): `Element`; `Type`: `Readonly`\<\{ `CHASING_DOTS`: `"chasing-dots"`; `LOW_MOTION`: `"low-motion"`; `PULSING_ELLIPSIS`: `"pulsing-ellipsis"`; `SPINNING_CIRCLE`: `"spinning-circle"`; `SPINNING_CIRCLE_SIMPLE`: `"spinning-circle-simple"`; `WANDERING_CUBES`: `"wandering-cubes"`; \}\>; \} & `object`
+> **Spinner**: \{(`props`): `Element`; `Type`: `Readonly`\<\{ `CHASING_DOTS`: `"chasing-dots"`; `LOW_MOTION`: `"low-motion"`; `PULSING_ELLIPSIS`: `"pulsing-ellipsis"`; `SPINNING_CIRCLE`: `"spinning-circle"`; `SPINNING_CIRCLE_SIMPLE`: `"spinning-circle-simple"`; `WANDERING_CUBES`: `"wandering-cubes"`; \}\>; \}
 
-#### Type Declaration
+Clone of Discord's builtin spinner, acts 100% the same.
 
-##### Type
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `props` | [`SpinnerProps`](SpinnerProps.md) |
+
+#### Returns
+
+`Element`
+
+#### Type
 
 > **Type**: `Readonly`\<\{ `CHASING_DOTS`: `"chasing-dots"`; `LOW_MOTION`: `"low-motion"`; `PULSING_ELLIPSIS`: `"pulsing-ellipsis"`; `SPINNING_CIRCLE`: `"spinning-circle"`; `SPINNING_CIRCLE_SIMPLE`: `"spinning-circle-simple"`; `WANDERING_CUBES`: `"wandering-cubes"`; \}\>
 

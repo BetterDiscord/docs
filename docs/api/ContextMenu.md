@@ -1,16 +1,6 @@
 # Class: ContextMenu
 
-`ContextMenu` is a module to help patch and create context menus. Instance is accessible through the [BdApi](BdApi.md).
-
-## Constructors
-
-### Constructor
-
-> **new ContextMenu**(): `ContextMenu`
-
-#### Returns
-
-`ContextMenu`
+`ContextMenu` is a module to help patch and create context menus. An instance is available on [BdApi](BdApi.md).
 
 ## Properties
 

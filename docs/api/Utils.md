@@ -1,16 +1,6 @@
 # Class: Utils
 
-`Utils` is a utility containing commonly reused functions. Instance is accessible through the [BdApi](BdApi.md).
-
-## Constructors
-
-### Constructor
-
-> **new Utils**(): `Utils`
-
-#### Returns
-
-`Utils`
+`Utils` is a utility containing commonly reused functions. An instance is available on [BdApi](BdApi.md).
 
 ## Properties
 

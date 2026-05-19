@@ -24,7 +24,9 @@
 - [DOM](DOM.md)
 - [ErrorBoundary](ErrorBoundary.md)
 - [Hooks](Hooks.md)
+- [HydratingResponse](HydratingResponse.md)
 - [Logger](Logger.md)
+- [Net](Net.md)
 - [NodePatcher](NodePatcher.md)
 - [Patcher](Patcher.md)
 - [ReactUtils](ReactUtils.md)
@@ -53,7 +55,9 @@
 - [Command](Command.md)
 - [CustomSetting](CustomSetting.md)
 - [DialogOptions](DialogOptions.md)
+- [DriedResponse](DriedResponse.md)
 - [DropdownSetting](DropdownSetting.md)
+- [DryReadableStream](DryReadableStream.md)
 - [ErrorInfo](ErrorInfo.md)
 - [FindInTreeOptions](FindInTreeOptions.md)
 - [FluxStore](FluxStore.md)
@@ -182,6 +186,5 @@
 ## Functions
 
 - [Button](Button.md)
-- [fetch](fetch.md)
 - [Flex](Flex.md)
 - [Text](Text.md)

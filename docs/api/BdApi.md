@@ -1,6 +1,8 @@
 # Class: BdApi
 
 `BdApi` is a globally (`window.BdApi`) accessible object for use by plugins and developers to make their lives easier.
+It can be instantiated (`new BdApi("MyPlugin")`) to get a version of the API with automatic scoping for plugins,
+or its static properties can be used directly.
 
 ## Constructors
 
@@ -19,54 +21,6 @@
 `BdApi`
 
 ## Properties
-
-### Commands
-
-> **Commands**: [`BoundCommandAPI`](BoundCommandAPI.md)
-
-An instance of [CommandAPI](CommandAPI.md) for adding slash commands
-
-***
-
-### Data
-
-> **Data**: [`BoundData`](BoundData.md)
-
-An instance of [Data](Data.md) to manage data
-
-***
-
-### DOM
-
-> **DOM**: [`BoundDOM`](BoundDOM.md)
-
-An instance of [DOM](DOM.md) to interact with the DOM
-
-***
-
-### Hooks
-
-> **Hooks**: [`BoundHooks`](BoundHooks.md)
-
-An instance of [Hooks](Hooks.md) for react hooks
-
-***
-
-### Logger
-
-> **Logger**: [`BoundLogger`](BoundLogger.md)
-
-An instance of [Logger](Logger.md) for logging information
-
-***
-
-### Patcher
-
-> **Patcher**: [`BoundPatcher`](BoundPatcher.md)
-
-An instance of [Patcher](Patcher.md) to monkey patch functions
-
-***
 
 ### Commands
 
@@ -126,9 +80,9 @@ An instance of [Logger](Logger.md) for logging information
 
 ### Net
 
-> `static` **Net**: `Readonly`\<\{ `fetch`: (`input`, `init?`) => `Promise`\<`Response`\>; \}\>
+> `static` **Net**: [`Net`](Net.md) = `NetInstance`
 
-An instance of [Net](#net) for using network related tools
+An instance of [Net](Net.md) for using network related tools
 
 ***
 
@@ -212,6 +166,20 @@ An instance of [Webpack](Webpack.md) to search for modules
 
 ## Accessors
 
+### Commands
+
+#### Get Signature
+
+> **get** **Commands**(): [`BoundCommandAPI`](BoundCommandAPI.md)
+
+An instance of [CommandAPI](CommandAPI.md) for adding slash commands
+
+##### Returns
+
+[`BoundCommandAPI`](BoundCommandAPI.md)
+
+***
+
 ### Components
 
 #### Get Signature
@@ -240,17 +208,87 @@ An instance of [ContextMenu](ContextMenu.md) for interacting with context menus
 
 ***
 
+### Data
+
+#### Get Signature
+
+> **get** **Data**(): [`BoundData`](BoundData.md)
+
+An instance of [Data](Data.md) to manage data
+
+##### Returns
+
+[`BoundData`](BoundData.md)
+
+***
+
+### DOM
+
+#### Get Signature
+
+> **get** **DOM**(): [`BoundDOM`](BoundDOM.md)
+
+An instance of [DOM](DOM.md) to interact with the DOM
+
+##### Returns
+
+[`BoundDOM`](BoundDOM.md)
+
+***
+
+### Hooks
+
+#### Get Signature
+
+> **get** **Hooks**(): [`BoundHooks`](BoundHooks.md)
+
+An instance of [Hooks](Hooks.md) for react hooks
+
+##### Returns
+
+[`BoundHooks`](BoundHooks.md)
+
+***
+
+### Logger
+
+#### Get Signature
+
+> **get** **Logger**(): [`BoundLogger`](BoundLogger.md)
+
+An instance of [Logger](Logger.md) for logging information
+
+##### Returns
+
+[`BoundLogger`](BoundLogger.md)
+
+***
+
 ### Net
 
 #### Get Signature
 
-> **get** **Net**(): `Readonly`\<\{ `fetch`: (`input`, `init?`) => `Promise`\<`Response`\>; \}\>
+> **get** **Net**(): [`Net`](Net.md)
 
-An instance of [Net](#net) for using network related tools
+An instance of [Net](Net.md) for using network related tools
 
 ##### Returns
 
-`Readonly`\<\{ `fetch`: (`input`, `init?`) => `Promise`\<`Response`\>; \}\>
+[`Net`](Net.md)
+
+***
+
+### Patcher
+
+#### Get Signature
+
+> **get** **Patcher**(): [`BoundPatcher`](BoundPatcher.md)
+
+An instance of [Patcher](Patcher.md) to monkey patch functions
+
+##### Returns
+
+[`BoundPatcher`](BoundPatcher.md)
 
 ***
 

@@ -1,20 +1,8 @@
 # Class: BoundCommandAPI
 
-## Constructors
-
-### Constructor
-
-> **new BoundCommandAPI**(`callerName`): `BoundCommandAPI`
-
-#### Parameters
-
-| Parameter | Type |
-| ------ | ------ |
-| `callerName` | `string` |
-
-#### Returns
-
-`BoundCommandAPI`
+`CommandAPI` is a utility class for managing commands, with plugin scoping automatically supplied.
+An instance is available on instances of [BdApi](BdApi.md).
+This allows plugins to register and manage their own commands.
 
 ## Properties
 
