@@ -160,7 +160,7 @@ You probably noticed in the example directly above that we used `{searchExports:
 
 ### declarations
 
-Sometimes what Discord exposes through module exports isn't enough, and the value you want to use or modify is buried deep within the module. In this case, you can use declarations, which are essentially a way of accessing every variable defined at the top level of a module. The most fundamental way of accessing declarations is by passing `raw: true` to a module query, and reading the returned `declarations` property. For example:
+Sometimes what Discord exposes through module exports isn't enough, and the value you want to use or modify is buried deep within the module. In this case, you can use declarations, which are essentially a way of accessing every variable defined at the top level of a module. The most fundamental way of accessing declarations is by passing `raw: true` to a module query, and reading the `declarations` property on the returned module object. For example:
 
 ![declarations_raw](./img/declarations_raw.png)
 
