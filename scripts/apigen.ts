@@ -1,19 +1,6 @@
 import { $ } from "bun";
-import { existsSync, rmSync, readFileSync, writeFileSync, renameSync } from "node:fs";
+import { rmSync, readFileSync, writeFileSync, cpSync } from "node:fs";
 import { join } from "node:path";
-
-const forceClone = process.argv.includes("--forceClone");
-const sourceExists = existsSync("bd-source");
-
-if(forceClone && sourceExists) {
-    console.log("Removing existing source...");
-    rmSync("bd-source", { recursive: true, force: true });
-}
-
-if(!sourceExists || forceClone) {
-    console.log("Cloning BetterDiscord source...");
-    await $`git clone https://github.com/BetterDiscord/BetterDiscord.git bd-source`;
-}
 
 console.log("Generating API documentation...");
 await $`bunx typedoc`;
@@ -22,8 +9,9 @@ console.log("Cleaning up...");
 const baseDir = join("docs", "api");
 const bdApiPath = join(baseDir, "BdApi.md");
 
-// Rename README.md to index.md
-renameSync(join(baseDir, "README.md"), join(baseDir, "index.md"));
+// Remove README, add apioverview as index
+rmSync(join(baseDir, "README.md"), { force: true });
+cpSync(join("scripts", "data", "apioverview.md"), join(baseDir, "index.md"));
 
 // Remove the initialization information from BdApi
 let apiText = readFileSync(bdApiPath, "utf-8");

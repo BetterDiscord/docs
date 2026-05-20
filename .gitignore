@@ -7,7 +7,6 @@
 # Generated files
 .cache-loader
 .vitepress/cache
-/bd-source
 
 # Misc
 .DS_Store

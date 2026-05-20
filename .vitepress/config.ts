@@ -2,78 +2,10 @@ import {DefaultTheme, defineConfig, UserConfig} from "vitepress";
 import {generateSidebar} from "vitepress-sidebar";
 import {bundledLanguages, LanguageRegistration} from "shiki";
 import {groupIconMdPlugin, groupIconVitePlugin, localIconLoader} from "vitepress-plugin-group-icons";
+import {readFileSync} from "node:fs";
 
 
 const bdIcon = localIconLoader(import.meta.url, "../docs/public/branding/logo_small.svg");
-
-
-const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
-    {
-        rootGroupText: "Discord Internals",
-        documentRootPath: "docs",
-        scanStartPath: "discord",
-        basePath: "/discord/",
-        resolvePath: "/discord/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        hyphenToSpace: true,
-        capitalizeEachWords: true,
-        useFolderLinkFromIndexFile: true,
-        useFolderTitleFromIndexFile: true,
-    },
-    {
-        documentRootPath: "docs",
-        scanStartPath: "users",
-        basePath: "/users/",
-        resolvePath: "/users/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        capitalizeEachWords: true,
-        collapsed: false,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["getting-started", "guides"],
-    },
-    {
-        documentRootPath: "docs",
-        scanStartPath: "plugins",
-        basePath: "/plugins/",
-        resolvePath: "/plugins/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        capitalizeEachWords: true,
-        followSymlinks: true,
-        useFolderTitleFromIndexFile: true,
-        excludeFilesByFrontmatterFieldName: "hide",
-        collapsed: true,
-        collapseDepth: 2,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["introduction", "tutorials", "ui", "concepts", "publishing"],
-    },
-    {
-        documentRootPath: "docs",
-        scanStartPath: "themes",
-        basePath: "/themes/",
-        resolvePath: "/themes/",
-        useTitleFromFileHeading: true,
-        includeRootIndexFile: true,
-        capitalizeEachWords: true,
-        followSymlinks: true,
-        useFolderTitleFromIndexFile: true,
-        excludeFilesByFrontmatterFieldName: "hide",
-        collapsed: false,
-        sortFolderTo: "bottom",
-        sortMenusByFrontmatterOrder: true,
-        frontmatterOrderDefaultValue: 1,
-        manualSortFileNameByPriority: ["introduction", "tutorials", "concepts", "publishing"],
-    },
-];
 
 const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
     srcDir: "./docs",
@@ -119,7 +51,7 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
             {
                 text: "Reference",
                 items: [
-                    {text: "API", link: "/api/BdApi", activeMatch: "/api/"},
+                    {text: "API", link: "/api/", activeMatch: "/api/"},
                     {text: "Discord", link: "/discord/", activeMatch: "/discord/"},
                 ],
                 activeMatch: "/(?:api|discord)/"
@@ -157,35 +89,6 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
                 appId: "JI19E3KHGR",
                 apiKey: "22fcfe9bbb67cc5b6ca5f34ed217e525",
                 indexName: "betterdiscord"
-            }
-        },
-
-        sidebar: {
-            ...generateSidebar(SIDEBARS),
-            "/api/": {
-                base: "/api/",
-                items: [
-                    {
-                        text: "API Reference",
-                        items: [
-                            { text: "BdApi", link: "BdApi" },
-                            { text: "Components", link: "Components" },
-                            { text: "Commands", link: "CommandAPI" },
-                            { text: "ContextMenu", link: "ContextMenu" },
-                            { text: "Data", link: "Data" },
-                            { text: "DOM", link: "DOM" },
-                            { text: "Hooks", link: "Hooks" },
-                            { text: "Logger", link: "Logger" },
-                            { text: "Net", link: "Net" },
-                            { text: "Patcher", link: "Patcher" },
-                            { text: "Plugins/Themes", link: "AddonAPI" },
-                            { text: "ReactUtils", link: "ReactUtils" },
-                            { text: "UI", link: "UI" },
-                            { text: "Utils", link: "Utils" },
-                            { text: "Webpack", link: "Webpack" }
-                        ]
-                    }
-                ]
             }
         },
 
@@ -282,5 +185,127 @@ const VITEPRESS_CONFIG: UserConfig<DefaultTheme.Config> = {
         return pageData;
     },
 };
+
+
+const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
+    {
+        documentRootPath: "docs",
+        scanStartPath: "api",
+        basePath: "/api/",
+        resolvePath: "/api/",
+        useTitleFromFrontmatter: true,
+        // useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        collapsed: true,
+        collapseDepth: 1,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+    },
+    {
+        rootGroupText: "Discord Internals",
+        documentRootPath: "docs",
+        scanStartPath: "discord",
+        basePath: "/discord/",
+        resolvePath: "/discord/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        hyphenToSpace: true,
+        capitalizeEachWords: true,
+        useFolderLinkFromIndexFile: true,
+        useFolderTitleFromIndexFile: true,
+    },
+    {
+        documentRootPath: "docs",
+        scanStartPath: "users",
+        basePath: "/users/",
+        resolvePath: "/users/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        collapsed: false,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        manualSortFileNameByPriority: ["getting-started", "guides"],
+    },
+    {
+        documentRootPath: "docs",
+        scanStartPath: "plugins",
+        basePath: "/plugins/",
+        resolvePath: "/plugins/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        followSymlinks: true,
+        useFolderTitleFromIndexFile: true,
+        excludeFilesByFrontmatterFieldName: "hide",
+        collapsed: true,
+        collapseDepth: 2,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        manualSortFileNameByPriority: ["introduction", "tutorials", "ui", "concepts", "publishing"],
+    },
+    {
+        documentRootPath: "docs",
+        scanStartPath: "themes",
+        basePath: "/themes/",
+        resolvePath: "/themes/",
+        useTitleFromFileHeading: true,
+        includeRootIndexFile: true,
+        capitalizeEachWords: true,
+        followSymlinks: true,
+        useFolderTitleFromIndexFile: true,
+        excludeFilesByFrontmatterFieldName: "hide",
+        collapsed: false,
+        sortFolderTo: "bottom",
+        sortMenusByFrontmatterOrder: true,
+        frontmatterOrderDefaultValue: 1,
+        manualSortFileNameByPriority: ["introduction", "tutorials", "concepts", "publishing"],
+    },
+];
+
+// Read the BdApi file to get items that should be in the sidebar
+const bdConfig = readFileSync("./docs/api/BdApi.md", "utf-8");
+const propertyRegex = /\n> `static` \*\*(.+)\*\*.+\((.+)\.md\)/g;
+
+const properties: Record<string, string> = {};
+for(const match of bdConfig.matchAll(propertyRegex)) {
+    const [, name, path] = match;
+
+    if(properties[path]) properties[path] += `/${name}`;
+    else properties[path] = name;
+}
+
+const propertyItems = Object.entries(properties).map(([path, name]) => ({
+    text: name,
+    link: path
+}));
+
+VITEPRESS_CONFIG.themeConfig ??= {};
+VITEPRESS_CONFIG.themeConfig.sidebar = {
+    ...generateSidebar(SIDEBARS),
+    "/api/": {
+        base: "/api/",
+        items: [
+            {
+                text: "Overview",
+                link: "index.md"
+            },
+            {
+                text: "API Reference",
+                items: [
+                    { text: "BdApi", link: "BdApi" },
+                    ...propertyItems
+                ]
+            }
+        ]
+    }
+}
 
 export default defineConfig(VITEPRESS_CONFIG);
