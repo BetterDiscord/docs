@@ -8,6 +8,7 @@
     "entryPoints": [
         "./bd-source/src/betterdiscord/api/*.ts"
     ],
+    "entryFileName": "index",
     "tsconfig": "./bd-source/tsconfig.json",
     "readme": "none",
     "hidePageHeader": true,

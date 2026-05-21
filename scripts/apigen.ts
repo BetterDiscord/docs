@@ -9,9 +9,8 @@ console.log("Cleaning up...");
 const baseDir = join("docs", "api");
 const bdApiPath = join(baseDir, "BdApi.md");
 
-// Remove README, add apioverview as index
-rmSync(join(baseDir, "README.md"), { force: true });
-cpSync(join("scripts", "data", "apioverview.md"), join(baseDir, "index.md"));
+// Overwrite index.md
+cpSync(join("scripts", "data", "apioverview.md"), join(baseDir, "index.md"), { force: true });
 
 // Remove the initialization information from BdApi
 let apiText = readFileSync(bdApiPath, "utf-8");
