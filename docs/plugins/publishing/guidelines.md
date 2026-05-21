@@ -27,7 +27,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 1. Plugins must not modify the BetterDiscord UI.
    - This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.
 1. Plugins must not touch or use BetterDiscord's files.
-1. Addons submitted as plugins must include JavaScript logic or interactivity; pure CSS snippets for element removal/hiding are not permitted.
+1. Plugins must include JavaScript logic or interactivity; pure CSS snippets for element removal/hiding are not permitted.
 
 
 ## Code
