@@ -1,0 +1,3 @@
+# Type Alias: FlexProps
+
+> **FlexProps** = `PropsWithChildren`\<\{ `align?`: *typeof* [`FlexAlign`](FlexAlign.md)\[keyof *typeof* [`FlexAlign`](FlexAlign.md)\]; `basis?`: `"auto"`; `className?`: `string`; `direction?`: *typeof* [`FlexDirection`](FlexDirection.md)\[keyof *typeof* [`FlexDirection`](FlexDirection.md)\]; `grow?`: `number`; `id?`: `string`; `justify?`: *typeof* [`FlexJustify`](FlexJustify.md)\[keyof *typeof* [`FlexJustify`](FlexJustify.md)\]; `onClick?`: `MouseEventHandler`\<`HTMLDivElement`\>; `shrink?`: `number`; `style?`: `CSSProperties`; `wrap?`: *typeof* [`FlexWrap`](FlexWrap.md)\[keyof *typeof* [`FlexWrap`](FlexWrap.md)\]; \}\>
