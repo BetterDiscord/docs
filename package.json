@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "private": true,
     "scripts": {
-        "api": "bun run scripts/apigen.ts",
+        "api": "typedoc",
         "lint": "eslint --ext .ts --ignore-path .gitignore .",
         "dev": "vitepress dev .",
         "build": "vitepress build .",

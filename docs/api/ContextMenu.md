@@ -6,43 +6,43 @@
 
 ### CheckboxItem
 
-> **CheckboxItem**: `FC`\<`PropsWithChildren`\<[`MenuCheckboxItemProps`](MenuCheckboxItemProps.md)\>\> = `MenuComponents.CheckboxItem`
+> **CheckboxItem**: `FC`\<`PropsWithChildren`\<[`MenuCheckboxItemProps`](MenuCheckboxItemProps.md)\>\>
 
 ***
 
 ### ControlItem
 
-> **ControlItem**: `FC`\<`PropsWithChildren`\<[`MenuControlItemProps`](MenuControlItemProps.md)\>\> = `MenuComponents.ControlItem`
+> **ControlItem**: `FC`\<`PropsWithChildren`\<[`MenuControlItemProps`](MenuControlItemProps.md)\>\>
 
 ***
 
 ### Group
 
-> **Group**: `FC`\<\{ \}\> = `MenuComponents.Group`
+> **Group**: `FC`\<\{ \}\>
 
 ***
 
 ### Item
 
-> **Item**: `FC`\<`PropsWithChildren`\<[`BaseMenuItemProps`](BaseMenuItemProps.md)\>\> = `MenuComponents.Item`
+> **Item**: `FC`\<`PropsWithChildren`\<[`BaseMenuItemProps`](BaseMenuItemProps.md)\>\>
 
 ***
 
 ### Menu
 
-> **Menu**: `FC`\<`PropsWithChildren`\<[`MenuRenderProps`](MenuRenderProps.md)\>\> = `MenuComponents.Menu`
+> **Menu**: `FC`\<`PropsWithChildren`\<[`MenuRenderProps`](MenuRenderProps.md)\>\>
 
 ***
 
 ### RadioItem
 
-> **RadioItem**: `FC`\<`PropsWithChildren`\<[`MenuRadioItemProps`](MenuRadioItemProps.md)\>\> = `MenuComponents.RadioItem`
+> **RadioItem**: `FC`\<`PropsWithChildren`\<[`MenuRadioItemProps`](MenuRadioItemProps.md)\>\>
 
 ***
 
 ### Separator
 
-> **Separator**: `FC`\<\{ \}\> = `MenuComponents.Separator`
+> **Separator**: `FC`\<\{ \}\>
 
 ## Methods
 

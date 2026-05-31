@@ -228,4 +228,4 @@ Clone of Discord's builtin spinner, acts 100% the same.
 
 ### Tooltip
 
-> **Tooltip**: [`DiscordTooltip`](DiscordTooltip.md) = `DiscordModules.Tooltip`
+> **Tooltip**: [`DiscordTooltip`](DiscordTooltip.md)

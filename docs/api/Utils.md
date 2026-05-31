@@ -6,7 +6,7 @@
 
 ### className
 
-> **className**: (...`inputs`) => `string` = `clsx`
+> **className**: (...`inputs`) => `string`
 
 Builds a classname string from any number of arguments. This includes arrays and objects.
 When given an array all values from the array are added to the list.
@@ -71,7 +71,7 @@ and the keys match, the object is extended. This happens recursively.
 
 | Parameter | Type | Description |
 | ------ | ------ | ------ |
-| `target` | `object` | - |
+| `target` | `object` | Object to be extended |
 | ...`extenders` | `object`[] | Objects to extend with |
 
 #### Returns
@@ -163,7 +163,7 @@ Maps the properties of one object onto another based on a set of filters
 
 ### semverCompare
 
-> **semverCompare**: (`currentVersion`, `remoteVersion`) => `-1` \| `0` \| `1` = `comparator`
+> **semverCompare**: (`currentVersion`, `remoteVersion`) => `-1` \| `0` \| `1`
 
 Compares two semantic versions, e.g. "1.0.0"
 

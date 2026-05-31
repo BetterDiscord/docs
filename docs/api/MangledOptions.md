@@ -7,3 +7,5 @@
 ### mapDeclarations?
 
 > `optional` **mapDeclarations?**: `boolean`
+
+Whether to map declarations instead of exports

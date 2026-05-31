@@ -148,9 +148,9 @@ The visual description to display
 
 ***
 
-### units
+### units?
 
-> **units**: `string`
+> `optional` **units?**: `string`
 
 ***
 

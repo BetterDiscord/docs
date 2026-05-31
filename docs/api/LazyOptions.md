@@ -7,3 +7,5 @@
 ### signal?
 
 > `optional` **signal?**: `AbortSignal`
+
+A signal that cancels waiting for the module

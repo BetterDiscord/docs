@@ -46,7 +46,7 @@ such as Discord's Flux stores or BdApi.Utils.Store.
 | `stores` | [`StoreType`](StoreType.md) \| [`StoreType`](StoreType.md)[] | The store(s) to subscribe to |
 | `factory` | () => `T` | A function that computes the value to return when stores change |
 | `deps?` | `DependencyList` | An optional dependency list that controls when the factory function is updated |
-| `isStateEqual?` | `true` \| ((`oldState`, `newState`) => `boolean`) | An optional function that allows for skipping re-renders if the state hasn't changed |
+| `isStateEqual?` | `true` \| ((`oldState`, `newState`) => `boolean`) | An optional function that allows for skipping re-renders if the state hasn't changed, or `true` to use a shallow equality check |
 
 #### Returns
 

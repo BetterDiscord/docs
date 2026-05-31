@@ -1,3 +1,73 @@
-# Type Alias: FlexProps
+# Interface: FlexProps
 
-> **FlexProps** = `PropsWithChildren`\<\{ `align?`: *typeof* [`FlexAlign`](FlexAlign.md)\[keyof *typeof* [`FlexAlign`](FlexAlign.md)\]; `basis?`: `"auto"`; `className?`: `string`; `direction?`: *typeof* [`FlexDirection`](FlexDirection.md)\[keyof *typeof* [`FlexDirection`](FlexDirection.md)\]; `grow?`: `number`; `id?`: `string`; `justify?`: *typeof* [`FlexJustify`](FlexJustify.md)\[keyof *typeof* [`FlexJustify`](FlexJustify.md)\]; `onClick?`: `MouseEventHandler`\<`HTMLDivElement`\>; `shrink?`: `number`; `style?`: `CSSProperties`; `wrap?`: *typeof* [`FlexWrap`](FlexWrap.md)\[keyof *typeof* [`FlexWrap`](FlexWrap.md)\]; \}\>
+## Properties
+
+### align?
+
+> `optional` **align?**: `"bd-flex-align-start"` \| `"bd-flex-align-end"` \| `"bd-flex-align-center"` \| `"bd-flex-align-stretch"` \| `"bd-flex-align-baseline"`
+
+***
+
+### basis?
+
+> `optional` **basis?**: `"auto"`
+
+***
+
+### children?
+
+> `optional` **children?**: `ReactNode`
+
+***
+
+### className?
+
+> `optional` **className?**: `string`
+
+***
+
+### direction?
+
+> `optional` **direction?**: `"bd-flex-vertical"` \| `"bd-flex-horizontal"` \| `"bd-flex-reverse"`
+
+***
+
+### grow?
+
+> `optional` **grow?**: `number`
+
+***
+
+### id?
+
+> `optional` **id?**: `string`
+
+***
+
+### justify?
+
+> `optional` **justify?**: `"bd-flex-justify-start"` \| `"bd-flex-justify-end"` \| `"bd-flex-justify-center"` \| `"bd-flex-justify-between"` \| `"bd-flex-justify-around"`
+
+***
+
+### onClick?
+
+> `optional` **onClick?**: `MouseEventHandler`\<`HTMLDivElement`\>
+
+***
+
+### shrink?
+
+> `optional` **shrink?**: `number`
+
+***
+
+### style?
+
+> `optional` **style?**: `CSSProperties`
+
+***
+
+### wrap?
+
+> `optional` **wrap?**: `"bd-flex-no-wrap"` \| `"bd-flex-wrap"` \| `"bd-flex-wrap-reverse"`

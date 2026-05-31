@@ -1,3 +1,31 @@
-# Type Alias: SettingItemProps
+# Interface: SettingItemProps
 
-> **SettingItemProps** = `PropsWithChildren`\<\{ `id`: `string`; `inline?`: `boolean`; `name?`: `string`; `note?`: `string`; \}\>
+## Properties
+
+### children?
+
+> `optional` **children?**: `ReactNode`
+
+***
+
+### id
+
+> **id**: `string`
+
+***
+
+### inline?
+
+> `optional` **inline?**: `boolean`
+
+***
+
+### name?
+
+> `optional` **name?**: `string`
+
+***
+
+### note?
+
+> `optional` **note?**: `string`

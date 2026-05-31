@@ -12,7 +12,7 @@ The path the dialog should show on launch
 
 ### filters
 
-> **filters**: `Record`\<`string`, `string`[]\>[]
+> **filters**: [`FileFilter`](FileFilter.md)[]
 
 An array of [file filters](https://www.electronjs.org/docs/latest/api/structures/file-filter)
 

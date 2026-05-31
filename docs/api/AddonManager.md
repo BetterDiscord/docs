@@ -32,15 +32,9 @@
 
 ***
 
-### addonInfo
-
-> **addonInfo**: [`Addon`](Addon.md)[] = `[]`
-
-***
-
 ### addonList
 
-> **addonList**: `T`[] = `[]`
+> **addonList**: `T`[]
 
 ***
 
@@ -58,13 +52,13 @@
 
 ### hasInitialized
 
-> **hasInitialized**: `boolean` = `false`
+> **hasInitialized**: `boolean`
 
 ***
 
 ### initialAddonsLoaded
 
-> **initialAddonsLoaded**: `number` = `0`
+> **initialAddonsLoaded**: `number`
 
 ***
 
@@ -94,13 +88,13 @@
 
 ### state
 
-> **state**: `Record`\<`string`, `boolean`\> = `{}`
+> **state**: `Record`\<`string`, `boolean`\>
 
 ***
 
 ### timeCache
 
-> **timeCache**: `Record`\<`string`, `number`\> = `{}`
+> **timeCache**: `Record`\<`string`, `number`\>
 
 ***
 
@@ -241,17 +235,17 @@
 
 ### initAddon()
 
-> `abstract` **initAddon**(`addon`): `T` \| `null`
+> `abstract` **initAddon**(`addon`): `boolean`
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `addon` | [`Addon`](Addon.md) |
+| `addon` | `T` |
 
 #### Returns
 
-`T` \| `null`
+`boolean`
 
 ***
 
@@ -303,17 +297,17 @@
 
 ### loadAddon()
 
-> **loadAddon**(`addon`): `void`
+> **loadAddon**(`addon`): `boolean`
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
-| `addon` | [`Addon`](Addon.md) |
+| `addon` | `T` |
 
 #### Returns
 
-`void`
+`boolean`
 
 ***
 
@@ -345,18 +339,18 @@
 
 ### readAddon()
 
-> **readAddon**(`filename`, `loadAfter?`): [`Addon`](Addon.md) \| `null`
+> **readAddon**(`filename`, `startAfter?`): `void`
 
 #### Parameters
 
 | Parameter | Type |
 | ------ | ------ |
 | `filename` | `string` |
-| `loadAfter?` | `boolean` |
+| `startAfter?` | `boolean` |
 
 #### Returns
 
-[`Addon`](Addon.md) \| `null`
+`void`
 
 ***
 

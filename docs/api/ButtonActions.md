@@ -12,7 +12,17 @@
 
 #### Inherited from
 
-`ButtonProps.buttonRef`
+[`ButtonProps`](ButtonProps.md).[`buttonRef`](ButtonProps.md#buttonref)
+
+***
+
+### children?
+
+> `optional` **children?**: `ReactNode`
+
+#### Inherited from
+
+[`ButtonProps`](ButtonProps.md).[`children`](ButtonProps.md#children)
 
 ***
 
@@ -22,7 +32,7 @@
 
 #### Inherited from
 
-`ButtonProps.className`
+[`ButtonProps`](ButtonProps.md).[`className`](ButtonProps.md#classname)
 
 ***
 
@@ -32,7 +42,7 @@
 
 #### Inherited from
 
-`ButtonProps.color`
+[`ButtonProps`](ButtonProps.md).[`color`](ButtonProps.md#color)
 
 ***
 
@@ -42,7 +52,7 @@
 
 #### Inherited from
 
-`ButtonProps.disabled`
+[`ButtonProps`](ButtonProps.md).[`disabled`](ButtonProps.md#disabled)
 
 ***
 
@@ -64,7 +74,7 @@
 
 #### Inherited from
 
-`ButtonProps.grow`
+[`ButtonProps`](ButtonProps.md).[`grow`](ButtonProps.md#grow)
 
 ***
 
@@ -80,7 +90,7 @@
 
 #### Inherited from
 
-`ButtonProps.look`
+[`ButtonProps`](ButtonProps.md).[`look`](ButtonProps.md#look)
 
 ***
 
@@ -90,7 +100,7 @@
 
 #### Inherited from
 
-`ButtonProps.onClick`
+[`ButtonProps`](ButtonProps.md).[`onClick`](ButtonProps.md#onclick)
 
 ***
 
@@ -100,7 +110,7 @@
 
 #### Inherited from
 
-`ButtonProps.onKeyDown`
+[`ButtonProps`](ButtonProps.md).[`onKeyDown`](ButtonProps.md#onkeydown)
 
 ***
 
@@ -110,7 +120,7 @@
 
 #### Inherited from
 
-`ButtonProps.size`
+[`ButtonProps`](ButtonProps.md).[`size`](ButtonProps.md#size)
 
 ***
 
@@ -120,4 +130,4 @@
 
 #### Inherited from
 
-`ButtonProps.type`
+[`ButtonProps`](ButtonProps.md).[`type`](ButtonProps.md#type)

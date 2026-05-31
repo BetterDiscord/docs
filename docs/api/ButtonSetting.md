@@ -12,7 +12,17 @@
 
 #### Inherited from
 
-`ButtonProps.buttonRef`
+[`ButtonProps`](ButtonProps.md).[`buttonRef`](ButtonProps.md#buttonref)
+
+***
+
+### children?
+
+> `optional` **children?**: `ReactNode`
+
+#### Inherited from
+
+[`ButtonProps`](ButtonProps.md).[`children`](ButtonProps.md#children)
 
 ***
 
@@ -22,7 +32,7 @@
 
 #### Inherited from
 
-`ButtonProps.className`
+[`ButtonProps`](ButtonProps.md).[`className`](ButtonProps.md#classname)
 
 ***
 
@@ -32,7 +42,7 @@
 
 #### Inherited from
 
-`ButtonProps.color`
+[`ButtonProps`](ButtonProps.md).[`color`](ButtonProps.md#color)
 
 ***
 
@@ -56,7 +66,7 @@ Whether this setting is disabled
 
 #### Inherited from
 
-[`BaseSettingItem`](BaseSettingItem.md).[`disabled`](BaseSettingItem.md#disabled)
+[`ButtonProps`](ButtonProps.md).[`disabled`](ButtonProps.md#disabled)
 
 ***
 
@@ -90,7 +100,7 @@ The id of another setting that is required to use this one
 
 #### Inherited from
 
-`ButtonProps.grow`
+[`ButtonProps`](ButtonProps.md).[`grow`](ButtonProps.md#grow)
 
 ***
 
@@ -136,7 +146,7 @@ Whether the input should render inline with the name (this is false by default f
 
 #### Inherited from
 
-`ButtonProps.look`
+[`ButtonProps`](ButtonProps.md).[`look`](ButtonProps.md#look)
 
 ***
 
@@ -170,7 +180,7 @@ The visual description to display
 
 #### Inherited from
 
-`ButtonProps.onClick`
+[`ButtonProps`](ButtonProps.md).[`onClick`](ButtonProps.md#onclick)
 
 ***
 
@@ -180,7 +190,7 @@ The visual description to display
 
 #### Inherited from
 
-`ButtonProps.onKeyDown`
+[`ButtonProps`](ButtonProps.md).[`onKeyDown`](ButtonProps.md#onkeydown)
 
 ***
 
@@ -190,7 +200,7 @@ The visual description to display
 
 #### Inherited from
 
-`ButtonProps.size`
+[`ButtonProps`](ButtonProps.md).[`size`](ButtonProps.md#size)
 
 ***
 
@@ -200,4 +210,4 @@ The visual description to display
 
 #### Overrides
 
-[`BaseSettingItem`](BaseSettingItem.md).[`type`](BaseSettingItem.md#type)
+[`ButtonProps`](ButtonProps.md).[`type`](ButtonProps.md#type)

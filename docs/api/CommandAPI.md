@@ -19,11 +19,11 @@ This allows plugins to register and manage their own commands.
 
 ##### CommandTypes.MESSAGE
 
-> **MESSAGE**: `number` = `3`
+> **MESSAGE**: `number`
 
 ##### CommandTypes.USER
 
-> **USER**: `number` = `2`
+> **USER**: `number`
 
 #### InputTypes
 
@@ -31,7 +31,7 @@ This allows plugins to register and manage their own commands.
 
 ##### InputTypes.BOT
 
-> **BOT**: `number` = `3`
+> **BOT**: `number`
 
 ##### InputTypes.BUILT\_IN
 
@@ -39,15 +39,15 @@ This allows plugins to register and manage their own commands.
 
 ##### InputTypes.PLACEHOLDER
 
-> **PLACEHOLDER**: `number` = `4`
+> **PLACEHOLDER**: `number`
 
 ##### InputTypes.SEARCH
 
-> **SEARCH**: `number` = `2`
+> **SEARCH**: `number`
 
 ##### InputTypes.TEXT
 
-> **TEXT**: `number` = `1`
+> **TEXT**: `number`
 
 #### MessageEmbedTypes
 
@@ -59,7 +59,7 @@ This allows plugins to register and manage their own commands.
 
 ##### MessageEmbedTypes.ARTICLE
 
-> **ARTICLE**: `string` = `"article"`
+> **ARTICLE**: `string`
 
 ##### MessageEmbedTypes.AUTO\_MODERATION\_MESSAGE
 
@@ -75,19 +75,19 @@ This allows plugins to register and manage their own commands.
 
 ##### MessageEmbedTypes.GIFT
 
-> **GIFT**: `string` = `"gift"`
+> **GIFT**: `string`
 
 ##### MessageEmbedTypes.GIFV
 
-> **GIFV**: `string` = `"gifv"`
+> **GIFV**: `string`
 
 ##### MessageEmbedTypes.IMAGE
 
-> **IMAGE**: `string` = `"image"`
+> **IMAGE**: `string`
 
 ##### MessageEmbedTypes.LINK
 
-> **LINK**: `string` = `"link"`
+> **LINK**: `string`
 
 ##### MessageEmbedTypes.POST\_PREVIEW
 
@@ -95,7 +95,7 @@ This allows plugins to register and manage their own commands.
 
 ##### MessageEmbedTypes.RICH
 
-> **RICH**: `string` = `"rich"`
+> **RICH**: `string`
 
 ##### MessageEmbedTypes.SAFETY\_POLICY\_NOTICE
 
@@ -107,15 +107,15 @@ This allows plugins to register and manage their own commands.
 
 ##### MessageEmbedTypes.TEXT
 
-> **TEXT**: `string` = `"text"`
+> **TEXT**: `string`
 
 ##### MessageEmbedTypes.TWEET
 
-> **TWEET**: `string` = `"tweet"`
+> **TWEET**: `string`
 
 ##### MessageEmbedTypes.VIDEO
 
-> **VIDEO**: `string` = `"video"`
+> **VIDEO**: `string`
 
 ##### MessageEmbedTypes.VOICE\_CHANNEL
 
@@ -127,35 +127,35 @@ This allows plugins to register and manage their own commands.
 
 ##### OptionTypes.ATTACHMENT
 
-> **ATTACHMENT**: `number` = `11`
+> **ATTACHMENT**: `number`
 
 ##### OptionTypes.BOOLEAN
 
-> **BOOLEAN**: `number` = `5`
+> **BOOLEAN**: `number`
 
 ##### OptionTypes.CHANNEL
 
-> **CHANNEL**: `number` = `7`
+> **CHANNEL**: `number`
 
 ##### OptionTypes.INTEGER
 
-> **INTEGER**: `number` = `4`
+> **INTEGER**: `number`
 
 ##### OptionTypes.MENTIONABLE
 
-> **MENTIONABLE**: `number` = `9`
+> **MENTIONABLE**: `number`
 
 ##### OptionTypes.NUMBER
 
-> **NUMBER**: `number` = `10`
+> **NUMBER**: `number`
 
 ##### OptionTypes.ROLE
 
-> **ROLE**: `number` = `8`
+> **ROLE**: `number`
 
 ##### OptionTypes.STRING
 
-> **STRING**: `number` = `3`
+> **STRING**: `number`
 
 ##### OptionTypes.SUB\_COMMAND
 
@@ -167,7 +167,7 @@ This allows plugins to register and manage their own commands.
 
 ##### OptionTypes.USER
 
-> **USER**: `number` = `6`
+> **USER**: `number`
 
 ## Methods
 
