@@ -112,7 +112,7 @@ The React module being used inside Discord
 
 ### ReactDOM
 
-> `static` *typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`
+> `static` **ReactDOM**: *typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`
 
 The ReactDOM module being used inside Discord
 

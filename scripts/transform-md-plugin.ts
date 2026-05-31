@@ -3,8 +3,8 @@ import { readFileSync } from "node:fs";
 import { basename } from "node:path";
 
 const propertyRegex = /(\n> (?:`static` )?\*\*\w+\*\*: .+) = `.+`\n/g;
-const rename = [
-    ["**ReactDOM**: `__module` & `__module`", "*typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`"]
+const replace = [
+    ["**ReactDOM**: `__module` & `__module`", "**ReactDOM**: *typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`"]
 ]
 
 export function load(app: MarkdownApplication) {
@@ -20,7 +20,7 @@ export function load(app: MarkdownApplication) {
         page.contents = page.contents.replace(propertyRegex, "$1\n");
 
         // Manually rename certain types that typedoc doesn't like
-        for (const [from, to] of rename) {
+        for (const [from, to] of replace) {
             page.contents = page.contents.replaceAll(from, to);
         }
     });
