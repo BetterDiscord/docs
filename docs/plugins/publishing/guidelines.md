@@ -48,7 +48,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 1. Plugins must not remove security features.
 1. Plugins must not access user tokens, emails, or passwords.
 1. Plugins must not risk a user's account.
-    - This includes but is not limited to: self-botting, spamming API requests, using non-user APIs, bypassing nitro features, animated status, message logging.
+    - This includes but is not limited to: self-botting, spamming API requests, using non-user APIs, bypassing Nitro features, automatically completing quests, creating animated statuses, and logging messages.
 1. Plugins must not provide access to potentially sensitive information from other users of the platform which is not otherwise accessible.
     - This includes but is not limited to: hidden channels, deleted messages, invisible/offline status distinction.
 1. Plugins must not use remote libraries.
