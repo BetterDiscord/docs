@@ -1,7 +1,8 @@
 import {DefaultTheme, defineConfig, UserConfig} from "vitepress";
-import {withSidebar, generateSidebar} from "vitepress-sidebar";
+import {generateSidebar} from "vitepress-sidebar";
 import {bundledLanguages, LanguageRegistration} from "shiki";
 import {groupIconMdPlugin, groupIconVitePlugin, localIconLoader} from "vitepress-plugin-group-icons";
+import {readFileSync} from "node:fs";
 
 
 const bdIcon = localIconLoader(import.meta.url, "../docs/public/branding/logo_small.svg");
@@ -232,17 +233,6 @@ const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
         frontmatterOrderDefaultValue: 1,
         manualSortFileNameByPriority: ["getting-started", "guides"],
     },
-    // {
-    //     documentRootPath: "docs",
-    //     scanStartPath: "developers",
-    //     basePath: "/developers/",
-    //     resolvePath: "/developers/",
-    //     useTitleFromFileHeading: true,
-    //     includeRootIndexFile: true,
-    //     sortFolderTo: "bottom",
-    //     sortMenusByFrontmatterOrder: true,
-    //     frontmatterOrderDefaultValue: 1,
-    // },
     {
         documentRootPath: "docs",
         scanStartPath: "plugins",
@@ -280,5 +270,42 @@ const SIDEBARS: Parameters<typeof generateSidebar>[0] = [
     },
 ];
 
-const userConfig: Partial<UserConfig> = withSidebar(VITEPRESS_CONFIG, SIDEBARS);
-export default defineConfig(userConfig);
+// Read the BdApi file to get items that should be in the sidebar
+const bdConfig = readFileSync("./docs/api/BdApi.md", "utf-8");
+const propertyRegex = /\n> `static` \*\*(.+)\*\*.+\((.+)\.md\)/g;
+
+const properties: Record<string, string> = {};
+for(const match of bdConfig.matchAll(propertyRegex)) {
+    const [, name, path] = match;
+
+    if(properties[path]) properties[path] += `/${name}`;
+    else properties[path] = name;
+}
+
+const propertyItems = Object.entries(properties).map(([path, name]) => ({
+    text: name,
+    link: path
+}));
+
+VITEPRESS_CONFIG.themeConfig ??= {};
+VITEPRESS_CONFIG.themeConfig.sidebar = {
+    ...generateSidebar(SIDEBARS),
+    "/api/": {
+        base: "/api/",
+        items: [
+            {
+                text: "Overview",
+                link: "index.md"
+            },
+            {
+                text: "API Reference",
+                items: [
+                    { text: "BdApi", link: "BdApi" },
+                    ...propertyItems
+                ]
+            }
+        ]
+    }
+}
+
+export default defineConfig(VITEPRESS_CONFIG);

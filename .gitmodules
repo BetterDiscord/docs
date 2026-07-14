@@ -1,0 +1,3 @@
+[submodule "bd-source"]
+	path = bd-source
+	url = https://github.com/BetterDiscord/BetterDiscord.git
