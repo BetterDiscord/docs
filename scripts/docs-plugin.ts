@@ -1,6 +1,8 @@
 import { MarkdownPageEvent, type MarkdownApplication } from "typedoc-plugin-markdown";
-import { readFileSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { basename } from "node:path";
+import { execSync } from "node:child_process";
+import { join } from "node:path";
 
 const propertyRegex = /(\n> (?:`static` )?\*\*\w+\*\*: .+) = `.+`\n/g;
 const replace = [
@@ -8,6 +10,13 @@ const replace = [
 ]
 
 export function load(app: MarkdownApplication) {
+    // Make sure that bd-source has its node_modules installed
+    if(!existsSync(join("bd-source", "node_modules"))) {
+        console.log("Installing dependencies for docs generation...");
+        execSync("bun i --frozen-lockfile", { cwd: "bd-source", stdio: "inherit" });
+    }
+
+
     app.renderer.on(MarkdownPageEvent.END, (page) => {
         // Overwrite index.md with our custom one
         if(basename(page.filename) === "index.md") {

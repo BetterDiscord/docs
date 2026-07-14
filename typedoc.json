@@ -3,7 +3,7 @@
         "typedoc-plugin-markdown",
         "typedoc-plugin-merge-modules",
         "typedoc-plugin-missing-exports",
-        "./scripts/transform-md-plugin.ts"
+        "./scripts/docs-plugin.ts"
     ],
     "out": "./docs/api",
     "entryPoints": [

@@ -191,7 +191,7 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 ### getAllByKeys()
 
-> **getAllByKeys**\<`T`\>(...`props`): `void` \| `T`
+> **getAllByKeys**\<`T`\>(...`props`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -207,13 +207,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getAllByPrototypeKeys()
 
-> **getAllByPrototypeKeys**\<`T`\>(...`prototypes`): `void` \| `T`
+> **getAllByPrototypeKeys**\<`T`\>(...`prototypes`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -229,13 +229,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getAllByRegex()
 
-> **getAllByRegex**\<`T`\>(`regex`, `options?`): `void` \| `T`
+> **getAllByRegex**\<`T`\>(`regex`, `options?`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -252,13 +252,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getAllBySource()
 
-> **getAllBySource**\<`T`\>(...`searches`): `void` \| `T`
+> **getAllBySource**\<`T`\>(...`searches`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -274,13 +274,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getAllByStrings()
 
-> **getAllByStrings**\<`T`\>(...`strings`): `void` \| `T`
+> **getAllByStrings**\<`T`\>(...`strings`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -296,7 +296,7 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
@@ -363,7 +363,7 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 ### getByKeys()
 
-> **getByKeys**\<`T`\>(...`props`): `void` \| `T`
+> **getByKeys**\<`T`\>(...`props`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -379,13 +379,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getByPrototypeKeys()
 
-> **getByPrototypeKeys**\<`T`\>(...`prototypes`): `void` \| `T`
+> **getByPrototypeKeys**\<`T`\>(...`prototypes`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -401,13 +401,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getByRegex()
 
-> **getByRegex**\<`T`\>(`regex`, `options?`): `void` \| `T`
+> **getByRegex**\<`T`\>(`regex`, `options?`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -424,13 +424,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getBySource()
 
-> **getBySource**\<`T`\>(...`searches`): `void` \| `T`
+> **getBySource**\<`T`\>(...`searches`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -446,13 +446,13 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
 ### getByStrings()
 
-> **getByStrings**\<`T`\>(...`strings`): `void` \| `T`
+> **getByStrings**\<`T`\>(...`strings`): `T` \| `undefined`
 
 #### Type Parameters
 
@@ -468,7 +468,7 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 #### Returns
 
-`void` \| `T`
+`T` \| `undefined`
 
 ***
 
@@ -486,7 +486,31 @@ An object containing all of Discord's internal stores which can be accessed by t
 
 | Parameter | Type |
 | ------ | ------ |
-| `filter` | `string` \| `RegExp` \| [`ModuleFilter`](ModuleFilter.md) |
+| `filter` | `string` \| `number` \| `RegExp` \| [`ModuleFilter`](ModuleFilter.md) \| (`string` \| `RegExp`)[] |
+| `mangled` | `Record`\<keyof `T`, [`ExportedOnlyFilter`](ExportedOnlyFilter.md)\> |
+| `options` | [`MangledOptions`](MangledOptions.md) |
+
+#### Returns
+
+`void` \| `T`
+
+***
+
+### getMangledProxy()
+
+> **getMangledProxy**\<`T`\>(`filter`, `mangled`, `options?`): `void` \| `T`
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| `T` *extends* `object` |
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `filter` | `string` \| `number` \| `RegExp` \| [`ModuleFilter`](ModuleFilter.md) \| (`string` \| `RegExp`)[] |
 | `mangled` | `Record`\<keyof `T`, [`ExportedOnlyFilter`](ExportedOnlyFilter.md)\> |
 | `options` | [`MangledOptions`](MangledOptions.md) |
 
@@ -535,6 +559,29 @@ An object containing all of Discord's internal stores which can be accessed by t
 | ------ | ------ |
 | `filter` | [`ModuleFilter`](ModuleFilter.md) |
 | `options` | [`WebpackOptions`](WebpackOptions.md) |
+
+#### Returns
+
+`void` \| `T`
+
+***
+
+### getProxy()
+
+> **getProxy**\<`T`\>(`filter`, `options?`): `void` \| `T`
+
+#### Type Parameters
+
+| Type Parameter |
+| ------ |
+| `T` *extends* `object` |
+
+#### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `filter` | [`ModuleFilter`](ModuleFilter.md) |
+| `options` | [`ProxyOptions`](ProxyOptions.md) |
 
 #### Returns
 

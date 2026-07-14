@@ -4,6 +4,58 @@
 
 ## Properties
 
+### cache
+
+> **cache**: \<`T`\>(`factory`) => [`Cache`](Cache.md)\<`T`\> & `object`
+
+A simple utility for caching a result
+
+#### Type Declaration
+
+##### proxy
+
+> **proxy**: \<`T`\>(`factory`, `typeofIsObject?`, `CALL_LIMIT?`) => `T`
+
+Like [Utils.cache](#cache) but factory runs when its accessed instead of manually calling it
+
+###### Type Parameters
+
+| Type Parameter |
+| ------ |
+| `T` *extends* `object` |
+
+###### Parameters
+
+| Parameter | Type |
+| ------ | ------ |
+| `factory` | () => `T` |
+| `typeofIsObject?` | `boolean` |
+| `CALL_LIMIT?` | `number` |
+
+###### Returns
+
+`T`
+
+###### Example
+
+```ts
+const foo = cache.proxy(() => console.log("Called")); // no log
+
+foo.bar // LOG: Called
+foo.bar // No log
+```
+
+#### Example
+
+```ts
+const foo = cache(() => console.log("Called"));
+
+foo(); // LOG: Called
+foo(); // No log
+```
+
+***
+
 ### className
 
 > **className**: (...`inputs`) => `string`
