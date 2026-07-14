@@ -16,7 +16,6 @@ export function load(app: MarkdownApplication) {
         execSync("bun i --frozen-lockfile", { cwd: "bd-source", stdio: "inherit" });
     }
 
-
     app.renderer.on(MarkdownPageEvent.END, (page) => {
         // Overwrite index.md with our custom one
         if(basename(page.filename) === "index.md") {
