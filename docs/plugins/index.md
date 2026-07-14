@@ -16,7 +16,7 @@ These docs consist of this introduction which gives you an idea of what to expec
 
 The [Introduction](./introduction/quick-start.md) section gives a lot of background information on plugins requirements, the development environment, and the tools at your disposal.
 
-The [Tutorials](./tutorials/creating-a-plugin.md) section walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/classes/BdApi.md) has to offer.
+The [Tutorials](./tutorials/creating-a-plugin.md) section walks you through the basics of making plugins including code snippets and explanation. It also goes over most of what [BdApi](/api/BdApi.md) has to offer.
 
 The [Concepts](./concepts/patching.md) guide goes more in depth with advanced concepts that are important to making good and complicated plugins that smoothly integrate into Discord.
 
