@@ -5,8 +5,8 @@ import { execSync } from "node:child_process";
 import { join } from "node:path";
 
 const propertyRegex = /(\n> (?:`static` )?\*\*\w+\*\*: .+) = `.+`\n/g;
-const replace = [
-    ["**ReactDOM**: `__module` & `__module`", "**ReactDOM**: *typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`"]
+const replace: [string, string][] = [
+    ["`__module` & `__module`", "*typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`"]
 ]
 
 export function load(app: MarkdownApplication) {

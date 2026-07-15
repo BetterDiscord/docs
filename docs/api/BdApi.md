@@ -324,13 +324,13 @@ The React module being used inside Discord
 
 #### Get Signature
 
-> **get** **ReactDOM**(): `__module` & `__module`
+> **get** **ReactDOM**(): *typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`
 
 The ReactDOM module being used inside Discord
 
 ##### Returns
 
-`__module` & `__module`
+*typeof* `ReactDOMBase` & *typeof* `ReactDOMClient`
 
 ***
 
