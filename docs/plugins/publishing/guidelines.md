@@ -38,7 +38,9 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - Test styles (if using internal vars) and confirm they actually work.
    - Make sure all elements are visible and usable.
    - Incomplete implementations that break or hide features without a proper replacement or reason will not be accepted. If this happens, we will remove your plugin from the store or require a fix.
-3. Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
+3. Preventing App Crashes
+   - Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
+   - Use decent webpack filters.
 4. Plugins must include a license permitting community maintenance if abandoned.
 
 ## Code
