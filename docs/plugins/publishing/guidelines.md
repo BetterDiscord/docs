@@ -29,29 +29,31 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.
 1. Plugins must not touch or use BetterDiscord's files.
 
-## Quality Control
-
+## Usability
 1. If overriding a native client feature, it must achieve ONE OR MORE of the following:
    - Show clear visual effort and polish.
    - Be visually appealing while retaining ALL original features, plus/or improvements.
    - At minimum, be feature-complete (100% equality with what's being replaced).
-1. Don't half-ass features.
-   - Test styles (if using internal vars) and confirm they actually work.
-   - Make sure all elements are visible and usable.
-   - Incomplete implementations that break or hide features without a proper replacement or reason will not be accepted. If this happens, we will remove your plugin from the store or require a fix.
-1. Preventing App Crashes
-   - Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
-   - Use decent webpack filters.
-1. Plugins must include a license permitting community maintenance if abandoned.
+1.Make sure all elements are visible and usable.
 
-**Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:. 
- - Privacy/security
- - Accessibility
- - Performance
- - Content/moderation control
+**Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:.
+- Privacy/Security
+- Accessibility
+- Performance
+- Content/moderation control
    - This only accounts for removing *specific* type of content including but not limited to: disabling embeds, nsfw previews.
 
 These are not required to be feature-complete replacements, as the addons purpose is intentional removal.
+
+## Testing
+1. Test styles (if using internal vars) and confirm they actually work.
+1. Incomplete implementations that break or hide features without a proper replacement or reason will not be accepted. If this happens, we will remove your plugin from the store or require a fix.
+1. Preventing App Crashes
+   - Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
+   - Use decent webpack filters.
+
+## Maintenance
+1. Plugins must include a license permitting community maintenance if abandoned.
 
 ## Code
 
