@@ -23,8 +23,8 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - This includes UI changes, patches, intervals, timeouts, subscriptions, and listeners.
 1. Plugins and their corresponding libraries shall not operate outside their intended functionality.
    - This includes but is not limited to: 
-     - Swapping out unrelated components, 
-     - introducing unnecessary buttons or badges.
+     - Swapping out unrelated components
+     - introducing unnecessary buttons or badges
 1. Plugins must not modify the BetterDiscord UI.
    - This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.
 1. Plugins must not touch or use BetterDiscord's files.
@@ -50,7 +50,6 @@ These are not required to be feature-complete replacements, as the addons purpos
 1. Incomplete implementations that break or hide features without a proper replacement or reason will not be accepted. If this happens, we will remove your plugin from the store or require a fix.
 1. Preventing App Crashes
    - Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
-   - Use decent webpack filters.
 
 ## Maintenance
 1. Plugins must include a license permitting community maintenance if abandoned.
@@ -69,9 +68,9 @@ These are not required to be feature-complete replacements, as the addons purpos
 1. Plugins must not waste hardware resources.
     - e.g., repeated webpack searching without caching, storing unnecessary data in memory.
     - This includes but is not limited to:
-       - Unthrottled/undebounced event listeners (scroll, resize, keydown, message).
-       - Re-running expensive computations.
-       - Polling for state changes instead of using Flux/event-based subscriptions.
+       - Excessive event listeners (scroll, resize, keydown, message)
+       - Re-running expensive computations
+       - Polling for state changes instead of using Flux/event-based subscriptions
        - `MutationObserver`
        - `setInterval`
 
@@ -82,19 +81,19 @@ These are not required to be feature-complete replacements, as the addons purpos
 1. Plugins must not access user tokens, emails, phone numbers, billing info or passwords.
 1. Plugins must not risk a user's account.
     - This includes but is not limited to:
-      - Self-botting, 
-      - Spamming API requests, 
-      - Spamming Protobuf (cloud sync),
-      - Using non-user APIs, 
-      - Bypassing nitro features, 
-      - Animated status, 
-      - Message logging.
+      - Self-botting
+      - Spamming API requests
+      - Spamming Protobuf (cloud sync)
+      - Using non-user APIs
+      - Bypassing nitro features
+      - Animated status
+      - Message logging
       - Automating Quest Completion.
 1. Plugins must not provide access to potentially sensitive information from other users of the platform which is not otherwise accessible.
     - This includes but is not limited to: 
-      - Hidden channels, 
-      - Deleted messages, 
-      - Invisible/Offline status distinction.
+      - Hidden channels
+      - Deleted messages
+      - Invisible/Offline status distinction
 1. Plugins must not use remote libraries.
    - Necessary dependencies should be either bundled or a separate plugin.
 1. Plugins must not use closed source nor self-hosted binaries or libraries.

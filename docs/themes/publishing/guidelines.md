@@ -27,7 +27,6 @@ These are guidelines that all themes are expected to abide by. Any theme that vi
 
 ## Quality Control & Performance
 1. Performance hits from unoptimized code are not allowed.
-   - Discord is slow as it is, and it's hard enough for users to use the client without themes making it worse.
 1. Avoid expensive selectors.
    - e.g. long descendant chains (`div div div span`) make style recalculation slower and more intensive.
    - Use `:has()` sparingly, and only when no simpler selector achieves the same result. It can force re-evaluation of an element and its children.
