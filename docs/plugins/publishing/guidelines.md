@@ -7,6 +7,9 @@ description: Rules for all plugins.
 
 These are guidelines that all plugins are expected to abide by. Any plugin that violates these <u>will not</u> be added to the BetterDiscord website or marked as official or approved in any fashion. Existing plugins that push updates that violate these guidelines will have their updates denied.
 
+If the reviewing staff collectively agree that a submission appears to be AI-generated or otherwise not primarily written by the submitter,
+the plugin will be denied and the author may be asked to demonstrate competence or proof of knowledge (e.g. explaining the code, making a live modification, or a similar test) before resubmission will be considered.
+
 ## General Guidelines
 
 1. Addons must be in public GitHub repositories.
@@ -58,8 +61,6 @@ These are not required to be feature-complete replacements, as the addons purpos
 
 1. Your plugin's codebase must be made and written primarily by you.
    - You may not submit an automatically-generated plugin (AI or otherwise), a customized version of someone else's plugin, or a codebase written by someone other than you.
-   - If the reviewing staff collectively agree that a submission appears to be AI-generated or otherwise not primarily written by the submitter, 
-   the plugin will be denied and the author may be asked to demonstrate competence or proof of knowledge (e.g. explaining the code, making a live modification, or a similar test) before resubmission will be considered.
 1. Plugins must set `module.exports`
 1. Plugins must not modify global variables, global objects, or existing `prototype`s.
 1. Plugins must not access BetterDiscord globals outside the official API.
