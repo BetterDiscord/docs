@@ -10,24 +10,24 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 ## General Guidelines
 
 1. Addons must be in public GitHub repositories.
-2. Addons must not negatively affect users.
+1. Addons must not negatively affect users.
    - e.g., ban risk, disabling security features, accessing private information
-3. Addons must not discriminate whom can use it.
-4. Addons must not collect user data without opt-in consent.
-5. Addons must not include explicit sexual material or other adult content.
-6. Addons must have English language support.
+1. Addons must not discriminate whom can use it.
+1. Addons must not collect user data without opt-in consent.
+1. Addons must not include explicit sexual material or other adult content.
+1. Addons must have English language support.
 
 ## Scope
 
 1. Plugins must clean up all changes/modification made by the plugin when it is disabled.
    - This includes UI changes, patches, intervals, timeouts, subscriptions, and listeners.
-2. Plugins and their corresponding libraries shall not operate outside their intended functionality.
+1. Plugins and their corresponding libraries shall not operate outside their intended functionality.
    - This includes but is not limited to: 
      - Swapping out unrelated components, 
      - introducing unnecessary buttons or badges.
-3. Plugins must not modify the BetterDiscord UI.
+1. Plugins must not modify the BetterDiscord UI.
    - This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.
-4. Plugins must not touch or use BetterDiscord's files.
+1. Plugins must not touch or use BetterDiscord's files.
 
 ## Quality Control
 
@@ -35,14 +35,14 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - Show clear visual effort and polish.
    - Be visually appealing while retaining ALL original features, plus/or improvements.
    - At minimum, be feature-complete (100% equality with what's being replaced).
-2. Don't half-ass features.
+1. Don't half-ass features.
    - Test styles (if using internal vars) and confirm they actually work.
    - Make sure all elements are visible and usable.
    - Incomplete implementations that break or hide features without a proper replacement or reason will not be accepted. If this happens, we will remove your plugin from the store or require a fix.
-3. Preventing App Crashes
+1. Preventing App Crashes
    - Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
    - Use decent webpack filters.
-4. Plugins must include a license permitting community maintenance if abandoned.
+1. Plugins must include a license permitting community maintenance if abandoned.
 
 **Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:. 
  - Privacy/security
@@ -59,12 +59,12 @@ These are not required to be feature-complete replacements, as the addons purpos
    - You may not submit an automatically-generated plugin (AI or otherwise), a customized version of someone else's plugin, or a codebase written by someone other than you.
    - If the reviewing staff collectively agree that a submission appears to be AI-generated or otherwise not primarily written by the submitter, 
    the plugin will be denied and the author may be asked to demonstrate competence or proof of knowledge (e.g. explaining the code, making a live modification, or a similar test) before resubmission will be considered.
-2. Plugins must set `module.exports`
-3. Plugins must not modify global variables, global objects, or existing `prototype`s.
-4. Plugins must not access BetterDiscord globals outside the official API.
-5. Plugins must not access webpack modules outside the official API.
+1. Plugins must set `module.exports`
+1. Plugins must not modify global variables, global objects, or existing `prototype`s.
+1. Plugins must not access BetterDiscord globals outside the official API.
+1. Plugins must not access webpack modules outside the official API.
    - This includes injecting into Discord's global webpack declare.
-6. Plugins must not waste hardware resources.
+1. Plugins must not waste hardware resources.
     - e.g., repeated webpack searching without caching, storing unnecessary data in memory.
     - This includes but is not limited to:
        - Unthrottled/undebounced event listeners (scroll, resize, keydown, message).
@@ -77,8 +77,8 @@ These are not required to be feature-complete replacements, as the addons purpos
 ## Security & Privacy
 
 1. Plugins must not remove security features.
-2. Plugins must not access user tokens, emails, phone numbers, billing info or passwords.
-3. Plugins must not risk a user's account.
+1. Plugins must not access user tokens, emails, phone numbers, billing info or passwords.
+1. Plugins must not risk a user's account.
     - This includes but is not limited to:
       - Self-botting, 
       - Spamming API requests, 
@@ -88,16 +88,16 @@ These are not required to be feature-complete replacements, as the addons purpos
       - Animated status, 
       - Message logging.
       - Automating Quest Completion.
-4. Plugins must not provide access to potentially sensitive information from other users of the platform which is not otherwise accessible.
+1. Plugins must not provide access to potentially sensitive information from other users of the platform which is not otherwise accessible.
     - This includes but is not limited to: 
       - Hidden channels, 
       - Deleted messages, 
       - Invisible/Offline status distinction.
-5. Plugins must not use remote libraries.
+1. Plugins must not use remote libraries.
    - Necessary dependencies should be either bundled or a separate plugin.
-6. Plugins must not use closed source nor self-hosted binaries or libraries.
-7. Plugins must not be obfuscated, minified, include source maps, or be otherwise deceitful.
-8. Plugins must not bypass the addon approval system by implementing their own update system.
+1. Plugins must not use closed source nor self-hosted binaries or libraries.
+1. Plugins must not be obfuscated, minified, include source maps, or be otherwise deceitful.
+1. Plugins must not bypass the addon approval system by implementing their own update system.
 
 # Self-Botting & What is it?
 
