@@ -8,14 +8,13 @@ These are guidelines that all themes are expected to abide by. Any theme that vi
 
 ## General Guidelines
 
- 1. Addons must be in public GitHub repositories.
- 1. Addons must not negatively affect users.
-    - e.g., ban risk, disabling security features, accessing private information
- 1. Addons must not discriminate whom can use it.
- 1. Addons must not collect user data without opt-in consent.
- 1. Addons must not include explicit sexual material or other adult content.
- 1. Addons must have English language support.
-
+1. Addons must be in public GitHub repositories.
+1. Addons must not negatively affect users.
+   - e.g., ban risk, disabling security features, accessing private information
+1. Addons must not discriminate whom can use it.
+1. Addons must not collect user data without opt-in consent.
+1. Addons must not include explicit sexual material or other adult content.
+1. Addons must have English language support.
 
 ## Usability
 1. Do not degrade the user experience by removing core functionality.
@@ -25,6 +24,14 @@ These are guidelines that all themes are expected to abide by. Any theme that vi
 1. Try to maintain support for Discord's accessibility features.
 1. Maintain performance on modern hardware.
    - This can be done by limiting the use of intensive animations, filters, and effects.
+
+## Quality Control & Performance
+1. Performance hits from unoptimized code are not allowed.
+1. Avoid expensive selectors.
+   - e.g. long descendant chains (`div div div span`) make style recalculation slower and more intensive.
+   - Use `:has()` sparingly, and only when no simpler selector achieves the same result. It can force re-evaluation of an element and its children.
+1. Avoid GPU/CPU Intensive actions.
+   - Animated theme watermarks are CPU and GPU-intensive and run continuously in the background for no functional benefit.
 
 ## Code
 1. Your theme's codebase must be made and written primarily by you.
