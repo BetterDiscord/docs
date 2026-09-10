@@ -34,7 +34,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - Show clear visual effort and polish.
    - Be visually appealing while retaining ALL original features, plus/or improvements.
    - At minimum, be feature-complete (100% equality with what's being replaced).
-1.Make sure all elements are visible and usable.
+1. Make sure all elements are visible and usable.
 
 **Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:.
 - Privacy/Security
