@@ -30,6 +30,7 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
 4. Plugins must not touch or use BetterDiscord's files.
 
 ## Quality Control
+
 1. If overriding a native client feature, it must achieve ONE OR MORE of the following:
    - Show clear visual effort and polish.
    - Be visually appealing while retaining ALL original features, plus/or improvements.
@@ -42,6 +43,15 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
    - Use decent webpack filters.
 4. Plugins must include a license permitting community maintenance if abandoned.
+
+**Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:. 
+ - Privacy/security
+ - Accessibility
+ - Performance
+ - Content/moderation control
+   - This only accounts for removing *specific* type of content including but not limited to: disabling embeds, nsfw previews.
+
+These are not required to be feature-complete replacements, as the addons purpose is intentional removal.
 
 ## Code
 
