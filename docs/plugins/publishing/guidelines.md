@@ -50,13 +50,11 @@ These are guidelines that all plugins are expected to abide by. Any plugin that 
    - If the reviewing staff collectively agree that a submission appears to be AI-generated or otherwise not primarily written by the submitter, 
    the plugin will be denied and the author may be asked to demonstrate competence or proof of knowledge (e.g. explaining the code, making a live modification, or a similar test) before resubmission will be considered.
 2. Plugins must set `module.exports`
-3. Plugins must not make use of the `child_process` node module.
-   - Existing plugins are exempt, but no new plugins shall use this. This is due in part to the security risk, and in part due to an impending Discord update that will break this module.
-4. Plugins must not modify global variables, global objects, or existing `prototype`s.
-5. Plugins must not access BetterDiscord globals outside the official API.
-6. Plugins must not access webpack modules outside the official API.
+3. Plugins must not modify global variables, global objects, or existing `prototype`s.
+4. Plugins must not access BetterDiscord globals outside the official API.
+5. Plugins must not access webpack modules outside the official API.
    - This includes injecting into Discord's global webpack declare.
-7. Plugins must not waste hardware resources.
+6. Plugins must not waste hardware resources.
     - e.g., repeated webpack searching without caching, storing unnecessary data in memory.
     - This includes but is not limited to:
        - Unthrottled/undebounced event listeners (scroll, resize, keydown, message).
