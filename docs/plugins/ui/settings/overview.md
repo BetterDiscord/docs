@@ -22,7 +22,7 @@ You can then click through and test out the various settings and get a feel for 
 
 ## Concepts
 
-As mentioned above, BetterDiscord provides two high level ways of making use of these components. Using the React Components directly gives you more control and customization, but it also means it has fewer conveniences and helpers built-in. The documentation here will focus on the JSON-like API since that's our own custom API while React Components are pretty standard. You'll find a lot more information on the component details in the [API reference](../../../api/classes/Components.md).
+As mentioned above, BetterDiscord provides two high level ways of making use of these components. Using the React Components directly gives you more control and customization, but it also means it has fewer conveniences and helpers built-in. The documentation here will focus on the JSON-like API since that's our own custom API while React Components are pretty standard. You'll find a lot more information on the component details in the [API reference](/api/Components.md).
 
 For our JSON-like API we have 4 main components to consider, and it's important to know how they tie into one another. Let's start from the smallest consumable component and zoom out from there.
 
@@ -69,7 +69,7 @@ interface SettingItem {
 
 As you'll notice, most of these are optional, and they should all be understandable from name alone. The only one that might be a bit confusing is `id`. BetterDiscord uses this `id` to help keep all of your settings separate and give you an identifier to use when settings change. This isn't as important when doing single Setting Items, but when you create an entire panel at once, it's nice to know where the change is coming from. You'll see more on that in the next section.
 
-Each `SettingType` will require some other properties as well as providing other options. Visit those pages in the documentation for additional details or take a look at the [API reference](../../../api/classes/UI.md#buildsettingitem).
+Each `SettingType` will require some other properties as well as providing other options. Visit those pages in the documentation for additional details or take a look at the [API reference](/api/UI.md#buildsettingitem).
 
 ### `buildSettingsPanel()`
 

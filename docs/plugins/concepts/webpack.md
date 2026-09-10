@@ -24,7 +24,7 @@ Plugins are able to access all of these types of modules through BetterDiscord's
 
 ## Finding Modules
 
-How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../introduction/devtools.md), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [API reference](/api/classes/Webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
+How do we actually find these modules? First, let's take a look at the tools at our disposal. We of course have the Chromium DevTools as we talked about in our [developer guide](../introduction/devtools.md), which is absolutely crucial. But we also have BetterDiscord's Webpack API. You can take a look at the [API reference](/api/Webpack.md) for this namespace if you want a full list, we'll be going over the most frequently used ones here.
 
 ## Filters
 
@@ -157,3 +157,17 @@ Here we are looking for the function that opens the context menus in Discord and
 ### searchExports
 
 You probably noticed in the example directly above that we used `{searchExports: true}`. This is an option available to all the Webpack APIs. It causes BetterDiscord to loop over all the exports of every module to see if they match your filter rather than testing the whole module at once. This is used a lot in plugins when searching for objects, classes, and instantiations since patching with the key is not crucial.
+
+### declarations
+
+Sometimes what Discord exposes through module exports isn't enough, and the value you want to use or modify is buried deep within the module. In this case, you can use declarations, which are essentially a way of accessing every variable defined at the top level of a module. The most fundamental way of accessing declarations is by passing `raw: true` to a module query, and reading the `declarations` property on the returned module object. For example:
+
+![declarations_raw](./img/declarations_raw.png)
+
+Properties of the declarations object can be changed to update the corresponding variable in the module. For easier development, module queries can also take the `declarationFilter` property, which will automatically search through the declarations of the found module for the first matching declaration.
+
+```js
+BdApi.Webpack.getBySource("Everyone Warning", {
+    declarationFilter: (d) => d.toString().includes("memberCount")
+});
+```

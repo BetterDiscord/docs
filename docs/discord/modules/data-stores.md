@@ -1,6 +1,6 @@
 # Data Stores
 
-This is a reference of most of available internal data stores as well as their properties and methods. All the store listed here can be found through [`BdApi.Webpack.getStore()`](/api/classes/Webpack.md#getstore) using the names seen here.
+This is a reference of most of available internal data stores as well as their properties and methods. All the store listed here can be found through [`BdApi.Webpack.getStore()`](/api/Webpack.md#getstore) using the names seen here.
 
 
 ## Useful Snippets

@@ -65,7 +65,7 @@ If you think that repeating `BdApi.React` over and over is a bit tedious, many d
 
 ## React in BetterDiscord
 
-Some of the [UI related functions](/api/classes/UI.md) of BetterDiscord accept React Components as options to be rendered. Some accept React Nodes/Elements which is just having already called `createElement`. One good example is the confirmation modal. It's already a very helpful utility, but adding in your own custom React component allows for some very powerful UI and UX for end users. Just as a quick example, take a look at how we can combine our `MyComponent` from before with the confirmation modal.
+Some of the [UI related functions](/api/UI.md) of BetterDiscord accept React Components as options to be rendered. Some accept React Nodes/Elements which is just having already called `createElement`. One good example is the confirmation modal. It's already a very helpful utility, but adding in your own custom React component allows for some very powerful UI and UX for end users. Just as a quick example, take a look at how we can combine our `MyComponent` from before with the confirmation modal.
 
 ```js
 BdApi.UI.showConfirmationModal("My Component Demo", BdApi.React.createElement(MyComponent));
