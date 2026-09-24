@@ -49,10 +49,9 @@ the plugin will be denied and the author may be asked to demonstrate competence 
 These are not required to be feature-complete replacements, as the addons purpose is intentional removal.
 
 ## Testing
-1. Test styles (if using internal vars) and confirm they actually work.
+1. Plugins must be tested to ensure they function as intended, including any styles used by the plugin.
 1. Incomplete implementations that break or hide features without a proper replacement or reason will not be accepted. If this happens, we will remove your plugin from the store or require a fix.
-1. Preventing App Crashes
-   - Wrap React elements in ErrorBoundaries to prevent plugin errors from crashing the entire Discord client.
+1. Plugins must include appropriate error handling to prevent errors from crashing the Discord client.- e.g., wrapping React elements in Error Boundaries
 
 ## Maintenance
 1. Plugins must include a license permitting community maintenance if abandoned.
