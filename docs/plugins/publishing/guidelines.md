@@ -27,7 +27,7 @@ the plugin will be denied and the author may be asked to demonstrate competence 
 1. Plugins and their corresponding libraries shall not operate outside their intended functionality.
    - This includes but is not limited to: 
      - Swapping out unrelated components
-     - introducing unnecessary buttons or badges
+     - Introducing unnecessary buttons or badges
 1. Plugins must not modify the BetterDiscord UI.
    - This is to maintain a consistent UI/UX, prevent user confusion, and prevent errors.
 1. Plugins must not touch or use BetterDiscord's files.
@@ -44,7 +44,7 @@ the plugin will be denied and the author may be asked to demonstrate competence 
 - Accessibility
 - Performance
 - Content/moderation control
-   - This only accounts for removing *specific* type of content including but not limited to: disabling embeds, nsfw previews.
+   - This only accounts for removing *specific* types of content including but not limited to: disabling embeds, NSFW previews.
 
 These are not required to be feature-complete replacements, as the addons' purpose is intentional removal.
 
@@ -86,7 +86,7 @@ These are not required to be feature-complete replacements, as the addons' purpo
       - Spamming API requests
       - Spamming Protobuf (cloud sync)
       - Using non-user APIs
-      - Bypassing nitro features
+      - Bypassing Nitro features
       - Animated status
       - Automating Quest Completion.
 1. Plugins must not provide access to potentially sensitive information from other users of the platform which is not otherwise accessible.
