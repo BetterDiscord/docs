@@ -30,7 +30,7 @@ These are guidelines that all themes are expected to abide by. Any theme that vi
    - e.g. long descendant chains (`div div div span`) make style recalculation slower and more intensive.
    - Use `:has()` sparingly, and only when no simpler selector achieves the same result. It can force re-evaluation of an element and its children.
 1. Avoid GPU/CPU Intensive actions.
-   - Animated theme watermarks are CPU and GPU-intensive and run continuously in the background for no functional benefit.
+   - This includes animated theme watermarks are CPU and GPU-intensive and run continuously in the background for no functional benefit.
 
 ## Code
 1. Your theme's codebase must be made and written primarily by you.

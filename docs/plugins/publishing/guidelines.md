@@ -35,23 +35,23 @@ the plugin will be denied and the author may be asked to demonstrate competence 
 ## Usability
 1. If overriding a native client feature, it must achieve ONE OR MORE of the following:
    - Show clear visual effort and polish.
-   - Be visually appealing while retaining ALL original features, plus/or improvements.
+   - Be visually appealing while retaining ALL original features.
    - At minimum, be feature-complete (100% equality with what's being replaced).
 1. Make sure all elements are visible and usable.
 
-**Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:.
+**Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:
 - Privacy/Security
 - Accessibility
 - Performance
 - Content/moderation control
    - This only accounts for removing *specific* type of content including but not limited to: disabling embeds, nsfw previews.
 
-These are not required to be feature-complete replacements, as the addons purpose is intentional removal.
+These are not required to be feature-complete replacements, as the addons' purpose is intentional removal.
 
 ## Testing
 1. Plugins must be tested to ensure they function as intended, including any styles used by the plugin.
 1. Incomplete implementations that break or hide features without a proper replacement or reason will not be accepted. If this happens, we will remove your plugin from the store or require a fix.
-1. Plugins must include appropriate error handling to prevent errors from crashing the Discord client.- e.g., wrapping React elements in Error Boundaries
+1. Plugins must include appropriate error handling to prevent errors from crashing the Discord client - e.g., wrapping React elements in error boundaries
 
 ## Maintenance
 1. Plugins must include a license permitting community maintenance if abandoned.
@@ -66,13 +66,14 @@ These are not required to be feature-complete replacements, as the addons purpos
 1. Plugins must not access webpack modules outside the official API.
    - This includes injecting into Discord's global webpack declare.
 1. Plugins must not waste hardware resources.
-    - e.g., repeated webpack searching without caching, storing unnecessary data in memory.
     - This includes but is not limited to:
-       - Excessive event listeners (scroll, resize, keydown, message)
-       - Re-running expensive computations
-       - Polling for state changes instead of using Flux/event-based subscriptions
-       - `MutationObserver`
-       - `setInterval`
+      - Storing unnecessary data in memory
+      - Repeated webpack searching without caching
+      - Excessive event listeners (scroll, resize, keydown, message)
+      - Re-running expensive computations
+      - Polling for state changes instead of using Flux/event-based subscriptions
+      - `MutationObserver`
+      - `setInterval`
 
 
 ## Security & Privacy
@@ -87,20 +88,19 @@ These are not required to be feature-complete replacements, as the addons purpos
       - Using non-user APIs
       - Bypassing nitro features
       - Animated status
-      - Message logging
       - Automating Quest Completion.
 1. Plugins must not provide access to potentially sensitive information from other users of the platform which is not otherwise accessible.
     - This includes but is not limited to: 
       - Hidden channels
       - Deleted messages
-      - Invisible/Offline status distinction
+      - Invisible or offline status distinction
 1. Plugins must not use remote libraries.
    - Necessary dependencies should be either bundled or a separate plugin.
 1. Plugins must not use closed source nor self-hosted binaries or libraries.
 1. Plugins must not be obfuscated, minified, include source maps, or be otherwise deceitful.
 1. Plugins must not bypass the addon approval system by implementing their own update system.
 
-# Self-Botting & What is it?
+# Self-Botting
 
 Self-botting is the action of user automated actions. This excludes actions that are invoked by a user action but this does
 include anything that spams Discord's API or Protobuf (cloud sync).
