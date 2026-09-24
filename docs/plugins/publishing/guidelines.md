@@ -79,7 +79,7 @@ These are not required to be feature-complete replacements, as the addons' purpo
 ## Security & Privacy
 
 1. Plugins must not remove security features.
-1. Plugins must not access user tokens, emails, phone numbers, billing info or passwords.
+1. Plugins must not access user tokens, passwords or personally identifiable information.
 1. Plugins must not risk a user's account.
     - This includes but is not limited to:
       - Self-botting
