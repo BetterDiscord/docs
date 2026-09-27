@@ -33,11 +33,12 @@ the plugin will be denied and the author may be asked to demonstrate competence 
 1. Plugins must not touch or use BetterDiscord's files.
 
 ## Usability
-1. If overriding a native client feature, it must achieve ONE OR MORE of the following:
+1. Do not degrade the user experience when replacing or modifying native client functionality. 
+   - All existing features should be retained unless their removal is the intended purpose of the plugin.
    - Show clear visual effort and polish.
    - Be visually appealing while retaining ALL original features.
    - At minimum, be feature-complete (100% equality with what's being replaced).
-1. Make sure all elements are visible and usable.
+   - Consider accessibility when designing new components. - e.g., use of semantic HTML and following established accessibility patterns.
 
 **Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:
 - Privacy/Security
@@ -102,8 +103,8 @@ These are not required to be feature-complete replacements, as the addons' purpo
 
 # Self-Botting
 
-Self-botting is the action of user automated actions. This excludes actions that are invoked by a user action but this does
-include anything that spams Discord's API or Protobuf (cloud sync).
+Self-botting is the action of user automated actions. This excludes actions that are invoked by a user action, but does
+include spamming Discord's API or Protobuf (cloud sync).
 
 As taken from the Discord™️ guidelines
 > Don’t use the services to do harm to Discord. Among other things, this includes trying to gain access to, intentionally overburdening or attacking our systems; scraping our services without our written consent, including by using any robot, spider, crawler, scraper or other automatic device, process or software; selling, licensing or otherwise commercialising content or data obtained from our services; transmitting viruses or other malicious code to our services; using any unauthorised software designed to modify the services; abusing or defrauding us or our payment systems; copying, dismantling or reverse-engineering any of our services or using our intellectual property without permission; and misusing our reporting or customer service mechanisms.
