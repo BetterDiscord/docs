@@ -36,9 +36,7 @@ the plugin will be denied and the author may be asked to demonstrate competence 
 1. Do not degrade the user experience when replacing or modifying native client functionality. 
    - All existing features should be retained unless their removal is the intended purpose of the plugin.
    - Show clear visual effort and polish.
-   - Be visually appealing while retaining ALL original features.
-   - At minimum, be feature-complete (100% equality with what's being replaced).
-   - Consider accessibility when designing new components. - e.g., use of semantic HTML and following established accessibility patterns.
+1. Consider accessibility when designing new components use of semantic HTML and following established accessibility patterns.
 
 **Exceptions:** #1 and #2 does not apply to addons that intentionally remove or block functionality for privacy/security reasons including but not limited to:
 - Privacy/Security
